@@ -2,7 +2,7 @@
 //  DrawingCanvas.swift
 //  Naturia
 //
-//  Created by Lucas Migge de Barros on 23/03/23.
+//  Created by ditthales on 28/03/23.
 //
 
 import Foundation
@@ -48,4 +48,3 @@ struct DrawingCanvas: UIViewRepresentable {
         }
     }
 }
-

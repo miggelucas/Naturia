@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		1768ACE329CCE869002703C5 /* NaturiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768ACE229CCE869002703C5 /* NaturiaApp.swift */; };
-		1768ACE529CCE869002703C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768ACE429CCE869002703C5 /* ContentView.swift */; };
 		1768ACE729CCE86A002703C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACE629CCE86A002703C5 /* Assets.xcassets */; };
 		1768ACEB29CCE86A002703C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */; };
-		1768ACF229CCED7E002703C5 /* DrawingCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768ACF129CCED7E002703C5 /* DrawingCanvas.swift */; };
+		4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */; };
+		4787B88C29D36B1700BBC7EE /* ExpandableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88B29D36B1700BBC7EE /* ExpandableImageView.swift */; };
+		4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89429D36B9800BBC7EE /* CanvasView.swift */; };
+		4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89529D36B9800BBC7EE /* CanvasViewModel.swift */; };
+		4787B89929D36B9800BBC7EE /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89629D36B9800BBC7EE /* Canvas.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1768ACDF29CCE869002703C5 /* Naturia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Naturia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1768ACE229CCE869002703C5 /* NaturiaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturiaApp.swift; sourceTree = "<group>"; };
-		1768ACE429CCE869002703C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1768ACE629CCE86A002703C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1768ACE829CCE86A002703C5 /* Naturia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Naturia.entitlements; sourceTree = "<group>"; };
 		1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		1768ACF129CCED7E002703C5 /* DrawingCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvas.swift; sourceTree = "<group>"; };
+		4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvas.swift; sourceTree = "<group>"; };
+		4787B88B29D36B1700BBC7EE /* ExpandableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableImageView.swift; sourceTree = "<group>"; };
+		4787B89429D36B9800BBC7EE /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		4787B89529D36B9800BBC7EE /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
+		4787B89629D36B9800BBC7EE /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +60,8 @@
 		1768ACE129CCE869002703C5 /* Naturia */ = {
 			isa = PBXGroup;
 			children = (
-				1768ACF129CCED7E002703C5 /* DrawingCanvas.swift */,
+				4787B87F29D3689300BBC7EE /* UI */,
 				1768ACE229CCE869002703C5 /* NaturiaApp.swift */,
-				1768ACE429CCE869002703C5 /* ContentView.swift */,
 				1768ACE629CCE86A002703C5 /* Assets.xcassets */,
 				1768ACE829CCE86A002703C5 /* Naturia.entitlements */,
 				1768ACE929CCE86A002703C5 /* Preview Content */,
@@ -70,6 +75,42 @@
 				1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4787B87F29D3689300BBC7EE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4787B88829D368FA00BBC7EE /* Components */,
+				4787B88029D3689F00BBC7EE /* Modules */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		4787B88029D3689F00BBC7EE /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4787B89329D36B5C00BBC7EE /* Canvas */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4787B88829D368FA00BBC7EE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */,
+				4787B88B29D36B1700BBC7EE /* ExpandableImageView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4787B89329D36B5C00BBC7EE /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				4787B89429D36B9800BBC7EE /* CanvasView.swift */,
+				4787B89529D36B9800BBC7EE /* CanvasViewModel.swift */,
+				4787B89629D36B9800BBC7EE /* Canvas.swift */,
+			);
+			path = Canvas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +183,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1768ACE529CCE869002703C5 /* ContentView.swift in Sources */,
-				1768ACF229CCED7E002703C5 /* DrawingCanvas.swift in Sources */,
+				4787B89929D36B9800BBC7EE /* Canvas.swift in Sources */,
+				4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */,
+				4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */,
+				4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */,
+				4787B88C29D36B1700BBC7EE /* ExpandableImageView.swift in Sources */,
 				1768ACE329CCE869002703C5 /* NaturiaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
