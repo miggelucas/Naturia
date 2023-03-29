@@ -12,4 +12,11 @@ import SwiftUI
 
 final class CanvasViewModel: ObservableObject {
     @Published var example: String?
+    @Published var toggleType: ExpandableViewType? = .provocacao
+    
+    
+}
+
+enum ExpandableViewType{
+    case provocacao, referencia
 }

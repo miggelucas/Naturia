@@ -16,11 +16,22 @@ struct CanvasView: View {
     
     var body: some View {
         //Text(viewModel.example ?? "Hello World")
-        ZStack(alignment: .topLeading) {
-            Text("")
-            ExpandableImageView()
+        ZStack(alignment: .topLeading){
             DrawingCanvas(canvasView: $canvasView)
+            
+            HStack(alignment: .top) {
+                VStack(alignment: .leading) {
+                    ExpandableView(viewType: viewModel.toggleType!)
+                }
+                .padding([.top, .leading], 20.0)
+            
+                Spacer()
+                
+                DoneButton()
+                    .padding([.top, .trailing], 20.0)
+            }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
 }
