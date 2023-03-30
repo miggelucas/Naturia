@@ -20,13 +20,13 @@
 		4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89429D36B9800BBC7EE /* CanvasView.swift */; };
 		4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89529D36B9800BBC7EE /* CanvasViewModel.swift */; };
 		4787B89929D36B9800BBC7EE /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89629D36B9800BBC7EE /* Canvas.swift */; };
+		4787B89D29D375EB00BBC7EE /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89C29D375EB00BBC7EE /* DoneButton.swift */; };
 		EB18AEFE29D4AF9C00D73821 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AEFD29D4AF9C00D73821 /* Routes.swift */; };
 		EB18AF0229D4B00600D73821 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AEFF29D4B00600D73821 /* HomeView.swift */; };
 		EB18AF0329D4B00600D73821 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AF0029D4B00600D73821 /* HomeViewModel.swift */; };
 		EB18AF0429D4B00600D73821 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AF0129D4B00600D73821 /* Home.swift */; };
 		EB18AF0729D4C19600D73821 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AF0629D4C19600D73821 /* ContentView.swift */; };
-		4787B89D29D375EB00BBC7EE /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89C29D375EB00BBC7EE /* DoneButton.swift */; };
-
+		EB59D6B229D64C3E0047065D /* Responsive.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59D6B129D64C3E0047065D /* Responsive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,12 +45,13 @@
 		4787B89429D36B9800BBC7EE /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		4787B89529D36B9800BBC7EE /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
 		4787B89629D36B9800BBC7EE /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		4787B89C29D375EB00BBC7EE /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
 		EB18AEFD29D4AF9C00D73821 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		EB18AEFF29D4B00600D73821 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EB18AF0029D4B00600D73821 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		EB18AF0129D4B00600D73821 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		EB18AF0629D4C19600D73821 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		4787B89C29D375EB00BBC7EE /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
+		EB59D6B129D64C3E0047065D /* Responsive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responsive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +129,7 @@
 				4787B88829D368FA00BBC7EE /* Components */,
 				4787B88029D3689F00BBC7EE /* Modules */,
 				EB18AF0629D4C19600D73821 /* ContentView.swift */,
+				EB59D6B129D64C3E0047065D /* Responsive.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -254,11 +256,12 @@
 				170F210529D62029002363FB /* ImaginativeJourney.swift in Sources */,
 				4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */,
 				4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */,
+				EB59D6B229D64C3E0047065D /* Responsive.swift in Sources */,
 				4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */,
 				170F210329D61FE1002363FB /* Journey.swift in Sources */,
 				170F210929D6206A002363FB /* Drawn.swift in Sources */,
 				170F210129D607E4002363FB /* Plant.swift in Sources */,
-				4787B88C29D36B1700BBC7EE /* ExpandableImageView.swift in Sources */,
+				4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */,
 				EB18AF0729D4C19600D73821 /* ContentView.swift in Sources */,
 				EB18AF0329D4B00600D73821 /* HomeViewModel.swift in Sources */,
 				EB18AF0429D4B00600D73821 /* Home.swift in Sources */,
