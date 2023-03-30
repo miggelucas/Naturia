@@ -7,32 +7,47 @@
 //
 
 import SwiftUI
-import PencilKit
 
 struct CanvasView: View {
 
+    
     @ObservedObject private var viewModel = CanvasViewModel()
-    @State private var canvasView = PKCanvasView()
+    
+    
     
     var body: some View {
         //Text(viewModel.example ?? "Hello World")
         ZStack(alignment: .topLeading){
-            DrawingCanvas(canvasView: $canvasView)
+            DrawingCanvas(canvasView: $viewModel.canvasView)
             
-            HStack(alignment: .top) {
-                VStack(alignment: .leading) {
-                    ExpandableView(viewType: viewModel.toggleType!)
+            HStack(alignment: .top, spacing: 0) {
+                VStack(alignment: .leading, spacing: 24) {
+                    Button {
+                        
+                    } label: {
+                        Text("🔙 Voltar")
+                            .underline()
+                    }
+
+                    ExpandableView(viewType: viewModel.toggleType, provocacoes: viewModel.provocacoes, referencia: viewModel.referencia)
                 }
-                .padding([.top, .leading], 20.0)
-            
+                .padding(.leading, 32)
+                .fixedSize()
+                
                 Spacer()
                 
-                DoneButton()
-                    .padding([.top, .trailing], 20.0)
+                DoneButton(actionForDone: {
+                    viewModel.doneButtonPressed()
+                })
+                    .padding(.trailing, 32)
             }
+            .padding(.top, 48.0)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
+    
+    
+    
 
 }
 

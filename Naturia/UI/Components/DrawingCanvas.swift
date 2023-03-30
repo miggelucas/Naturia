@@ -34,7 +34,7 @@ struct DrawingCanvas: UIViewRepresentable {
         Coordinator(self)
     }
     
-    class Coordinator: NSObject, PKCanvasViewDelegate {
+    class Coordinator: NSObject, PKCanvasViewDelegate  {
         var parent: DrawingCanvas
         
         init(_ parent: DrawingCanvas) {
