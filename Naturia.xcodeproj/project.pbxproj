@@ -16,10 +16,17 @@
 		1768ACE729CCE86A002703C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACE629CCE86A002703C5 /* Assets.xcassets */; };
 		1768ACEB29CCE86A002703C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */; };
 		4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */; };
-		4787B88C29D36B1700BBC7EE /* ExpandableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88B29D36B1700BBC7EE /* ExpandableImageView.swift */; };
+		4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88B29D36B1700BBC7EE /* ExpandableView.swift */; };
 		4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89429D36B9800BBC7EE /* CanvasView.swift */; };
 		4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89529D36B9800BBC7EE /* CanvasViewModel.swift */; };
 		4787B89929D36B9800BBC7EE /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89629D36B9800BBC7EE /* Canvas.swift */; };
+		EB18AEFE29D4AF9C00D73821 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AEFD29D4AF9C00D73821 /* Routes.swift */; };
+		EB18AF0229D4B00600D73821 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AEFF29D4B00600D73821 /* HomeView.swift */; };
+		EB18AF0329D4B00600D73821 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AF0029D4B00600D73821 /* HomeViewModel.swift */; };
+		EB18AF0429D4B00600D73821 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AF0129D4B00600D73821 /* Home.swift */; };
+		EB18AF0729D4C19600D73821 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AF0629D4C19600D73821 /* ContentView.swift */; };
+		4787B89D29D375EB00BBC7EE /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89C29D375EB00BBC7EE /* DoneButton.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +41,16 @@
 		1768ACE829CCE86A002703C5 /* Naturia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Naturia.entitlements; sourceTree = "<group>"; };
 		1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvas.swift; sourceTree = "<group>"; };
-		4787B88B29D36B1700BBC7EE /* ExpandableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableImageView.swift; sourceTree = "<group>"; };
+		4787B88B29D36B1700BBC7EE /* ExpandableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableView.swift; sourceTree = "<group>"; };
 		4787B89429D36B9800BBC7EE /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		4787B89529D36B9800BBC7EE /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
 		4787B89629D36B9800BBC7EE /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		EB18AEFD29D4AF9C00D73821 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		EB18AEFF29D4B00600D73821 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EB18AF0029D4B00600D73821 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		EB18AF0129D4B00600D73821 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		EB18AF0629D4C19600D73821 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4787B89C29D375EB00BBC7EE /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				170F210A29D6207E002363FB /* Models */,
+				EB18AEFC29D4AF7600D73821 /* Navigation */,
 				4787B87F29D3689300BBC7EE /* UI */,
 				1768ACE229CCE869002703C5 /* NaturiaApp.swift */,
 				1768ACE629CCE86A002703C5 /* Assets.xcassets */,
@@ -113,6 +127,7 @@
 			children = (
 				4787B88829D368FA00BBC7EE /* Components */,
 				4787B88029D3689F00BBC7EE /* Modules */,
+				EB18AF0629D4C19600D73821 /* ContentView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -120,6 +135,7 @@
 		4787B88029D3689F00BBC7EE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EB18AF0529D4B02600D73821 /* Home */,
 				4787B89329D36B5C00BBC7EE /* Canvas */,
 			);
 			path = Modules;
@@ -129,7 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */,
-				4787B88B29D36B1700BBC7EE /* ExpandableImageView.swift */,
+				4787B88B29D36B1700BBC7EE /* ExpandableView.swift */,
+				4787B89C29D375EB00BBC7EE /* DoneButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -142,6 +159,24 @@
 				4787B89629D36B9800BBC7EE /* Canvas.swift */,
 			);
 			path = Canvas;
+			sourceTree = "<group>";
+		};
+		EB18AEFC29D4AF7600D73821 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				EB18AEFD29D4AF9C00D73821 /* Routes.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		EB18AF0529D4B02600D73821 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EB18AEFF29D4B00600D73821 /* HomeView.swift */,
+				EB18AF0029D4B00600D73821 /* HomeViewModel.swift */,
+				EB18AF0129D4B00600D73821 /* Home.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +259,16 @@
 				170F210929D6206A002363FB /* Drawn.swift in Sources */,
 				170F210129D607E4002363FB /* Plant.swift in Sources */,
 				4787B88C29D36B1700BBC7EE /* ExpandableImageView.swift in Sources */,
+				EB18AF0729D4C19600D73821 /* ContentView.swift in Sources */,
+				EB18AF0329D4B00600D73821 /* HomeViewModel.swift in Sources */,
+				EB18AF0429D4B00600D73821 /* Home.swift in Sources */,
+				EB18AEFE29D4AF9C00D73821 /* Routes.swift in Sources */,
+				4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */,
+				4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */,
+				4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */,
+				EB18AF0229D4B00600D73821 /* HomeView.swift in Sources */,
+				4787B89D29D375EB00BBC7EE /* DoneButton.swift in Sources */,
+				4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */,
 				1768ACE329CCE869002703C5 /* NaturiaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
