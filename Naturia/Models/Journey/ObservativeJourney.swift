@@ -10,7 +10,7 @@ import SwiftUI
 
 class ObservativeJouney: Journey {
     let imageQuest: Image
-
+    
     init(imageQuest: Image,
          plant: Plant,
          name: String,
@@ -18,29 +18,30 @@ class ObservativeJouney: Journey {
     ){
         self.imageQuest = imageQuest
         super.init(name: name, plant: plant , isCompleted: isCompleted, userConcreteDrawn: nil)
-
+        
     }
     
 }
 
 extension ObservativeJouney {
-    static func getPlaceholderObservativeJourney() -> ObservativeJouney {
-        ObservativeJouney(imageQuest: Image("jiboiaReferencia"),
-                          plant: Plant.getPlaceholderPlant(),
-                          name: "Jiboia",
-                          isCompleted: false
-                          )
+    static func getPlaceholderObservativeJourney(isJourneyDone: Bool) -> ObservativeJouney {
+        if isJourneyDone {
+            let model = ObservativeJouney(
+                imageQuest: Image("jiboiaReferencia"),
+                plant: Plant.getPlaceholderPlant(),
+                name: "Jiboia",
+                isCompleted: true)
+            model.userConcreteDrawn = Drawn(image: Image("desenhoUsuario"))
+            
+            return model
+            
+        } else {
+            return ObservativeJouney(
+                imageQuest: Image("jiboiaReferencia"),
+                plant: Plant.getPlaceholderPlant(),
+                name: "Jiboia",
+                isCompleted: false)
+        }
     }
     
-    static func getPlaceholderObservativeJouneyCompleted() -> ObservativeJouney {
-        let model = ObservativeJouney(imageQuest: Image("jiboiaReferencia"),
-                                      plant: Plant.getPlaceholderPlant(),
-                                      name: "Jiboia",
-                                      isCompleted: true
-                                      )
-        
-        model.userConcreteDrawn = Drawn(image: Image("desenhoUsuario"))
-        
-        return model
-    }
 }
