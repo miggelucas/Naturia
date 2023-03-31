@@ -17,8 +17,18 @@ class ObservativeJouney: Journey {
          isCompleted: Bool
     ){
         self.imageQuest = imageQuest
-        super.init(name: name, plant: plant , isCompleted: isCompleted)
+        super.init(name: name, plant: plant , isCompleted: isCompleted, userConcreteDrawn: nil)
 
     }
     
+}
+
+extension ObservativeJouney {
+    static func getPlaceholderObservativeJourney() -> ObservativeJouney {
+        ObservativeJouney(imageQuest: Image("jiboiaReferencia"),
+                          plant: Plant.getPlaceholderPlant(),
+                          name: "Jiboia",
+                          isCompleted: false
+                          )
+    }
 }

@@ -18,4 +18,16 @@ struct Plant {
 }
 
 
-
+extension Plant {
+    static func getPlaceholderPlant() -> Plant {
+        Plant(popularName: "Jiboia",
+              scientificName: "Epipremnum pinnatum",
+              origin: "Ilhas Salomão",
+              image: Image("jiboia"),
+              description: "A espécie é uma trepadeira sarmentosa, crescendo até 10 m de comprimento, com flores insignificantes e propagação por estaquia de ramos. É uma espécie de planta folhosa",
+              trivia: ["Muito resistente, a hera-do-diabo não requer grandes cuidados, pelo que é bastante utilizada em escritórios, lojas e outros locais públicos",
+                      "Só necessário regá-la quando a terra está seca",
+                      "adapta-se facilmente a temperaturas entre 17 °C e 30 °C"])
+    }
+    
+}
