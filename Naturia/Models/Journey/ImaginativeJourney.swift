@@ -53,5 +53,23 @@ extension ImaginativeJourney {
                            )
     }
     
+    static func getPlaceholderImaginativeJourneyCompleted() -> ImaginativeJourney {
+        let model = ImaginativeJourney(mainProvocation: "Algumas pessoas dizem que por ser uma trepadeira muito forte, por vezes a planta com seus grossos caules podem enforcar a árvore onde ela se apoia, assim como a cobra jiboia.",
+                           drawingProvocations: [
+                            "Por que você acredita que uma planta se chamaria Jibioa?",
+                            "Qual seria o tamanho dela?",
+                            "Ela teria formato específico?"],
+                           mainTrivia: "Algumas pessoas dizem que por ser uma trepadeira muito forte, por vezes a planta com seus grossos caules podem enforcar a árvore onde ela se apoia, assim como a cobra jiboia.",
+                           imageReference: Image("jiboiaReferencia"),
+                           plant: Plant.getPlaceholderPlant(),
+                           name: "Jiboia",
+                           isCompleted: true,
+                           userImaginativeDrawn: Drawn(image: Image("desenhoCriativo"))
+                           )
+        
+        model.userConcreteDrawn = Drawn(image: Image("desenhoUsuario"))
+        return model
+    }
+    
     
 }

@@ -31,4 +31,16 @@ extension ObservativeJouney {
                           isCompleted: false
                           )
     }
+    
+    static func getPlaceholderObservativeJouneyCompleted() -> ObservativeJouney {
+        let model = ObservativeJouney(imageQuest: Image("jiboiaReferencia"),
+                                      plant: Plant.getPlaceholderPlant(),
+                                      name: "Jiboia",
+                                      isCompleted: true
+                                      )
+        
+        model.userConcreteDrawn = Drawn(image: Image("desenhoUsuario"))
+        
+        return model
+    }
 }
