@@ -9,29 +9,11 @@ import SwiftUI
 
 struct ObservatoryRepositoryView: View {
     
-    let elements = [
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Verde"),
-        
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Vermelha44"),
-        
-        CardObservative(plantIconDrawn: Image("Violet Plant"), plantName: "Planta Vermelha213"),
-        
-        CardObservative(plantIconDrawn: Image("Green Plant"), plantName: "Planta Vermelha1"),
-        
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Vermelha2"),
-        
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Vermelha3"),
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Vermelha4"),
-        
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Vermelha5"),
-        
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Vermelha6"),
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Vermelha7"),
-        
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Vermelha8"),
-        
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Vermelha9")
-    ]
+    let viewModel: ObservatoryRepositoryViewModel
+    
+    init(viewModel: ObservatoryRepositoryViewModel = ObservatoryRepositoryViewModel()) {
+        self.viewModel = viewModel
+    }
     
     
     let gridLayout = [GridItem(.flexible()),
@@ -39,34 +21,50 @@ struct ObservatoryRepositoryView: View {
                       GridItem(.flexible())]
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("Botão de voltar")
-                
-                Spacer()
-            }
-            .padding(.bottom, 4)
+        ZStack {
+            Color("backgroundColor")
             
-            VStack(spacing: 16) {
-                Text("Jornada Observativa")
-                
-                Text("Escolha alguma das plantas abaixo e vá ao mundo para desenhá-la")
-            }
-            
-            .padding(.bottom, 48)
-
-            
-            ScrollView {
-                LazyVGrid(columns: gridLayout, alignment: .center, spacing: 32) {
-                    ForEach(elements, id: \.self) { element in
-                        element
+            VStack {
+                HStack {
+                    Button {
+                        viewModel.backButtonPressed()
+                    } label: {
+                        Text("Botão de voltar")
+                            .font(.custom("Montserrat", fixedSize: 16))
+                            .foregroundColor(.black)
                     }
+
                     
+                    Spacer()
+                }
+                .padding(.bottom, 4)
+                
+                VStack(spacing: 16) {
+                    Text("Jornada Observativa")
+                        .font(.custom("Montserrat", fixedSize: 50))
+                    
+                    Text("Escolha alguma das plantas abaixo e vá ao mundo para desenhá-la")
+                        .font(.custom("Montserrat", fixedSize: 20))
                 }
                 
+                .padding(.bottom, 48)
 
+                
+                ScrollView {
+                    LazyVGrid(columns: gridLayout, alignment: .center, spacing: 32) {
+                        ForEach(viewModel.elements, id: \.self) { element in
+                            element
+                        }
+                        
+                    }
+                    
+
+                }
             }
+            .padding(.horizontal, 32)
+            .padding(.top, 48)
         }
+        .ignoresSafeArea()
     }
 }
 
