@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CanvasView: View {
-
+    
     
     @ObservedObject private var viewModel = CanvasViewModel()
     
@@ -28,7 +28,7 @@ struct CanvasView: View {
                         Text("🔙 Voltar")
                             .underline()
                     }
-
+                    
                     ExpandableView(viewType: viewModel.toggleType, provocacoes: viewModel.provocacoes, referencia: viewModel.referencia)
                 }
                 .padding(.leading, 32)
@@ -39,7 +39,7 @@ struct CanvasView: View {
                 DoneButton(actionForDone: {
                     viewModel.doneButtonPressed()
                 })
-                    .padding(.trailing, 32)
+                .padding(.trailing, 32)
             }
             .padding(.top, 48.0)
         }
@@ -48,7 +48,7 @@ struct CanvasView: View {
     
     
     
-
+    
 }
 
 struct Canvas_Previews: PreviewProvider {

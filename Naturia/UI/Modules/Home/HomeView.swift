@@ -7,72 +7,87 @@
 //
 
 import SwiftUI
-
+import UIKit
 struct HomeView: View {
     
     @ObservedObject private var viewModel = HomeViewModel()
+    @State private var index = 0;
     
     var body: some View {
         VStack {
             VStack {
-                HStack(alignment: .top) {
-                    VStack(alignment: .leading) {
-                        Text("Jornada criativa")
-                            .font(.system(size: Responsive.scaleWidth(s: 20)))
-                        Text("Alguma provocação escrita aqui de três linhas")
-                            .font(.system(size: Responsive.scaleWidth(s: 60)))
-                            .lineLimit(3)
-                    }
-//                    .background(Color.pink)
-                    Spacer(minLength: Responsive.scaleWidth(s: 120))
-                    Image("plant")
-//                        .background(Color.pink)
-                }
-                .padding(EdgeInsets(top: Responsive.scaleHeight(s: 48), leading: Responsive.scaleWidth(s: 80), bottom: 0, trailing: Responsive.scaleWidth(s: 8)))
-                .frame(maxWidth: .infinity)
-                .background(Color.white)
-                VStack {
-                    HStack {
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text("\(Responsive.scaleHeight(s: 160))")
-                                    .font(.system(size: Responsive.scaleWidth(s: 32)))
-                                Text("Explore as plantas por análise presencial!")
-                                    .font(.system(size: Responsive.scaleWidth(s: 20)))
+                TabView(selection: $index) {
+                    ZStack() {
+                        ForEach((0..<3), id: \.self) { index in
+                            HStack(alignment: .top) {
+                                VStack(alignment: .leading) {
+                                    Text("Jornada criativa")
+                                        .font(.custom("Montserrat", size: 20))
+                                    Spacer().frame(height: Responsive.scaleHeight(s: 24))
+                                    Text("Provocação Escrita em três linhas")
+                                        .font(.custom("QuisasStandard-Regular", size: 96))
+                                        ._lineHeightMultiple(0.6)
+                                        .lineLimit(3)
+                                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: Responsive.scaleWidth(s: 96)))
+                                }
+                                Spacer()
+                                Image("plant")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: Responsive.scaleWidth(s: 248), height: Responsive.scaleHeight(s: 350))
+                                    
                             }
-                            .frame(maxHeight: .infinity)
-                            Spacer()
+                            .padding(EdgeInsets(top: Responsive.scaleHeight(s: 48), leading: Responsive.scaleWidth(s: 80), bottom: 0, trailing: Responsive.scaleWidth(s: 8)))
+                            .background(Color.white)
                         }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .padding(EdgeInsets(top: 0, leading: Responsive.scaleWidth(s: 32), bottom: 0, trailing: Responsive.scaleWidth(s: 60)))
-                        .background(Color.white)
-                        Spacer().frame(width: Responsive.scaleWidth(s: 32))
                         HStack {
-                            Text("Catálogo")
-                                .font(.system(size: Responsive.scaleWidth(s: 50)))
-                        }
-                        .padding(EdgeInsets(top: 0, leading: Responsive.scaleWidth(s: 42), bottom: 0, trailing: Responsive.scaleWidth(s: 42)))
-                        .frame(maxHeight: .infinity)
-                        .background(Color.white)
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            Button("<") {
 
+                            }
+                            .font((.system(size: 40)))
+                            .background(Color.black)
+                            Spacer()
+                            Button(">") {
+
+                            }
+                            .font((.system(size: 40)))
+                            .background(Color.black)
+                        }
+                    }
                 }
-                .frame(maxHeight: .infinity)
-//                .background(Color.brown)
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: Responsive.scaleHeight(s: 56), trailing: 0))
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+
+                
+                HStack(alignment: .bottom) {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("Jornada Observativa")
+                                .font(.custom("Montserrat", size: 32))
+                                .padding(EdgeInsets(top: 0, leading: 0, bottom: Responsive.scaleHeight(s: 8), trailing: 0))
+                            Text("Explore as plantas por análise presencial!")
+                                .font(.system(size: Responsive.scaleWidth(s: 20)))
+                        }
+                        .padding(EdgeInsets(top: Responsive.scaleHeight(s: 32), leading: Responsive.scaleWidth(s: 40), bottom: Responsive.scaleHeight(s: 32), trailing: Responsive.scaleWidth(s: 40)))
+        
+                    }
+                    .background(Color.white)
+                    Spacer()
+                    HStack {
+                        Text("Galeria")
+                            .font(.custom("Montserrat", size: 32))
+                           
+                    }
+                    .padding(EdgeInsets(top: Responsive.scaleHeight(s: 55), leading: Responsive.scaleWidth(s: 60), bottom: Responsive.scaleHeight(s: 52), trailing: Responsive.scaleWidth(s: 60)))
+                    .background(Color.white)
+                }
             }
+
         }
-        .frame(
-            minWidth: 0,
-            maxWidth: .infinity,
-            minHeight: 0,
-            maxHeight: .infinity,
-            alignment: .topLeading
-        )
-        .padding(EdgeInsets(top: Responsive.scaleHeight(s: 120), leading: Responsive.scaleWidth(s: 160), bottom: Responsive.scaleHeight(s: 80), trailing: Responsive.scaleWidth(s: 160)))
+        .padding(EdgeInsets(top: Responsive.scaleHeight(s: 110), leading: Responsive.scaleWidth(s: 136), bottom: Responsive.scaleHeight(s: 110), trailing: Responsive.scaleWidth(s: 136)))
         .background(LinearGradient(
-            colors: [Color(red: 255.0, green: 252.0, blue: 250.0), Color(red: 250.0, green: 241.0, blue: 218.0, opacity: 1)],
-            startPoint: .top, endPoint: .bottom))
+            colors: [Color.gray, Color.brown],
+            startPoint: .leading, endPoint: .trailing))
     }
 }
 

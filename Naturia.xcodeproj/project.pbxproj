@@ -27,6 +27,7 @@
 		EB18AF0429D4B00600D73821 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AF0129D4B00600D73821 /* Home.swift */; };
 		EB18AF0729D4C19600D73821 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AF0629D4C19600D73821 /* ContentView.swift */; };
 		EB59D6B229D64C3E0047065D /* Responsive.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59D6B129D64C3E0047065D /* Responsive.swift */; };
+		EB6555FB29D77891005A7FA2 /* QuisasStandard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB6555F929D77891005A7FA2 /* QuisasStandard-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,9 @@
 		EB18AF0129D4B00600D73821 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		EB18AF0629D4C19600D73821 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EB59D6B129D64C3E0047065D /* Responsive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responsive.swift; sourceTree = "<group>"; };
+		EB6555F929D77891005A7FA2 /* QuisasStandard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "QuisasStandard-Regular.otf"; sourceTree = "<group>"; };
+		EB6555FC29D77917005A7FA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EB6555FD29DC9A79005A7FA2 /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 		1768ACE129CCE869002703C5 /* Naturia */ = {
 			isa = PBXGroup;
 			children = (
+				EB6555FC29D77917005A7FA2 /* Info.plist */,
 				170F210A29D6207E002363FB /* Models */,
 				EB18AEFC29D4AF7600D73821 /* Navigation */,
 				4787B87F29D3689300BBC7EE /* UI */,
@@ -126,6 +131,7 @@
 		4787B87F29D3689300BBC7EE /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				EB6555F729D77869005A7FA2 /* Fonts */,
 				4787B88829D368FA00BBC7EE /* Components */,
 				4787B88029D3689F00BBC7EE /* Modules */,
 				EB18AF0629D4C19600D73821 /* ContentView.swift */,
@@ -179,6 +185,15 @@
 				EB18AF0129D4B00600D73821 /* Home.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		EB6555F729D77869005A7FA2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EB6555FD29DC9A79005A7FA2 /* Montserrat.ttf */,
+				EB6555F929D77891005A7FA2 /* QuisasStandard-Regular.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +256,7 @@
 			files = (
 				1768ACEB29CCE86A002703C5 /* Preview Assets.xcassets in Resources */,
 				1768ACE729CCE86A002703C5 /* Assets.xcassets in Resources */,
+				EB6555FB29D77891005A7FA2 /* QuisasStandard-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +417,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Naturia/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -439,6 +456,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Naturia/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
