@@ -62,7 +62,8 @@ struct ObservatoryRepositoryView: View {
                     Spacer()
                     
                     Text(viewModel.textForEmptyState)
-                        .font(.custom("Montserrat", fixedSize: 20))
+                        .font(.custom("Montserrat", fixedSize: 20)
+                        )
                     
                     Spacer()
                     
