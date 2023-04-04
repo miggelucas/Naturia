@@ -25,7 +25,7 @@ struct MiniInfosView: View {
                 
                 HStack(spacing: 32) {
                     CardMainTrivia(mainTriviaContent: "aleatoria")
-
+                    ImageMainTrivia(plantImage: Image("jiboia"))
                 }
                 
                 Spacer()
