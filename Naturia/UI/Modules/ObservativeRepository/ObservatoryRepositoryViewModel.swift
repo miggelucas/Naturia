@@ -10,36 +10,30 @@ import SwiftUI
 
 class ObservatoryRepositoryViewModel: ObservableObject {
     
-    let elements = [
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Verde"),
-        
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Vermelha44"),
-        
-        CardObservative(plantIconDrawn: Image("Violet Plant"), plantName: "Planta Vermelha213"),
-        
-        CardObservative(plantIconDrawn: Image("Green Plant"), plantName: "Planta Vermelha1"),
-        
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Vermelha2"),
-        
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Vermelha3"),
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Vermelha4"),
-        
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Vermelha5"),
-        
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Vermelha6"),
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Vermelha7"),
-        
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Vermelha8"),
-        
-        CardObservative(plantIconDrawn: Image("Red Plant"), plantName: "Planta Vermelha9")
-    ]
+    enum state {
+        case empty, content
+    }
+    
+    var state: state {
+        if jouneys.isEmpty {
+            return .empty
+        } else {
+            return .content
+        }
+    }
+    
+    init(journeyArray: [ObservativeJourney] = []) {
+        self.jouneys = journeyArray
+    }
     
     
-    let jouneys: [ObservativeJouney] = [
-        ObservativeJouney.getPlaceholderObservativeJourney(isJourneyDone: false)
-    ]
+    let jouneys: [ObservativeJourney]
     
     func backButtonPressed() {
         print("user pressed to go back to homeScreen")
+    }
+    
+    func journeyPressed(_ journey: ObservativeJourney) {
+        print("User pressed in jorney \(journey.name)")
     }
 }

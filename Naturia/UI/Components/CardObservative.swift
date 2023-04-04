@@ -7,20 +7,11 @@
 
 import SwiftUI
 
-struct CardObservative: View, Hashable {
+struct CardObservative: View {
     
     let plantIconDrawn: Image
     let plantName: String
     
-    
-    // Implementação do protocolo Hashable
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(plantName)
-    }
-    
-    static func == (lhs: CardObservative, rhs: CardObservative) -> Bool {
-        lhs.plantName == rhs.plantName
-    }
     
     var body: some View {
         ZStack {
@@ -34,6 +25,9 @@ struct CardObservative: View, Hashable {
                 Text(plantName)
                     .font(.system(size: 25))
                     .multilineTextAlignment(.center)
+                    .foregroundColor(.black)
+                
+                Spacer()
             }
             .padding(.trailing, 23.0)
             .padding(.leading, 16.0)

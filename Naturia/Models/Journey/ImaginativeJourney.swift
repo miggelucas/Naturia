@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 class ImaginativeJourney: Journey {
+    
+    
     let mainProvocation: String
     let drawingProvocations: [String]
     let mainTrivia: String
