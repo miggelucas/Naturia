@@ -19,6 +19,8 @@
 		1768ACE329CCE869002703C5 /* NaturiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768ACE229CCE869002703C5 /* NaturiaApp.swift */; };
 		1768ACE729CCE86A002703C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACE629CCE86A002703C5 /* Assets.xcassets */; };
 		1768ACEB29CCE86A002703C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */; };
+		17C4F56329DCB5900016D74C /* CardPlantDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */; };
+		17C4F56529DCBD750016D74C /* CardPlantOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56429DCBD750016D74C /* CardPlantOrigin.swift */; };
 		4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */; };
 		4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88B29D36B1700BBC7EE /* ExpandableView.swift */; };
 		4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89429D36B9800BBC7EE /* CanvasView.swift */; };
@@ -47,6 +49,8 @@
 		1768ACE629CCE86A002703C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1768ACE829CCE86A002703C5 /* Naturia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Naturia.entitlements; sourceTree = "<group>"; };
 		1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantDescriptionView.swift; sourceTree = "<group>"; };
+		17C4F56429DCBD750016D74C /* CardPlantOrigin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantOrigin.swift; sourceTree = "<group>"; };
 		4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvas.swift; sourceTree = "<group>"; };
 		4787B88B29D36B1700BBC7EE /* ExpandableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableView.swift; sourceTree = "<group>"; };
 		4787B89429D36B9800BBC7EE /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
@@ -138,6 +142,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		17C4F56129DCB5710016D74C /* Plant Info */ = {
+			isa = PBXGroup;
+			children = (
+				17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */,
+				17C4F56429DCBD750016D74C /* CardPlantOrigin.swift */,
+			);
+			path = "Plant Info";
+			sourceTree = "<group>";
+		};
 		4787B87F29D3689300BBC7EE /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +179,7 @@
 				4787B89C29D375EB00BBC7EE /* DoneButton.swift */,
 				172EA41029DBB9F0006AC9E6 /* BackButton.swift */,
 				172EA40C29DB4731006AC9E6 /* CardObservative.swift */,
+				17C4F56129DCB5710016D74C /* Plant Info */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -286,7 +300,9 @@
 				EB18AEFE29D4AF9C00D73821 /* Routes.swift in Sources */,
 				172EA40929DB46E7006AC9E6 /* ObservatoryRepositoryView.swift in Sources */,
 				172EA40D29DB4731006AC9E6 /* CardObservative.swift in Sources */,
+				17C4F56529DCBD750016D74C /* CardPlantOrigin.swift in Sources */,
 				EB18AF0229D4B00600D73821 /* HomeView.swift in Sources */,
+				17C4F56329DCB5900016D74C /* CardPlantDescriptionView.swift in Sources */,
 				4787B89D29D375EB00BBC7EE /* DoneButton.swift in Sources */,
 				1768ACE329CCE869002703C5 /* NaturiaApp.swift in Sources */,
 			);
