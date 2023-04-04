@@ -14,10 +14,11 @@ class Journey {
     let isCompleted: Bool
     var userConcreteDrawn: Drawn?
     
-    init(name: String, plant: Plant, isCompleted: Bool) {
+    init(name: String, plant: Plant, isCompleted: Bool, userConcreteDrawn: Drawn?) {
         self.name = name
         self.plant = plant
         self.isCompleted = isCompleted
+        self.userConcreteDrawn = userConcreteDrawn
     }
     
 }
