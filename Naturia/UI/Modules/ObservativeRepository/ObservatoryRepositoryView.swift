@@ -27,13 +27,7 @@ struct ObservatoryRepositoryView: View {
             
             VStack {
                 HStack {
-                    Button {
-                        viewModel.backButtonPressed()
-                    } label: {
-                        Text("Botão de voltar")
-                            .font(.custom("Montserrat", fixedSize: 16))
-                            .foregroundColor(.black)
-                    }
+                    BackButton(actionForButton: viewModel.backButtonPressed)
                     
                     Spacer()
                     
@@ -67,7 +61,7 @@ struct ObservatoryRepositoryView: View {
                 case .empty:
                     Spacer()
                     
-                    Text("Sem jornadas no momento =(")
+                    Text(viewModel.textForEmptyState)
                         .font(.custom("Montserrat", fixedSize: 20))
                     
                     Spacer()
@@ -84,7 +78,7 @@ struct ObservatoryRepositoryView: View {
 
 
 
-struct ObservatoryRepositoryView_Previews: PreviewProvider {    
+struct ObservatoryRepositoryView_Previews: PreviewProvider {
     static var previews: some View {
         // content state view
         ObservatoryRepositoryView(viewModel: ObservatoryRepositoryViewModel(journeyArray: [

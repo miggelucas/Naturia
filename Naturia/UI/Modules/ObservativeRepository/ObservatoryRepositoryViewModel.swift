@@ -28,6 +28,7 @@ class ObservatoryRepositoryViewModel: ObservableObject {
     
     
     let jouneys: [ObservativeJourney]
+    let textForEmptyState: String = "Sem jornadas no momento =("
     
     func backButtonPressed() {
         print("user pressed to go back to homeScreen")

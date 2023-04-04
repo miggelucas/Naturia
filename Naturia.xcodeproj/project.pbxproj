@@ -15,6 +15,7 @@
 		172EA40929DB46E7006AC9E6 /* ObservatoryRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EA40829DB46E7006AC9E6 /* ObservatoryRepositoryView.swift */; };
 		172EA40D29DB4731006AC9E6 /* CardObservative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EA40C29DB4731006AC9E6 /* CardObservative.swift */; };
 		172EA40F29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EA40E29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift */; };
+		172EA41129DBB9F0006AC9E6 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EA41029DBB9F0006AC9E6 /* BackButton.swift */; };
 		1768ACE329CCE869002703C5 /* NaturiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768ACE229CCE869002703C5 /* NaturiaApp.swift */; };
 		1768ACE729CCE86A002703C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACE629CCE86A002703C5 /* Assets.xcassets */; };
 		1768ACEB29CCE86A002703C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		172EA40829DB46E7006AC9E6 /* ObservatoryRepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservatoryRepositoryView.swift; sourceTree = "<group>"; };
 		172EA40C29DB4731006AC9E6 /* CardObservative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardObservative.swift; sourceTree = "<group>"; };
 		172EA40E29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservatoryRepositoryViewModel.swift; sourceTree = "<group>"; };
+		172EA41029DBB9F0006AC9E6 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		1768ACDF29CCE869002703C5 /* Naturia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Naturia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1768ACE229CCE869002703C5 /* NaturiaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturiaApp.swift; sourceTree = "<group>"; };
 		1768ACE629CCE86A002703C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */,
 				4787B88B29D36B1700BBC7EE /* ExpandableView.swift */,
 				4787B89C29D375EB00BBC7EE /* DoneButton.swift */,
+				172EA41029DBB9F0006AC9E6 /* BackButton.swift */,
 				172EA40C29DB4731006AC9E6 /* CardObservative.swift */,
 			);
 			path = Components;
@@ -270,6 +273,7 @@
 				170F210529D62029002363FB /* ImaginativeJourney.swift in Sources */,
 				172EA40F29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift in Sources */,
 				4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */,
+				172EA41129DBB9F0006AC9E6 /* BackButton.swift in Sources */,
 				4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */,
 				4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */,
 				170F210329D61FE1002363FB /* Journey.swift in Sources */,
