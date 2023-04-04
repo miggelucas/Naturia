@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct MiniInfosView: View {
+    
+    
+    
     var body: some View {
         ZStack {
             Color("backgroundColor")
+                .ignoresSafeArea()
+                
             
-            VStack {
+            VStack (spacing: 56) {
                 
                 HStack{
                     BackButton {
@@ -28,16 +33,24 @@ struct MiniInfosView: View {
                     ImageMainTrivia(plantImage: Image("jiboia"))
                 }
                 
-                Spacer()
+//                Spacer()
                 
-            }
+                VStack(spacing: -24) {
+                    CardCTAMainTrivia()
+                    CTAButton(cardType: .desenhar, actionForButton: {})
+                }
             
+        
+                Spacer()
+            }
             .padding(.top, 48)
             .padding(.leading, 32)
             
         }
         .ignoresSafeArea()
+        
     }
+    
 }
 
 struct MiniInfosView_Previews: PreviewProvider {

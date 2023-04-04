@@ -9,15 +9,10 @@ import SwiftUI
 
 struct CTAButton: View {
     
-    //    enum CardColor {
-    //        case white, green
-    //    }
-    
     enum CardType {
         case estou, naoEstou, concluido, desenhar, sim, agoranao
     }
     
-    //    let cardColor: CardColor
     let cardType: CardType
     
     let actionForButton: () -> Void
