@@ -25,6 +25,7 @@
 		4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89529D36B9800BBC7EE /* CanvasViewModel.swift */; };
 		4787B89929D36B9800BBC7EE /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89629D36B9800BBC7EE /* Canvas.swift */; };
 		4787B89D29D375EB00BBC7EE /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89C29D375EB00BBC7EE /* DoneButton.swift */; };
+		822E0A0129DCA64F005B311F /* ImageMainTrivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822E0A0029DCA64F005B311F /* ImageMainTrivia.swift */; };
 		824CC2DB29DC982400DC2A4E /* MiniInfosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824CC2DA29DC982400DC2A4E /* MiniInfosView.swift */; };
 		824CC2DD29DC9C2600DC2A4E /* CardMainTrivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824CC2DC29DC9C2600DC2A4E /* CardMainTrivia.swift */; };
 		EB18AEFE29D4AF9C00D73821 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AEFD29D4AF9C00D73821 /* Routes.swift */; };
@@ -55,6 +56,7 @@
 		4787B89529D36B9800BBC7EE /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
 		4787B89629D36B9800BBC7EE /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		4787B89C29D375EB00BBC7EE /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
+		822E0A0029DCA64F005B311F /* ImageMainTrivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMainTrivia.swift; sourceTree = "<group>"; };
 		824CC2DA29DC982400DC2A4E /* MiniInfosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniInfosView.swift; sourceTree = "<group>"; };
 		824CC2DC29DC9C2600DC2A4E /* CardMainTrivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMainTrivia.swift; sourceTree = "<group>"; };
 		EB18AEFD29D4AF9C00D73821 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				172EA41029DBB9F0006AC9E6 /* BackButton.swift */,
 				172EA40C29DB4731006AC9E6 /* CardObservative.swift */,
 				824CC2DC29DC9C2600DC2A4E /* CardMainTrivia.swift */,
+				822E0A0029DCA64F005B311F /* ImageMainTrivia.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				170F210129D607E4002363FB /* Plant.swift in Sources */,
 				4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */,
 				EB18AF0729D4C19600D73821 /* ContentView.swift in Sources */,
+				822E0A0129DCA64F005B311F /* ImageMainTrivia.swift in Sources */,
 				EB18AF0329D4B00600D73821 /* HomeViewModel.swift in Sources */,
 				EB18AF0429D4B00600D73821 /* Home.swift in Sources */,
 				EB18AEFE29D4AF9C00D73821 /* Routes.swift in Sources */,

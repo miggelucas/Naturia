@@ -23,9 +23,10 @@ struct MiniInfosView: View {
                     Spacer()
                 }
                 
-//                HStack {
-//
-//                }
+                HStack(spacing: 32) {
+                    CardMainTrivia(mainTriviaContent: "aleatoria")
+
+                }
                 
                 Spacer()
                 
