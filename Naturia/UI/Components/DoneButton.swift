@@ -29,3 +29,11 @@ struct DoneButton: View {
         }
     }
 }
+
+
+struct DoneButton_Previews: PreviewProvider {
+    static var previews: some View {
+        DoneButton(actionForDone: {})
+    }
+    
+}
