@@ -17,7 +17,7 @@ struct BackgroundView: View {
                            endPoint: .topTrailing)
             Image("texturaBackground")
                 .resizable()
-                .opacity(0.7)
+                .opacity(0.8)
         }
         .ignoresSafeArea()
     }
