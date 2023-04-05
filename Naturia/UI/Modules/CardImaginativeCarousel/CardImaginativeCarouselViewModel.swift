@@ -30,6 +30,10 @@ final class CardImaginativeCarouselViewModel: ObservableObject {
         }
     }
     
+    func onTapButton() {
+        
+    }
+    
     private func getJourneys() -> [ImaginativeJourney]{
         return [ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false), ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false)]
     }
