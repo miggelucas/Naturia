@@ -24,6 +24,9 @@
 		47185D8B29DE0757008611D6 /* ConquistaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D8829DE0757008611D6 /* ConquistaView.swift */; };
 		47185D8C29DE0757008611D6 /* ConquistaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D8929DE0757008611D6 /* ConquistaViewModel.swift */; };
 		47185D8D29DE0757008611D6 /* Conquista.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D8A29DE0757008611D6 /* Conquista.swift */; };
+		47185D9229DE0A30008611D6 /* ConfirmacaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D8F29DE0A30008611D6 /* ConfirmacaoView.swift */; };
+		47185D9329DE0A30008611D6 /* ConfirmacaoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D9029DE0A30008611D6 /* ConfirmacaoViewModel.swift */; };
+		47185D9429DE0A30008611D6 /* Confirmacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D9129DE0A30008611D6 /* Confirmacao.swift */; };
 		4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */; };
 		4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88B29D36B1700BBC7EE /* ExpandableView.swift */; };
 		4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89429D36B9800BBC7EE /* CanvasView.swift */; };
@@ -69,6 +72,9 @@
 		47185D8829DE0757008611D6 /* ConquistaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquistaView.swift; sourceTree = "<group>"; };
 		47185D8929DE0757008611D6 /* ConquistaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquistaViewModel.swift; sourceTree = "<group>"; };
 		47185D8A29DE0757008611D6 /* Conquista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conquista.swift; sourceTree = "<group>"; };
+		47185D8F29DE0A30008611D6 /* ConfirmacaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmacaoView.swift; sourceTree = "<group>"; };
+		47185D9029DE0A30008611D6 /* ConfirmacaoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmacaoViewModel.swift; sourceTree = "<group>"; };
+		47185D9129DE0A30008611D6 /* Confirmacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Confirmacao.swift; sourceTree = "<group>"; };
 		4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvas.swift; sourceTree = "<group>"; };
 		4787B88B29D36B1700BBC7EE /* ExpandableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableView.swift; sourceTree = "<group>"; };
 		4787B89429D36B9800BBC7EE /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
@@ -191,6 +197,16 @@
 			path = Conquista;
 			sourceTree = "<group>";
 		};
+		47185D8E29DE0A1C008611D6 /* Confirmacao */ = {
+			isa = PBXGroup;
+			children = (
+				47185D8F29DE0A30008611D6 /* ConfirmacaoView.swift */,
+				47185D9029DE0A30008611D6 /* ConfirmacaoViewModel.swift */,
+				47185D9129DE0A30008611D6 /* Confirmacao.swift */,
+			);
+			path = Confirmacao;
+			sourceTree = "<group>";
+		};
 		4787B87F29D3689300BBC7EE /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +221,7 @@
 		4787B88029D3689F00BBC7EE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				47185D8E29DE0A1C008611D6 /* Confirmacao */,
 				47185D8729DE0740008611D6 /* Conquista */,
 				47F7D28329D61F5600D54D01 /* Review */,
 				824CC2D929DC980300DC2A4E /* MiniInfos */,
@@ -367,6 +384,8 @@
 				824CC2DB29DC982400DC2A4E /* MiniInfosView.swift in Sources */,
 				4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */,
 				47F7D28B29D61FEE00D54D01 /* SaveButton.swift in Sources */,
+				47185D9429DE0A30008611D6 /* Confirmacao.swift in Sources */,
+				47185D9229DE0A30008611D6 /* ConfirmacaoView.swift in Sources */,
 				4787B89D29D375EB00BBC7EE /* DoneButton.swift in Sources */,
 				47185D8D29DE0757008611D6 /* Conquista.swift in Sources */,
 				4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */,
@@ -383,6 +402,7 @@
 				EB18AF0429D4B00600D73821 /* Home.swift in Sources */,
 				EB18AEFE29D4AF9C00D73821 /* Routes.swift in Sources */,
 				172EA40929DB46E7006AC9E6 /* ObservatoryRepositoryView.swift in Sources */,
+				47185D9329DE0A30008611D6 /* ConfirmacaoViewModel.swift in Sources */,
 				172EA40D29DB4731006AC9E6 /* CardObservative.swift in Sources */,
 				EB18AF0229D4B00600D73821 /* HomeView.swift in Sources */,
 				4787B89D29D375EB00BBC7EE /* DoneButton.swift in Sources */,
