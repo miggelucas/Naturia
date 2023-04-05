@@ -13,15 +13,21 @@ struct ConquistaView: View {
     @ObservedObject private var viewModel = ConquistaViewModel()
        
     var body: some View {
-        VStack(spacing: 56){
-            HStack{
-                Spacer()
-                SaveButton()
+        ZStack {
+            
+            Color("backgroundColor")
+                .ignoresSafeArea()
+            
+            VStack(spacing: 56){
+                HStack{
+                    Spacer()
+                    SaveButton()
+                }
+                Image("Logo")
+                TextAndConfirmationButtons(cardType: .grande, firstLine: "Você registrou uma nova planta! Ela estará na sua galeria.", secondLine: "Deseja conhecer mais sobre ela?", firstButtonType: .sim, secondButtonType: .agoranao, actionForFirstButton: {}, actionForSecondButton: {})
             }
-            Image("Logo")
-            TextAndConfirmationButtons(cardType: .grande, firstLine: "Você registrou uma nova planta! Ela estará na sua galeria.", secondLine: "Deseja conhecer mais sobre ela?", firstButtonType: .sim, secondButtonType: .agoranao, actionForFirstButton: {}, actionForSecondButton: {})
+            .frame(width: 874)
         }
-        .frame(width: 874)
     }
 
 }

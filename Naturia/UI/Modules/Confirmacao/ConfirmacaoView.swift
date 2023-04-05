@@ -13,24 +13,30 @@ struct ConfirmacaoView: View {
     @ObservedObject private var viewModel = ConfirmacaoViewModel()
        
     var body: some View {
-        VStack(spacing: 60) {
-            ZStack {
-                Image("jiboiaReferencia")
-                    .resizable()
+        ZStack {
+            
+            Color("backgroundColor")
+                .ignoresSafeArea()
+            
+            VStack(spacing: 60) {
+                ZStack {
+                    Image("jiboiaReferencia")
+                        .resizable()
+                        .frame(height: 384)
+                    Image("cardImageConfirmacao")
+                        .resizable()
                     .frame(height: 384)
-                Image("cardImageConfirmacao")
-                    .resizable()
-                .frame(height: 384)
+                }
+                TextAndConfirmationButtons(cardType: .grande,
+                                           firstLine: "Essa planta será o seu desafio de desenho.",
+                                           secondLine: "Você já está presencialmente com ela?",
+                                           firstButtonType: .estou,
+                                           secondButtonType: .naoEstou,
+                                           actionForFirstButton: {},
+                                           actionForSecondButton: {})
             }
-            TextAndConfirmationButtons(cardType: .grande,
-                                       firstLine: "Essa planta será o seu desafio de desenho.",
-                                       secondLine: "Você já está presencialmente com ela?",
-                                       firstButtonType: .estou,
-                                       secondButtonType: .naoEstou,
-                                       actionForFirstButton: {},
-                                       actionForSecondButton: {})
+            .frame(width: 874)
         }
-        .frame(width: 874)
     }
 
 }
