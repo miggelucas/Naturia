@@ -19,7 +19,8 @@ struct CardPlantDescriptionView: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text(description)
-                        .font(.custom("Montserrat", size: 16))
+                        .font(Font.NaturiaSecundary(.body))
+                        .foregroundColor(Color("gray-900"))
                     
                     Spacer()
                 }

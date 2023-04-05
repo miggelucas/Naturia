@@ -46,14 +46,16 @@ struct PlantInfoView: View {
                             
                             VStack(alignment: .leading, spacing: 16) {
                                 Text(plant.popularName)
-                                
+                                    .font(Font.NaturiaPrimary(.h1))
                                 
                                 Text(plant.scientificName)
+                                    .font(Font.NaturiaSecundary(.Subtitle))
                                 
                             }
                             
                             VStack(alignment: .leading, spacing: 16) {
                                 Text("Descrição")
+                                    .font(Font.NaturiaSecundary(.h5))
                                 
                                 CardPlantDescriptionView(description: plant.description)
                             }
@@ -61,6 +63,7 @@ struct PlantInfoView: View {
                             
                             VStack(alignment: .leading, spacing: 16) {
                                 Text("Local de Origem")
+                                    .font(Font.NaturiaSecundary(.h5))
                                 
                                 CardPlantOrigin(plantOrigin: plant.origin)
                             }
@@ -68,12 +71,16 @@ struct PlantInfoView: View {
                             
                             VStack(alignment: .leading, spacing: 16) {
                                 Text("Trivia")
+                                    .font(Font.NaturiaSecundary(.h5))
                             }
                             
                             
                             
                         }
+                        
                     }
+                    .foregroundColor(Color("gray-900"))
+                    .padding(.top, -50)
                 }
             }
             .padding(.horizontal, 32)

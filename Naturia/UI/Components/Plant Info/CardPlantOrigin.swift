@@ -18,7 +18,8 @@ struct CardPlantOrigin: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text(plantOrigin)
-                        .font(.custom("Montserrat", size: 16))
+                        .font(Font.NaturiaSecundary(.body))
+                        .foregroundColor(Color("gray-900"))
                     
                     Spacer()
                 }

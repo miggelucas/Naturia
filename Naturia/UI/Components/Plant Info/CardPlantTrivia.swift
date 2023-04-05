@@ -18,7 +18,8 @@ struct CardPlantTrivia: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text(trivia)
-                        .font(.custom("Montserrat", size: 16))
+                        .font(Font.NaturiaSecundary(.body))
+                        .foregroundColor(Color("gray-900"))
                     
                     Spacer()
                 }
