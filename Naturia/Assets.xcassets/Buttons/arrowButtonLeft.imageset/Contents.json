@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Fundo do botao.png",
+      "filename" : "arrowLeftButton@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Fundo do botao@2x.png",
+      "filename" : "arrowLeftButton@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Fundo do botao@3x.png",
+      "filename" : "arrowLeftButton@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

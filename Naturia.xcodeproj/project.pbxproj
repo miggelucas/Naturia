@@ -49,6 +49,13 @@
 		EB18AF0329D4B00600D73821 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AF0029D4B00600D73821 /* HomeViewModel.swift */; };
 		EB18AF0429D4B00600D73821 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AF0129D4B00600D73821 /* Home.swift */; };
 		EB18AF0729D4C19600D73821 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AF0629D4C19600D73821 /* ContentView.swift */; };
+		EB59D6B229D64C3E0047065D /* Responsive.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59D6B129D64C3E0047065D /* Responsive.swift */; };
+		EBB272AE29DDF8FE00811137 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB272AD29DDF8FE00811137 /* ArrowButton.swift */; };
+		EBB272B029DE07F800811137 /* CardObservativeHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB272AF29DE07F800811137 /* CardObservativeHome.swift */; };
+		EBE180DB29DCB59000336477 /* CardImaginativeCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE180DA29DCB59000336477 /* CardImaginativeCarousel.swift */; };
+		EBE180DF29DCC48200336477 /* CardImaginative.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE180DE29DCC48200336477 /* CardImaginative.swift */; };
+		EBE180E429DCE04B00336477 /* CardImaginativeCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE180E129DCE04B00336477 /* CardImaginativeCarouselView.swift */; };
+		EBE180E529DCE04B00336477 /* CardImaginativeCarouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE180E229DCE04B00336477 /* CardImaginativeCarouselViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +105,14 @@
 		EB18AF0029D4B00600D73821 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		EB18AF0129D4B00600D73821 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		EB18AF0629D4C19600D73821 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EB59D6B129D64C3E0047065D /* Responsive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responsive.swift; sourceTree = "<group>"; };
+		EB6555FC29D77917005A7FA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EBB272AD29DDF8FE00811137 /* ArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
+		EBB272AF29DE07F800811137 /* CardObservativeHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardObservativeHome.swift; sourceTree = "<group>"; };
+		EBE180DA29DCB59000336477 /* CardImaginativeCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImaginativeCarousel.swift; sourceTree = "<group>"; };
+		EBE180DE29DCC48200336477 /* CardImaginative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImaginative.swift; sourceTree = "<group>"; };
+		EBE180E129DCE04B00336477 /* CardImaginativeCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImaginativeCarouselView.swift; sourceTree = "<group>"; };
+		EBE180E229DCE04B00336477 /* CardImaginativeCarouselViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImaginativeCarouselViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +230,7 @@
 				4787B88829D368FA00BBC7EE /* Components */,
 				4787B88029D3689F00BBC7EE /* Modules */,
 				EB18AF0629D4C19600D73821 /* ContentView.swift */,
+				EB59D6B129D64C3E0047065D /* Responsive.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -222,6 +238,7 @@
 		4787B88029D3689F00BBC7EE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EBE180E029DCE02900336477 /* CardImaginativeCarousel */,
 				47F7D28329D61F5600D54D01 /* Review */,
 				824CC2D929DC980300DC2A4E /* MiniInfos */,
 				172EA40729DB46B1006AC9E6 /* ObservativeRepository */,
@@ -243,12 +260,16 @@
 				47F7D28E29D6219300D54D01 /* TextAndConfirmationButtons.swift */,
 				172EA41029DBB9F0006AC9E6 /* BackButton.swift */,
 				172EA40C29DB4731006AC9E6 /* CardObservative.swift */,
+				EBE180DA29DCB59000336477 /* CardImaginativeCarousel.swift */,
+				EBE180DE29DCC48200336477 /* CardImaginative.swift */,
 				17C4F56129DCB5710016D74C /* Plant Info */,
 				824CC2DC29DC9C2600DC2A4E /* CardMainTrivia.swift */,
 				822E0A0029DCA64F005B311F /* ImageMainTrivia.swift */,
 				822E0A0429DCBC47005B311F /* CardCTAMainTrivia.swift */,
 				822E0A0229DCAB42005B311F /* CTAButton.swift */,
 				173E80FF29DE09B8005B7253 /* BackgroundView.swift */,
+				EBB272AD29DDF8FE00811137 /* ArrowButton.swift */,
+				EBB272AF29DE07F800811137 /* CardObservativeHome.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -297,6 +318,15 @@
 				EB18AF0129D4B00600D73821 /* Home.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		EBE180E029DCE02900336477 /* CardImaginativeCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				EBE180E129DCE04B00336477 /* CardImaginativeCarouselView.swift */,
+				EBE180E229DCE04B00336477 /* CardImaginativeCarouselViewModel.swift */,
+			);
+			path = CardImaginativeCarousel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,15 +403,23 @@
 				47F7D28829D61F7A00D54D01 /* ReviewViewModel.swift in Sources */,
 				4787B89929D36B9800BBC7EE /* Canvas.swift in Sources */,
 				170F210729D6204B002363FB /* ObservativeJourney.swift in Sources */,
+				EBB272AE29DDF8FE00811137 /* ArrowButton.swift in Sources */,
 				822E0A0529DCBC47005B311F /* CardCTAMainTrivia.swift in Sources */,
 				824CC2DD29DC9C2600DC2A4E /* CardMainTrivia.swift in Sources */,
 				170F210529D62029002363FB /* ImaginativeJourney.swift in Sources */,
 				172EA40F29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift in Sources */,
+				EBE180E429DCE04B00336477 /* CardImaginativeCarouselView.swift in Sources */,
+				4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */,
+				172EA41129DBB9F0006AC9E6 /* BackButton.swift in Sources */,
+				4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */,
+				EB59D6B229D64C3E0047065D /* Responsive.swift in Sources */,
+				EBE180DF29DCC48200336477 /* CardImaginative.swift in Sources */,
 				822E0A0329DCAB42005B311F /* CTAButton.swift in Sources */,
 				4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */,
 				172EA41129DBB9F0006AC9E6 /* BackButton.swift in Sources */,
 				17C4F56C29DD0E410016D74C /* NaturiaSecundaryFont.swift in Sources */,
 				4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */,
+				EBB272B029DE07F800811137 /* CardObservativeHome.swift in Sources */,
 				47F7D28929D61F7A00D54D01 /* Review.swift in Sources */,
 				824CC2DB29DC982400DC2A4E /* MiniInfosView.swift in Sources */,
 				4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */,
@@ -403,6 +441,7 @@
 				EB18AF0329D4B00600D73821 /* HomeViewModel.swift in Sources */,
 				EB18AF0429D4B00600D73821 /* Home.swift in Sources */,
 				EB18AEFE29D4AF9C00D73821 /* Routes.swift in Sources */,
+				EBE180E529DCE04B00336477 /* CardImaginativeCarouselViewModel.swift in Sources */,
 				172EA40929DB46E7006AC9E6 /* ObservatoryRepositoryView.swift in Sources */,
 				172EA40D29DB4731006AC9E6 /* CardObservative.swift in Sources */,
 				17C4F56929DCC5E00016D74C /* PlantInfoView.swift in Sources */,
@@ -411,6 +450,7 @@
 				17C4F56329DCB5900016D74C /* CardPlantDescriptionView.swift in Sources */,
 				4787B89D29D375EB00BBC7EE /* DoneButton.swift in Sources */,
 				1768ACE329CCE869002703C5 /* NaturiaApp.swift in Sources */,
+				EBE180DB29DCB59000336477 /* CardImaginativeCarousel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
