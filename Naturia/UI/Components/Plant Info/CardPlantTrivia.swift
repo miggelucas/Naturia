@@ -1,5 +1,5 @@
 //
-//  CardPlantOrigin.swift
+//  CardPlantTrivia.swift
 //  Naturia
 //
 //  Created by Lucas Migge de Barros on 04/04/23.
@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct CardPlantOrigin: View {
+struct CardPlantTrivia: View {
     
-    let plantOrigin: String
+    let trivia: String
     
     var body: some View {
         ZStack {
-            Image("Card Origin")
+            Image("Card Trivia")
             
             HStack {
                 VStack(alignment: .leading) {
-                    Text(plantOrigin)
+                    Text(trivia)
                         .font(.custom("Montserrat", size: 16))
                     
                     Spacer()
@@ -28,12 +28,12 @@ struct CardPlantOrigin: View {
             .padding(24)
             
         }
-        .frame(width: 549, height: 72)
+        .frame(width: 258, height: 312)
     }
 }
 
-struct CardPlantOrigin_Previews: PreviewProvider {
+struct CardPlantTrivia_Previews: PreviewProvider {
     static var previews: some View {
-        CardPlantOrigin(plantOrigin: "Hogwarts - Brazil")
+        CardPlantTrivia(trivia: "Você já parou pra pensar que reflexão é um reflexo muito grande")
     }
 }

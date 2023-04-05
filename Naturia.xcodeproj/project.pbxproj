@@ -21,6 +21,8 @@
 		1768ACEB29CCE86A002703C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */; };
 		17C4F56329DCB5900016D74C /* CardPlantDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */; };
 		17C4F56529DCBD750016D74C /* CardPlantOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56429DCBD750016D74C /* CardPlantOrigin.swift */; };
+		17C4F56729DCBE670016D74C /* CardPlantTrivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56629DCBE670016D74C /* CardPlantTrivia.swift */; };
+		17C4F56929DCC5E00016D74C /* PlantInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56829DCC5E00016D74C /* PlantInfoView.swift */; };
 		4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */; };
 		4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88B29D36B1700BBC7EE /* ExpandableView.swift */; };
 		4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89429D36B9800BBC7EE /* CanvasView.swift */; };
@@ -51,6 +53,8 @@
 		1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantDescriptionView.swift; sourceTree = "<group>"; };
 		17C4F56429DCBD750016D74C /* CardPlantOrigin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantOrigin.swift; sourceTree = "<group>"; };
+		17C4F56629DCBE670016D74C /* CardPlantTrivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantTrivia.swift; sourceTree = "<group>"; };
+		17C4F56829DCC5E00016D74C /* PlantInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantInfoView.swift; sourceTree = "<group>"; };
 		4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvas.swift; sourceTree = "<group>"; };
 		4787B88B29D36B1700BBC7EE /* ExpandableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableView.swift; sourceTree = "<group>"; };
 		4787B89429D36B9800BBC7EE /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
@@ -146,9 +150,18 @@
 			isa = PBXGroup;
 			children = (
 				17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */,
+				17C4F56629DCBE670016D74C /* CardPlantTrivia.swift */,
 				17C4F56429DCBD750016D74C /* CardPlantOrigin.swift */,
 			);
 			path = "Plant Info";
+			sourceTree = "<group>";
+		};
+		17C4F56A29DCC5E50016D74C /* PlantInfo */ = {
+			isa = PBXGroup;
+			children = (
+				17C4F56829DCC5E00016D74C /* PlantInfoView.swift */,
+			);
+			path = PlantInfo;
 			sourceTree = "<group>";
 		};
 		4787B87F29D3689300BBC7EE /* UI */ = {
@@ -167,6 +180,7 @@
 				172EA40729DB46B1006AC9E6 /* ObservativeRepository */,
 				EB18AF0529D4B02600D73821 /* Home */,
 				4787B89329D36B5C00BBC7EE /* Canvas */,
+				17C4F56A29DCC5E50016D74C /* PlantInfo */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -290,6 +304,7 @@
 				172EA41129DBB9F0006AC9E6 /* BackButton.swift in Sources */,
 				4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */,
 				4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */,
+				17C4F56729DCBE670016D74C /* CardPlantTrivia.swift in Sources */,
 				170F210329D61FE1002363FB /* Journey.swift in Sources */,
 				170F210929D6206A002363FB /* Drawn.swift in Sources */,
 				170F210129D607E4002363FB /* Plant.swift in Sources */,
@@ -300,6 +315,7 @@
 				EB18AEFE29D4AF9C00D73821 /* Routes.swift in Sources */,
 				172EA40929DB46E7006AC9E6 /* ObservatoryRepositoryView.swift in Sources */,
 				172EA40D29DB4731006AC9E6 /* CardObservative.swift in Sources */,
+				17C4F56929DCC5E00016D74C /* PlantInfoView.swift in Sources */,
 				17C4F56529DCBD750016D74C /* CardPlantOrigin.swift in Sources */,
 				EB18AF0229D4B00600D73821 /* HomeView.swift in Sources */,
 				17C4F56329DCB5900016D74C /* CardPlantDescriptionView.swift in Sources */,
