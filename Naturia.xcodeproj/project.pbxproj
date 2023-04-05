@@ -19,6 +19,7 @@
 		1768ACE329CCE869002703C5 /* NaturiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768ACE229CCE869002703C5 /* NaturiaApp.swift */; };
 		1768ACE729CCE86A002703C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACE629CCE86A002703C5 /* Assets.xcassets */; };
 		1768ACEB29CCE86A002703C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */; };
+		17C4F56C29DD0E410016D74C /* NaturiaSecundaryFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56B29DD0E410016D74C /* NaturiaSecundaryFont.swift */; };
 		4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */; };
 		4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88B29D36B1700BBC7EE /* ExpandableView.swift */; };
 		4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89429D36B9800BBC7EE /* CanvasView.swift */; };
@@ -47,6 +48,7 @@
 		1768ACE629CCE86A002703C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1768ACE829CCE86A002703C5 /* Naturia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Naturia.entitlements; sourceTree = "<group>"; };
 		1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		17C4F56B29DD0E410016D74C /* NaturiaSecundaryFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturiaSecundaryFont.swift; sourceTree = "<group>"; };
 		4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvas.swift; sourceTree = "<group>"; };
 		4787B88B29D36B1700BBC7EE /* ExpandableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableView.swift; sourceTree = "<group>"; };
 		4787B89429D36B9800BBC7EE /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
@@ -138,9 +140,18 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		17C4F56D29DD0E560016D74C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				17C4F56B29DD0E410016D74C /* NaturiaSecundaryFont.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		4787B87F29D3689300BBC7EE /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				17C4F56D29DD0E560016D74C /* Fonts */,
 				4787B88829D368FA00BBC7EE /* Components */,
 				4787B88029D3689F00BBC7EE /* Modules */,
 				EB18AF0629D4C19600D73821 /* ContentView.swift */,
@@ -274,6 +285,7 @@
 				172EA40F29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift in Sources */,
 				4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */,
 				172EA41129DBB9F0006AC9E6 /* BackButton.swift in Sources */,
+				17C4F56C29DD0E410016D74C /* NaturiaSecundaryFont.swift in Sources */,
 				4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */,
 				4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */,
 				170F210329D61FE1002363FB /* Journey.swift in Sources */,
