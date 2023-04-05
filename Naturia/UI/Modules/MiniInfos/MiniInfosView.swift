@@ -35,10 +35,12 @@ struct MiniInfosView: View {
                 
 //                Spacer()
                 
-                VStack(spacing: -24) {
-                    CardCTAMainTrivia(cardType: .pequeno, firstLine: "Exemplo")
-                    CTAButton(buttonType: .desenhar, actionForButton: {})
-                }
+                TextAndConfirmationButtons(cardType: .pequeno, firstLine: "Agora que você conhece mais essa planta, vamos desenhá-la?", firstButtonType: .desenhar, actionForFirstButton: {}, actionForSecondButton: {})
+                
+//                VStack(spacing: -24) {
+//                    CardCTAMainTrivia(cardType: .pequeno, firstLine: "Exemplo")
+//                    CTAButton(buttonType: .desenhar, actionForButton: {})
+//                }
             
         
                 Spacer()
@@ -55,6 +57,6 @@ struct MiniInfosView: View {
 
 struct MiniInfosView_Previews: PreviewProvider {
     static var previews: some View {
-        MiniInfosView()
+        MiniInfosView().previewInterfaceOrientation(.landscapeLeft)
     }
 }
