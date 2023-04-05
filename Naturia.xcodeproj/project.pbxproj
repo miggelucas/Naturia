@@ -16,6 +16,11 @@
 		4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89529D36B9800BBC7EE /* CanvasViewModel.swift */; };
 		4787B89929D36B9800BBC7EE /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89629D36B9800BBC7EE /* Canvas.swift */; };
 		4787B89D29D375EB00BBC7EE /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89C29D375EB00BBC7EE /* DoneButton.swift */; };
+		47F7D28729D61F7A00D54D01 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F7D28429D61F7A00D54D01 /* ReviewView.swift */; };
+		47F7D28829D61F7A00D54D01 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F7D28529D61F7A00D54D01 /* ReviewViewModel.swift */; };
+		47F7D28929D61F7A00D54D01 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F7D28629D61F7A00D54D01 /* Review.swift */; };
+		47F7D28B29D61FEE00D54D01 /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F7D28A29D61FEE00D54D01 /* SaveButton.swift */; };
+		47F7D28F29D6219300D54D01 /* TextAndConfirmationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F7D28E29D6219300D54D01 /* TextAndConfirmationButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		4787B89529D36B9800BBC7EE /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
 		4787B89629D36B9800BBC7EE /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		4787B89C29D375EB00BBC7EE /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
+		47F7D28429D61F7A00D54D01 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		47F7D28529D61F7A00D54D01 /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
+		47F7D28629D61F7A00D54D01 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		47F7D28A29D61FEE00D54D01 /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
+		47F7D28E29D6219300D54D01 /* TextAndConfirmationButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAndConfirmationButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +101,7 @@
 		4787B88029D3689F00BBC7EE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				47F7D28329D61F5600D54D01 /* Review */,
 				4787B89329D36B5C00BBC7EE /* Canvas */,
 			);
 			path = Modules;
@@ -102,6 +113,8 @@
 				4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */,
 				4787B88B29D36B1700BBC7EE /* ExpandableView.swift */,
 				4787B89C29D375EB00BBC7EE /* DoneButton.swift */,
+				47F7D28A29D61FEE00D54D01 /* SaveButton.swift */,
+				47F7D28E29D6219300D54D01 /* TextAndConfirmationButtons.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -114,6 +127,16 @@
 				4787B89629D36B9800BBC7EE /* Canvas.swift */,
 			);
 			path = Canvas;
+			sourceTree = "<group>";
+		};
+		47F7D28329D61F5600D54D01 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				47F7D28429D61F7A00D54D01 /* ReviewView.swift */,
+				47F7D28529D61F7A00D54D01 /* ReviewViewModel.swift */,
+				47F7D28629D61F7A00D54D01 /* Review.swift */,
+			);
+			path = Review;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,12 +209,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47F7D28729D61F7A00D54D01 /* ReviewView.swift in Sources */,
+				47F7D28829D61F7A00D54D01 /* ReviewViewModel.swift in Sources */,
 				4787B89929D36B9800BBC7EE /* Canvas.swift in Sources */,
 				4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */,
 				4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */,
+				47F7D28929D61F7A00D54D01 /* Review.swift in Sources */,
 				4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */,
+				47F7D28B29D61FEE00D54D01 /* SaveButton.swift in Sources */,
 				4787B89D29D375EB00BBC7EE /* DoneButton.swift in Sources */,
 				4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */,
+				47F7D28F29D6219300D54D01 /* TextAndConfirmationButtons.swift in Sources */,
 				1768ACE329CCE869002703C5 /* NaturiaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
