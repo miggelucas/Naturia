@@ -15,7 +15,7 @@ class ObservatoryRepositoryViewModel: ObservableObject {
     }
     
     var state: state {
-        if jouneys.isEmpty {
+        if journeys.isEmpty {
             return .empty
         } else {
             return .content
@@ -23,11 +23,11 @@ class ObservatoryRepositoryViewModel: ObservableObject {
     }
     
     init(journeyArray: [ObservativeJourney] = []) {
-        self.jouneys = journeyArray
+        self.journeys = journeyArray
     }
     
     
-    let jouneys: [ObservativeJourney]
+    let journeys: [ObservativeJourney]
     let textForEmptyState: String = "Sem jornadas no momento =("
     
     func backButtonPressed() {

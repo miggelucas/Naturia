@@ -47,7 +47,7 @@ struct ObservatoryRepositoryView: View {
                 case .content:
                     ScrollView {
                         LazyVGrid(columns: gridLayout, alignment: .center, spacing: 32) {
-                            ForEach(viewModel.jouneys, id: \.self) { jorney in
+                            ForEach(viewModel.journeys, id: \.self) { jorney in
                                 Button {
                                     viewModel.journeyPressed(jorney)
                                 } label: {
@@ -62,7 +62,8 @@ struct ObservatoryRepositoryView: View {
                     Spacer()
                     
                     Text(viewModel.textForEmptyState)
-                        .font(.custom("Montserrat", fixedSize: 20))
+                        .font(.custom("Montserrat", fixedSize: 20)
+                        )
                     
                     Spacer()
                     

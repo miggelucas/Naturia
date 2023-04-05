@@ -47,6 +47,6 @@ struct BackButton: View {
 
 struct BackButton_Previews: PreviewProvider {
     static var previews: some View {
-        BackButton( style: .backToHome,actionForButton: {})
+        BackButton(actionForButton: {})
     }
 }
