@@ -32,6 +32,11 @@
 		47F7D28929D61F7A00D54D01 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F7D28629D61F7A00D54D01 /* Review.swift */; };
 		47F7D28B29D61FEE00D54D01 /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F7D28A29D61FEE00D54D01 /* SaveButton.swift */; };
 		47F7D28F29D6219300D54D01 /* TextAndConfirmationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F7D28E29D6219300D54D01 /* TextAndConfirmationButtons.swift */; };
+		822E0A0129DCA64F005B311F /* ImageMainTrivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822E0A0029DCA64F005B311F /* ImageMainTrivia.swift */; };
+		822E0A0329DCAB42005B311F /* CTAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822E0A0229DCAB42005B311F /* CTAButton.swift */; };
+		822E0A0529DCBC47005B311F /* CardCTAMainTrivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822E0A0429DCBC47005B311F /* CardCTAMainTrivia.swift */; };
+		824CC2DB29DC982400DC2A4E /* MiniInfosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824CC2DA29DC982400DC2A4E /* MiniInfosView.swift */; };
+		824CC2DD29DC9C2600DC2A4E /* CardMainTrivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824CC2DC29DC9C2600DC2A4E /* CardMainTrivia.swift */; };
 		EB18AEFE29D4AF9C00D73821 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AEFD29D4AF9C00D73821 /* Routes.swift */; };
 		EB18AF0229D4B00600D73821 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AEFF29D4B00600D73821 /* HomeView.swift */; };
 		EB18AF0329D4B00600D73821 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AF0029D4B00600D73821 /* HomeViewModel.swift */; };
@@ -69,6 +74,11 @@
 		47F7D28629D61F7A00D54D01 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		47F7D28A29D61FEE00D54D01 /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 		47F7D28E29D6219300D54D01 /* TextAndConfirmationButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAndConfirmationButtons.swift; sourceTree = "<group>"; };
+		822E0A0029DCA64F005B311F /* ImageMainTrivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMainTrivia.swift; sourceTree = "<group>"; };
+		822E0A0229DCAB42005B311F /* CTAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTAButton.swift; sourceTree = "<group>"; };
+		822E0A0429DCBC47005B311F /* CardCTAMainTrivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCTAMainTrivia.swift; sourceTree = "<group>"; };
+		824CC2DA29DC982400DC2A4E /* MiniInfosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniInfosView.swift; sourceTree = "<group>"; };
+		824CC2DC29DC9C2600DC2A4E /* CardMainTrivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMainTrivia.swift; sourceTree = "<group>"; };
 		EB18AEFD29D4AF9C00D73821 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		EB18AEFF29D4B00600D73821 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EB18AF0029D4B00600D73821 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -180,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				47F7D28329D61F5600D54D01 /* Review */,
+				824CC2D929DC980300DC2A4E /* MiniInfos */,
 				172EA40729DB46B1006AC9E6 /* ObservativeRepository */,
 				EB18AF0529D4B02600D73821 /* Home */,
 				4787B89329D36B5C00BBC7EE /* Canvas */,
@@ -197,6 +208,10 @@
 				47F7D28E29D6219300D54D01 /* TextAndConfirmationButtons.swift */,
 				172EA41029DBB9F0006AC9E6 /* BackButton.swift */,
 				172EA40C29DB4731006AC9E6 /* CardObservative.swift */,
+				824CC2DC29DC9C2600DC2A4E /* CardMainTrivia.swift */,
+				822E0A0029DCA64F005B311F /* ImageMainTrivia.swift */,
+				822E0A0429DCBC47005B311F /* CardCTAMainTrivia.swift */,
+				822E0A0229DCAB42005B311F /* CTAButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -222,6 +237,14 @@
 			sourceTree = "<group>";
 		};
 
+		824CC2D929DC980300DC2A4E /* MiniInfos */ = {
+			isa = PBXGroup;
+			children = (
+				824CC2DA29DC982400DC2A4E /* MiniInfosView.swift */,
+			);
+			path = MiniInfos;
+			sourceTree = "<group>";
+		};
 		EB18AEFC29D4AF7600D73821 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,13 +337,17 @@
 				47F7D28829D61F7A00D54D01 /* ReviewViewModel.swift in Sources */,
 				4787B89929D36B9800BBC7EE /* Canvas.swift in Sources */,
 				170F210729D6204B002363FB /* ObservativeJourney.swift in Sources */,
+				822E0A0529DCBC47005B311F /* CardCTAMainTrivia.swift in Sources */,
+				824CC2DD29DC9C2600DC2A4E /* CardMainTrivia.swift in Sources */,
 				170F210529D62029002363FB /* ImaginativeJourney.swift in Sources */,
 				172EA40F29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift in Sources */,
+				822E0A0329DCAB42005B311F /* CTAButton.swift in Sources */,
 				4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */,
 				172EA41129DBB9F0006AC9E6 /* BackButton.swift in Sources */,
 				17C4F56C29DD0E410016D74C /* NaturiaSecundaryFont.swift in Sources */,
 				4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */,
 				47F7D28929D61F7A00D54D01 /* Review.swift in Sources */,
+				824CC2DB29DC982400DC2A4E /* MiniInfosView.swift in Sources */,
 				4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */,
 				47F7D28B29D61FEE00D54D01 /* SaveButton.swift in Sources */,
 				4787B89D29D375EB00BBC7EE /* DoneButton.swift in Sources */,
@@ -332,6 +359,7 @@
 				170F210129D607E4002363FB /* Plant.swift in Sources */,
 				4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */,
 				EB18AF0729D4C19600D73821 /* ContentView.swift in Sources */,
+				822E0A0129DCA64F005B311F /* ImageMainTrivia.swift in Sources */,
 				EB18AF0329D4B00600D73821 /* HomeViewModel.swift in Sources */,
 				EB18AF0429D4B00600D73821 /* Home.swift in Sources */,
 				EB18AEFE29D4AF9C00D73821 /* Routes.swift in Sources */,
