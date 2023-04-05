@@ -15,8 +15,7 @@ struct ConquistaView: View {
     var body: some View {
         ZStack {
             
-            Color("backgroundColor")
-                .ignoresSafeArea()
+            BackgroundView(illustrationType: .conquista)
             
             VStack(spacing: 56){
                 HStack{

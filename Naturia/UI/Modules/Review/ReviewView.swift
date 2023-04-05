@@ -15,8 +15,7 @@ struct ReviewView: View {
     var body: some View {
         ZStack {
             
-            Color("backgroundColor")
-                .ignoresSafeArea()
+            BackgroundView(illustrationType: .review)
             
             VStack (spacing: 36){
                 HStack{

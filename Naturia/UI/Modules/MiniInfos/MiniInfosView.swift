@@ -13,8 +13,7 @@ struct MiniInfosView: View {
     
     var body: some View {
         ZStack {
-            Color("backgroundColor")
-                .ignoresSafeArea()
+            BackgroundView()
                 
             
             VStack (spacing: 56) {
