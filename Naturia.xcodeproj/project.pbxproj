@@ -22,6 +22,7 @@
 		1768ACE329CCE869002703C5 /* NaturiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768ACE229CCE869002703C5 /* NaturiaApp.swift */; };
 		1768ACE729CCE86A002703C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACE629CCE86A002703C5 /* Assets.xcassets */; };
 		1768ACEB29CCE86A002703C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */; };
+		179637A329DE119100C787F7 /* GaleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179637A229DE119100C787F7 /* GaleryViewModel.swift */; };
 		17C4F56329DCB5900016D74C /* CardPlantDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */; };
 		17C4F56529DCBD750016D74C /* CardPlantOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56429DCBD750016D74C /* CardPlantOrigin.swift */; };
 		17C4F56729DCBE670016D74C /* CardPlantTrivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56629DCBE670016D74C /* CardPlantTrivia.swift */; };
@@ -76,6 +77,7 @@
 		1768ACE629CCE86A002703C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1768ACE829CCE86A002703C5 /* Naturia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Naturia.entitlements; sourceTree = "<group>"; };
 		1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		179637A229DE119100C787F7 /* GaleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryViewModel.swift; sourceTree = "<group>"; };
 		17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantDescriptionView.swift; sourceTree = "<group>"; };
 		17C4F56429DCBD750016D74C /* CardPlantOrigin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantOrigin.swift; sourceTree = "<group>"; };
 		17C4F56629DCBE670016D74C /* CardPlantTrivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantTrivia.swift; sourceTree = "<group>"; };
@@ -106,7 +108,6 @@
 		EB18AF0129D4B00600D73821 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		EB18AF0629D4C19600D73821 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EB59D6B129D64C3E0047065D /* Responsive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responsive.swift; sourceTree = "<group>"; };
-		EB6555FC29D77917005A7FA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EBB272AD29DDF8FE00811137 /* ArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
 		EBB272AF29DE07F800811137 /* CardObservativeHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardObservativeHome.swift; sourceTree = "<group>"; };
 		EBE180DA29DCB59000336477 /* CardImaginativeCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImaginativeCarousel.swift; sourceTree = "<group>"; };
@@ -246,6 +247,7 @@
 				4787B89329D36B5C00BBC7EE /* Canvas */,
 				17C4F56A29DCC5E50016D74C /* PlantInfo */,
 				173E026629DDFAAA007E07DF /* GaleryView.swift */,
+				179637A229DE119100C787F7 /* GaleryViewModel.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -432,6 +434,7 @@
 				170F210329D61FE1002363FB /* Journey.swift in Sources */,
 				170F210929D6206A002363FB /* Drawn.swift in Sources */,
 				173E810029DE09B8005B7253 /* BackgroundView.swift in Sources */,
+				179637A329DE119100C787F7 /* GaleryViewModel.swift in Sources */,
 				170F210129D607E4002363FB /* Plant.swift in Sources */,
 				173E026729DDFAAA007E07DF /* GaleryView.swift in Sources */,
 				4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */,

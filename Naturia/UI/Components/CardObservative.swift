@@ -23,7 +23,7 @@ struct CardObservative: View {
                 Spacer()
                 
                 Text(plantName)
-                    .font(.system(size: 25))
+                    .font(Font.NaturiaSecundary(.cta))
                     .multilineTextAlignment(.center)
                     .foregroundColor(.black)
                 

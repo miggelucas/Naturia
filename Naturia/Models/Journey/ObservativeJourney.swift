@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class ObservativeJourney: Journey, Hashable {
+class ObservativeJourney: Journey {
     
     let imageQuest: Image
     
@@ -24,13 +24,13 @@ class ObservativeJourney: Journey, Hashable {
     
     
     // Implementação do protocolo Hashable
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
-    }
-    
-    static func == (lhs: ObservativeJourney, rhs: ObservativeJourney) -> Bool {
-        lhs.name == rhs.name
-    }
+//    func hash(into hasher: inout Hasher) {
+//        hasher.combine(name)
+//    }
+//
+//    static func == (lhs: ObservativeJourney, rhs: ObservativeJourney) -> Bool {
+//        lhs.name == rhs.name
+//    }
     
 }
 

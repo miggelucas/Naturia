@@ -8,7 +8,8 @@
 import Foundation
 import SwiftUI
 
-class Journey {
+class Journey: Hashable {
+    let id = UUID()
     let name: String
     let plant: Plant
     let isCompleted: Bool
@@ -19,6 +20,15 @@ class Journey {
         self.plant = plant
         self.isCompleted = isCompleted
         self.userConcreteDrawn = userConcreteDrawn
+    }
+    
+    // Implementação do protocolo Hashable
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: Journey, rhs: Journey) -> Bool {
+        lhs.id == rhs.id
     }
     
 }
