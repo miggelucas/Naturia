@@ -27,6 +27,7 @@ final class CardImaginativeCarouselViewModel: ObservableObject {
     func onTapArrowRight() {
         if (cardIndex < 2) {
             cardIndex = cardIndex + 1
+            print(String(cardIndex))
         }
     }
     
