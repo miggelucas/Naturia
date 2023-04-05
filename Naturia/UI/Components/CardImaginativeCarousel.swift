@@ -16,29 +16,30 @@ struct CardImaginativeCarousel: View {
     let onTapArrowRight: () -> Void
     
     var body: some View {
-        
         TabView(selection: $index) {
-            ZStack() {
-                ForEach(journeys.indices, id: \.self) { i in
-                    if i == index {
-                        CardImaginative(journeyTitle: "Jornada Criativa", journeyProvocation: journeys[i].mainProvocation, journeyImage: journeys[i].imageReference)
-                    }
-                    
-                }
-                HStack {
-                    Button("<") {
-                        onTapArrowLeft()
-                    }
-                    .font((.system(size: 40)))
-                    Spacer()
-                    Button(">") {
-                        onTapArrowRight()
-                    }
-                    .font((.system(size: 40)))
+            ForEach(journeys.indices, id: \.self) { i in
+                if i == index {
+                    CardImaginative(
+                        journeyTitle: "Jornada Criativa",
+                        journeyProvocation: journeys[i].mainProvocation,
+                        journeyImage: journeys[i].imageReference)
+                    .overlay(
+                        HStack {
+                            Button("<") {
+                                onTapArrowLeft()
+                            }
+                            .font((.system(size: 40)))
+                            Spacer()
+                            Button(">") {
+                                onTapArrowRight()
+                            }
+                            .font((.system(size: 40)))
+                        }
+                    )
                 }
             }
         }
-        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
 }
 
