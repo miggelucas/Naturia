@@ -43,8 +43,11 @@ struct PlantInfoView: View {
                             VStack(alignment: .leading, spacing: 16) {
                                 HStack(alignment: .lastTextBaseline) {
                                     Text(viewModel.plant.popularName)
-//                                        .font(Font.NaturiaPrimary(.h1))
+                                        .font(Font.NaturiaPrimary(.h1))
+                                    
+                                    
                                     Spacer()
+                                     
                                     Image("Logo")
                                         .resizable()
                                         .frame(width: 46, height: 46)
