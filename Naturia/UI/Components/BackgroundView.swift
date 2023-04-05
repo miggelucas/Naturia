@@ -29,7 +29,8 @@ struct BackgroundView: View {
                 switch illustrationType{
                 case .conquista:
                     Image("IlustracoesConquista")
-                    
+                        .resizable()
+                        .frame(width: .infinity, height: .infinity)
                 case .review:
                     Image("IlustracoesReview")
                 }

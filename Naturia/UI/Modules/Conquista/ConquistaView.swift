@@ -17,13 +17,19 @@ struct ConquistaView: View {
             
             BackgroundView(illustrationType: .conquista)
             
-            VStack(spacing: 56){
+            VStack(spacing: 60){
                 HStack{
                     Spacer()
                     SaveButton()
                 }
                 Image("Logo")
-                TextAndConfirmationButtons(cardType: .grande, firstLine: "Você registrou uma nova planta! Ela estará na sua galeria.", secondLine: "Deseja conhecer mais sobre ela?", firstButtonType: .sim, secondButtonType: .agoranao, actionForFirstButton: {}, actionForSecondButton: {})
+                TextAndConfirmationButtons(cardType: .grande,
+                                           firstLine: "Você registrou uma nova planta! Ela estará na sua galeria.",
+                                           secondLine: "Deseja conhecer mais sobre ela?",
+                                           firstButtonType: .sim,
+                                           secondButtonType: .agoranao,
+                                           actionForFirstButton: {},
+                                           actionForSecondButton: {})
             }
             .frame(width: 874)
         }
