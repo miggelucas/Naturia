@@ -21,6 +21,9 @@
 		1768ACEB29CCE86A002703C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */; };
 		17C4F56C29DD0E410016D74C /* NaturiaSecundaryFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56B29DD0E410016D74C /* NaturiaSecundaryFont.swift */; };
 		17C4F57329DD149D0016D74C /* NaturaPrimaryFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F57229DD149D0016D74C /* NaturaPrimaryFont.swift */; };
+		47185D8B29DE0757008611D6 /* ConquistaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D8829DE0757008611D6 /* ConquistaView.swift */; };
+		47185D8C29DE0757008611D6 /* ConquistaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D8929DE0757008611D6 /* ConquistaViewModel.swift */; };
+		47185D8D29DE0757008611D6 /* Conquista.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D8A29DE0757008611D6 /* Conquista.swift */; };
 		4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */; };
 		4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88B29D36B1700BBC7EE /* ExpandableView.swift */; };
 		4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89429D36B9800BBC7EE /* CanvasView.swift */; };
@@ -63,6 +66,9 @@
 		17C4F57029DD13230016D74C /* QuisasStandard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "QuisasStandard-Regular.otf"; sourceTree = "<group>"; };
 		17C4F57129DD13B10016D74C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		17C4F57229DD149D0016D74C /* NaturaPrimaryFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturaPrimaryFont.swift; sourceTree = "<group>"; };
+		47185D8829DE0757008611D6 /* ConquistaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquistaView.swift; sourceTree = "<group>"; };
+		47185D8929DE0757008611D6 /* ConquistaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquistaViewModel.swift; sourceTree = "<group>"; };
+		47185D8A29DE0757008611D6 /* Conquista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conquista.swift; sourceTree = "<group>"; };
 		4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvas.swift; sourceTree = "<group>"; };
 		4787B88B29D36B1700BBC7EE /* ExpandableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableView.swift; sourceTree = "<group>"; };
 		4787B89429D36B9800BBC7EE /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
@@ -175,6 +181,16 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		47185D8729DE0740008611D6 /* Conquista */ = {
+			isa = PBXGroup;
+			children = (
+				47185D8829DE0757008611D6 /* ConquistaView.swift */,
+				47185D8929DE0757008611D6 /* ConquistaViewModel.swift */,
+				47185D8A29DE0757008611D6 /* Conquista.swift */,
+			);
+			path = Conquista;
+			sourceTree = "<group>";
+		};
 		4787B87F29D3689300BBC7EE /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +205,7 @@
 		4787B88029D3689F00BBC7EE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				47185D8729DE0740008611D6 /* Conquista */,
 				47F7D28329D61F5600D54D01 /* Review */,
 				824CC2D929DC980300DC2A4E /* MiniInfos */,
 				172EA40729DB46B1006AC9E6 /* ObservativeRepository */,
@@ -236,7 +253,6 @@
 			path = Review;
 			sourceTree = "<group>";
 		};
-
 		824CC2D929DC980300DC2A4E /* MiniInfos */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,13 +362,16 @@
 				172EA41129DBB9F0006AC9E6 /* BackButton.swift in Sources */,
 				17C4F56C29DD0E410016D74C /* NaturiaSecundaryFont.swift in Sources */,
 				4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */,
+				47185D8C29DE0757008611D6 /* ConquistaViewModel.swift in Sources */,
 				47F7D28929D61F7A00D54D01 /* Review.swift in Sources */,
 				824CC2DB29DC982400DC2A4E /* MiniInfosView.swift in Sources */,
 				4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */,
 				47F7D28B29D61FEE00D54D01 /* SaveButton.swift in Sources */,
 				4787B89D29D375EB00BBC7EE /* DoneButton.swift in Sources */,
+				47185D8D29DE0757008611D6 /* Conquista.swift in Sources */,
 				4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */,
 				47F7D28F29D6219300D54D01 /* TextAndConfirmationButtons.swift in Sources */,
+				47185D8B29DE0757008611D6 /* ConquistaView.swift in Sources */,
 				17C4F57329DD149D0016D74C /* NaturaPrimaryFont.swift in Sources */,
 				170F210329D61FE1002363FB /* Journey.swift in Sources */,
 				170F210929D6206A002363FB /* Drawn.swift in Sources */,
