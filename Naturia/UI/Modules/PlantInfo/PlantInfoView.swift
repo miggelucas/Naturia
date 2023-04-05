@@ -36,6 +36,7 @@ struct PlantInfoView: View {
                     viewModel.plant.plantIcon
                         .resizable()
                         .scaledToFit()
+                        .padding(.vertical, 68)
                     
                     ScrollView {
                         VStack(alignment: .leading, spacing: 32) {
