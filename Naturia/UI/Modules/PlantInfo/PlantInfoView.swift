@@ -38,15 +38,24 @@ struct PlantInfoView: View {
                     plant.plantIcon
                         .resizable()
                         .scaledToFit()
-                        .padding(.vertical, 68)
-                        .offset(x: -16)
                     
                     ScrollView {
                         VStack(alignment: .leading, spacing: 32) {
                             
                             VStack(alignment: .leading, spacing: 16) {
-                                Text(plant.popularName)
-                                    .font(Font.NaturiaPrimary(.h1))
+                                HStack(alignment: .lastTextBaseline) {
+                                    Text(plant.popularName)
+                                        .font(Font.NaturiaPrimary(.h1))
+                                    Spacer()
+                                    Image("Logo")
+                                        .resizable()
+                                        .frame(width: 46, height: 46)
+                                 
+                                }
+                                .padding(.vertical, -5)
+     
+                                
+                                
                                 
                                 Text(plant.scientificName)
                                     .font(Font.NaturiaSecundary(.Subtitle))
