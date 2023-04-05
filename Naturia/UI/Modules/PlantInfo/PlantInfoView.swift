@@ -9,33 +9,31 @@ import SwiftUI
 
 struct PlantInfoView: View {
     
-    let journey: Journey
-    var plant: Plant
+    let viewModel: PlantInfoViewModel
     
-    init(journey: Journey) {
-        self.journey = journey
-        self.plant = journey.plant
+    init(viewModel: PlantInfoViewModel) {
+        self.viewModel = viewModel
     }
     
     var body: some View {
         
         ZStack {
-            
             Color("backgroundColor")
-            
             
             VStack {
                 
                 // Back Button
                 HStack {
-                    BackButton(style: .backToHome, actionForButton: {})
+                    BackButton(style: .backToHome, actionForButton: {
+                        viewModel.backButtonPressed()
+                    })
                     
                     Spacer()
                     
                 }
                 
                 HStack(spacing: 32) {
-                    plant.plantIcon
+                    viewModel.plant.plantIcon
                         .resizable()
                         .scaledToFit()
                     
@@ -44,8 +42,8 @@ struct PlantInfoView: View {
                             
                             VStack(alignment: .leading, spacing: 16) {
                                 HStack(alignment: .lastTextBaseline) {
-                                    Text(plant.popularName)
-                                        .font(Font.NaturiaPrimary(.h1))
+                                    Text(viewModel.plant.popularName)
+//                                        .font(Font.NaturiaPrimary(.h1))
                                     Spacer()
                                     Image("Logo")
                                         .resizable()
@@ -55,9 +53,7 @@ struct PlantInfoView: View {
                                 .padding(.vertical, -5)
      
                                 
-                                
-                                
-                                Text(plant.scientificName)
+                                Text(viewModel.plant.scientificName)
                                     .font(Font.NaturiaSecundary(.Subtitle))
                                 
                             }
@@ -66,7 +62,7 @@ struct PlantInfoView: View {
                                 Text("Descrição")
                                     .font(Font.NaturiaSecundary(.h5))
                                 
-                                CardPlantDescriptionView(description: plant.description)
+                                CardPlantDescriptionView(description: viewModel.plant.description)
                             }
                             
                             
@@ -74,7 +70,7 @@ struct PlantInfoView: View {
                                 Text("Local de Origem")
                                     .font(Font.NaturiaSecundary(.h5))
                                 
-                                CardPlantOrigin(plantOrigin: plant.origin)
+                                CardPlantOrigin(plantOrigin: viewModel.plant.origin)
                             }
                             
                             
@@ -83,7 +79,13 @@ struct PlantInfoView: View {
                                     .font(Font.NaturiaSecundary(.h5))
                             }
                             
-                            
+                            ScrollView {
+                                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], alignment: .center, spacing: 32) {
+                                    ForEach(viewModel.plant.trivia, id: \.self) { trivia in
+                                        CardPlantTrivia(trivia: trivia)
+                                    }
+                                }
+                            }
                             
                         }
                         
@@ -103,6 +105,6 @@ struct PlantInfoView: View {
 
 struct PlantInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        PlantInfoView(journey: ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false))
+        PlantInfoView(viewModel: PlantInfoViewModel(journey: ObservativeJourney.placeholderObservativeJourney(name: "asdasd")))
     }
 }
