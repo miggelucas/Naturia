@@ -62,7 +62,7 @@ extension ImaginativeJourney {
         } else {
             
             return ImaginativeJourney(
-                mainProvocation: "Algumas pessoas dizem que por ser uma trepadeira muito forte, por vezes a planta com seus grossos caules podem enforcar a árvore onde ela se apoia, assim como a cobra jiboia.",
+                mainProvocation: "Eita!.",
                 drawingProvocations: [
                     "Por que você acredita que uma planta se chamaria Jibioa?",
                     "Qual seria o tamanho dela?",
