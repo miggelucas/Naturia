@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Fundo do botão.png",
+      "filename" : "Logo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Fundo do botão@2x.png",
+      "filename" : "Logo@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Fundo do botão@3x.png",
+      "filename" : "Logo@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
