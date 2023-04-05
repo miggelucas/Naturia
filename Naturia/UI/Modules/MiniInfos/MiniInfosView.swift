@@ -36,8 +36,8 @@ struct MiniInfosView: View {
 //                Spacer()
                 
                 VStack(spacing: -24) {
-                    CardCTAMainTrivia()
-                    CTAButton(cardType: .desenhar, actionForButton: {})
+                    CardCTAMainTrivia(cardType: .pequeno, firstLine: "Exemplo")
+                    CTAButton(buttonType: .desenhar, actionForButton: {})
                 }
             
         

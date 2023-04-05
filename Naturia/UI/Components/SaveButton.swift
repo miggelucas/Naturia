@@ -12,7 +12,7 @@ struct SaveButton: View {
         Button {
             
         } label: {
-            Circle()
+            Image("buttonBaixar")
                 .frame(width: 58.2, height: 56)
                 .foregroundColor(.blue)
         }

@@ -9,11 +9,9 @@ import SwiftUI
 
 struct CTAButton: View {
     
-    enum CardType {
-        case estou, naoEstou, concluido, desenhar, sim, agoranao
-    }
     
-    let cardType: CardType
+    
+    let buttonType: ButtonType
     
     let actionForButton: () -> Void
     
@@ -28,7 +26,7 @@ struct CTAButton: View {
             ZStack {
                 
                 
-                switch cardType {
+                switch buttonType {
                 case .estou:
                     Image("CardGreenCTAButton")
                     Text("Estou")
@@ -66,6 +64,10 @@ struct CTAButton: View {
 
 struct CTAButton_Previews: PreviewProvider {
     static var previews: some View {
-        CTAButton(cardType: .estou, actionForButton: {})
+        CTAButton(buttonType: .estou, actionForButton: {})
     }
+}
+
+enum ButtonType {
+    case estou, naoEstou, concluido, desenhar, sim, agoranao
 }
