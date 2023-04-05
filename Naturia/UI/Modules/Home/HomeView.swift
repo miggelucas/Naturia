@@ -16,48 +16,7 @@ struct HomeView: View {
     var body: some View {
         VStack {
             VStack {
-                TabView(selection: $index) {
-                    ZStack() {
-                        ForEach((0..<3), id: \.self) { index in
-                            HStack(alignment: .top) {
-                                VStack(alignment: .leading) {
-                                    Text("Jornada criativa")
-                                        .font(.custom("Montserrat", size: 20))
-                                    Spacer().frame(height: Responsive.scaleHeight(s: 24))
-                                    Text("Provocação Escrita em três linhas")
-                                        .font(.custom("QuisasStandard-Regular", size: 96))
-                                        ._lineHeightMultiple(0.6)
-                                        .lineLimit(3)
-                                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: Responsive.scaleWidth(s: 96)))
-                                }
-                                Spacer()
-                                Image("plant")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: Responsive.scaleWidth(s: 248), height: Responsive.scaleHeight(s: 350))
-                                    
-                            }
-                            .padding(EdgeInsets(top: Responsive.scaleHeight(s: 48), leading: Responsive.scaleWidth(s: 80), bottom: 0, trailing: Responsive.scaleWidth(s: 8)))
-                            .background(Color.white)
-                        }
-                        HStack {
-                            Button("<") {
-
-                            }
-                            .font((.system(size: 40)))
-                            .background(Color.black)
-                            Spacer()
-                            Button(">") {
-
-                            }
-                            .font((.system(size: 40)))
-                            .background(Color.black)
-                        }
-                    }
-                }
-                .padding(EdgeInsets(top: 0, leading: 0, bottom: Responsive.scaleHeight(s: 56), trailing: 0))
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-
+                CardImaginativeCarouselView()
                 
                 HStack(alignment: .bottom) {
                     HStack {
@@ -84,7 +43,7 @@ struct HomeView: View {
             }
 
         }
-        .padding(EdgeInsets(top: Responsive.scaleHeight(s: 110), leading: Responsive.scaleWidth(s: 136), bottom: Responsive.scaleHeight(s: 110), trailing: Responsive.scaleWidth(s: 136)))
+        .frame(maxHeight: .infinity)
         .background(LinearGradient(
             colors: [Color.gray, Color.brown],
             startPoint: .leading, endPoint: .trailing))
