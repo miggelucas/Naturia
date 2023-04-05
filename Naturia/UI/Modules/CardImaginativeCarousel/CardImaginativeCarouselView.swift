@@ -13,7 +13,8 @@ struct CardImaginativeCarouselView: View {
     @ObservedObject private var viewModel = CardImaginativeCarouselViewModel()
     
     var body: some View {
-        CardImaginativeCarousel(index: viewModel.model.cardIndex, journeys: viewModel.model.journeys, onTapArrowLeft: viewModel.onTapArrowLeft, onTapArrowRight: viewModel.onTapArrowRight)
+        CardImaginativeCarousel(index: viewModel.cardIndex, journeys: viewModel.journeys, onTapArrowLeft: viewModel.onTapArrowLeft, onTapArrowRight: viewModel.onTapArrowRight)
+        
     }
     
     struct CardImaginativeCarousel_Previews: PreviewProvider {

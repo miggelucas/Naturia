@@ -36,7 +36,6 @@
 		EBE180DF29DCC48200336477 /* CardImaginative.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE180DE29DCC48200336477 /* CardImaginative.swift */; };
 		EBE180E429DCE04B00336477 /* CardImaginativeCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE180E129DCE04B00336477 /* CardImaginativeCarouselView.swift */; };
 		EBE180E529DCE04B00336477 /* CardImaginativeCarouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE180E229DCE04B00336477 /* CardImaginativeCarouselViewModel.swift */; };
-		EBE180E829DCF8DE00336477 /* CardImaginativeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE180E729DCF8DE00336477 /* CardImaginativeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,7 +72,6 @@
 		EBE180DE29DCC48200336477 /* CardImaginative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImaginative.swift; sourceTree = "<group>"; };
 		EBE180E129DCE04B00336477 /* CardImaginativeCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImaginativeCarouselView.swift; sourceTree = "<group>"; };
 		EBE180E229DCE04B00336477 /* CardImaginativeCarouselViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImaginativeCarouselViewModel.swift; sourceTree = "<group>"; };
-		EBE180E729DCF8DE00336477 /* CardImaginativeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImaginativeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,7 +232,6 @@
 			children = (
 				EBE180E129DCE04B00336477 /* CardImaginativeCarouselView.swift */,
 				EBE180E229DCE04B00336477 /* CardImaginativeCarouselViewModel.swift */,
-				EBE180E729DCF8DE00336477 /* CardImaginativeModel.swift */,
 			);
 			path = CardImaginativeCarousel;
 			sourceTree = "<group>";
@@ -315,7 +312,6 @@
 				170F210529D62029002363FB /* ImaginativeJourney.swift in Sources */,
 				172EA40F29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift in Sources */,
 				EBE180E429DCE04B00336477 /* CardImaginativeCarouselView.swift in Sources */,
-				EBE180E829DCF8DE00336477 /* CardImaginativeModel.swift in Sources */,
 				4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */,
 				172EA41129DBB9F0006AC9E6 /* BackButton.swift in Sources */,
 				4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */,

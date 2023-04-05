@@ -11,24 +11,22 @@ import SwiftUI
 // MARK: Variables to watch mark as Published. ViewModel also calls API/Core Data
 
 final class CardImaginativeCarouselViewModel: ObservableObject {
-    @Published var model: CardImaginativeModel = CardImaginativeModel()
+    @Published var cardIndex: Int = 0
+    @Published var journeys: [ImaginativeJourney] = []
     
     init() {
-        self.model.journeys = getJourneys()
+        journeys = getJourneys()
     }
     
     func onTapArrowLeft() {
-        if (self.model.cardIndex > 0) {
-            self.model.cardIndex = model.cardIndex - 1
-            self.objectWillChange.send()
+        if (cardIndex > 0) {
+            cardIndex = cardIndex - 1
         }
     }
     
     func onTapArrowRight() {
-        if (self.model.cardIndex < 2) {
-            print("aaa")
-            self.model.cardIndex = model.cardIndex + 1
-            self.objectWillChange.send()
+        if (cardIndex < 2) {
+            cardIndex = cardIndex + 1
         }
     }
     
