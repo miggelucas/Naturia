@@ -34,7 +34,7 @@ struct CardImaginativeCarousel: View {
                         }
                     )
                     .overlay(
-                        CTAButton(cardType: .desenhar, actionForButton: onTapButton), alignment: .bottom)
+                        CTAButton(buttonType: .desenhar, actionForButton: onTapButton), alignment: .bottom)
                 }
             }
         }
