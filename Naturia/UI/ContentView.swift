@@ -10,10 +10,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-//        NavigationStack {
-//            appView
-//        }
-        GaleryView()
+        NavigationStack {
+            appView
+        }
     }
     
     private var appView: some View {
