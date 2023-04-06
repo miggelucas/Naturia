@@ -36,6 +36,7 @@ struct CardGaleryDrawn: View {
                 
                 Text(text)
                     .font(Font.NaturiaSecundary(.Subtitle))
+                    .foregroundColor(Color("gray-900"))
                     .padding(.bottom, 8)
             }
             .padding(8)
@@ -46,6 +47,6 @@ struct CardGaleryDrawn: View {
 
 struct CardGaleryDrawn_Previews: PreviewProvider {
     static var previews: some View {
-        CardGaleryDrawn(drawn: ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true).userConcreteDrawn!, text: "Desenho")
+        CardGaleryDrawn(drawn: ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true).userDrawns[0], text: "Desenho")
     }
 }

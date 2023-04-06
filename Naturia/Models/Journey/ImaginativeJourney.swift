@@ -15,7 +15,6 @@ class ImaginativeJourney: Journey {
     let drawingProvocations: [String]
     let mainTrivia: String
     let imageReference: Image
-    var userImaginativeDrawn: Drawn?
     
     init(mainProvocation: String,
          drawingProvocations: [String],
@@ -23,15 +22,13 @@ class ImaginativeJourney: Journey {
          imageReference: Image,
          plant: Plant,
          name: String,
-         isCompleted: Bool,
-         userImaginativeDrawn: Drawn?
+         isCompleted: Bool
     ){
         self.mainProvocation = mainProvocation
         self.drawingProvocations = drawingProvocations
         self.mainTrivia = mainTrivia
         self.imageReference = imageReference
-        self.userImaginativeDrawn = userImaginativeDrawn
-        super.init(name:  name, plant: plant , isCompleted: isCompleted, userConcreteDrawn: nil)
+        super.init(name:  name, plant: plant , isCompleted: isCompleted)
     }
     
 }
@@ -53,9 +50,11 @@ extension ImaginativeJourney {
                 imageReference: Image("jiboiaReferencia"),
                 plant: Plant.getPlaceholderPlant(),
                 name: "Jiboia",
-                isCompleted: true,
-                userImaginativeDrawn: Drawn(image: Image("desenhoCriativo"), type: .imaginative))
-            model.userConcreteDrawn = Drawn(image: Image("desenhoUsuario"), type: .observative)
+                isCompleted: true)
+            model.userDrawns = [
+                Drawn(image: Image("DesenhoCriativo"), type: .imaginative),
+                Drawn(image: Image("desenhoUsuario"), type: .observative)
+            ]
             
             return model
             
@@ -71,8 +70,7 @@ extension ImaginativeJourney {
                 imageReference: Image("jiboiaReferencia"),
                 plant: Plant.getPlaceholderPlant(),
                 name: "Jiboia",
-                isCompleted: false,
-                userImaginativeDrawn: nil
+                isCompleted: false
             )
         }
         

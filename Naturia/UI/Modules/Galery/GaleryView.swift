@@ -64,12 +64,28 @@ struct GaleryView: View {
                         }
                         
                     case .empty:
-                        Text("Você ainda não coletou nenhuma plant")
+                        Text("Você ainda não coletou nenhuma planta")
                         Spacer()
                     }
                     
                 case .draws:
-                    Text("hadhadhjakshd")
+                    ScrollView {
+                        LazyVGrid(columns: gridLayout, alignment: .center, spacing: 32) {
+                            ForEach(viewModel.completedJourneys, id: \.self) { jorney in
+                                
+                                ForEach(jorney.userDrawns, id: \.self) { draw in
+                                    Button {
+                                        viewModel.itemPressed()
+                                    } label: {
+                                        CardGaleryDrawn(drawn: draw,
+                                                        text: jorney.plant.popularName)
+                                    }
+                                    
+                                }
+                          
+                            }
+                        }
+                    }
                 }
                     
                   
@@ -90,23 +106,23 @@ struct GaleryView: View {
 struct GaleryView_Previews: PreviewProvider {
     static var previews: some View {
         GaleryView(viewModel: GaleryViewModel(journeys:  [
-//            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-//            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-//            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-//            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
-//            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-//            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-//            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-//            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
-//            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-//            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-//            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-//            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
-//            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-//            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-//            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-//            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false)
-        ], mode: .plants
+            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
+            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
+            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
+            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false)
+        ], mode: .draws
                                              )
         )
     }

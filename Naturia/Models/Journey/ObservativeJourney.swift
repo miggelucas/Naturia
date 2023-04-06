@@ -18,7 +18,7 @@ class ObservativeJourney: Journey {
          isCompleted: Bool
     ){
         self.imageQuest = imageQuest
-        super.init(name: name, plant: plant , isCompleted: isCompleted, userConcreteDrawn: nil)
+        super.init(name: name, plant: plant , isCompleted: isCompleted)
         
     }
     
@@ -43,7 +43,7 @@ extension ObservativeJourney {
                 plant: Plant.getPlaceholderPlant(),
                 name: "Jiboia",
                 isCompleted: true)
-            model.userConcreteDrawn = Drawn(image: Image("desenhoUsuario"), type: .observative)
+            model.userDrawns = [Drawn(image: Image("desenhoUsuario"), type: .observative)]
             
             return model
             
@@ -64,7 +64,7 @@ extension ObservativeJourney {
                 name: name,
                 isCompleted: true)
             
-            model.userConcreteDrawn = Drawn(image: Image("desenhoUsuario"), type: .observative)
+            model.userDrawns = [Drawn(image: Image("desenhoUsuario"), type: .observative)]
             
             return model
             

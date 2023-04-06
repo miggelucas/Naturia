@@ -13,13 +13,12 @@ class Journey: Hashable {
     let name: String
     let plant: Plant
     let isCompleted: Bool
-    var userConcreteDrawn: Drawn?
+    var userDrawns: [Drawn] = []
     
-    init(name: String, plant: Plant, isCompleted: Bool, userConcreteDrawn: Drawn?) {
+    init(name: String, plant: Plant, isCompleted: Bool) {
         self.name = name
         self.plant = plant
         self.isCompleted = isCompleted
-        self.userConcreteDrawn = userConcreteDrawn
     }
     
     // Implementação do protocolo Hashable
