@@ -9,8 +9,7 @@ import SwiftUI
 
 struct GaleryView: View {
     
-    
-    let viewModel: GaleryViewModel
+    @ObservedObject var viewModel: GaleryViewModel
     
     init(viewModel: GaleryViewModel = GaleryViewModel(journeys: [])) {
         self.viewModel = viewModel
@@ -28,6 +27,7 @@ struct GaleryView: View {
             
             VStack(spacing: 24) {
                 
+                // backButton
                 HStack {
                     BackButton(actionForButton: {})
                     
@@ -48,49 +48,105 @@ struct GaleryView: View {
                 
                 switch viewModel.mode {
                 case .plants:
-                    switch viewModel.state {
-                    case .content:
-                        ScrollView {
-                            LazyVGrid(columns: gridLayout, alignment: .center, spacing: 32) {
-                                ForEach(viewModel.completedJourneys, id: \.self) { jorney in
-                                    Button {
-                                        viewModel.itemPressed()
-                                    } label: {
-                                        CardObservative(plantIconDrawn: jorney.plant.plantIcon,
-                                                        plantName: jorney.name)
+                    HStack(alignment: .center) {
+                        
+                        ArrowButton(buttonType: .right) {
+                            // esse botao aqui é pura gambiarra
+                            // so esta aqui para manter a proporcao da tela
+                        }
+                        .layoutPriority(2)
+                        .opacity(0)
+                        
+                        switch viewModel.state {
+                        case .content:
+                            ScrollView {
+                                LazyVGrid(columns: gridLayout, alignment: .center, spacing: 32) {
+                                    ForEach(viewModel.completedJourneys, id: \.self) { jorney in
+                                        Button {
+                                            viewModel.itemPressed()
+                                        } label: {
+                                            CardObservative(plantIconDrawn: jorney.plant.plantIcon,
+                                                            plantName: jorney.name)
+                                        }
                                     }
                                 }
                             }
+                            
+                        case .empty:
+                            Spacer()
+                            VStack {
+                                Spacer()
+                                Text("Você ainda não coletou nenhuma planta")
+                                    .font(Font.NaturiaSecundary(.body))
+                                Spacer()
+                            }
+                            Spacer()
                         }
                         
-                    case .empty:
-                        Text("Você ainda não coletou nenhuma planta")
-                        Spacer()
+                        
+                        ArrowButton(buttonType: .right) {
+                            viewModel.rightArrowPressed()
+                        }
+                        .layoutPriority(2)
+                        
                     }
+                    
                     
                 case .draws:
-                    ScrollView {
-                        LazyVGrid(columns: gridLayout, alignment: .center, spacing: 32) {
-                            ForEach(viewModel.completedJourneys, id: \.self) { jorney in
-                                
-                                ForEach(jorney.userDrawns, id: \.self) { draw in
-                                    Button {
-                                        viewModel.itemPressed()
-                                    } label: {
-                                        CardGaleryDrawn(drawn: draw,
-                                                        text: jorney.plant.popularName)
-                                    }
-                                    
-                                }
-                          
-                            }
+                    HStack(alignment: .center) {
+                        ArrowButton(buttonType: .left) {
+                            viewModel.leftArrowPressed()
+                            
                         }
+                        .layoutPriority(2)
+                        
+                        switch viewModel.state {
+                        case .content:
+                            ScrollView {
+                                LazyVGrid(columns: gridLayout, alignment: .center, spacing: 32) {
+                                    ForEach(viewModel.completedJourneys, id: \.self) { jorney in
+                                        
+                                        ForEach(jorney.userDrawns, id: \.self) { draw in
+                                            Button {
+                                                viewModel.itemPressed()
+                                            } label: {
+                                                CardGaleryDrawn(drawn: draw,
+                                                                text: jorney.name)
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                            
+                        case .empty:
+                            Spacer()
+                            VStack {
+                                Spacer()
+                                Text("Você ainda não concluiu nenhuma jornada")
+                                    .font(Font.NaturiaSecundary(.body))
+                                Spacer()
+                            }
+                            Spacer()
+                            
+                        }
+                        
+                        
+                        
+                        ArrowButton(buttonType: .left) {
+                            // assim como o botao no caso da tela de plantas
+                            // esse cara eh gambiarra, esta aqui para manter proporcao da tela
+                        }
+                        .layoutPriority(2)
+                        .opacity(0)
                     }
+                    
+                    
                 }
-                    
-                  
-                    
-              
+                
+                
+                
+                
                 
                 
             }
@@ -106,23 +162,23 @@ struct GaleryView: View {
 struct GaleryView_Previews: PreviewProvider {
     static var previews: some View {
         GaleryView(viewModel: GaleryViewModel(journeys:  [
-            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
-            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
-            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
-            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false)
-        ], mode: .draws
+                        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+                        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+                        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+                        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
+                        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+                        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+                        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+                        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
+                        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+                        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+                        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+                        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
+                        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+                        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+                        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+                        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false)
+        ],  mode: .plants
                                              )
         )
     }

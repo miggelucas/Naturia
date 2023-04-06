@@ -17,14 +17,9 @@ class GaleryViewModel: ObservableObject {
         case empty, content
     }
     
-    init(journeys: [Journey], mode: GaleryViewModel.Mode = .plants) {
-        self.journeys = journeys
-        self.mode = mode
-    }
-        
+    @Published var mode: Mode
     
     let journeys: [Journey]
-    
     
     var completedJourneys: [Journey] {
         journeys.filter { journey in
@@ -32,21 +27,31 @@ class GaleryViewModel: ObservableObject {
         }
     }
     
-    var mode: Mode
-    
     var state: State {
         switch mode {
         case .plants:
             return journeys.isEmpty ? .empty : .content
             
         case .draws:
-            return .empty
+            return journeys.isEmpty ? .empty : .content
         }
     }
- 
+    
+    init(journeys: [Journey], mode: GaleryViewModel.Mode = .draws) {
+        self.journeys = journeys
+        self.mode = mode
+    }
     
     
     func itemPressed() {
         
+    }
+    
+    func rightArrowPressed() {
+        self.mode = .draws
+    }
+    
+    func leftArrowPressed() {
+        self.mode = .plants
     }
 }
