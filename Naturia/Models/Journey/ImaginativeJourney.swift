@@ -54,8 +54,8 @@ extension ImaginativeJourney {
                 plant: Plant.getPlaceholderPlant(),
                 name: "Jiboia",
                 isCompleted: true,
-                userImaginativeDrawn: Drawn(image: Image("desenhoCriativo")))
-            model.userConcreteDrawn = Drawn(image: Image("desenhoUsuario"))
+                userImaginativeDrawn: Drawn(image: Image("desenhoCriativo"), type: .imaginative))
+            model.userConcreteDrawn = Drawn(image: Image("desenhoUsuario"), type: .observative)
             
             return model
             

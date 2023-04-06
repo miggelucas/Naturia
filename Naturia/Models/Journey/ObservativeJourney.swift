@@ -43,7 +43,7 @@ extension ObservativeJourney {
                 plant: Plant.getPlaceholderPlant(),
                 name: "Jiboia",
                 isCompleted: true)
-            model.userConcreteDrawn = Drawn(image: Image("desenhoUsuario"))
+            model.userConcreteDrawn = Drawn(image: Image("desenhoUsuario"), type: .observative)
             
             return model
             
@@ -64,7 +64,7 @@ extension ObservativeJourney {
                 name: name,
                 isCompleted: true)
             
-            model.userConcreteDrawn = Drawn(image: Image("desenhoUsuario"))
+            model.userConcreteDrawn = Drawn(image: Image("desenhoUsuario"), type: .observative)
             
             return model
             
