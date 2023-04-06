@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class ObservativeJourney: Journey, Hashable {
+class ObservativeJourney: Journey {
     
     let imageQuest: Image
     
@@ -18,19 +18,19 @@ class ObservativeJourney: Journey, Hashable {
          isCompleted: Bool
     ){
         self.imageQuest = imageQuest
-        super.init(name: name, plant: plant , isCompleted: isCompleted, userConcreteDrawn: nil)
+        super.init(name: name, plant: plant , isCompleted: isCompleted)
         
     }
     
     
     // Implementação do protocolo Hashable
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
-    }
-    
-    static func == (lhs: ObservativeJourney, rhs: ObservativeJourney) -> Bool {
-        lhs.name == rhs.name
-    }
+//    func hash(into hasher: inout Hasher) {
+//        hasher.combine(name)
+//    }
+//
+//    static func == (lhs: ObservativeJourney, rhs: ObservativeJourney) -> Bool {
+//        lhs.name == rhs.name
+//    }
     
 }
 
@@ -43,7 +43,7 @@ extension ObservativeJourney {
                 plant: Plant.getPlaceholderPlant(),
                 name: "Jiboia",
                 isCompleted: true)
-            model.userConcreteDrawn = Drawn(image: Image("desenhoUsuario"))
+            model.userDrawns = [Drawn(image: Image("desenhoUsuario"), type: .observative)]
             
             return model
             
@@ -64,7 +64,7 @@ extension ObservativeJourney {
                 name: name,
                 isCompleted: true)
             
-            model.userConcreteDrawn = Drawn(image: Image("desenhoUsuario"))
+            model.userDrawns = [Drawn(image: Image("desenhoUsuario"), type: .observative)]
             
             return model
             
