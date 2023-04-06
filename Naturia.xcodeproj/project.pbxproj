@@ -16,13 +16,13 @@
 		172EA40D29DB4731006AC9E6 /* CardObservative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EA40C29DB4731006AC9E6 /* CardObservative.swift */; };
 		172EA40F29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EA40E29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift */; };
 		172EA41129DBB9F0006AC9E6 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EA41029DBB9F0006AC9E6 /* BackButton.swift */; };
-		173E026729DDFAAA007E07DF /* GaleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173E026629DDFAAA007E07DF /* GaleryView.swift */; };
 		173E810029DE09B8005B7253 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173E80FF29DE09B8005B7253 /* BackgroundView.swift */; };
 		17601E1B29DDF31100A82898 /* PlantInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17601E1A29DDF31100A82898 /* PlantInfoViewModel.swift */; };
 		1768ACE329CCE869002703C5 /* NaturiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768ACE229CCE869002703C5 /* NaturiaApp.swift */; };
 		1768ACE729CCE86A002703C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACE629CCE86A002703C5 /* Assets.xcassets */; };
 		1768ACEB29CCE86A002703C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */; };
 		179637A329DE119100C787F7 /* GaleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179637A229DE119100C787F7 /* GaleryViewModel.swift */; };
+		179637A929DE56C800C787F7 /* GaleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179637A829DE56C800C787F7 /* GaleryView.swift */; };
 		17C4F56329DCB5900016D74C /* CardPlantDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */; };
 		17C4F56529DCBD750016D74C /* CardPlantOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56429DCBD750016D74C /* CardPlantOrigin.swift */; };
 		17C4F56729DCBE670016D74C /* CardPlantTrivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56629DCBE670016D74C /* CardPlantTrivia.swift */; };
@@ -69,7 +69,6 @@
 		172EA40C29DB4731006AC9E6 /* CardObservative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardObservative.swift; sourceTree = "<group>"; };
 		172EA40E29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservatoryRepositoryViewModel.swift; sourceTree = "<group>"; };
 		172EA41029DBB9F0006AC9E6 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
-		173E026629DDFAAA007E07DF /* GaleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryView.swift; sourceTree = "<group>"; };
 		173E80FF29DE09B8005B7253 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		17601E1A29DDF31100A82898 /* PlantInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantInfoViewModel.swift; sourceTree = "<group>"; };
 		1768ACDF29CCE869002703C5 /* Naturia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Naturia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +77,7 @@
 		1768ACE829CCE86A002703C5 /* Naturia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Naturia.entitlements; sourceTree = "<group>"; };
 		1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		179637A229DE119100C787F7 /* GaleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryViewModel.swift; sourceTree = "<group>"; };
+		179637A829DE56C800C787F7 /* GaleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryView.swift; sourceTree = "<group>"; };
 		17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantDescriptionView.swift; sourceTree = "<group>"; };
 		17C4F56429DCBD750016D74C /* CardPlantOrigin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantOrigin.swift; sourceTree = "<group>"; };
 		17C4F56629DCBE670016D74C /* CardPlantTrivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantTrivia.swift; sourceTree = "<group>"; };
@@ -195,6 +195,41 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		1789C60429DE572500BA9F49 /* Galery */ = {
+			isa = PBXGroup;
+			children = (
+				179637A829DE56C800C787F7 /* GaleryView.swift */,
+				179637A229DE119100C787F7 /* GaleryViewModel.swift */,
+			);
+			path = Galery;
+			sourceTree = "<group>";
+		};
+		1789C60529DE576000BA9F49 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				172EA40C29DB4731006AC9E6 /* CardObservative.swift */,
+				EBE180DA29DCB59000336477 /* CardImaginativeCarousel.swift */,
+				EBE180DE29DCC48200336477 /* CardImaginative.swift */,
+				822E0A0429DCBC47005B311F /* CardCTAMainTrivia.swift */,
+				824CC2DC29DC9C2600DC2A4E /* CardMainTrivia.swift */,
+				EBB272AF29DE07F800811137 /* CardObservativeHome.swift */,
+				17C4F56129DCB5710016D74C /* Plant Info */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		179637A529DE562400C787F7 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				EBB272AD29DDF8FE00811137 /* ArrowButton.swift */,
+				4787B89C29D375EB00BBC7EE /* DoneButton.swift */,
+				47F7D28A29D61FEE00D54D01 /* SaveButton.swift */,
+				822E0A0229DCAB42005B311F /* CTAButton.swift */,
+				172EA41029DBB9F0006AC9E6 /* BackButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		17C4F56129DCB5710016D74C /* Plant Info */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +274,7 @@
 		4787B88029D3689F00BBC7EE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				1789C60429DE572500BA9F49 /* Galery */,
 				EBE180E029DCE02900336477 /* CardImaginativeCarousel */,
 				47F7D28329D61F5600D54D01 /* Review */,
 				824CC2D929DC980300DC2A4E /* MiniInfos */,
@@ -246,8 +282,6 @@
 				EB18AF0529D4B02600D73821 /* Home */,
 				4787B89329D36B5C00BBC7EE /* Canvas */,
 				17C4F56A29DCC5E50016D74C /* PlantInfo */,
-				173E026629DDFAAA007E07DF /* GaleryView.swift */,
-				179637A229DE119100C787F7 /* GaleryViewModel.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -255,23 +289,13 @@
 		4787B88829D368FA00BBC7EE /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1789C60529DE576000BA9F49 /* Cards */,
+				179637A529DE562400C787F7 /* Buttons */,
 				4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */,
 				4787B88B29D36B1700BBC7EE /* ExpandableView.swift */,
-				4787B89C29D375EB00BBC7EE /* DoneButton.swift */,
-				47F7D28A29D61FEE00D54D01 /* SaveButton.swift */,
 				47F7D28E29D6219300D54D01 /* TextAndConfirmationButtons.swift */,
-				172EA41029DBB9F0006AC9E6 /* BackButton.swift */,
-				172EA40C29DB4731006AC9E6 /* CardObservative.swift */,
-				EBE180DA29DCB59000336477 /* CardImaginativeCarousel.swift */,
-				EBE180DE29DCC48200336477 /* CardImaginative.swift */,
-				17C4F56129DCB5710016D74C /* Plant Info */,
-				824CC2DC29DC9C2600DC2A4E /* CardMainTrivia.swift */,
 				822E0A0029DCA64F005B311F /* ImageMainTrivia.swift */,
-				822E0A0429DCBC47005B311F /* CardCTAMainTrivia.swift */,
-				822E0A0229DCAB42005B311F /* CTAButton.swift */,
 				173E80FF29DE09B8005B7253 /* BackgroundView.swift */,
-				EBB272AD29DDF8FE00811137 /* ArrowButton.swift */,
-				EBB272AF29DE07F800811137 /* CardObservativeHome.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -419,6 +443,7 @@
 				822E0A0329DCAB42005B311F /* CTAButton.swift in Sources */,
 				4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */,
 				172EA41129DBB9F0006AC9E6 /* BackButton.swift in Sources */,
+				179637A929DE56C800C787F7 /* GaleryView.swift in Sources */,
 				17C4F56C29DD0E410016D74C /* NaturiaSecundaryFont.swift in Sources */,
 				4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */,
 				EBB272B029DE07F800811137 /* CardObservativeHome.swift in Sources */,
@@ -436,7 +461,6 @@
 				173E810029DE09B8005B7253 /* BackgroundView.swift in Sources */,
 				179637A329DE119100C787F7 /* GaleryViewModel.swift in Sources */,
 				170F210129D607E4002363FB /* Plant.swift in Sources */,
-				173E026729DDFAAA007E07DF /* GaleryView.swift in Sources */,
 				4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */,
 				17601E1B29DDF31100A82898 /* PlantInfoViewModel.swift in Sources */,
 				EB18AF0729D4C19600D73821 /* ContentView.swift in Sources */,
