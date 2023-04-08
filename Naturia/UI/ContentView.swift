@@ -9,26 +9,31 @@ import Foundation
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var navigationManager: NavigationManager = NavigationManager()
+    
     var body: some View {
-        NavigationStack {
-            appView
-        }
+        
+        HomeView()
+        // Usando a view atual como conteúdo da tela
+//        navigationManager.currentView()
+        
+
     }
     
-    private var appView: some View {
-        HomeView().navigationDestination(for: Routes.self) { route in
-            switch route {
-            case .home:
-                HomeView()
-            case .canvas:
-                CanvasView()
-            }
-        }
-    }
+    //    private var appView: some View {
+    //        HomeView().navigationDestination(for: Routes.self) { route in
+    //            switch route {
+    //            case .home:
+    //                HomeView()
+    //            case .canvas:
+    //                CanvasView()
+    //            }
+    //        }
+    //    }
 }
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var preview: some View {
-//        ContentView()
-//    }
-//}
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
