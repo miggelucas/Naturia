@@ -8,6 +8,16 @@
 import Foundation
 import SwiftUI
 
+struct ChildComponentSizePreferenceKey: PreferenceKey {
+    typealias Value = CGSize
+    
+    static var defaultValue: CGSize = .zero
+    
+    static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
+        value = nextValue()
+    }
+}
+
 struct CardImaginativeCarousel: View {
     
     @Binding var index: Int
@@ -15,6 +25,7 @@ struct CardImaginativeCarousel: View {
     let onTapArrowLeft: () -> Void
     let onTapArrowRight: () -> Void
     let onTapButton: () -> Void
+    @State private var childComponentSize: CGSize = .zero
     
     var body: some View {
         TabView(selection: $index) {
@@ -24,22 +35,32 @@ struct CardImaginativeCarousel: View {
                         journeyTitle: "Jornada Criativa",
                         journeyProvocation: journeys[i].mainProvocation,
                         journeyImage: journeys[i].imageReference)
+                    .background(GeometryReader { geometry in
+                                        Color.clear
+                                            .preference(key: ChildComponentSizePreferenceKey.self, value: geometry.size)
+                                    })
+                                    .onPreferenceChange(ChildComponentSizePreferenceKey.self) { size in
+                                        self.childComponentSize = size
+                                    }
                     .overlay(
                         VStack() {
                             HStack {
                                 ArrowButton(buttonType: .left, onTap: onTapArrowLeft)
+                                    .padding(.leading, Responsive.scaleWidth(s: -29))
                                 Spacer()
                                 ArrowButton(buttonType: .right, onTap: onTapArrowRight)
+                                    .padding(.trailing, Responsive.scaleWidth(s: -29))
                             }
                         }
                     )
                     .overlay(
-                        CTAButton(buttonType: .desenhar, actionForButton: onTapButton), alignment: .bottom)
+                        CTAButton(cardType: .desenhar, actionForButton: onTapButton)
+                            .padding(.bottom, Responsive.scaleHeight(s: -24.5)), alignment: .bottom)
                 }
             }
         }
-        
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        .frame(width: childComponentSize.width + Responsive.scaleWidth(s: 58), height: childComponentSize.height + Responsive.scaleHeight(s: 50))
     }
 }
 

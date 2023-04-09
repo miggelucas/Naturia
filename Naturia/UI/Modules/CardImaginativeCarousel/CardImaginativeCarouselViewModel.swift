@@ -31,7 +31,7 @@ final class CardImaginativeCarouselViewModel: ObservableObject {
     }
     
     func onTapButton() {
-        
+        print("onTapButton CardImaginativeCarouselViewModel")
     }
     
     private func getJourneys() -> [ImaginativeJourney]{
