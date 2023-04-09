@@ -9,10 +9,11 @@ import Foundation
 import SwiftUI
 
 class NavigationManager: ObservableObject {
-    @Published var stack: [any View] = [HomeView()]
+    static let shared = NavigationManager()
+    @Published var stack: [any View] = []
     
     func push<Content: View>(_ view: Content) {
-        stack.append(AnyView(view))
+        stack.append(view)
     }
     
     func pop() {

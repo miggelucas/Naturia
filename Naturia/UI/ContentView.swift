@@ -9,27 +9,34 @@ import Foundation
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var navigationManager: NavigationManager = NavigationManager()
+    @ObservedObject private var navigationManager = NavigationManager.shared
+    @Environment(\.presentationMode) private var presentationMode
     
-    var body: some View {
+    @ViewBuilder
+    private var currentView: some View {
+        Group {
+            if let view = navigationManager.stack.last {
+                switch view {
+                case let galleryView as GaleryView:
+                    galleryView
+                default:
+                    HomeView()
+                }
+                
+            } else {
+                HomeView()
+            }
+        }
         
-        HomeView()
-        // Usando a view atual como conteúdo da tela
-//        navigationManager.currentView()
-        
-
     }
     
-    //    private var appView: some View {
-    //        HomeView().navigationDestination(for: Routes.self) { route in
-    //            switch route {
-    //            case .home:
-    //                HomeView()
-    //            case .canvas:
-    //                CanvasView()
-    //            }
-    //        }
-    //    }
+    var body: some View {
+        NavigationView {
+            currentView
+                .navigationViewStyle(.stack)
+        }
+        .navigationViewStyle(.stack)
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

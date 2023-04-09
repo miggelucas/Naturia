@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct CardObservativeHomeView: View {
-
     @ObservedObject private var viewModel = CardObservativeHomeViewModel()
        
     var body: some View {
