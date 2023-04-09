@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct BackgroundView: View {
+    
+    enum IllustrationType{
+        case conquista, review
+    }
+    
+    var illustrationType: IllustrationType?
+    
     var body: some View {
         ZStack {
             
@@ -18,6 +25,16 @@ struct BackgroundView: View {
             Image("texturaBackground")
                 .resizable()
                 .opacity(0.8)
+            if let illustrationType = illustrationType{
+                switch illustrationType{
+                case .conquista:
+                    Image("IlustracoesConquista")
+                        .resizable()
+                        .frame(width: .infinity, height: .infinity)
+                case .review:
+                    Image("IlustracoesReview")
+                }
+            }
         }
         .ignoresSafeArea()
     }
@@ -25,6 +42,6 @@ struct BackgroundView: View {
 
 struct BackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundView()
+        BackgroundView().previewInterfaceOrientation(.landscapeLeft)
     }
 }

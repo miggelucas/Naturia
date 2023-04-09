@@ -13,27 +13,51 @@ struct ReviewView: View {
     @ObservedObject private var viewModel = ReviewViewModel()
        
     var body: some View {
-        VStack (spacing: 37){
-            HStack{
-                Spacer()
-                SaveButton()
+        ZStack {
+            
+            BackgroundView(illustrationType: .review)
+            
+            VStack (spacing: 36){
+                HStack{
+                    Spacer()
+                    SaveButton()
+                }
+                HStack {
+                    VStack(spacing: 16) {
+                        ZStack {
+                            Image("DesenhoCriativo")
+                                .resizable()
+                                .frame(width: 362, height: 252)
+                            Image("cardImage")
+                                .resizable()
+                                .frame(width: 362, height: 252)
+                        }
+                        Text("O que você imaginou")
+                            .font(Font.NaturiaSecundary(.h5))
+                    }
+                    Spacer()
+                    Image("iconSetaDireita")
+                        .padding(.bottom, 40.0)
+                    Spacer()
+                    VStack(spacing: 16) {
+                        ZStack {
+                            Image("desenhoUsuario")
+                                .resizable()
+                                .frame(width: 362, height: 252)
+                            Image("cardImage")
+                                .resizable()
+                                .frame(width: 362, height: 252)
+                        }
+                        Text("Seu desenho da planta")
+                            .font(Font.NaturiaSecundary(.h5))
+                    }
+                }
+                
+                TextAndConfirmationButtons(cardType: .grande, firstLine: "Parabéns, olha o quanto você aprendeu!", secondLine: "Quer saber mais sobre o/a [nomedaplanta]?", firstButtonType: .sim, secondButtonType: .agoranao, actionForFirstButton: {}, actionForSecondButton: {})
+                    .padding(.top, 19)
             }
-            HStack {
-                Image("plantinha")
-                    .resizable()
-                    .frame(width: 362, height: 430)
-                Spacer()
-                Text(">")
-                    .font(.system(size: 100))
-                Spacer()
-                Image("plantinha")
-                    .resizable()
-                    .frame(width: 362, height: 430)
-            }
-            TextAndConfirmationButtons()
-                .padding(.top, 19)
+            .frame(width: 874)
         }
-        .frame(width: 874)
     }
 
 }
