@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 class GaleryViewModel: ObservableObject {
+
+    var navigationManager: NavigationManager?
     
     enum Mode {
         case plants, draws
@@ -19,24 +22,7 @@ class GaleryViewModel: ObservableObject {
     
     @Published var mode: Mode
     
-    var journeys: [Journey] = [
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false)
-    ]
+    var journeys: [Journey]
     
     var completedJourneys: [Journey] {
         journeys.filter { journey in
@@ -54,14 +40,34 @@ class GaleryViewModel: ObservableObject {
         }
     }
     
-    init(journeys: [Journey], mode: GaleryViewModel.Mode = .draws) {
+    init(journeys: [Journey] = [
+        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
+        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
+        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
+        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false)
+    ], mode: GaleryViewModel.Mode = .draws) {
         self.journeys = journeys
         self.mode = mode
     }
     
+    func backButtonPressed() {
+        navigationManager!.path.removeLast()
+    }
     
-    func itemPressed() {
-        
+    func itemPressed(for jorney: Journey) {
+        navigationManager!.path.append(jorney)
     }
     
     func rightArrowPressed() {

@@ -11,6 +11,7 @@ class PlantInfoViewModel: ObservableObject {
     
     @Published var journey: Journey
     @Published var plant: Plant
+    var navigationManager: NavigationManager?
     
     init(journey: Journey) {
         self.journey = journey
@@ -19,6 +20,7 @@ class PlantInfoViewModel: ObservableObject {
     
     
     func backButtonPressed() {
+        navigationManager?.path.removeLast()
         // should return to home
     }
     
