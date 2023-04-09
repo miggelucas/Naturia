@@ -30,6 +30,8 @@
 		17C4F56929DCC5E00016D74C /* PlantInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56829DCC5E00016D74C /* PlantInfoView.swift */; };
 		17C4F56C29DD0E410016D74C /* NaturiaSecundaryFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56B29DD0E410016D74C /* NaturiaSecundaryFont.swift */; };
 		17C4F57329DD149D0016D74C /* NaturaPrimaryFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F57229DD149D0016D74C /* NaturaPrimaryFont.swift */; };
+		17E9251729E233BE009FB71E /* DrawImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9251629E233BE009FB71E /* DrawImageView.swift */; };
+		17E9251929E2391E009FB71E /* CardExpandedDrawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9251829E2391E009FB71E /* CardExpandedDrawn.swift */; };
 		47185D8B29DE0757008611D6 /* ConquistaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D8829DE0757008611D6 /* ConquistaView.swift */; };
 		47185D8C29DE0757008611D6 /* ConquistaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D8929DE0757008611D6 /* ConquistaViewModel.swift */; };
 		47185D8D29DE0757008611D6 /* Conquista.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D8A29DE0757008611D6 /* Conquista.swift */; };
@@ -99,6 +101,8 @@
 		17C4F57029DD13230016D74C /* QuisasStandard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "QuisasStandard-Regular.otf"; sourceTree = "<group>"; };
 		17C4F57129DD13B10016D74C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		17C4F57229DD149D0016D74C /* NaturaPrimaryFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturaPrimaryFont.swift; sourceTree = "<group>"; };
+		17E9251629E233BE009FB71E /* DrawImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawImageView.swift; sourceTree = "<group>"; };
+		17E9251829E2391E009FB71E /* CardExpandedDrawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardExpandedDrawn.swift; sourceTree = "<group>"; };
 		47185D8829DE0757008611D6 /* ConquistaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquistaView.swift; sourceTree = "<group>"; };
 		47185D8929DE0757008611D6 /* ConquistaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquistaViewModel.swift; sourceTree = "<group>"; };
 		47185D8A29DE0757008611D6 /* Conquista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conquista.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 		1789C60429DE572500BA9F49 /* Galery */ = {
 			isa = PBXGroup;
 			children = (
+				17E9251629E233BE009FB71E /* DrawImageView.swift */,
 				179637A829DE56C800C787F7 /* GaleryView.swift */,
 				179637A229DE119100C787F7 /* GaleryViewModel.swift */,
 			);
@@ -237,6 +242,7 @@
 				EBE180DE29DCC48200336477 /* CardImaginative.swift */,
 				822E0A0429DCBC47005B311F /* CardCTAMainTrivia.swift */,
 				EBB272AF29DE07F800811137 /* CardObservativeHome.swift */,
+				17E9251829E2391E009FB71E /* CardExpandedDrawn.swift */,
 				824CC2DC29DC9C2600DC2A4E /* CardMainTrivia.swift */,
 				17C4F56129DCB5710016D74C /* Plant Info */,
 			);
@@ -518,6 +524,7 @@
 				17C4F56C29DD0E410016D74C /* NaturiaSecundaryFont.swift in Sources */,
 				4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */,
 				47185D8C29DE0757008611D6 /* ConquistaViewModel.swift in Sources */,
+				17E9251729E233BE009FB71E /* DrawImageView.swift in Sources */,
 				EBB272B029DE07F800811137 /* CardObservativeHome.swift in Sources */,
 				47F7D28929D61F7A00D54D01 /* Review.swift in Sources */,
 				824CC2DB29DC982400DC2A4E /* MiniInfosView.swift in Sources */,
@@ -544,6 +551,7 @@
 				822E0A0129DCA64F005B311F /* ImageMainTrivia.swift in Sources */,
 				EB18AF0329D4B00600D73821 /* HomeViewModel.swift in Sources */,
 				EB18AF0429D4B00600D73821 /* Home.swift in Sources */,
+				17E9251929E2391E009FB71E /* CardExpandedDrawn.swift in Sources */,
 				EB18AEFE29D4AF9C00D73821 /* Routes.swift in Sources */,
 				EBE180E529DCE04B00336477 /* CardImaginativeCarouselViewModel.swift in Sources */,
 				172EA40929DB46E7006AC9E6 /* ObservatoryRepositoryView.swift in Sources */,

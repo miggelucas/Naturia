@@ -23,7 +23,7 @@ struct ObservatoryRepositoryView: View {
     var body: some View {
         
         ZStack {
-            Color("backgroundColor")
+            BackgroundView()
             
             VStack {
                 HStack {
@@ -36,11 +36,12 @@ struct ObservatoryRepositoryView: View {
                 
                 VStack(spacing: 16) {
                     Text("Jornada Observativa")
-                        .font(.custom("Montserrat", fixedSize: 50))
+                        .font(Font.NaturiaPrimary(.h1))
                     
                     Text("Escolha alguma das plantas abaixo e vá ao mundo para desenhá-la")
-                        .font(.custom("Montserrat", fixedSize: 20))
+                        .font(Font.NaturiaSecundary(.Subtitle))
                 }
+                .padding(.top, -60)
                 .padding(.bottom, 48)
                 
                 switch viewModel.state {
@@ -62,8 +63,7 @@ struct ObservatoryRepositoryView: View {
                     Spacer()
                     
                     Text(viewModel.textForEmptyState)
-                        .font(.custom("Montserrat", fixedSize: 20)
-                        )
+                        .font(Font.NaturiaSecundary(.Subtitle))
                     
                     Spacer()
                     

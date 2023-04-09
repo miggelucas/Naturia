@@ -18,7 +18,7 @@ struct PlantInfoView: View {
     var body: some View {
         
         ZStack {
-            Color("backgroundColor")
+            BackgroundView()
             
             VStack {
                 
@@ -109,6 +109,6 @@ struct PlantInfoView: View {
 
 struct PlantInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        PlantInfoView(viewModel: PlantInfoViewModel(journey: ObservativeJourney.placeholderObservativeJourney(name: "asdasd")))
+        PlantInfoView(viewModel: PlantInfoViewModel(journey: ObservativeJourney.placeholderObservativeJourney(name: "asdasd"))).previewInterfaceOrientation(.landscapeLeft)
     }
 }
