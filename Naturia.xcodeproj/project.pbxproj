@@ -22,6 +22,7 @@
 		1768ACE729CCE86A002703C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACE629CCE86A002703C5 /* Assets.xcassets */; };
 		1768ACEB29CCE86A002703C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */; };
 		1789C60729DE595F00BA9F49 /* CardGaleryDrawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1789C60629DE595F00BA9F49 /* CardGaleryDrawn.swift */; };
+		178B81B829E2641B009E1D10 /* CardObservativeHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178B81B729E2641B009E1D10 /* CardObservativeHome.swift */; };
 		179637A329DE119100C787F7 /* GaleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179637A229DE119100C787F7 /* GaleryViewModel.swift */; };
 		179637A929DE56C800C787F7 /* GaleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179637A829DE56C800C787F7 /* GaleryView.swift */; };
 		17C4F56329DCB5900016D74C /* CardPlantDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */; };
@@ -66,7 +67,6 @@
 		EB8C01D229E0936B00B286A3 /* CardGalleryHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C01CF29E0936B00B286A3 /* CardGalleryHomeView.swift */; };
 		EB8C01D329E0936B00B286A3 /* CardGalleryHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C01D029E0936B00B286A3 /* CardGalleryHomeViewModel.swift */; };
 		EBB272AE29DDF8FE00811137 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB272AD29DDF8FE00811137 /* ArrowButton.swift */; };
-		EBB272B029DE07F800811137 /* CardObservativeHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB272AF29DE07F800811137 /* CardObservativeHome.swift */; };
 		EBE180DB29DCB59000336477 /* CardImaginativeCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE180DA29DCB59000336477 /* CardImaginativeCarousel.swift */; };
 		EBE180DF29DCC48200336477 /* CardImaginative.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE180DE29DCC48200336477 /* CardImaginative.swift */; };
 		EBE180E429DCE04B00336477 /* CardImaginativeCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE180E129DCE04B00336477 /* CardImaginativeCarouselView.swift */; };
@@ -91,6 +91,7 @@
 		1768ACE829CCE86A002703C5 /* Naturia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Naturia.entitlements; sourceTree = "<group>"; };
 		1768ACEA29CCE86A002703C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1789C60629DE595F00BA9F49 /* CardGaleryDrawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGaleryDrawn.swift; sourceTree = "<group>"; };
+		178B81B729E2641B009E1D10 /* CardObservativeHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardObservativeHome.swift; sourceTree = "<group>"; };
 		179637A229DE119100C787F7 /* GaleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryViewModel.swift; sourceTree = "<group>"; };
 		179637A829DE56C800C787F7 /* GaleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryView.swift; sourceTree = "<group>"; };
 		17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantDescriptionView.swift; sourceTree = "<group>"; };
@@ -137,7 +138,6 @@
 		EB8C01CF29E0936B00B286A3 /* CardGalleryHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGalleryHomeView.swift; sourceTree = "<group>"; };
 		EB8C01D029E0936B00B286A3 /* CardGalleryHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGalleryHomeViewModel.swift; sourceTree = "<group>"; };
 		EBB272AD29DDF8FE00811137 /* ArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
-		EBB272AF29DE07F800811137 /* CardObservativeHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardObservativeHome.swift; path = ../CardObservativeHome.swift; sourceTree = "<group>"; };
 		EBE180DA29DCB59000336477 /* CardImaginativeCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImaginativeCarousel.swift; sourceTree = "<group>"; };
 		EBE180DE29DCC48200336477 /* CardImaginative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImaginative.swift; sourceTree = "<group>"; };
 		EBE180E129DCE04B00336477 /* CardImaginativeCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImaginativeCarouselView.swift; sourceTree = "<group>"; };
@@ -241,8 +241,8 @@
 				EBE180DA29DCB59000336477 /* CardImaginativeCarousel.swift */,
 				EBE180DE29DCC48200336477 /* CardImaginative.swift */,
 				822E0A0429DCBC47005B311F /* CardCTAMainTrivia.swift */,
-				EBB272AF29DE07F800811137 /* CardObservativeHome.swift */,
 				17E9251829E2391E009FB71E /* CardExpandedDrawn.swift */,
+				178B81B729E2641B009E1D10 /* CardObservativeHome.swift */,
 				824CC2DC29DC9C2600DC2A4E /* CardMainTrivia.swift */,
 				17C4F56129DCB5710016D74C /* Plant Info */,
 			);
@@ -524,8 +524,8 @@
 				17C4F56C29DD0E410016D74C /* NaturiaSecundaryFont.swift in Sources */,
 				4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */,
 				47185D8C29DE0757008611D6 /* ConquistaViewModel.swift in Sources */,
+				178B81B829E2641B009E1D10 /* CardObservativeHome.swift in Sources */,
 				17E9251729E233BE009FB71E /* DrawImageView.swift in Sources */,
-				EBB272B029DE07F800811137 /* CardObservativeHome.swift in Sources */,
 				47F7D28929D61F7A00D54D01 /* Review.swift in Sources */,
 				824CC2DB29DC982400DC2A4E /* MiniInfosView.swift in Sources */,
 				4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */,

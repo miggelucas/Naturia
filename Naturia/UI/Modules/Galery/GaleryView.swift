@@ -16,9 +16,11 @@ struct GaleryView: View {
     }
     
     
-    let gridLayout = [GridItem(.flexible()),
-                      GridItem(.flexible()),
-                      GridItem(.flexible())]
+//    let gridLayout = [GridItem(.flexible()),
+//                      GridItem(.flexible()),
+//                      GridItem(.flexible())]
+    
+    let gridLayout = [GridItem(.adaptive(minimum: 280))]
     
     
     var body: some View {

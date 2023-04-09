@@ -16,9 +16,12 @@ struct ObservatoryRepositoryView: View {
     }
     
     
-    let gridLayout = [GridItem(.flexible()),
-                      GridItem(.flexible()),
-                      GridItem(.flexible())]
+//    let gridLayout = [GridItem(.flexible()),
+//                      GridItem(.flexible()),
+//                      GridItem(.flexible())]
+    
+    // layout responsivo!
+    let gridLayout = [GridItem(.adaptive(minimum: 280))]
     
     var body: some View {
         
