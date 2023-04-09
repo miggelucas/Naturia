@@ -15,33 +15,19 @@ struct HomeView: View {
     
     var body: some View {
         VStack {
+            Spacer()
             VStack {
                 CardImaginativeCarouselView()
-                
+                Spacer().frame(height: Responsive.scaleWidth(s: 56))
                 HStack(alignment: .bottom) {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("Jornada Observativa")
-                                .font(.custom("Montserrat", size: 32))
-                                .padding(EdgeInsets(top: 0, leading: 0, bottom: Responsive.scaleHeight(s: 8), trailing: 0))
-                            Text("Explore as plantas por análise presencial!")
-                                .font(.system(size: Responsive.scaleWidth(s: 20)))
-                        }
-                        .padding(EdgeInsets(top: Responsive.scaleHeight(s: 32), leading: Responsive.scaleWidth(s: 40), bottom: Responsive.scaleHeight(s: 32), trailing: Responsive.scaleWidth(s: 40)))
-        
-                    }
-                    .background(Color.white)
                     Spacer()
-                    HStack {
-                        Text("Galeria")
-                            .font(.custom("Montserrat", size: 32))
-                           
-                    }
-                    .padding(EdgeInsets(top: Responsive.scaleHeight(s: 55), leading: Responsive.scaleWidth(s: 60), bottom: Responsive.scaleHeight(s: 52), trailing: Responsive.scaleWidth(s: 60)))
-                    .background(Color.white)
+                    CardObservativeHomeView()
+                    Spacer().frame(width: Responsive.scaleWidth(s: 32))
+                    CardGalleryHomeView()
+                    Spacer()
                 }
             }
-
+            Spacer()
         }
         .frame(maxHeight: .infinity)
         .background(LinearGradient(
