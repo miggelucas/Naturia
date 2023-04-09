@@ -29,3 +29,19 @@ struct Drawn: Hashable {
         lhs.id == rhs.id
     }
 }
+
+extension Drawn {
+    static func DrawnPlaceholder(type: DrawnType) -> Drawn {
+        switch type {
+        case .imaginative:
+           return Drawn(image: Image("DesenhoCriativo"), type: .imaginative)
+            
+            
+        case .observative:
+            return Drawn(image: Image("desenhoUsuario"), type: .observative)
+        }
+        
+        
+    }
+    
+}
