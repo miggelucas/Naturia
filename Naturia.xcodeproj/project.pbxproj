@@ -216,6 +216,7 @@
 		1789C60429DE572500BA9F49 /* Galery */ = {
 			isa = PBXGroup;
 			children = (
+				17E9251629E233BE009FB71E /* DrawImageView.swift */,
 				179637A829DE56C800C787F7 /* GaleryView.swift */,
 				179637A229DE119100C787F7 /* GaleryViewModel.swift */,
 			);
@@ -324,7 +325,6 @@
 				EB18AF0529D4B02600D73821 /* Home */,
 				4787B89329D36B5C00BBC7EE /* Canvas */,
 				17C4F56A29DCC5E50016D74C /* PlantInfo */,
-				17E9251629E233BE009FB71E /* DrawImageView.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
