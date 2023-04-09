@@ -19,7 +19,24 @@ class GaleryViewModel: ObservableObject {
     
     @Published var mode: Mode
     
-    let journeys: [Journey]
+    var journeys: [Journey] = [
+        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
+        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
+        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
+        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false)
+    ]
     
     var completedJourneys: [Journey] {
         journeys.filter { journey in
