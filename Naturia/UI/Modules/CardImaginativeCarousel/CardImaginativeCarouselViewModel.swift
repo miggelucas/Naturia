@@ -13,6 +13,7 @@ import SwiftUI
 final class CardImaginativeCarouselViewModel: ObservableObject {
     @Published var cardIndex: Int = 0
     @Published var journeys: [ImaginativeJourney] = []
+    var navigationManager: NavigationManager?
     
     init() {
         journeys = getJourneys()
@@ -31,7 +32,9 @@ final class CardImaginativeCarouselViewModel: ObservableObject {
     }
     
     func onTapButton() {
-        print("onTapButton CardImaginativeCarouselViewModel")
+        if let safeNavigationManager = navigationManager{
+            safeNavigationManager.path.append(Routes.canvas)
+        }
     }
     
     private func getJourneys() -> [ImaginativeJourney]{

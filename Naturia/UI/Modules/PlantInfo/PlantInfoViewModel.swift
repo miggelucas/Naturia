@@ -20,8 +20,9 @@ class PlantInfoViewModel: ObservableObject {
     
     
     func backButtonPressed() {
-        navigationManager?.path.removeLast()
-        // should return to home
+        if let safeNavigationManager = navigationManager{
+            safeNavigationManager.popToRoot()
+        }
     }
     
     
