@@ -17,7 +17,16 @@ final class CanvasViewModel: ObservableObject {
     var navigationManager: NavigationManager?
     
     @Published var example: String?
-    @Published var toggleType: ExpandableViewType = .provocacao
+    var toggleType: ExpandableViewType {
+        switch canvasRole {
+        case .imaginative1:
+            return .provocacao
+        case .imaginative2:
+            return .referencia
+        case .observative:
+            return .referencia 
+        }
+    }
     @Published var userDraw: UIImage = UIImage()
     @Published var canvasView = PKCanvasView()
     @Published var provocacoes: [String] = ["Provocacao 1 aaaaaaaaaaa", "Provocacao 2 aaaaaaaaaaa", "Provocacao 3 aaaaaaaaaaa"]
@@ -53,12 +62,15 @@ final class CanvasViewModel: ObservableObject {
         receivedJourney?.userDrawns.append(newDrawn)
         
         safeNavManage.currentJourney = receivedJourney
+        print(self.canvasRole)
         
         switch canvasRole {
         case .imaginative1:
             safeNavManage.path.append(CanvasRoutes.miniInfo)
+                print("Caiu na miniInfo")
         case .imaginative2:
             safeNavManage.path.append(CanvasRoutes.review)
+            print("caiy aqyu")
         case .observative:
             safeNavManage.path.append(CanvasRoutes.conquista)
         }

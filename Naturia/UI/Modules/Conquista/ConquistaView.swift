@@ -43,11 +43,11 @@ struct ConquistaView: View {
                                            secondLine: "Deseja conhecer mais sobre ela?",
                                            firstButtonType: .sim,
                                            secondButtonType: .agoranao,
-                                           actionForFirstButton: {
+                                           actionForGreenButton: {
                     viewModel.confirmativeButtonPressed()
                     
                 },
-                                           actionForSecondButton: {
+                                           actionForWhiteButton: {
                     viewModel.dismissButtonPressed()
                 })
             }

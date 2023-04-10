@@ -78,7 +78,7 @@ struct ReviewView: View {
                     }
                 }
                 
-                TextAndConfirmationButtons(cardType: .grande, firstLine: "Parabéns, olha o quanto você aprendeu!", secondLine: "Quer saber mais sobre o/a [nomedaplanta]?", firstButtonType: .sim, secondButtonType: .agoranao, actionForFirstButton: {}, actionForSecondButton: {})
+                TextAndConfirmationButtons(cardType: .grande, firstLine: "Parabéns, olha o quanto você aprendeu!", secondLine: "Quer saber mais sobre o/a [nomedaplanta]?", firstButtonType: .sim, secondButtonType: .agoranao, actionForGreenButton: {}, actionForWhiteButton: {})
                     .padding(.top, 19)
             }
             .frame(width: 874)
