@@ -12,4 +12,5 @@ import SwiftUI
 
 final class ConquistaViewModel: ObservableObject {
     @Published var example: String?
+    var navigationManager: NavigationManager?
 }

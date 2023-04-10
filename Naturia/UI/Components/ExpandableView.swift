@@ -14,59 +14,77 @@ struct ExpandableView: View {
     @State var viewType: ExpandableViewType
     @State var provocacoes: [String]?
     @State var referencia: String?
+    @State var frameDaView: CGSize?
     
     var body: some View {
-        VStack (alignment: .leading, spacing: 24){
-            Button(action: { self.isExpanded.toggle() }) {
-                HStack{
-                    Text("\(getTitle())")
-                        .font(.headline)
-                        .foregroundColor(.black)
-                    Spacer()
-                    if isExpanded{
-                        Text("X")
-                            .font(.headline)
-                            .foregroundColor(.black)
-                    }else{
-                        Text("v")
-                            .font(.headline)
-                            .foregroundColor(.black)
+        ZStack {
+            if isExpanded{
+                Image("contornoToggleAberto")
+                    .onAppear{
+                        self.frameDaView = CGSize(width: 375, height: 204)
                     }
-                }
+            }else{
+                Image("contornoToggleFechado")
+                    .onAppear{
+                        self.frameDaView = CGSize(width: 200, height: 56)
+                    }
             }
-            
-            if isExpanded {
-                
-                switch viewType{
-                    
-                case .referencia:
-                    Image(referencia ?? "")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                    
-                case .provocacao:
-                    VStack(alignment:.leading ,spacing: 8) {
-                        if let provocacoes = provocacoes{
-                            ForEach(provocacoes, id: \.self){ provocacao in
-                                Text(provocacao)
-                            }
+            VStack (alignment: .leading, spacing: 24){
+                Button(action: { self.isExpanded.toggle() }) {
+                    HStack{
+                        Text("\(getTitle())")
+                            .font(Font.NaturiaSecundary(.h5))
+                            .foregroundColor(.black)
+                        Spacer()
+                        if isExpanded{
+                            Image("iconFechar")
                         }else{
-                            Text("Poxa nenhuma provocação por aqui! Erro: EVPROV1")
+                            Image("iconSetaBaixo")
                         }
                     }
-                    
-                    
                 }
+                
+                if isExpanded {
+                    
+                    switch viewType{
+                        
+                    case .referencia:
+                        Image(referencia ?? "")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        
+                    case .provocacao:
+                        VStack(alignment:.leading ,spacing: 8) {
+                            if let provocacoes = provocacoes{
+                                ForEach(provocacoes, id: \.self){ provocacao in
+                                    Text(provocacao)
+                                }
+                            }else{
+                                Text("Poxa nenhuma provocação por aqui! Erro: EVPROV1")
+                            }
+                        }
+                        .font(Font.NaturiaSecundary(.body))
+                        
+                        
+                    }
+                    Spacer()
+                }
+                
             }
+            .padding(20)
+            .animation(.easeInOut, value: isExpanded)
+            .frame(width: frameDaView?.width, height: frameDaView?.height)
         }
-        .animation(.easeInOut, value: isExpanded)
-        .background(.blue)
-        .frame(width: getSize().width, height: getSize().height)
         
         
     
     }
+    
+    
+    
+    
     func getTitle() -> String{
+        
         switch viewType{
         case .referencia:
             return "Referência"
@@ -90,4 +108,10 @@ struct ExpandableView: View {
         
     }
     
+}
+
+struct ExpandableView_Previews: PreviewProvider {
+    static var previews: some View {
+        ExpandableView(viewType: .provocacao)
+    }
 }

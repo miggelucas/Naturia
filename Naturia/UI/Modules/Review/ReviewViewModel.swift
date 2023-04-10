@@ -12,4 +12,7 @@ import SwiftUI
 
 final class ReviewViewModel: ObservableObject {
     @Published var example: String?
+    var navigationManager: NavigationManager?
+    
+   
 }

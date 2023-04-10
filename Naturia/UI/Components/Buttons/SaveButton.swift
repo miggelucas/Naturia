@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct SaveButton: View {
+    
     var body: some View {
-        Button {
-            
-        } label: {
-            Image("buttonBaixar")
-                .frame(width: 58.2, height: 56)
-                .foregroundColor(.blue)
-        }
-
+        Image("buttonBaixar")
+            .frame(width: 58.2, height: 56)
+            .foregroundColor(.blue)
+        
+        
     }
 }
