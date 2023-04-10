@@ -13,6 +13,7 @@ class NavigationManager: ObservableObject {
     @Published var currentObservativeJourney: ObservativeJourney?
     @Published var currentImaginativeJourney: ImaginativeJourney?
     
+    var currentJourney: Journey?
     
 //
 //    func push<Content: View>(_ view: Content) {
