@@ -16,26 +16,29 @@ struct HomeView: View {
     @State private var index = 0;
     
     var body: some View {
-        VStack {
-            Spacer()
+        ZStack {
+            BackgroundView()
             VStack {
-                CardImaginativeCarouselView()
-                Spacer().frame(height: Responsive.scaleWidth(s: 56))
-                HStack(alignment: .bottom) {
-                    Spacer()
-                    CardObservativeHomeView()
-                    Spacer().frame(width: Responsive.scaleWidth(s: 32))
-                    CardGalleryHomeView()
-                    Spacer()
+                Spacer()
+                VStack {
+                    CardImaginativeCarouselView()
+                    Spacer().frame(height: Responsive.scaleWidth(s: 56))
+                    HStack(alignment: .bottom) {
+                        Spacer()
+                        CardObservativeHomeView()
+                        Spacer().frame(width: Responsive.scaleWidth(s: 32))
+                        CardGalleryHomeView()
+                        Spacer()
+                    }
                 }
+                Spacer()
             }
-            Spacer()
-        }
-        .environmentObject(navigationManager)
+            .environmentObject(navigationManager)
         .frame(maxHeight: .infinity)
-        .background(LinearGradient(
-            colors: [Color.gray, Color.brown],
-            startPoint: .leading, endPoint: .trailing))
+        }
+//        .background(LinearGradient(
+//            colors: [Color.gray, Color.brown],
+//            startPoint: .leading, endPoint: .trailing))
     }
 }
 
