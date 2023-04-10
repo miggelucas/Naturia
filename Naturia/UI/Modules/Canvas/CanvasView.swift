@@ -9,24 +9,21 @@
 import SwiftUI
 
 struct CanvasView: View {
-    
-    
     @ObservedObject private var viewModel = CanvasViewModel()
-    
+    @EnvironmentObject var navigationManager: NavigationManager
     
     
     var body: some View {
         //Text(viewModel.example ?? "Hello World")
         ZStack(alignment: .topLeading){
+            BackgroundView()
+            
             DrawingCanvas(canvasView: $viewModel.canvasView)
             
             HStack(alignment: .top, spacing: 0) {
                 VStack(alignment: .leading, spacing: 24) {
-                    Button {
-                        
-                    } label: {
-                        Text("🔙 Voltar")
-                            .underline()
+                    BackButton(style: .back) {
+                        viewModel.backButtonPressed()
                     }
                     
                     ExpandableView(viewType: viewModel.toggleType, provocacoes: viewModel.provocacoes, referencia: viewModel.referencia)
@@ -36,12 +33,15 @@ struct CanvasView: View {
                 
                 Spacer()
                 
-                DoneButton(actionForDone: {
+                CTAButton(buttonType: .concluido, actionForButton: {
                     viewModel.doneButtonPressed()
                 })
                 .padding(.trailing, 32)
             }
             .padding(.top, 48.0)
+        }
+        .onAppear {
+            viewModel.navigationManager = navigationManager
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
@@ -53,6 +53,6 @@ struct CanvasView: View {
 
 struct Canvas_Previews: PreviewProvider {
     static var previews: some View {
-        CanvasView()
+        CanvasView().previewInterfaceOrientation(.landscapeLeft).environmentObject(NavigationManager())
     }
 }
