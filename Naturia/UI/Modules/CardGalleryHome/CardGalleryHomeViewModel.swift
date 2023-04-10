@@ -12,6 +12,7 @@ import SwiftUI
 
 final class CardGalleryHomeViewModel: ObservableObject {
     @Published var title: String = ""
+    var navigationManager: NavigationManager?
     
     init() {
         title = "Galeria"
@@ -19,5 +20,6 @@ final class CardGalleryHomeViewModel: ObservableObject {
     
     func onTap() {
         print("onTap CardGalleryHomeViewModel")
+        navigationManager!.path.append(Routes.galery)
     }
 }

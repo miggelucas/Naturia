@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Routes {
-    case home
+enum Routes: Hashable {
+    case galery
     case canvas
 }

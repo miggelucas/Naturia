@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PlantInfoView: View {
+    @EnvironmentObject var navigationManager: NavigationManager
     
     let viewModel: PlantInfoViewModel
     
@@ -26,6 +27,7 @@ struct PlantInfoView: View {
                 HStack {
                     BackButton(style: .backToHome, actionForButton: {
                         viewModel.backButtonPressed()
+                        print("entrou aqui")
                     })
                     
                     Spacer()
@@ -104,6 +106,10 @@ struct PlantInfoView: View {
             
         }
         .ignoresSafeArea()
+        .navigationBarBackButtonHidden(true)
+        .onAppear {
+            self.viewModel.navigationManager = self.navigationManager
+        }
     }
 }
 
