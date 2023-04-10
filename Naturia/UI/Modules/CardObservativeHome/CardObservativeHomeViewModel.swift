@@ -14,12 +14,17 @@ final class CardObservativeHomeViewModel: ObservableObject {
     @Published var title: String = ""
     @Published var description: String = ""
     
+    var navigationManager: NavigationManager?
+    
     init() {
         title = "Title"
         description = "Description"
     }
     
     func onTap() {
-        print("onTap CardObservativeHomeViewModel")
+        if let safeNavManager = navigationManager {
+            safeNavManager.path.append(Routes.observativeRepo)
+        }
+        
     }
 }

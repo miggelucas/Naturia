@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ObservatoryRepositoryView: View {
+    @EnvironmentObject var navigationManager: NavigationManager
+    @ObservedObject var viewModel: ObservatoryRepositoryViewModel
     
-    let viewModel: ObservatoryRepositoryViewModel
     
     init(viewModel: ObservatoryRepositoryViewModel = ObservatoryRepositoryViewModel()) {
         self.viewModel = viewModel
@@ -76,7 +77,11 @@ struct ObservatoryRepositoryView: View {
             .padding(.horizontal, 32)
             .padding(.top, 48)
         }
+        .onAppear {
+            viewModel.navigationManager = navigationManager
+        }
         .ignoresSafeArea()
+        .navigationBarBackButtonHidden(true)
     }
 }
 

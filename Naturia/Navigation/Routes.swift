@@ -10,4 +10,5 @@ import Foundation
 enum Routes: Hashable {
     case galery
     case canvas
+    case observativeRepo
 }

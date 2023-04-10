@@ -10,6 +10,8 @@ import SwiftUI
 
 class ObservatoryRepositoryViewModel: ObservableObject {
     
+    var navigationManager: NavigationManager?
+    
     enum state {
         case empty, content
     }
@@ -31,6 +33,9 @@ class ObservatoryRepositoryViewModel: ObservableObject {
     let textForEmptyState: String = "Sem jornadas no momento =("
     
     func backButtonPressed() {
+        if let safeNavManager = navigationManager {
+            safeNavManager.path.removeLast()
+        }
         print("user pressed to go back to homeScreen")
     }
     

@@ -23,6 +23,8 @@ struct ContentView: View {
                     case .galery:
                         GaleryView()
                         
+                    case .observativeRepo:
+                        ObservatoryRepositoryView()
                     }
                     
                 }
