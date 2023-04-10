@@ -14,8 +14,8 @@ struct TextAndConfirmationButtons: View {
     var secondLine: String
     let firstButtonType: ButtonType
     var secondButtonType: ButtonType
-    let actionForFirstButton: () -> Void
-    var actionForSecondButton: () -> Void
+    let actionForGreenButton: () -> Void
+    var actionForWhiteButton: () -> Void
 
     init(cardType: CardType, firstLine: String, secondLine: String = "", firstButtonType: ButtonType, secondButtonType: ButtonType = .sim, actionForFirstButton: @escaping () -> Void, actionForSecondButton: @escaping () -> Void){
         self.cardType = cardType
@@ -23,8 +23,8 @@ struct TextAndConfirmationButtons: View {
         self.secondLine = secondLine
         self.firstButtonType = firstButtonType
         self.secondButtonType = secondButtonType
-        self.actionForFirstButton = actionForFirstButton
-        self.actionForSecondButton = actionForSecondButton
+        self.actionForGreenButton = actionForFirstButton
+        self.actionForWhiteButton = actionForSecondButton
     }
     
     var body: some View {
@@ -37,10 +37,10 @@ struct TextAndConfirmationButtons: View {
                                   secondLine: secondLine)
                 HStack (spacing: 24){
                     CTAButton(buttonType: firstButtonType) {
-                        actionForFirstButton()
+                        actionForGreenButton()
                     }
                     CTAButton(buttonType: secondButtonType) {
-                        actionForSecondButton()
+                        actionForWhiteButton()
                     }
                 }
                 
@@ -49,7 +49,7 @@ struct TextAndConfirmationButtons: View {
                                   firstLine: firstLine,
                                   secondLine: secondLine)
                 CTAButton(buttonType: firstButtonType) {
-                    actionForFirstButton()
+                    actionForGreenButton()
                 }
             }
         }

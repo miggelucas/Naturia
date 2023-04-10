@@ -163,7 +163,7 @@ struct GaleryView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationDestination(for: Journey.self) { journey in
-            PlantInfoView(viewModel: PlantInfoViewModel(journey: journey), backButtonStyle: .back)
+            PlantInfoView(viewModel: PlantInfoViewModel(journey: journey, buttonStyle: .back))
         }
         .navigationDestination(for: CardGaleryDrawn.self) { card in
             DrawImageView(drawn: card.drawn, name: card.text)

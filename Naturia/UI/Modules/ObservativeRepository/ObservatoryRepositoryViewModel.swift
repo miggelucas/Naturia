@@ -54,6 +54,7 @@ class ObservatoryRepositoryViewModel: ObservableObject {
     
     func journeyPressed(_ journey: ObservativeJourney) {
         if let safeNavManager = navigationManager {
+            safeNavManager.currentJourney = journey
             safeNavManager.path.append(journey)
         }
         print("User pressed in jorney \(journey.name)")

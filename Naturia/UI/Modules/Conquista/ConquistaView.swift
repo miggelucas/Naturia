@@ -43,11 +43,20 @@ struct ConquistaView: View {
                                            secondLine: "Deseja conhecer mais sobre ela?",
                                            firstButtonType: .sim,
                                            secondButtonType: .agoranao,
-                                           actionForFirstButton: {},
-                                           actionForSecondButton: {})
+                                           actionForFirstButton: {
+                    viewModel.confirmativeButtonPressed()
+                    
+                },
+                                           actionForSecondButton: {
+                    viewModel.dismissButtonPressed()
+                })
             }
             .frame(width: 874)
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationDestination(for: Journey.self, destination: { journey in
+            PlantInfoView(viewModel: PlantInfoViewModel(journey: journey, buttonStyle: .backToHome))
+        })
         .onAppear{
             viewModel.navigationManager = navigationManager
         }

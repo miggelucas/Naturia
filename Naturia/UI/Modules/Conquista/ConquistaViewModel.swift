@@ -13,4 +13,20 @@ import SwiftUI
 final class ConquistaViewModel: ObservableObject {
     @Published var example: String?
     var navigationManager: NavigationManager?
+    
+    
+    func confirmativeButtonPressed() {
+        if let safeNavManager = navigationManager {
+            let journey = safeNavManager.currentJourney!
+            safeNavManager.path.append(journey)
+        }
+    }
+    
+    func dismissButtonPressed() {
+        if let safeNavManager = navigationManager {
+            safeNavManager.path = NavigationPath()
+        }
+    }
+    
+    
 }
