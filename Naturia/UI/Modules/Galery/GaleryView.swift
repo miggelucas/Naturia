@@ -68,7 +68,7 @@ struct GaleryView: View {
                                 LazyVGrid(columns: gridLayout, alignment: .center, spacing: 32) {
                                     ForEach(viewModel.completedJourneys, id: \.self) { jorney in
                                         Button {
-                                            viewModel.itemPressed(for: jorney)
+                                            viewModel.jorneyPressed(for: jorney)
                                             //                                                navigationManager.push(AnyView(PlantInfoView(viewModel: PlantInfoViewModel(journey: jorney))))
                                             
                                         } label: {
@@ -115,7 +115,8 @@ struct GaleryView: View {
                                         
                                         ForEach(jorney.userDrawns, id: \.self) { draw in
                                             Button {
-                                                //                                                    viewModel.itemPressed()
+                                                viewModel.drawnPressed(for: CardGaleryDrawn(drawn: draw,
+                                                                                            text: jorney.name))
                                             } label: {
                                                 CardGaleryDrawn(drawn: draw,
                                                                 text: jorney.name)
@@ -162,37 +163,41 @@ struct GaleryView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationDestination(for: Journey.self) { journey in
-            PlantInfoView(viewModel: PlantInfoViewModel(journey: journey))
+            PlantInfoView(viewModel: PlantInfoViewModel(journey: journey), backButtonStyle: .back)
         }
+        .navigationDestination(for: CardGaleryDrawn.self) { card in
+            DrawImageView(drawn: card.drawn, name: card.text)
+        }
+        
         .onAppear {
             self.viewModel.navigationManager = self.navigationManager
-        
+            
+        }
     }
-}
-
-struct GaleryView_Previews: PreviewProvider {
-    static var previews: some View {
-        GaleryView(viewModel: GaleryViewModel(journeys:  [
-            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
-            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
-            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
-            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-            ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-            ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false)
-        ],  mode: .plants
-                                             )
-        )
-        .environmentObject(NavigationManager())
+    
+    struct GaleryView_Previews: PreviewProvider {
+        static var previews: some View {
+            GaleryView(viewModel: GaleryViewModel(journeys:  [
+                ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+                ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+                ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+                ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
+                ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+                ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+                ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+                ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
+                ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+                ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+                ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+                ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
+                ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
+                ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
+                ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
+                ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false)
+            ],  mode: .plants
+                                                 )
+            )
+            .environmentObject(NavigationManager())
+        }
     }
-}
 }

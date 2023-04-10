@@ -11,9 +11,11 @@ struct PlantInfoView: View {
     @EnvironmentObject var navigationManager: NavigationManager
     
     let viewModel: PlantInfoViewModel
+    let buttonStyle: BackButton.Style
     
-    init(viewModel: PlantInfoViewModel) {
+    init(viewModel: PlantInfoViewModel, backButtonStyle: BackButton.Style = .backToHome) {
         self.viewModel = viewModel
+        self.buttonStyle = backButtonStyle
     }
     
     var body: some View {
@@ -25,7 +27,7 @@ struct PlantInfoView: View {
                 
                 // Back Button
                 HStack {
-                    BackButton(style: .backToHome, actionForButton: {
+                    BackButton(style: buttonStyle, actionForButton: {
                         viewModel.backButtonPressed()
                         print("entrou aqui")
                     })

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DrawImageView: View {
+    @EnvironmentObject var navigationManager: NavigationManager
     
     let drawn: Drawn
     let name: String
@@ -21,6 +22,7 @@ struct DrawImageView: View {
                 HStack {
                     BackButton {
                         // volta para tela de geleria
+                        navigationManager.path.removeLast()
                     }
                     Spacer()
                 }
@@ -30,6 +32,7 @@ struct DrawImageView: View {
             .padding(32)
             
         }
+        .navigationBarBackButtonHidden(true)
         .ignoresSafeArea()
     }
 }
@@ -39,5 +42,6 @@ struct DrawImageView_Previews: PreviewProvider {
         DrawImageView(drawn: Drawn.DrawnPlaceholder(type: .imaginative),
                       name: "Pé de Jambo")
         .previewInterfaceOrientation(.landscapeLeft)
+        .environmentObject(NavigationManager())
     }
 }

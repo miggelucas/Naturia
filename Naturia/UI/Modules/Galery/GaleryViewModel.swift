@@ -57,7 +57,7 @@ class GaleryViewModel: ObservableObject {
         ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
         ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
         ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false)
-    ], mode: GaleryViewModel.Mode = .draws) {
+    ], mode: GaleryViewModel.Mode = .plants) {
         self.journeys = journeys
         self.mode = mode
     }
@@ -66,8 +66,12 @@ class GaleryViewModel: ObservableObject {
         navigationManager!.path.removeLast()
     }
     
-    func itemPressed(for jorney: Journey) {
+    func jorneyPressed(for jorney: Journey) {
         navigationManager!.path.append(jorney)
+    }
+    
+    func drawnPressed(for drawCard: CardGaleryDrawn) {
+        navigationManager!.path.append(drawCard)
     }
     
     func rightArrowPressed() {
