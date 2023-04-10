@@ -80,6 +80,9 @@ struct ObservatoryRepositoryView: View {
         .onAppear {
             viewModel.navigationManager = navigationManager
         }
+        .navigationDestination(for: ObservativeJourney.self, destination: { journey in
+            CanvasView(viewModel: CanvasViewModel(canvasRole: .observative))
+        })
         .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)
     }
@@ -90,18 +93,7 @@ struct ObservatoryRepositoryView: View {
 struct ObservatoryRepositoryView_Previews: PreviewProvider {
     static var previews: some View {
         // content state view
-        ObservatoryRepositoryView(viewModel: ObservatoryRepositoryViewModel(journeyArray: [
-            ObservativeJourney.placeholderObservativeJourney(name: "Samambaia"),
-            ObservativeJourney.placeholderObservativeJourney(name: "Jiboia"),
-            ObservativeJourney.placeholderObservativeJourney(name: "Pau Brasil"),
-            ObservativeJourney.placeholderObservativeJourney(name: "Coqueiro"),
-            ObservativeJourney.placeholderObservativeJourney(name: "Mangueira"),
-            ObservativeJourney.placeholderObservativeJourney(name: "Cacto"),
-            ObservativeJourney.placeholderObservativeJourney(name: "Pé de Jaca"),
-            ObservativeJourney.placeholderObservativeJourney(name: "Espada de São Jorge"),
-            ObservativeJourney.placeholderObservativeJourney(name: "Baobá"),
-            ObservativeJourney.placeholderObservativeJourney(name: "Vitória Régia"),
-            ObservativeJourney.placeholderObservativeJourney(name: "Jambeiro")]))
+        ObservatoryRepositoryView()
         
         // empty state view
 //        ObservatoryRepositoryView()

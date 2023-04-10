@@ -13,6 +13,7 @@ import PencilKit
 
 final class CanvasViewModel: ObservableObject {
     
+    var canvasRole: CanvasRole
     var navigationManager: NavigationManager?
     
     @Published var example: String?
@@ -22,12 +23,20 @@ final class CanvasViewModel: ObservableObject {
     @Published var provocacoes: [String] = ["Provocacao 1 aaaaaaaaaaa", "Provocacao 2 aaaaaaaaaaa", "Provocacao 3 aaaaaaaaaaa"]
     @Published var referencia: String = "plantinha"
     
+    init(canvasRole: CanvasRole) {
+        self.canvasRole = canvasRole
+    }
+    
+
     func backButtonPressed(){
-        
+        if let safeNavManager = navigationManager {
+            safeNavManager.path.removeLast()
+        }
     }
     
     func doneButtonPressed() {
-        let receivedJourney = navigationManager?.currentJourney
+        guard let safeNavManage = navigationManager else { return }
+        let receivedJourney = safeNavManage.currentJourney
         var typeOfJourney: Drawn.DrawnType
         
         
@@ -43,7 +52,17 @@ final class CanvasViewModel: ObservableObject {
         let newDrawn: Drawn = Drawn(image: Image(uiImage: userDraw), type: typeOfJourney)
         receivedJourney?.userDrawns.append(newDrawn)
         
-        navigationManager?.currentJourney = receivedJourney
+        safeNavManage.currentJourney = receivedJourney
+        
+        switch canvasRole {
+        case .imaginative1:
+            safeNavManage.path.append(CanvasRoutes.miniInfo)
+        case .imaginative2:
+            safeNavManage.path.append(CanvasRoutes.review)
+        case .observative:
+            safeNavManage.path.append(CanvasRoutes.conquista)
+        }
+
     }
 
     func getImageData() -> UIImage{

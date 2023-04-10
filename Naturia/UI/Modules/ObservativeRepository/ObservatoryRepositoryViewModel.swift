@@ -24,12 +24,25 @@ class ObservatoryRepositoryViewModel: ObservableObject {
         }
     }
     
-    init(journeyArray: [ObservativeJourney] = []) {
+    init(journeyArray: [ObservativeJourney] = [
+        ObservativeJourney.placeholderObservativeJourney(name: "Samambaia"),
+        ObservativeJourney.placeholderObservativeJourney(name: "Jiboia"),
+        ObservativeJourney.placeholderObservativeJourney(name: "Pau Brasil"),
+        ObservativeJourney.placeholderObservativeJourney(name: "Coqueiro"),
+        ObservativeJourney.placeholderObservativeJourney(name: "Mangueira"),
+        ObservativeJourney.placeholderObservativeJourney(name: "Cacto"),
+        ObservativeJourney.placeholderObservativeJourney(name: "Pé de Jaca"),
+        ObservativeJourney.placeholderObservativeJourney(name: "Espada de São Jorge"),
+        ObservativeJourney.placeholderObservativeJourney(name: "Baobá"),
+        ObservativeJourney.placeholderObservativeJourney(name: "Vitória Régia"),
+        ObservativeJourney.placeholderObservativeJourney(name: "Jambeiro")
+    ]) {
         self.journeys = journeyArray
     }
     
     
     let journeys: [ObservativeJourney]
+    
     let textForEmptyState: String = "Sem jornadas no momento =("
     
     func backButtonPressed() {
@@ -40,6 +53,9 @@ class ObservatoryRepositoryViewModel: ObservableObject {
     }
     
     func journeyPressed(_ journey: ObservativeJourney) {
+        if let safeNavManager = navigationManager {
+            safeNavManager.path.append(journey)
+        }
         print("User pressed in jorney \(journey.name)")
     }
 }
