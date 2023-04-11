@@ -94,7 +94,7 @@ struct ReviewView: View, Hashable {
                 }, actionForWhiteButton: {
                     viewModel.whiteButtonPressed()
                 })
-                    .padding(.top, 19)
+                .padding(.top, 19)
             }
             .frame(width: 874)
         }
@@ -105,8 +105,8 @@ struct ReviewView: View, Hashable {
         .onAppear {
             viewModel.navigationManager = navigationManager
         }
-
-
+        
+        
     }
     
     var screenshot: some View{
@@ -148,21 +148,20 @@ struct ReviewView: View, Hashable {
                 }
             }
             .frame(width: 874)
-
             
-                
+            
+            
+            HStack{
+                Spacer()
                 HStack{
-                    Spacer()
-                    HStack{
-                        Image("Logo")
-                            .resizable()
-                            .frame(width: 38, height: 38)
-                        Text("NATURIA")
-                            .font(.system(size: 26))
-                    }.padding(.top, 48)
-                }
-            }.frame(width: 1130)
-        }
+                    Image("Logo")
+                        .resizable()
+                        .frame(width: 38, height: 38)
+                    Text("NATURIA")
+                        .font(.system(size: 26))
+                }.padding(.top, 48)
+            }
+        }.frame(width: 1130)
     }
     
     func getShareImage() -> Image{
@@ -171,8 +170,10 @@ struct ReviewView: View, Hashable {
         }
         return Image(uiImage: image)
     }
+
     
 }
+
 
 struct Review_Previews: PreviewProvider {
     static var previews: some View {
