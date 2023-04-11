@@ -46,6 +46,8 @@
 		4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89529D36B9800BBC7EE /* CanvasViewModel.swift */; };
 		4787B89929D36B9800BBC7EE /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89629D36B9800BBC7EE /* Canvas.swift */; };
 		4787B89D29D375EB00BBC7EE /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89C29D375EB00BBC7EE /* DoneButton.swift */; };
+		479EF26329E5FAB900428CC5 /* QuisasStandard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 479EF26229E5FAB900428CC5 /* QuisasStandard-Regular.ttf */; };
+		479EF26729E5FC9200428CC5 /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 479EF26629E5FC9200428CC5 /* Montserrat-VariableFont_wght.ttf */; };
 		47F7D28729D61F7A00D54D01 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F7D28429D61F7A00D54D01 /* ReviewView.swift */; };
 		47F7D28829D61F7A00D54D01 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F7D28529D61F7A00D54D01 /* ReviewViewModel.swift */; };
 		47F7D28929D61F7A00D54D01 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F7D28629D61F7A00D54D01 /* Review.swift */; };
@@ -101,7 +103,6 @@
 		17C4F56629DCBE670016D74C /* CardPlantTrivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantTrivia.swift; sourceTree = "<group>"; };
 		17C4F56829DCC5E00016D74C /* PlantInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantInfoView.swift; sourceTree = "<group>"; };
 		17C4F56B29DD0E410016D74C /* NaturiaSecundaryFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturiaSecundaryFont.swift; sourceTree = "<group>"; };
-		17C4F57029DD13230016D74C /* QuisasStandard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "QuisasStandard-Regular.otf"; sourceTree = "<group>"; };
 		17C4F57129DD13B10016D74C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		17C4F57229DD149D0016D74C /* NaturaPrimaryFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturaPrimaryFont.swift; sourceTree = "<group>"; };
 		17E9251629E233BE009FB71E /* DrawImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawImageView.swift; sourceTree = "<group>"; };
@@ -118,6 +119,8 @@
 		4787B89529D36B9800BBC7EE /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
 		4787B89629D36B9800BBC7EE /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		4787B89C29D375EB00BBC7EE /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
+		479EF26229E5FAB900428CC5 /* QuisasStandard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "QuisasStandard-Regular.ttf"; sourceTree = "<group>"; };
+		479EF26629E5FC9200428CC5 /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		47F7D28429D61F7A00D54D01 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		47F7D28529D61F7A00D54D01 /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
 		47F7D28629D61F7A00D54D01 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -285,9 +288,10 @@
 		17C4F56D29DD0E560016D74C /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				17C4F57029DD13230016D74C /* QuisasStandard-Regular.otf */,
-				17C4F56B29DD0E410016D74C /* NaturiaSecundaryFont.swift */,
+				479EF26629E5FC9200428CC5 /* Montserrat-VariableFont_wght.ttf */,
+				479EF26229E5FAB900428CC5 /* QuisasStandard-Regular.ttf */,
 				17C4F57229DD149D0016D74C /* NaturaPrimaryFont.swift */,
+				17C4F56B29DD0E410016D74C /* NaturiaSecundaryFont.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -490,6 +494,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				479EF26729E5FC9200428CC5 /* Montserrat-VariableFont_wght.ttf in Resources */,
+				479EF26329E5FAB900428CC5 /* QuisasStandard-Regular.ttf in Resources */,
 				1768ACEB29CCE86A002703C5 /* Preview Assets.xcassets in Resources */,
 				1768ACE729CCE86A002703C5 /* Assets.xcassets in Resources */,
 			);
