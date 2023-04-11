@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct MiniInfosView: View {
-    @ObservedObject private var viewModel = ReviewViewModel()
-    @EnvironmentObject private var navigationManager: NavigationManager
+    
+    
     
     var body: some View {
         ZStack {
@@ -18,6 +18,15 @@ struct MiniInfosView: View {
             
             VStack (spacing: 56) {
                 
+                HStack{
+                    BackButton {
+                        // Ação para botão
+                        print("usuario clicou em backbutton")
+                    }
+                    
+                    Spacer()
+                }
+                
                 HStack(spacing: 32) {
                     CardMainTrivia(mainTriviaContent: "aleatoria")
                     ImageMainTrivia(plantImage: Image("jiboia"))
@@ -25,7 +34,7 @@ struct MiniInfosView: View {
                 
 //                Spacer()
                 
-                TextAndConfirmationButtons(cardType: .pequeno, firstLine: "Agora que você conhece mais essa planta, vamos desenhá-laaa?", firstButtonType: .desenhar, actionForFirstButton: viewModel.onTapFirstButton, actionForSecondButton: viewModel.onTapFirstButton)
+                TextAndConfirmationButtons(cardType: .pequeno, firstLine: "Agora que você conhece mais essa planta, vamos desenhá-la?", firstButtonType: .desenhar, actionForFirstButton: {}, actionForSecondButton: {})
                 
 //                VStack(spacing: -24) {
 //                    CardCTAMainTrivia(cardType: .pequeno, firstLine: "Exemplo")
@@ -39,15 +48,9 @@ struct MiniInfosView: View {
             .padding(.leading, 32)
             
         }
-        .navigationDestination(for: Journey.self, destination: { journey in
-            ReviewView()
-        })
-        .onAppear {
-            viewModel.navigationManager = navigationManager
-        }
+        .ignoresSafeArea()
         
     }
-    
     
 }
 

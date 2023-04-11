@@ -11,8 +11,7 @@ import SwiftUI
 struct ReviewView: View {
 
     @ObservedObject private var viewModel = ReviewViewModel()
-    @EnvironmentObject private var navigationManager: NavigationManager
-    
+       
     var body: some View {
         ZStack {
             
@@ -54,13 +53,10 @@ struct ReviewView: View {
                     }
                 }
                 
-                TextAndConfirmationButtons(cardType: .grande, firstLine: "Parabéns, olha o quanto você aprendeu!", secondLine: "Quer saber mais sobre o/a [nomedaplanta]?", firstButtonType: .sim, secondButtonType: .agoranao, actionForFirstButton: viewModel.onTapFirstButton, actionForSecondButton: viewModel.onTapSecondButton)
+                TextAndConfirmationButtons(cardType: .grande, firstLine: "Parabéns, olha o quanto você aprendeu!", secondLine: "Quer saber mais sobre o/a [nomedaplanta]?", firstButtonType: .sim, secondButtonType: .agoranao, actionForFirstButton: {}, actionForSecondButton: {})
                     .padding(.top, 19)
             }
             .frame(width: 874)
-        }
-        .onAppear {
-            viewModel.navigationManager = navigationManager
         }
     }
 

@@ -19,25 +19,21 @@ struct ContentView: View {
                     switch route {
                     case .canvas:
                         CanvasView()
+                        
                     case .galery:
                         GaleryView()
-//                    case .miniInformation:
-//                        MiniInfosView()
-//                    case .review:
-//                        ReviewView()
-//                    case .aditionalInformation:
-//                        MiniInfosView()
-//                    case .canvasFinal:
-//                        CanvasView()
+                        
                     }
+                    
                 }
+            
         }
         .environmentObject(navigationManager)
         .navigationViewStyle(.stack)
         .navigationBarTitleDisplayMode(.automatic)
         .navigationBarBackButtonHidden(true)
-        
-        
+
+
         
         
         //        HomeView()

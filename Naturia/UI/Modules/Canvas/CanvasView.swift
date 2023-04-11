@@ -12,7 +12,7 @@ struct CanvasView: View {
     
     
     @ObservedObject private var viewModel = CanvasViewModel()
-    @EnvironmentObject var navigationManager: NavigationManager
+    
     
     
     var body: some View {
@@ -27,9 +27,6 @@ struct CanvasView: View {
                     } label: {
                         Text("🔙 Voltar")
                             .underline()
-                    }
-                    .onTapGesture {
-                        viewModel.backButtonPressed()
                     }
                     
                     ExpandableView(viewType: viewModel.toggleType, provocacoes: viewModel.provocacoes, referencia: viewModel.referencia)
@@ -46,18 +43,7 @@ struct CanvasView: View {
             }
             .padding(.top, 48.0)
         }
-        .navigationDestination(for: CanvasRoutes.self, destination: { canvasRoutes in
-            switch canvasRoutes {
-            case .miniInfos:
-                MiniInfosView()
-            case .review:
-                ReviewView()
-            }
-        })
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .onAppear {
-            viewModel.navigationManager = navigationManager
-        }
     }
     
     

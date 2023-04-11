@@ -18,18 +18,9 @@ final class CanvasViewModel: ObservableObject {
     @Published var canvasView = PKCanvasView()
     @Published var provocacoes: [String] = ["Provocacao 1 aaaaaaaaaaa", "Provocacao 2 aaaaaaaaaaa", "Provocacao 3 aaaaaaaaaaa"]
     @Published var referencia: String = "plantinha"
-    var navigationManager: NavigationManager?
     
     func doneButtonPressed() {
-        if let safeNavigationManager = navigationManager{
-//            safeNavigationManager.path.append(Routes.miniInformation)
-        }
-    }
-    
-    func backButtonPressed() {
-        if let safeNavigationManager = navigationManager{
-            safeNavigationManager.path.removeLast()
-        }
+        myImage = getImageData()
     }
 
     func getImageData() -> UIImage{

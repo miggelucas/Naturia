@@ -13,9 +13,6 @@ class NavigationManager: ObservableObject {
     @Published var currentObservativeJourney: ObservativeJourney?
     @Published var currentImaginativeJourney: ImaginativeJourney?
     
-    func popToRoot() {
-        path = NavigationPath()
-    }
     
 //
 //    func push<Content: View>(_ view: Content) {
