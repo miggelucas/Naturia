@@ -9,10 +9,7 @@ import SwiftUI
 
 struct CardMainTrivia: View {
     
-    
     var mainTriviaContent: String
-    
-    
     
     var body: some View {
         
@@ -24,14 +21,14 @@ struct CardMainTrivia: View {
                 VStack(alignment: .leading, spacing: 16) {
                     HStack {
                         Text("O que você desenhou na verdade é...")
-                            .font(.custom("Montserrat", size: 25))
+                            .font(.NaturiaSecundary(.cta))
                             .fontWeight(.medium)
 
                     }
                     
                     HStack {
                         Text(mainTriviaContent)
-                            .font(.custom("Montserrat", size: 16))
+                            .font(.NaturiaSecundary(.body))
                             .fontWeight(.regular)
 
                     }

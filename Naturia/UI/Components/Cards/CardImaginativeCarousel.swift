@@ -35,7 +35,7 @@ struct CardImaginativeCarousel: View {
                     CardImaginative(
                         journeyTitle: "Jornada Criativa",
                         journeyProvocation: journeys[i].mainProvocation,
-                        journeyImage: journeys[i].imageReference)
+                        journeyImage: Image(journeys[i].plant.imagePath))
                     
                     .background(GeometryReader { geometry in
                                         Color.clear
@@ -72,7 +72,10 @@ struct CardImaginativeCarousel: View {
 struct CardCarousel_Previews: PreviewProvider {
     static var previews: some View {
         StatefulPreviewWrapper(0) {
-            CardImaginativeCarousel(index: $0, journeys: [ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false), ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false), ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false)], onTapArrowLeft: test, onTapArrowRight: test)
+            CardImaginativeCarousel(index: $0,
+                                    journeys: ImaginativeJourney.getImaginativeJourneys(),
+                                    onTapArrowLeft: test,
+                                    onTapArrowRight: test)
         }
     }
     

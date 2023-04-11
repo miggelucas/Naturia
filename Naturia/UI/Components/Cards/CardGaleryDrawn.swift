@@ -47,6 +47,6 @@ struct CardGaleryDrawn: View, Hashable {
 
 struct CardGaleryDrawn_Previews: PreviewProvider {
     static var previews: some View {
-        CardGaleryDrawn(drawn: ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true).userDrawns[0], text: "Desenho")
+        CardGaleryDrawn(drawn: .DrawnPlaceholder(type: .imaginative), text: "Desenho")
     }
 }

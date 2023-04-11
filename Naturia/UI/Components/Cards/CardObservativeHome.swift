@@ -40,6 +40,8 @@ struct CardObservativeHome: View {
 
 struct CardObservativeHome_Previews: PreviewProvider {
     static var previews: some View {
-        CardObservativeHome(title: "Titulo", description: "Poxa", onTap: {})
+        CardObservativeHome(title: "Titulo",
+                            description: "Poxa",
+                            onTap: {})
     }
 }

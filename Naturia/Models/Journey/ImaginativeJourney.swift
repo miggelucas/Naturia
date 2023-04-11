@@ -35,4 +35,23 @@ extension ImaginativeJourney {
             // Brinco de princesa
             ImaginativeJourney(mainProvocation: "Como você imagina a aparência da planta brinco de princesa?", drawingProvocations: ["Você acha que essa planta possui flores?", "Qual característica nessa planta você imagina que justifica o seu nome?", "Onde você imagina encontra-la?"], mainTrivia: Plant.getPlant(popularName: "Brinco-de-princesa")!.trivia[0], plant: Plant.getPlant(popularName: "Brinco-de-princesa")!, isCompleted: false)]
     }
+    
+    static func getPlaceholder() {
+        
+        var journey = ImaginativeJourney(mainProvocation: "Como deve ser a planta que indica a chuva no sertão?",
+                                         drawingProvocations: ["Qual característica ela deve ter para habitar o sertão?", "O que tem nessa planta que indica a vinda da chuva?", "Como você imagina que seria o porte dela?"],
+                                         Plant.getPlant(popularName: "Mandacaru")!.trivia[0],
+                                         plant: Plant.getPlant(popularName: "Pitangueira")!,
+                                         isCompleted: true)
+        
+        let drawn: [Drawn] = [Drawn.DrawnPlaceholder(type: .observative),
+                              Drawn.DrawnPlaceholder(type: .imaginative)
+        ]
+        
+        journey.userDrawns = drawn
+        
+        return journey
+        
+        
+    }
 }

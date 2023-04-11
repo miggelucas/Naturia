@@ -47,6 +47,8 @@ struct CardExpandedDrawn: View {
 
 struct CardExpandedDrawn_Previews: PreviewProvider {
     static var previews: some View {
-        CardExpandedDrawn(name: "Nome da Planta", drawn: Drawn.DrawnPlaceholder(type: .imaginative)).previewInterfaceOrientation(.landscapeLeft)
+        CardExpandedDrawn(name: "Nome da Planta",
+                          drawn: Drawn.DrawnPlaceholder(type:.imaginative))
+        .previewInterfaceOrientation(.landscapeLeft)
     }
 }

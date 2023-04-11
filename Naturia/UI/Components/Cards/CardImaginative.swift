@@ -17,10 +17,10 @@ struct CardImaginative: View {
         HStack(alignment: .top) {
             VStack(alignment: .leading) {
                 Text(journeyTitle)
-                    .font(.custom("Montserrat", size: 20))
+                    .font(Font.NaturiaSecundary(.Subtitle))
                 Spacer().frame(height: Responsive.scaleHeight(s: 24))
                 Text(journeyProvocation)
-                    .font(.custom("QuisasStandard-Regular", size: 96))
+                    .font(Font.NaturiaPrimary(.h2))
                     ._lineHeightMultiple(0.6)
                     .lineLimit(3)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: Responsive.scaleWidth(s: 96)))
@@ -39,6 +39,8 @@ struct CardImaginative: View {
 
 struct CardImaginative_Preview: PreviewProvider {
     static var previews: some View {
-        CardImaginative(journeyTitle: "Título", journeyProvocation: "Provocação escrita em três linhas", journeyImage: Image("plant"))
+        CardImaginative(journeyTitle: "Título",
+                        journeyProvocation: "Provocação escrita em três linhas",
+                        journeyImage: Image("plant"))
     }
 }

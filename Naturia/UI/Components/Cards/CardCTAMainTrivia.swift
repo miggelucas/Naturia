@@ -10,7 +10,6 @@ import SwiftUI
 struct CardCTAMainTrivia: View {
     
     
-    
     let cardType: CardType
     let firstLine: String
     var secondLine: String?
@@ -43,10 +42,14 @@ struct CardCTAMainTrivia: View {
         }
     }
     
-    struct CardCTAMainTrivia_Previews: PreviewProvider {
-        static var previews: some View {
-            CardCTAMainTrivia(cardType: .grande, firstLine: "Exemplo de texto de 1 linha", secondLine: "Exemplo de texto de 2 linhas")
-        }
+
+}
+
+struct CardCTAMainTrivia_Previews: PreviewProvider {
+    static var previews: some View {
+        CardCTAMainTrivia(cardType: .grande,
+                          firstLine: "Exemplo de texto de 1 linha",
+                          secondLine: "Exemplo de texto de 2 linhas")
     }
 }
 

@@ -43,4 +43,16 @@ extension Journey {
             // Primavera
             Journey(plant: Plant.getPlant(popularName: "Primavera")!, isCompleted: false)]
     }
+    
+    static func getObservativePlaceHolder() -> Journey {
+        var journey = Journey(plant: Plant.getPlant(popularName: "Pitangueira")!,
+                              isCompleted: true
+        )
+        let drawn: [Drawn] = [Drawn.DrawnPlaceholder(type: .observative)]
+        
+        journey.userDrawns = drawn
+        
+        return journey
+        
+    }
 }
