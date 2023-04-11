@@ -10,15 +10,15 @@ import SwiftUI
 
 class Journey: Hashable {
     let id = UUID()
-    let name: String
     let plant: Plant
     let isCompleted: Bool
+    let drawingProvocations: [String]
     var userDrawns: [Drawn] = []
     
-    init(name: String, plant: Plant, isCompleted: Bool) {
-        self.name = name
+    init(plant: Plant, isCompleted: Bool = false, drawingProvocations: [String] = [""]) {
         self.plant = plant
         self.isCompleted = isCompleted
+        self.drawingProvocations = drawingProvocations
     }
     
     // Implementação do protocolo Hashable
@@ -29,5 +29,18 @@ class Journey: Hashable {
     static func == (lhs: Journey, rhs: Journey) -> Bool {
         lhs.id == rhs.id
     }
-    
+}
+
+extension Journey {
+    static func getObservativeJourneys() -> [Journey] {
+        return [
+            // Pitangueira
+            Journey(plant: Plant.getPlant(popularName: "Pitangueira")!, isCompleted: false),
+            // Pau-Brasil
+            Journey(plant: Plant.getPlant(popularName: "Pau-Brasil")!, isCompleted: false),
+            // Vitória-régia
+            Journey(plant: Plant.getPlant(popularName: "Vitória-régia")!, isCompleted: false),
+            // Primavera
+            Journey(plant: Plant.getPlant(popularName: "Primavera")!, isCompleted: false)]
+    }
 }

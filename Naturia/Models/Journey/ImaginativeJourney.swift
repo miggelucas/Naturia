@@ -10,73 +10,29 @@ import SwiftUI
 
 class ImaginativeJourney: Journey {
     
-    
     let mainProvocation: String
-    let drawingProvocations: [String]
     let mainTrivia: String
-    let imageReference: Image
     
     init(mainProvocation: String,
          drawingProvocations: [String],
          mainTrivia: String,
-         imageReference: Image,
          plant: Plant,
-         name: String,
          isCompleted: Bool
-    ){
+    ) {
         self.mainProvocation = mainProvocation
-        self.drawingProvocations = drawingProvocations
         self.mainTrivia = mainTrivia
-        self.imageReference = imageReference
-        super.init(name:  name, plant: plant , isCompleted: isCompleted)
+        super.init(plant: plant, isCompleted: isCompleted, drawingProvocations: drawingProvocations)
     }
-    
 }
 
-
-
 extension ImaginativeJourney {
-    
-    static func getPlaceholderImaginativeJourney(isJourneyDone: Bool) -> ImaginativeJourney {
-        if isJourneyDone {
-            
-            let model = ImaginativeJourney(
-                mainProvocation: "Algumas pessoas dizem que por ser uma trepadeira muito forte, por vezes a planta com seus grossos caules podem enforcar a árvore onde ela se apoia, assim como a cobra jiboia.",
-                drawingProvocations: [
-                    "Por que você acredita que uma planta se chamaria Jibioa?",
-                    "Qual seria o tamanho dela?",
-                    "Ela teria formato específico?"],
-                mainTrivia: "Algumas pessoas dizem que por ser uma trepadeira muito forte, por vezes a planta com seus grossos caules podem enforcar a árvore onde ela se apoia, assim como a cobra jiboia.",
-                imageReference: Image("jiboiaReferencia"),
-                plant: Plant.getPlaceholderPlant(),
-                name: "Jiboia",
-                isCompleted: true)
-            model.userDrawns = [
-                Drawn(image: Image("DesenhoCriativo"), type: .imaginative),
-                Drawn(image: Image("desenhoUsuario"), type: .observative)
-            ]
-            
-            return model
-            
-        } else {
-            
-            return ImaginativeJourney(
-                mainProvocation: "Eita!.",
-                drawingProvocations: [
-                    "Por que você acredita que uma planta se chamaria Jibioa?",
-                    "Qual seria o tamanho dela?",
-                    "Ela teria formato específico?"],
-                mainTrivia: "Algumas pessoas dizem que por ser uma trepadeira muito forte, por vezes a planta com seus grossos caules podem enforcar a árvore onde ela se apoia, assim como a cobra jiboia.",
-                imageReference: Image("jiboiaReferencia"),
-                plant: Plant.getPlaceholderPlant(),
-                name: "Jiboia",
-                isCompleted: false
-            )
-        }
-        
-        
+    static func getImaginativeJourneys() -> [ImaginativeJourney] {
+        return [
+            // Mandacaru
+            ImaginativeJourney(mainProvocation: "Como deve ser a planta que indica a chuva no sertão?", drawingProvocations: ["Qual característica ela deve ter para habitar o sertão?", "O que tem nessa planta que indica a vinda da chuva?", "Como você imagina que seria o porte dela?"], mainTrivia: Plant.getPlant(popularName: "Mandacaru")!.trivia[0], plant: Plant.getPlant(popularName: "Pitangueira")!, isCompleted: false),
+            // Ipê amarelo
+            ImaginativeJourney(mainProvocation: "De que jeito deve ser as flores que tem formato de trombeta?", drawingProvocations: ["Como você imagina que é a planta na qual florescem?", "Qual deve ser a cor dela?", "Como será que o formato de trombeta ajuda ela na natureza?"], mainTrivia: Plant.getPlant(popularName: "Ipê-amarelo")!.trivia[0], plant: Plant.getPlant(popularName: "Vitória-régia")!, isCompleted: false),
+            // Brinco de princesa
+            ImaginativeJourney(mainProvocation: "Como você imagina a aparência da planta brinco de princesa?", drawingProvocations: ["Você acha que essa planta possui flores?", "Qual característica nessa planta você imagina que justifica o seu nome?", "Onde você imagina encontra-la?"], mainTrivia: Plant.getPlant(popularName: "Brinco-de-princesa")!.trivia[0], plant: Plant.getPlant(popularName: "Brinco-de-princesa")!, isCompleted: false)]
     }
-    
-    
-    
 }
