@@ -47,7 +47,7 @@ class ObservatoryRepositoryViewModel: ObservableObject {
     
     func backButtonPressed() {
         if let safeNavManager = navigationManager {
-            safeNavManager.path.removeLast()
+            safeNavManager.backToPreviousView()
         }
         print("user pressed to go back to homeScreen")
     }
@@ -55,7 +55,7 @@ class ObservatoryRepositoryViewModel: ObservableObject {
     func journeyPressed(_ journey: ObservativeJourney) {
         if let safeNavManager = navigationManager {
             safeNavManager.currentJourney = journey
-            safeNavManager.path.append(journey)
+            safeNavManager.pushToPath(journey)
         }
         print("User pressed in jorney \(journey.name)")
     }

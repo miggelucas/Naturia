@@ -18,13 +18,13 @@ final class ConquistaViewModel: ObservableObject {
     func confirmativeButtonPressed() {
         if let safeNavManager = navigationManager {
             let journey = safeNavManager.currentJourney!
-            safeNavManager.path.append(journey)
+            safeNavManager.pushToPath(journey)
         }
     }
     
     func dismissButtonPressed() {
         if let safeNavManager = navigationManager {
-            safeNavManager.path = NavigationPath()
+            safeNavManager.popToRoot()
         }
     }
     

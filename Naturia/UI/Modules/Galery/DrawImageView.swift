@@ -22,7 +22,7 @@ struct DrawImageView: View {
                 HStack {
                     BackButton {
                         // volta para tela de geleria
-                        navigationManager.path.removeLast()
+                        navigationManager.backToPreviousView()
                     }
                     Spacer()
                 }

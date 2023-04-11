@@ -63,15 +63,21 @@ class GaleryViewModel: ObservableObject {
     }
     
     func backButtonPressed() {
-        navigationManager!.path.removeLast()
+        if let safeNavManger = navigationManager {
+            safeNavManger.backToPreviousView()
+        }
     }
     
-    func jorneyPressed(for jorney: Journey) {
-        navigationManager!.path.append(jorney)
+    func jorneyPressed(for journey: Journey) {
+        if let safeNavManger = navigationManager {
+            safeNavManger.pushToPath(journey)
+        }
     }
     
     func drawnPressed(for drawCard: CardGaleryDrawn) {
-        navigationManager!.path.append(drawCard)
+        if let safeNavManger = navigationManager {
+            safeNavManger.pushToPath(drawCard)
+        }
     }
     
     func rightArrowPressed() {

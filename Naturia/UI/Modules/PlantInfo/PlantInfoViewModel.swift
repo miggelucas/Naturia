@@ -26,9 +26,9 @@ class PlantInfoViewModel: ObservableObject {
         if let safeNavManager = navigationManager {
             switch buttonStyle {
             case .back:
-                safeNavManager.path.removeLast()
+                safeNavManager.backToPreviousView()
             case .backToHome:
-                safeNavManager.path = NavigationPath()
+                safeNavManager.popToRoot()
             }
         }
 
