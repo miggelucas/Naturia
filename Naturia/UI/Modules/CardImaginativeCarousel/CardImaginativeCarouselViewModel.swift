@@ -14,6 +14,8 @@ final class CardImaginativeCarouselViewModel: ObservableObject {
     @Published var cardIndex: Int = 0
     @Published var journeys: [ImaginativeJourney] = []
     
+    var navigationManager: NavigationManager?
+    
     init() {
         journeys = getJourneys()
     }
@@ -32,6 +34,10 @@ final class CardImaginativeCarouselViewModel: ObservableObject {
     
     func onTapButton() {
         print("onTapButton CardImaginativeCarouselViewModel")
+        if let safeNavManager = navigationManager {
+//            safeNavManager.path.append()
+            
+        }
     }
     
     private func getJourneys() -> [ImaginativeJourney]{

@@ -57,17 +57,27 @@ class GaleryViewModel: ObservableObject {
         ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
         ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
         ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false)
-    ], mode: GaleryViewModel.Mode = .draws) {
+    ], mode: GaleryViewModel.Mode = .plants) {
         self.journeys = journeys
         self.mode = mode
     }
     
     func backButtonPressed() {
-        navigationManager!.path.removeLast()
+        if let safeNavManger = navigationManager {
+            safeNavManger.backToPreviousView()
+        }
     }
     
-    func itemPressed(for jorney: Journey) {
-        navigationManager!.path.append(jorney)
+    func jorneyPressed(for journey: Journey) {
+        if let safeNavManger = navigationManager {
+            safeNavManger.pushToPath(journey)
+        }
+    }
+    
+    func drawnPressed(for drawCard: CardGaleryDrawn) {
+        if let safeNavManger = navigationManager {
+            safeNavManger.pushToPath(drawCard)
+        }
     }
     
     func rightArrowPressed() {

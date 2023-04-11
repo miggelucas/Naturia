@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct CardGaleryDrawn: View {
-    
+struct CardGaleryDrawn: View, Hashable {
+    let id: UUID = UUID()
     let drawn: Drawn
     let text: String
     

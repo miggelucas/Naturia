@@ -19,6 +19,7 @@ struct DrawingCanvas: UIViewRepresentable {
         canvasView.delegate = context.coordinator
         canvasView.tool = PKInkingTool(.pen, color: .black, width: 10)
         canvasView.drawingPolicy = .default
+        canvasView.backgroundColor = UIColor.clear
         
        
         return canvasView

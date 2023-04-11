@@ -31,8 +31,8 @@ struct ConfirmacaoView: View {
                                            secondLine: "Você já está presencialmente com ela?",
                                            firstButtonType: .estou,
                                            secondButtonType: .naoEstou,
-                                           actionForFirstButton: {},
-                                           actionForSecondButton: {})
+                                           actionForGreenButton: {},
+                                           actionForWhiteButton: {})
             }
             .frame(width: 874)
         }

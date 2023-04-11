@@ -8,25 +8,28 @@
 
 import SwiftUI
 
+
 struct CanvasView: View {
+    @ObservedObject private var viewModel: CanvasViewModel
+    @EnvironmentObject var navigationManager: NavigationManager
     
+    init(viewModel: CanvasViewModel) {
+        self.viewModel = viewModel
+    }
     
-    @ObservedObject private var viewModel = CanvasViewModel()
-    
-    
+        
     
     var body: some View {
         //Text(viewModel.example ?? "Hello World")
         ZStack(alignment: .topLeading){
+            BackgroundView()
+            
             DrawingCanvas(canvasView: $viewModel.canvasView)
             
             HStack(alignment: .top, spacing: 0) {
                 VStack(alignment: .leading, spacing: 24) {
-                    Button {
-                        
-                    } label: {
-                        Text("🔙 Voltar")
-                            .underline()
+                    BackButton(style: .back) {
+                        viewModel.backButtonPressed()
                     }
                     
                     ExpandableView(viewType: viewModel.toggleType, provocacoes: viewModel.provocacoes, referencia: viewModel.referencia)
@@ -36,12 +39,26 @@ struct CanvasView: View {
                 
                 Spacer()
                 
-                DoneButton(actionForDone: {
+                CTAButton(buttonType: .concluido, actionForButton: {
                     viewModel.doneButtonPressed()
                 })
                 .padding(.trailing, 32)
             }
             .padding(.top, 48.0)
+        }
+        .navigationDestination(for: CanvasRoutes.self, destination: { canvaRoute in
+            switch canvaRoute {
+            case .conquista:
+                ConquistaView()
+            case .miniInfo:
+                MiniInfosView()
+            case .review:
+                ReviewView()
+            }
+        })
+        .navigationBarBackButtonHidden(true)
+        .onAppear {
+            viewModel.navigationManager = navigationManager
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
@@ -53,6 +70,6 @@ struct CanvasView: View {
 
 struct Canvas_Previews: PreviewProvider {
     static var previews: some View {
-        CanvasView()
+        CanvasView(viewModel: CanvasViewModel(canvasRole: .imaginative1)).previewInterfaceOrientation(.landscapeLeft).environmentObject(NavigationManager())
     }
 }

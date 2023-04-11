@@ -13,21 +13,18 @@ class NavigationManager: ObservableObject {
     @Published var currentObservativeJourney: ObservativeJourney?
     @Published var currentImaginativeJourney: ImaginativeJourney?
     
+    var currentJourney: Journey?
     
-//
-//    func push<Content: View>(_ view: Content) {
-//        stack.append(AnyView(view))
-//    }
-//
-//    func pop() {
-//        _ = stack.popLast()
-//    }
-//
-//    func popToRoot() {
-//        stack.removeAll()
-//    }
-//
-//    func getLastViewFromStack() -> AnyView {
-//        return stack.last!
-//    }
+    func popToRoot() {
+        self.path = NavigationPath()
+    }
+    
+    func backToPreviousView() {
+        self.path.removeLast()
+    }
+    
+    func pushToPath(_ value: any Hashable) {
+        self.path.append(value)
+    }
+    
 }

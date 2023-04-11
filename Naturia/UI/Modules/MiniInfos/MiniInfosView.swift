@@ -9,12 +9,13 @@ import SwiftUI
 
 struct MiniInfosView: View {
     
+    @EnvironmentObject var navigationManager: NavigationManager
     
     
     var body: some View {
         ZStack {
             BackgroundView()
-                
+            
             
             VStack (spacing: 56) {
                 
@@ -32,22 +33,32 @@ struct MiniInfosView: View {
                     ImageMainTrivia(plantImage: Image("jiboia"))
                 }
                 
-//                Spacer()
+                //                Spacer()
+    
                 
-                TextAndConfirmationButtons(cardType: .pequeno, firstLine: "Agora que você conhece mais essa planta, vamos desenhá-la?", firstButtonType: .desenhar, actionForFirstButton: {}, actionForSecondButton: {})
+                TextAndConfirmationButtons(cardType: .pequeno, firstLine:  "Agora que você conhece mais essa planta, vamos desenhá-la?", firstButtonType: .desenhar, actionForGreenButton: {
+                    print("greenButton pressed")
+//                    let journey = navigationManager.currentJourney
+                    navigationManager.path.append("Vai pra próxima tela por favor")
+                }, actionForWhiteButton: {})
                 
-//                VStack(spacing: -24) {
-//                    CardCTAMainTrivia(cardType: .pequeno, firstLine: "Exemplo")
-//                    CTAButton(buttonType: .desenhar, actionForButton: {})
-//                }
-            
-        
+                //                VStack(spacing: -24) {
+                //                    CardCTAMainTrivia(cardType: .pequeno, firstLine: "Exemplo")
+                //                    CTAButton(buttonType: .desenhar, actionForButton: {})
+                //                }
+                
+                
                 Spacer()
             }
             .padding(.top, 48)
             .padding(.leading, 32)
             
         }
+        .navigationDestination(for: String.self, destination: { string in
+            CanvasView(viewModel: CanvasViewModel(canvasRole: .imaginative2))
+
+        })
+        .navigationBarBackButtonHidden(true)
         .ignoresSafeArea()
         
     }
@@ -57,5 +68,6 @@ struct MiniInfosView: View {
 struct MiniInfosView_Previews: PreviewProvider {
     static var previews: some View {
         MiniInfosView().previewInterfaceOrientation(.landscapeLeft)
+            .environmentObject(NavigationManager())
     }
 }
