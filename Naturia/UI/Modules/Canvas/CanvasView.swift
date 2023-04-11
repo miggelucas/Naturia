@@ -17,7 +17,43 @@ struct CanvasView: View {
         self.viewModel = viewModel
     }
     
+    func getImageData() -> UIImage{
+        let drawingImage = viewModel.canvasView.drawing.image(from: CGRect(origin: .zero, size: CGSize(width: 200, height: 200)), scale: 1)
+        return drawingImage
+    }
+    
+    func doneButtonPressed() {
+        let receivedJourney = navigationManager.currentJourney
+        var typeOfJourney: Drawn.DrawnType
         
+        
+        //descobrir se recivedJouney é observative ou imaginve
+        if receivedJourney is ObservativeJourney{
+            typeOfJourney = .observative
+        }else{
+            typeOfJourney = .imaginative
+        }
+
+        
+        viewModel.userDraw = getImageData()
+        let newDrawn: Drawn = Drawn(image: Image(uiImage: viewModel.userDraw), type: typeOfJourney)
+        receivedJourney?.userDrawns.append(newDrawn)
+        
+        navigationManager.currentJourney = receivedJourney
+        print(viewModel.canvasRole)
+        
+        switch viewModel.canvasRole {
+        case .imaginative1:
+            navigationManager.path.append(CanvasRoutes.miniInfo)
+                print("Caiu na miniInfo")
+        case .imaginative2:
+            navigationManager.path.append(CanvasRoutes.review)
+            print("caiy aqyu")
+        case .observative:
+            navigationManager.path.append(CanvasRoutes.conquista)
+        }
+
+    }
     
     var body: some View {
         //Text(viewModel.example ?? "Hello World")
@@ -40,7 +76,7 @@ struct CanvasView: View {
                 Spacer()
                 
                 CTAButton(buttonType: .concluido, actionForButton: {
-                    viewModel.doneButtonPressed()
+                    doneButtonPressed()
                 })
                 .padding(.trailing, 32)
             }

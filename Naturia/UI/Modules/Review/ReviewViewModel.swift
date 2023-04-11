@@ -14,5 +14,15 @@ final class ReviewViewModel: ObservableObject {
     @Published var example: String?
     var navigationManager: NavigationManager?
     
-   
+    func greenButtonPressed() {
+        if let safeNavManager = navigationManager {
+            safeNavManager.pushToPath(ReviewView())
+        }
+    }
+    
+    func whiteButtonPressed() {
+        if let safeNavManager = navigationManager {
+            safeNavManager.popToRoot()
+        }
+    }
 }
