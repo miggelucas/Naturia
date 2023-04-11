@@ -19,12 +19,13 @@ struct ChildComponentSizePreferenceKey: PreferenceKey {
 }
 
 struct CardImaginativeCarousel: View {
+    @EnvironmentObject var navigationManager: NavigationManager
     
     @Binding var index: Int
     let journeys: [ImaginativeJourney]
     let onTapArrowLeft: () -> Void
     let onTapArrowRight: () -> Void
-    let onTapButton: () -> Void
+//    let onTapButton: () -> Void
     @State private var childComponentSize: CGSize = .zero
     
     var body: some View {
@@ -35,6 +36,7 @@ struct CardImaginativeCarousel: View {
                         journeyTitle: "Jornada Criativa",
                         journeyProvocation: journeys[i].mainProvocation,
                         journeyImage: journeys[i].imageReference)
+                    
                     .background(GeometryReader { geometry in
                                         Color.clear
                                             .preference(key: ChildComponentSizePreferenceKey.self, value: geometry.size)
@@ -54,7 +56,10 @@ struct CardImaginativeCarousel: View {
                         }
                     )
                     .overlay(
-                        CTAButton(buttonType: .desenhar, actionForButton: onTapButton)
+                        CTAButton(buttonType: .desenhar, actionForButton: {
+                            navigationManager.currentJourney = journeys[index]
+                            navigationManager.path.append(Routes.canvas)
+                        })
                             .padding(.bottom, Responsive.scaleHeight(s: -24.5)), alignment: .bottom)
                 }
             }
@@ -67,7 +72,7 @@ struct CardImaginativeCarousel: View {
 struct CardCarousel_Previews: PreviewProvider {
     static var previews: some View {
         StatefulPreviewWrapper(0) {
-            CardImaginativeCarousel(index: $0, journeys: [ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false), ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false), ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false)], onTapArrowLeft: test, onTapArrowRight: test, onTapButton: test)
+            CardImaginativeCarousel(index: $0, journeys: [ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false), ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false), ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false)], onTapArrowLeft: test, onTapArrowRight: test)
         }
     }
     

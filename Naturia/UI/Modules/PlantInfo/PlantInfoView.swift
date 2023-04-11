@@ -12,8 +12,9 @@ struct PlantInfoView: View {
     
     let viewModel: PlantInfoViewModel
     
-    init(viewModel: PlantInfoViewModel) {
+    init(viewModel: PlantInfoViewModel, backButtonStyle: BackButton.Style = .backToHome) {
         self.viewModel = viewModel
+
     }
     
     var body: some View {
@@ -25,7 +26,7 @@ struct PlantInfoView: View {
                 
                 // Back Button
                 HStack {
-                    BackButton(style: .backToHome, actionForButton: {
+                    BackButton(style: viewModel.buttonStyle, actionForButton: {
                         viewModel.backButtonPressed()
                         print("entrou aqui")
                     })
@@ -115,6 +116,6 @@ struct PlantInfoView: View {
 
 struct PlantInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        PlantInfoView(viewModel: PlantInfoViewModel(journey: ObservativeJourney.placeholderObservativeJourney(name: "asdasd"))).previewInterfaceOrientation(.landscapeLeft)
+        PlantInfoView(viewModel: PlantInfoViewModel(journey: ObservativeJourney.placeholderObservativeJourney(name: "asdasd"), buttonStyle: .backToHome)).previewInterfaceOrientation(.landscapeLeft)
     }
 }

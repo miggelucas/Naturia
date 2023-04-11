@@ -14,17 +14,17 @@ struct TextAndConfirmationButtons: View {
     var secondLine: String
     let firstButtonType: ButtonType
     var secondButtonType: ButtonType
-    let actionForFirstButton: () -> Void
-    var actionForSecondButton: () -> Void
+    let actionForGreenButton: () -> Void
+    var actionForWhiteButton: () -> Void
 
-    init(cardType: CardType, firstLine: String, secondLine: String = "", firstButtonType: ButtonType, secondButtonType: ButtonType = .sim, actionForFirstButton: @escaping () -> Void, actionForSecondButton: @escaping () -> Void){
+    init(cardType: CardType, firstLine: String, secondLine: String = "", firstButtonType: ButtonType, secondButtonType: ButtonType = .sim, actionForGreenButton: @escaping () -> Void, actionForWhiteButton: @escaping () -> Void){
         self.cardType = cardType
         self.firstLine = firstLine
         self.secondLine = secondLine
         self.firstButtonType = firstButtonType
         self.secondButtonType = secondButtonType
-        self.actionForFirstButton = actionForFirstButton
-        self.actionForSecondButton = actionForSecondButton
+        self.actionForGreenButton = actionForGreenButton
+        self.actionForWhiteButton = actionForWhiteButton
     }
     
     var body: some View {
@@ -37,10 +37,10 @@ struct TextAndConfirmationButtons: View {
                                   secondLine: secondLine)
                 HStack (spacing: 24){
                     CTAButton(buttonType: firstButtonType) {
-                        actionForFirstButton()
+                        actionForGreenButton()
                     }
                     CTAButton(buttonType: secondButtonType) {
-                        actionForSecondButton()
+                        actionForWhiteButton()
                     }
                 }
                 
@@ -49,7 +49,7 @@ struct TextAndConfirmationButtons: View {
                                   firstLine: firstLine,
                                   secondLine: secondLine)
                 CTAButton(buttonType: firstButtonType) {
-                    actionForFirstButton()
+                    actionForGreenButton()
                 }
             }
         }
@@ -59,7 +59,7 @@ struct TextAndConfirmationButtons: View {
 
 struct TextAndConfirmationButtons_Previews: PreviewProvider {
     static var previews: some View {
-        TextAndConfirmationButtons(cardType: .pequeno, firstLine: "Teste de 1 linha", firstButtonType: .sim, actionForFirstButton: {}, actionForSecondButton: {})
+        TextAndConfirmationButtons(cardType: .pequeno, firstLine: "Teste de 1 linha", firstButtonType: .sim, actionForGreenButton: {}, actionForWhiteButton: {})
     }
 }
 

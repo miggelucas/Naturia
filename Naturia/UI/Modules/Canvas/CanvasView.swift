@@ -8,10 +8,16 @@
 
 import SwiftUI
 
+
 struct CanvasView: View {
-    @ObservedObject private var viewModel = CanvasViewModel()
+    @ObservedObject private var viewModel: CanvasViewModel
     @EnvironmentObject var navigationManager: NavigationManager
     
+    init(viewModel: CanvasViewModel) {
+        self.viewModel = viewModel
+    }
+    
+        
     
     var body: some View {
         //Text(viewModel.example ?? "Hello World")
@@ -40,6 +46,17 @@ struct CanvasView: View {
             }
             .padding(.top, 48.0)
         }
+        .navigationDestination(for: CanvasRoutes.self, destination: { canvaRoute in
+            switch canvaRoute {
+            case .conquista:
+                ConquistaView()
+            case .miniInfo:
+                MiniInfosView()
+            case .review:
+                ReviewView()
+            }
+        })
+        .navigationBarBackButtonHidden(true)
         .onAppear {
             viewModel.navigationManager = navigationManager
         }
@@ -53,6 +70,6 @@ struct CanvasView: View {
 
 struct Canvas_Previews: PreviewProvider {
     static var previews: some View {
-        CanvasView().previewInterfaceOrientation(.landscapeLeft).environmentObject(NavigationManager())
+        CanvasView(viewModel: CanvasViewModel(canvasRole: .imaginative1)).previewInterfaceOrientation(.landscapeLeft).environmentObject(NavigationManager())
     }
 }

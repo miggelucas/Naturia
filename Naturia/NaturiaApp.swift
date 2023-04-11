@@ -13,7 +13,7 @@ struct NaturiaApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ReviewView()
+            ContentView()
                 .environmentObject(navigationManager)
         }
     }

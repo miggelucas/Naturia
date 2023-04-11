@@ -18,11 +18,13 @@ struct ContentView: View {
                 .navigationDestination(for: Routes.self) { route in
                     switch route {
                     case .canvas:
-                        CanvasView()
+                        CanvasView(viewModel: CanvasViewModel(canvasRole: .imaginative1))
                         
                     case .galery:
                         GaleryView()
                         
+                    case .observativeRepo:
+                        ObservatoryRepositoryView()
                     }
                     
                 }
