@@ -89,37 +89,54 @@ struct ReviewView: View {
     }
     
     var screenshot: some View{
-        ZStack {
+        ZStack{
             BackgroundView(illustrationType: .review)
-            HStack {
-                VStack(spacing: 16) {
-                    ZStack {
-                        userFirstDrawImage
-                            .resizable()
-                        Image("cardImage")
-                            .resizable()
+            VStack (spacing: 48) {
+                Text("Jornada Criativa")
+                    .font(Font.NaturiaPrimary(.h2))
+                Text(navigationManager.currentImaginativeJourney?.name ?? "[Nome da planta]")
+                    .font(Font.NaturiaSecundary(.Subtitle))
+                    .padding(.top, -24)
+                HStack {
+                    VStack(spacing: 16) {
+                        ZStack {
+                            userFirstDrawImage
+                                .resizable()
+                            Image("cardImage")
+                                .resizable()
+                        }
+                        .frame(width: 468, height: 325)
+                        Text("O que você imaginou")
+                            .font(Font.NaturiaSecundary(.h5))
                     }
-                    .frame(width: 362, height: 252)
-                    Text("O que você imaginou")
-                        .font(Font.NaturiaSecundary(.h5))
-                }
-                Spacer()
-                Image("iconSetaDireita")
-                    .padding(.bottom, 40.0)
-                Spacer()
-                VStack(spacing: 16) {
-                    ZStack {
-                        userNewDrawImage
-                            .resizable()
-                        Image("cardImage")
-                            .resizable()
+                    Spacer()
+                    Image("iconSetaDireita")
+                        .padding(.bottom, 40.0)
+                    Spacer()
+                    VStack(spacing: 16) {
+                        ZStack {
+                            userNewDrawImage
+                                .resizable()
+                            Image("cardImage")
+                                .resizable()
+                        }
+                        .frame(width: 468, height: 325)
+                        Text("Seu desenho da planta")
+                            .font(Font.NaturiaSecundary(.h5))
                     }
-                    .frame(width: 362, height: 252)
-                    Text("Seu desenho da planta")
-                        .font(Font.NaturiaSecundary(.h5))
                 }
-            }
-            .frame(width: 874)
+                
+                HStack{
+                    Spacer()
+                    HStack{
+                        Image("Logo")
+                            .resizable()
+                            .frame(width: 38, height: 38)
+                        Text("NATURIA")
+                            .font(.system(size: 26))
+                    }.padding(.top, 48)
+                }
+            }.frame(width: 1130)
         }
     }
     
