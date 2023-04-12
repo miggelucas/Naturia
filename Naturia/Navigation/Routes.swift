@@ -14,6 +14,7 @@ enum Routes: Hashable {
     case confirmacao
     case canvasObservative
     case plantsInfoFromJourney
+    case plantsInfoFromGalery
 }
 
 enum CanvasRoutes: Hashable {

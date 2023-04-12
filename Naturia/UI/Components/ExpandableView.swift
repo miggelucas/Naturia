@@ -82,13 +82,6 @@ struct ExpandableView: View {
                         
                     case .provocacao:
                         VStack(alignment:.leading ,spacing: 8) {
-                            //                            if let provocacoes = provocacoes{
-                            //                                ForEach(provocacoes, id: \.self){ provocacao in
-                            //                                    Text(provocacao)
-                            //                                }
-                            //                            }else{
-                            //                                Text("Poxa nenhuma provocação por aqui! Erro: EVPROV1")
-                            //                            }
                             ForEach(provocacoes, id: \.self){ provocacao in
                                 Text(provocacao)
                             }

@@ -31,6 +31,9 @@ struct ContentView: View {
                         
                     case .plantsInfoFromJourney:
                         PlantInfoView(viewModel: PlantInfoViewModel(journey: navigationManager.currentJourney!, buttonStyle: .backToHome))
+                        
+                    case .plantsInfoFromGalery:
+                        PlantInfoView(viewModel: PlantInfoViewModel(journey: navigationManager.currentJourney!, buttonStyle: .back))
                    
                     case .confirmacao:
                         ConfirmacaoView()

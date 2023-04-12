@@ -33,10 +33,10 @@ class GaleryViewModel: ObservableObject {
     var state: State {
         switch mode {
         case .plants:
-            return journeys.isEmpty ? .empty : .content
+            return completedJourneys.isEmpty ? .empty : .content
             
         case .draws:
-            return journeys.isEmpty ? .empty : .content
+            return completedJourneys.isEmpty ? .empty : .content
         }
     }
     

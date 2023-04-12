@@ -17,11 +17,6 @@ struct ObservatoryRepositoryView: View {
     }
     
     
-//    let gridLayout = [GridItem(.flexible()),
-//                      GridItem(.flexible()),
-//                      GridItem(.flexible())]
-    
-    // layout responsivo!
     let gridLayout = [GridItem(.adaptive(minimum: 280))]
     
     var body: some View {
@@ -89,13 +84,7 @@ struct ObservatoryRepositoryView: View {
 
 struct ObservatoryRepositoryView_Previews: PreviewProvider {
     static var previews: some View {
-        // content state view
         ObservatoryRepositoryView()
-        
-        // empty state view
-//        ObservatoryRepositoryView()
-        
-        
-        
+
     }
 }

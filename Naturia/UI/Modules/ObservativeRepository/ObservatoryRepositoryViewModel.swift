@@ -36,7 +36,6 @@ class ObservatoryRepositoryViewModel: ObservableObject {
         if let safeNavManager = navigationManager {
             safeNavManager.backToPreviousView()
         }
-        print("user pressed to go back to homeScreen")
     }
     
     func journeyPressed(_ journey: Journey) {
@@ -44,6 +43,5 @@ class ObservatoryRepositoryViewModel: ObservableObject {
             safeNavManager.currentJourney = journey
             safeNavManager.pushToPath(Routes.confirmacao)
         }
-        print("User pressed in jorney \(journey.plant.popularName)")
     }
 }
