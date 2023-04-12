@@ -18,19 +18,23 @@ struct CanvasView: View {
     }
     
     func getImageData() -> UIImage{
-        let drawingImage = viewModel.canvasView.drawing.image(from: CGRect(origin: .zero, size: CGSize(width: 200, height: 200)), scale: 1)
+        let drawnSize = viewModel.canvasView.drawing.bounds.size
+        let drawnRect = CGRect(origin: .zero, size: drawnSize)
+        let drawingImage = viewModel.canvasView.drawing.image(from: drawnRect, scale: 1)
         return drawingImage
     }
     
     func doneButtonPressed() {
         let receivedJourney = navigationManager.currentJourney
                 
-        var typeOfJourney: Drawn.DrawnType
-        if receivedJourney != nil {
-            typeOfJourney = .observative
-        }else{
-            typeOfJourney = .imaginative
+        var typeOfJourney: Drawn.DrawnType {
+            if viewModel.canvasRole == .imaginative1 {
+                return .imaginative
+            } else {
+                return .observative
+            }
         }
+    
 
         viewModel.userDraw = getImageData()
         let newDrawn: Drawn = Drawn(image: Image(uiImage: viewModel.userDraw), type: typeOfJourney)

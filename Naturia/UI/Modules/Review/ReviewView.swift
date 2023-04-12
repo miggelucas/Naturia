@@ -24,30 +24,7 @@ struct ReviewView: View, Hashable {
     }
     
     
-    var userFirstDrawImage: Image{
-        if let drawns = navigationManager.currentJourney?.userDrawns{
-            for drawn in drawns {
-                if drawn.type == .imaginative{
-                    return drawn.image
-                }
-            }
-        }
-        return Image("DesenhoCriativo")
-        
-    }
-    
-    var userNewDrawImage: Image{
-        if let drawns = navigationManager.currentJourney?.userDrawns{
-            for drawn in drawns {
-                if drawn.type == .observative{
-                    return drawn.image
-                }
-            }
-        }
-        return Image("desenhoUsuario")
-        
-    }
-    
+
     var body: some View {
         ZStack {
             
@@ -63,7 +40,7 @@ struct ReviewView: View, Hashable {
                 HStack {
                     VStack(spacing: 16) {
                         ZStack {
-                            userFirstDrawImage
+                            viewModel.userFirstDrawImage
                                 .resizable()
                             Image("cardImage")
                                 .resizable()
@@ -78,7 +55,7 @@ struct ReviewView: View, Hashable {
                     Spacer()
                     VStack(spacing: 16) {
                         ZStack {
-                            userNewDrawImage
+                            viewModel.userNewDrawImage
                                 .resizable()
                             Image("cardImage")
                                 .resizable()
@@ -99,11 +76,9 @@ struct ReviewView: View, Hashable {
             .frame(width: 874)
         }
         .navigationBarBackButtonHidden(true)
-        .navigationDestination(for: ReviewView.self, destination: { view in
-            PlantInfoView(viewModel: PlantInfoViewModel(journey: ImaginativeJourney.getPlaceholder(), buttonStyle: .backToHome))
-        })
         .onAppear {
             viewModel.navigationManager = navigationManager
+            viewModel.viewDidApper()
         }
         
         
@@ -121,7 +96,7 @@ struct ReviewView: View, Hashable {
                 HStack {
                     VStack(spacing: 16) {
                         ZStack {
-                            userFirstDrawImage
+                            viewModel.userFirstDrawImage
                                 .resizable()
                             Image("cardImage")
                                 .resizable()
@@ -137,7 +112,7 @@ struct ReviewView: View, Hashable {
                     Spacer()
                     VStack(spacing: 16) {
                         ZStack {
-                            userNewDrawImage
+                            viewModel.userNewDrawImage
                                 .resizable()
                             Image("cardImage")
                                 .resizable()
