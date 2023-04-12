@@ -25,7 +25,7 @@ struct ReviewView: View, Hashable {
     
     
     var userFirstDrawImage: Image{
-        if let drawns = navigationManager.currentImaginativeJourney?.userDrawns{
+        if let drawns = navigationManager.currentJourney?.userDrawns{
             for drawn in drawns {
                 if drawn.type == .imaginative{
                     return drawn.image
@@ -37,7 +37,7 @@ struct ReviewView: View, Hashable {
     }
     
     var userNewDrawImage: Image{
-        if let drawns = navigationManager.currentImaginativeJourney?.userDrawns{
+        if let drawns = navigationManager.currentJourney?.userDrawns{
             for drawn in drawns {
                 if drawn.type == .observative{
                     return drawn.image

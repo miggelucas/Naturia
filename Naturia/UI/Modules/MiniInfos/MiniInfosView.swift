@@ -11,6 +11,10 @@ struct MiniInfosView: View {
     
     @EnvironmentObject var navigationManager: NavigationManager
     
+    var journey: ImaginativeJourney {
+        navigationManager.currentJourney! as! ImaginativeJourney
+    }
+    
     
     var body: some View {
         ZStack {
@@ -29,8 +33,8 @@ struct MiniInfosView: View {
                 }
                 
                 HStack(spacing: 32) {
-                    CardMainTrivia(mainTriviaContent: "aleatoria")
-                    ImageMainTrivia(plantImage: Image("jiboia"))
+                    CardMainTrivia(mainTriviaContent: journey.mainTrivia)
+                    ImageMainTrivia(plantImage: Image(journey.plant.imagePath))
                 }
                 
                 //                Spacer()
@@ -38,8 +42,7 @@ struct MiniInfosView: View {
                 
                 TextAndConfirmationButtons(cardType: .pequeno, firstLine:  "Agora que você conhece mais essa planta, vamos desenhá-la?", firstButtonType: .desenhar, actionForGreenButton: {
                     print("greenButton pressed")
-//                    let journey = navigationManager.currentJourney
-                    navigationManager.path.append("Vai pra próxima tela por favor")
+                    navigationManager.path.append(Routes.canvasImaginative2)
                 }, actionForWhiteButton: {})
                 
                 //                VStack(spacing: -24) {
@@ -54,10 +57,6 @@ struct MiniInfosView: View {
             .padding(.leading, 32)
             
         }
-        .navigationDestination(for: String.self, destination: { string in
-            CanvasView(viewModel: CanvasViewModel(canvasRole: .imaginative2))
-
-        })
         .navigationBarBackButtonHidden(true)
         .ignoresSafeArea()
         

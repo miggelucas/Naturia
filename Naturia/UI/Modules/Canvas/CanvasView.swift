@@ -40,13 +40,13 @@ struct CanvasView: View {
         
         switch viewModel.canvasRole {
         case .imaginative1:
-            navigationManager.path.append(CanvasRoutes.miniInfo)
+            navigationManager.path.append(Routes.miniInfo)
 
         case .imaginative2:
-            navigationManager.path.append(CanvasRoutes.review)
+            navigationManager.path.append(Routes.review)
 
         case .observative:
-            navigationManager.path.append(CanvasRoutes.conquista)
+            navigationManager.path.append(Routes.conquista)
         }
 
     }
@@ -79,16 +79,6 @@ struct CanvasView: View {
             }
             .padding(.top, 48.0)
         }
-        .navigationDestination(for: CanvasRoutes.self, destination: { canvaRoute in
-            switch canvaRoute {
-            case .conquista:
-                ConquistaView()
-            case .miniInfo:
-                MiniInfosView()
-            case .review:
-                ReviewView()
-            }
-        })
         .navigationBarBackButtonHidden(true)
         .onAppear {
             viewModel.navigationManager = navigationManager

@@ -37,8 +37,28 @@ struct ContentView: View {
                    
                     case .confirmacao:
                         ConfirmacaoView()
+                        
+                    case .canvasImaginative2:
+                        CanvasView(viewModel: CanvasViewModel(canvasRole: .imaginative2))
+                        
+                    case .conquista:
+                        ConquistaView()
+                        
+                    case .miniInfo:
+                        MiniInfosView()
+                        
+                    case .review:
+                        ReviewView()
+                        
+//                    case .drawnImageView:
+//                        DrawImageView()
+
                     }
                     
+                }
+                .navigationDestination(for: CardGaleryDrawn.self) { card in
+                    // gambiarra
+                    DrawImageView(drawn: card.drawn, name: card.text)
                 }
 
 
