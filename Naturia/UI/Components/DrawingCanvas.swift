@@ -47,3 +47,11 @@ struct DrawingCanvas: UIViewRepresentable {
         }
     }
 }
+
+struct DrawingCanvas_Previews: PreviewProvider {
+    static var previews: some View {
+        DrawingCanvas(canvasView: .constant(PKCanvasView()))
+            .previewInterfaceOrientation(.landscapeLeft).environmentObject(NavigationManager())
+    }
+}
+

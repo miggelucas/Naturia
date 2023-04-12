@@ -16,6 +16,7 @@ struct Drawn: Hashable {
     
     let id: UUID = UUID()
     let creationDate : Date = Date()
+    var image: Image
     var type: DrawnType
     
     // Implementação do protocolo Hashable
@@ -29,17 +30,17 @@ struct Drawn: Hashable {
 }
 
 extension Drawn {
-//    static func DrawnPlaceholder(type: DrawnType) -> Drawn {
-//        switch type {
-//        case .imaginative:
-//           return Drawn(image: Image("DesenhoCriativo"), type: .imaginative)
-//
-//
-//        case .observative:
-//            return Drawn(image: Image("desenhoUsuario"), type: .observative)
-//        }
-//
-//
-//    }
+    static func DrawnPlaceholder(type: DrawnType) -> Drawn {
+        switch type {
+        case .imaginative:
+           return Drawn(image: Image("DesenhoCriativo"), type: .imaginative)
+
+
+        case .observative:
+            return Drawn(image: Image("desenhoUsuario"), type: .observative)
+        }
+
+
+    }
 
 }

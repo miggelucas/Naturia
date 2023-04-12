@@ -17,11 +17,6 @@ struct ObservatoryRepositoryView: View {
     }
     
     
-//    let gridLayout = [GridItem(.flexible()),
-//                      GridItem(.flexible()),
-//                      GridItem(.flexible())]
-    
-    // layout responsivo!
     let gridLayout = [GridItem(.adaptive(minimum: 280))]
     
     var body: some View {
@@ -56,8 +51,8 @@ struct ObservatoryRepositoryView: View {
                                 Button {
                                     viewModel.journeyPressed(jorney)
                                 } label: {
-                                    CardObservative(plantIconDrawn: jorney.plant.plantIcon,
-                                                    plantName: jorney.name)
+                                    CardObservative(plantIconDrawn: Image(jorney.plant.iconPath),
+                                                    plantName: jorney.plant.popularName)
                                 }
                             }
                         }
@@ -80,9 +75,6 @@ struct ObservatoryRepositoryView: View {
         .onAppear {
             viewModel.navigationManager = navigationManager
         }
-        .navigationDestination(for: ObservativeJourney.self, destination: { journey in
-            CanvasView(viewModel: CanvasViewModel(canvasRole: .observative))
-        })
         .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)
     }
@@ -92,13 +84,7 @@ struct ObservatoryRepositoryView: View {
 
 struct ObservatoryRepositoryView_Previews: PreviewProvider {
     static var previews: some View {
-        // content state view
         ObservatoryRepositoryView()
-        
-        // empty state view
-//        ObservatoryRepositoryView()
-        
-        
-        
+
     }
 }

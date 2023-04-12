@@ -30,28 +30,33 @@ struct CTAButton: View {
                 case .estou:
                     Image("CardGreenCTAButton")
                     Text("Estou")
+                        .font(Font.NaturiaSecundary(.button))
                     
                 case .naoEstou:
                     Image("CardWhiteCTAButton")
                     Text("Não estou")
-                    
+                        .font(Font.NaturiaSecundary(.button))
                 case .concluido:
                     Image("CardGreenCTAButton")
                     HStack(spacing: 8) {
                         Image("IconCheck")
                         Text("Concluído")
+                            .font(Font.NaturiaSecundary(.button))
                     }
                 case .desenhar:
                     Image("CardGreenCTAButton")
                     Text("Desenhar")
+                        .font(Font.NaturiaSecundary(.button))
                     
                 case .sim:
                     Image("CardGreenCTAButton")
                     Text("Sim!")
+                        .font(Font.NaturiaSecundary(.button))
                     
                 case .agoranao:
                     Image("CardWhiteCTAButton")
                     Text("Agora não...")
+                        .font(Font.NaturiaSecundary(.button))
                 }
                 
             }

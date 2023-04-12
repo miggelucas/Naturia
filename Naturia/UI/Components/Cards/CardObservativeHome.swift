@@ -16,14 +16,16 @@ struct CardObservativeHome: View {
         HStack {
             VStack(alignment: .leading) {
                 HStack {
-                    Image("IconSearch")
+                    Image("iconJO")
+                        .resizable()
+                        .scaledToFit()
                         .frame(width: Responsive.scaleWidth(s: 25), height: Responsive.scaleHeight(s: 32))
                     Text(title)
-                        .font(.custom("Montserrat", size: 31))
+                        .font(Font.NaturiaSecundary(.h4))
                 }
                 Spacer().frame(height: Responsive.scaleHeight(s: 8))
                 Text(description)
-                    .font(.custom("Montserrat", size: 16))
+                    .font(Font.NaturiaSecundary(.body))
                     
             }
             .padding(.horizontal, 40)
@@ -31,7 +33,7 @@ struct CardObservativeHome: View {
            Spacer()
         }
         .frame(width: Responsive.scaleWidth(s: 572), height: Responsive.scaleHeight(s: 136))
-        .background(Image("Card Carousel").resizable())
+        .background(Image("CardObservativeHome").resizable())
         .onTapGesture {
             onTap()
         }
@@ -40,6 +42,8 @@ struct CardObservativeHome: View {
 
 struct CardObservativeHome_Previews: PreviewProvider {
     static var previews: some View {
-        CardObservativeHome(title: "Titulo", description: "Poxa", onTap: {})
+        CardObservativeHome(title: "Titulo",
+                            description: "Poxa",
+                            onTap: {})
     }
 }

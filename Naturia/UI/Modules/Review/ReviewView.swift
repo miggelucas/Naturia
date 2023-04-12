@@ -24,30 +24,7 @@ struct ReviewView: View, Hashable {
     }
     
     
-    var userFirstDrawImage: Image{
-        if let drawns = navigationManager.currentImaginativeJourney?.userDrawns{
-            for drawn in drawns {
-                if drawn.type == .imaginative{
-                    return drawn.image
-                }
-            }
-        }
-        return Image("DesenhoCriativo")
-        
-    }
-    
-    var userNewDrawImage: Image{
-        if let drawns = navigationManager.currentImaginativeJourney?.userDrawns{
-            for drawn in drawns {
-                if drawn.type == .observative{
-                    return drawn.image
-                }
-            }
-        }
-        return Image("desenhoUsuario")
-        
-    }
-    
+
     var body: some View {
         ZStack {
             
@@ -63,7 +40,7 @@ struct ReviewView: View, Hashable {
                 HStack {
                     VStack(spacing: 16) {
                         ZStack {
-                            userFirstDrawImage
+                            viewModel.userImaginativeDrawn
                                 .resizable()
                             Image("cardImage")
                                 .resizable()
@@ -78,7 +55,7 @@ struct ReviewView: View, Hashable {
                     Spacer()
                     VStack(spacing: 16) {
                         ZStack {
-                            userNewDrawImage
+                            viewModel.userObservativeDrawn
                                 .resizable()
                             Image("cardImage")
                                 .resizable()
@@ -99,11 +76,9 @@ struct ReviewView: View, Hashable {
             .frame(width: 874)
         }
         .navigationBarBackButtonHidden(true)
-        .navigationDestination(for: ReviewView.self, destination: { view in
-            PlantInfoView(viewModel: PlantInfoViewModel(journey: ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true), buttonStyle: .backToHome))
-        })
         .onAppear {
             viewModel.navigationManager = navigationManager
+            viewModel.viewDidApper()
         }
         
         
@@ -115,13 +90,13 @@ struct ReviewView: View, Hashable {
             VStack (spacing: 48) {
                 Text("Jornada Criativa")
                     .font(Font.NaturiaPrimary(.h2))
-                Text(navigationManager.currentImaginativeJourney?.name ?? "[Nome da planta]")
+                Text(navigationManager.currentImaginativeJourney?.plant.popularName ?? "[Nome da planta]")
                     .font(Font.NaturiaSecundary(.Subtitle))
                     .padding(.top, -24)
                 HStack {
                     VStack(spacing: 16) {
                         ZStack {
-                            userFirstDrawImage
+                            viewModel.userImaginativeDrawn
                                 .resizable()
                             Image("cardImage")
                                 .resizable()
@@ -137,7 +112,7 @@ struct ReviewView: View, Hashable {
                     Spacer()
                     VStack(spacing: 16) {
                         ZStack {
-                            userNewDrawImage
+                            viewModel.userObservativeDrawn
                                 .resizable()
                             Image("cardImage")
                                 .resizable()

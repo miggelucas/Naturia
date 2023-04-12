@@ -13,7 +13,7 @@ import PencilKit
 
 final class CanvasViewModel: ObservableObject {
     
-    var canvasRole: CanvasRole
+    let canvasRole: CanvasRole
     var navigationManager: NavigationManager?
     
     @Published var example: String?
@@ -24,7 +24,7 @@ final class CanvasViewModel: ObservableObject {
         case .imaginative2:
             return .referencia
         case .observative:
-            return .referencia 
+            return .provocacao
         }
     }
     @Published var userDraw: UIImage = UIImage()
@@ -43,6 +43,15 @@ final class CanvasViewModel: ObservableObject {
         }
     }
     
+    func viewDidAppear() {
+        guard let safeNavManager = navigationManager else { return }
+        
+        guard let safeJourney = safeNavManager.currentJourney else { return }
+        
+        provocacoes = safeJourney.drawingProvocations
+        referencia = safeJourney.plant.imagePath
+    }
+    
 //    func doneButtonPressed() {
 //        guard let safeNavManage = navigationManager else { return }
 //        let receivedJourney = safeNavManage.currentJourney
@@ -50,10 +59,10 @@ final class CanvasViewModel: ObservableObject {
 //        
 //        
 //        //descobrir se recivedJouney é observative ou imaginve
-//        if receivedJourney is ObservativeJourney{
-//            typeOfJourney = .observative
-//        }else{
+//        if receivedJourney is ImaginativeJourney {
 //            typeOfJourney = .imaginative
+//        } else {
+//            typeOfJourney = .observative
 //        }
 //
 //        
@@ -76,7 +85,7 @@ final class CanvasViewModel: ObservableObject {
 //        }
 //
 //    }
-
+//
 //    func getImageData() -> UIImage{
 //        let drawingImage = canvasView.drawing.image(from: canvasView.bounds, scale: CGFloat(1.0))
 //        return drawingImage

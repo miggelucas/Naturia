@@ -33,31 +33,14 @@ class GaleryViewModel: ObservableObject {
     var state: State {
         switch mode {
         case .plants:
-            return journeys.isEmpty ? .empty : .content
+            return completedJourneys.isEmpty ? .empty : .content
             
         case .draws:
-            return journeys.isEmpty ? .empty : .content
+            return completedJourneys.isEmpty ? .empty : .content
         }
     }
     
-    init(journeys: [Journey] = [
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false)
-    ], mode: GaleryViewModel.Mode = .plants) {
+    init(journeys: [Journey] = Journey.getObservativeJourneys(), mode: GaleryViewModel.Mode = .plants) {
         self.journeys = journeys
         self.mode = mode
     }
@@ -70,13 +53,15 @@ class GaleryViewModel: ObservableObject {
     
     func jorneyPressed(for journey: Journey) {
         if let safeNavManger = navigationManager {
-            safeNavManger.pushToPath(journey)
+            safeNavManger.currentJourney = journey
+            safeNavManger.pushToPath(Routes.plantsInfoFromGalery)
         }
     }
     
-    func drawnPressed(for drawCard: CardGaleryDrawn) {
+    func drawnPressed(for cardDrawn: CardGaleryDrawn) {
         if let safeNavManger = navigationManager {
-            safeNavManger.pushToPath(drawCard)
+            // gambiarra
+            safeNavManger.pushToPath(cardDrawn)
         }
     }
     

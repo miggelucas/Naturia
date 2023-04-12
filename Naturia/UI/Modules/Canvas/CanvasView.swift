@@ -18,45 +18,44 @@ struct CanvasView: View {
     }
     
     func getImageData() -> UIImage{
-        let drawingImage = viewModel.canvasView.drawing.image(from: CGRect(origin: .zero, size: CGSize(width: 200, height: 200)), scale: 1)
+        let drawnSize = viewModel.canvasView.drawing.bounds.size
+        let drawnRect = CGRect(origin: .zero, size: drawnSize)
+        let drawingImage = viewModel.canvasView.drawing.image(from: drawnRect, scale: 1)
         return drawingImage
     }
     
     func doneButtonPressed() {
         let receivedJourney = navigationManager.currentJourney
-        var typeOfJourney: Drawn.DrawnType
-        
-        
-        //descobrir se recivedJouney é observative ou imaginve
-        if receivedJourney is ObservativeJourney{
-            typeOfJourney = .observative
-        }else{
-            typeOfJourney = .imaginative
+                
+        var typeOfJourney: Drawn.DrawnType {
+            if viewModel.canvasRole == .imaginative1 {
+                return .imaginative
+            } else {
+                return .observative
+            }
         }
+    
 
-        
         viewModel.userDraw = getImageData()
         let newDrawn: Drawn = Drawn(image: Image(uiImage: viewModel.userDraw), type: typeOfJourney)
         receivedJourney?.userDrawns.append(newDrawn)
         
         navigationManager.currentJourney = receivedJourney
-        print(viewModel.canvasRole)
         
         switch viewModel.canvasRole {
         case .imaginative1:
-            navigationManager.path.append(CanvasRoutes.miniInfo)
-                print("Caiu na miniInfo")
+            navigationManager.path.append(Routes.miniInfo)
+
         case .imaginative2:
-            navigationManager.path.append(CanvasRoutes.review)
-            print("caiy aqyu")
+            navigationManager.path.append(Routes.review)
+
         case .observative:
-            navigationManager.path.append(CanvasRoutes.conquista)
+            navigationManager.path.append(Routes.conquista)
         }
 
     }
     
     var body: some View {
-        //Text(viewModel.example ?? "Hello World")
         ZStack(alignment: .topLeading){
             BackgroundView()
             
@@ -68,7 +67,9 @@ struct CanvasView: View {
                         viewModel.backButtonPressed()
                     }
                     
-                    ExpandableView(viewType: viewModel.toggleType, provocacoes: viewModel.provocacoes, referencia: viewModel.referencia)
+                    ExpandableView(viewType: viewModel.toggleType,
+                                   provocacoes: $viewModel.provocacoes,
+                                   referencia: $viewModel.referencia)
                 }
                 .padding(.leading, 32)
                 .fixedSize()
@@ -82,19 +83,10 @@ struct CanvasView: View {
             }
             .padding(.top, 48.0)
         }
-        .navigationDestination(for: CanvasRoutes.self, destination: { canvaRoute in
-            switch canvaRoute {
-            case .conquista:
-                ConquistaView()
-            case .miniInfo:
-                MiniInfosView()
-            case .review:
-                ReviewView()
-            }
-        })
         .navigationBarBackButtonHidden(true)
         .onAppear {
             viewModel.navigationManager = navigationManager
+            viewModel.viewDidAppear()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

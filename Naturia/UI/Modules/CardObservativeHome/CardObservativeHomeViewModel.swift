@@ -17,8 +17,8 @@ final class CardObservativeHomeViewModel: ObservableObject {
     var navigationManager: NavigationManager?
     
     init() {
-        title = "Title"
-        description = "Description"
+        title = "Jornada Observativa"
+        description = "Explore as plantas por análise presencial! "
     }
     
     func onTap() {

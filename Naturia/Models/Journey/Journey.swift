@@ -15,7 +15,12 @@ class Journey: Hashable {
     let drawingProvocations: [String]
     var userDrawns: [Drawn] = []
     
-    init(plant: Plant, isCompleted: Bool = false, drawingProvocations: [String] = [""]) {
+    init(plant: Plant,
+         isCompleted: Bool = false,
+         drawingProvocations: [String] = ["Você percebe algum padrão nessa planta?",
+                                          "Existe alguma característica única nela?",
+                                          "Como essa planta esta? "]
+    ) {
         self.plant = plant
         self.isCompleted = isCompleted
         self.drawingProvocations = drawingProvocations
@@ -42,5 +47,17 @@ extension Journey {
             Journey(plant: Plant.getPlant(popularName: "Vitória-régia")!, isCompleted: false),
             // Primavera
             Journey(plant: Plant.getPlant(popularName: "Primavera")!, isCompleted: false)]
+    }
+    
+    static func getObservativePlaceholder() -> Journey {
+        let journey = Journey(plant: Plant.getPlant(popularName: "Pitangueira")!,
+                              isCompleted: true
+        )
+        let drawn: [Drawn] = [Drawn.DrawnPlaceholder(type: .observative)]
+        
+        journey.userDrawns = drawn
+        
+        return journey
+        
     }
 }

@@ -24,24 +24,11 @@ class ObservatoryRepositoryViewModel: ObservableObject {
         }
     }
     
-    init(journeyArray: [ObservativeJourney] = [
-        ObservativeJourney.placeholderObservativeJourney(name: "Samambaia"),
-        ObservativeJourney.placeholderObservativeJourney(name: "Jiboia"),
-        ObservativeJourney.placeholderObservativeJourney(name: "Pau Brasil"),
-        ObservativeJourney.placeholderObservativeJourney(name: "Coqueiro"),
-        ObservativeJourney.placeholderObservativeJourney(name: "Mangueira"),
-        ObservativeJourney.placeholderObservativeJourney(name: "Cacto"),
-        ObservativeJourney.placeholderObservativeJourney(name: "Pé de Jaca"),
-        ObservativeJourney.placeholderObservativeJourney(name: "Espada de São Jorge"),
-        ObservativeJourney.placeholderObservativeJourney(name: "Baobá"),
-        ObservativeJourney.placeholderObservativeJourney(name: "Vitória Régia"),
-        ObservativeJourney.placeholderObservativeJourney(name: "Jambeiro")
-    ]) {
+    init(journeyArray: [Journey] = Journey.getObservativeJourneys()) {
         self.journeys = journeyArray
     }
     
-    
-    let journeys: [ObservativeJourney]
+    let journeys: [Journey]
     
     let textForEmptyState: String = "Sem jornadas no momento =("
     
@@ -49,14 +36,12 @@ class ObservatoryRepositoryViewModel: ObservableObject {
         if let safeNavManager = navigationManager {
             safeNavManager.backToPreviousView()
         }
-        print("user pressed to go back to homeScreen")
     }
     
-    func journeyPressed(_ journey: ObservativeJourney) {
+    func journeyPressed(_ journey: Journey) {
         if let safeNavManager = navigationManager {
             safeNavManager.currentJourney = journey
-            safeNavManager.pushToPath(journey)
+            safeNavManager.pushToPath(Routes.confirmacao)
         }
-        print("User pressed in jorney \(journey.name)")
     }
 }
