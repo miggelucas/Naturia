@@ -40,7 +40,7 @@ struct ReviewView: View, Hashable {
                 HStack {
                     VStack(spacing: 16) {
                         ZStack {
-                            viewModel.userFirstDrawImage
+                            viewModel.userImaginativeDrawn
                                 .resizable()
                             Image("cardImage")
                                 .resizable()
@@ -55,7 +55,7 @@ struct ReviewView: View, Hashable {
                     Spacer()
                     VStack(spacing: 16) {
                         ZStack {
-                            viewModel.userNewDrawImage
+                            viewModel.userObservativeDrawn
                                 .resizable()
                             Image("cardImage")
                                 .resizable()
@@ -96,7 +96,7 @@ struct ReviewView: View, Hashable {
                 HStack {
                     VStack(spacing: 16) {
                         ZStack {
-                            viewModel.userFirstDrawImage
+                            viewModel.userImaginativeDrawn
                                 .resizable()
                             Image("cardImage")
                                 .resizable()
@@ -112,7 +112,7 @@ struct ReviewView: View, Hashable {
                     Spacer()
                     VStack(spacing: 16) {
                         ZStack {
-                            viewModel.userNewDrawImage
+                            viewModel.userObservativeDrawn
                                 .resizable()
                             Image("cardImage")
                                 .resizable()

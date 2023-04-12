@@ -56,7 +56,7 @@ struct ExpandableView: View {
                         self.frameDaView = CGSize(width: 200, height: 56)
                     }
             }
-            VStack (alignment: .leading, spacing: 24){
+            VStack (alignment: .leading, spacing: 8){
                 Button(action: { self.isExpanded.toggle() }) {
                     HStack{
                         Text("\(getTitle())")
@@ -76,17 +76,29 @@ struct ExpandableView: View {
                     switch viewType{
                         
                     case .referencia:
-                        Image(referencia)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
+                        
+                        VStack(alignment: .center) {
+                            Image(referencia)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        }
+                        .frame(width: 325, height: 124, alignment: .center)
                         
                     case .provocacao:
                         VStack(alignment:.leading ,spacing: 8) {
                             ForEach(provocacoes, id: \.self){ provocacao in
-                                Text(provocacao)
+                                VStack {
+                                    Text(provocacao)
+                                        .frame(width: 350, alignment: .leading)
+                                        .lineLimit(nil)
+                                        .fixedSize(horizontal: false, vertical: true)
+                                }
+//                                .frame(height: .infinity)
+
                             }
                         }
                         .font(Font.NaturiaSecundary(.body))
+//                        .border(.pink)
                         
                         
                     }
@@ -108,8 +120,8 @@ struct ExpandableView: View {
 
 struct ExpandableView_Previews: PreviewProvider {
     static var previews: some View {
-        ExpandableView(viewType: .provocacao,
-                       provocacoes: .constant(["a", "b", "c"]),
-                       referencia: .constant("plantinha"))
+        ExpandableView(viewType: .referencia,
+                       provocacoes: .constant(["Qual característica ela deve ter para habitar o sertão?", "O que tem nessa planta que indica a vinda da chuva?", "Como você imagina que seria o porte dela?"]),
+                       referencia: .constant("pitangueira"))
     }
 }

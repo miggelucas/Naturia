@@ -14,8 +14,8 @@ final class ReviewViewModel: ObservableObject {
     @Published var example: String?
     var navigationManager: NavigationManager?
     
-    @Published var userFirstDrawImage: Image = Image("DesenhoCriativo")
-    @Published var userNewDrawImage: Image = Image("desenhoUsuario")
+    @Published var userImaginativeDrawn: Image = Image("DesenhoCriativo")
+    @Published var userObservativeDrawn: Image = Image("desenhoUsuario")
     
     
     func viewDidApper() {
@@ -24,11 +24,11 @@ final class ReviewViewModel: ObservableObject {
         
         for drawn in safeJourney.userDrawns {
             switch drawn.type {
-            case .observative:
-                userFirstDrawImage = drawn.image
-                
             case .imaginative:
-                userNewDrawImage = drawn.image
+                userImaginativeDrawn = drawn.image
+                
+            case .observative:
+                userObservativeDrawn = drawn.image
             }
         }
         
