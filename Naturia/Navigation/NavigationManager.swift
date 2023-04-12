@@ -10,7 +10,7 @@ import SwiftUI
 
 class NavigationManager: ObservableObject {
     @Published var path = NavigationPath()
-    @Published var currentObservativeJourney: ObservativeJourney?
+    @Published var currentObservativeJourney: Journey?
     @Published var currentImaginativeJourney: ImaginativeJourney?
     
     var currentJourney: Journey?

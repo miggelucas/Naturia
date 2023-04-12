@@ -40,24 +40,7 @@ class GaleryViewModel: ObservableObject {
         }
     }
     
-    init(journeys: [Journey] = [
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: false),
-        ObservativeJourney.genericPlaceholderObservativeJourney(isDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),
-        ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false)
-    ], mode: GaleryViewModel.Mode = .plants) {
+    init(journeys: [Journey] = Journey.getObservativeJourneys(), mode: GaleryViewModel.Mode = .plants) {
         self.journeys = journeys
         self.mode = mode
     }

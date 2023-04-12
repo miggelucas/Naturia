@@ -14,7 +14,7 @@ struct ConquistaView: View {
     @ObservedObject private var viewModel = ConquistaViewModel()
     
     var userDrawImage: Image{
-        if let drawns = navigationManager.currentObservativeJourney?.userDrawns{
+        if let drawns = navigationManager.currentObservativeJourney?.userDrawns {
             for drawn in drawns {
                 if drawn.type == .observative{
                     return drawn.image

@@ -50,10 +50,10 @@ final class CanvasViewModel: ObservableObject {
 //        
 //        
 //        //descobrir se recivedJouney é observative ou imaginve
-//        if receivedJourney is ObservativeJourney{
-//            typeOfJourney = .observative
-//        }else{
+//        if receivedJourney is ImaginativeJourney {
 //            typeOfJourney = .imaginative
+//        } else {
+//            typeOfJourney = .observative
 //        }
 //
 //        
@@ -76,7 +76,7 @@ final class CanvasViewModel: ObservableObject {
 //        }
 //
 //    }
-
+//
 //    func getImageData() -> UIImage{
 //        let drawingImage = canvasView.drawing.image(from: canvasView.bounds, scale: CGFloat(1.0))
 //        return drawingImage

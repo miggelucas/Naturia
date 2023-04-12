@@ -33,9 +33,9 @@ struct CardImaginativeCarousel: View {
             ForEach(journeys.indices, id: \.self) { i in
                 if i == index {
                     CardImaginative(
-                        journeyTitle: "Jornada Criativa",
+                        journeyTitle: journeys[i].plant.popularName,
                         journeyProvocation: journeys[i].mainProvocation,
-                        journeyImage: Image(journeys[i].plant.imagePath))
+                        journeyImage: Image(journeys[i].iconPath))
                     
                     .background(GeometryReader { geometry in
                                         Color.clear

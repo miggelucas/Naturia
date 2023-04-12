@@ -12,12 +12,12 @@ import SwiftUI
 
 final class CardImaginativeCarouselViewModel: ObservableObject {
     @Published var cardIndex: Int = 0
-    @Published var journeys: [ImaginativeJourney] = []
+    @Published var journeys: [ImaginativeJourney]
     
     var navigationManager: NavigationManager?
     
     init() {
-        journeys = getJourneys()
+        journeys = ImaginativeJourney.getImaginativeJourneys()
     }
     
     func onTapArrowLeft() {
@@ -41,6 +41,6 @@ final class CardImaginativeCarouselViewModel: ObservableObject {
     }
     
     private func getJourneys() -> [ImaginativeJourney]{
-        return [ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false), ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true),ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: false)]
+        return ImaginativeJourney.getImaginativeJourneys()
     }
 }

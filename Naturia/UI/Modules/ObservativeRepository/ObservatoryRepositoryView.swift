@@ -56,8 +56,8 @@ struct ObservatoryRepositoryView: View {
                                 Button {
                                     viewModel.journeyPressed(jorney)
                                 } label: {
-                                    CardObservative(plantIconDrawn: jorney.plant.plantIcon,
-                                                    plantName: jorney.name)
+                                    CardObservative(plantIconDrawn: Image(jorney.plant.iconPath),
+                                                    plantName: jorney.plant.popularName)
                                 }
                             }
                         }
@@ -80,7 +80,7 @@ struct ObservatoryRepositoryView: View {
         .onAppear {
             viewModel.navigationManager = navigationManager
         }
-        .navigationDestination(for: ObservativeJourney.self, destination: { journey in
+        .navigationDestination(for: Journey.self, destination: { journey in
             CanvasView(viewModel: CanvasViewModel(canvasRole: .observative))
         })
         .ignoresSafeArea()

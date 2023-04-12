@@ -100,7 +100,7 @@ struct ReviewView: View, Hashable {
         }
         .navigationBarBackButtonHidden(true)
         .navigationDestination(for: ReviewView.self, destination: { view in
-            PlantInfoView(viewModel: PlantInfoViewModel(journey: ImaginativeJourney.getPlaceholderImaginativeJourney(isJourneyDone: true), buttonStyle: .backToHome))
+            PlantInfoView(viewModel: PlantInfoViewModel(journey: ImaginativeJourney.getPlaceholder(), buttonStyle: .backToHome))
         })
         .onAppear {
             viewModel.navigationManager = navigationManager
@@ -115,7 +115,7 @@ struct ReviewView: View, Hashable {
             VStack (spacing: 48) {
                 Text("Jornada Criativa")
                     .font(Font.NaturiaPrimary(.h2))
-                Text(navigationManager.currentImaginativeJourney?.name ?? "[Nome da planta]")
+                Text(navigationManager.currentImaginativeJourney?.plant.popularName ?? "[Nome da planta]")
                     .font(Font.NaturiaSecundary(.Subtitle))
                     .padding(.top, -24)
                 HStack {

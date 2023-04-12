@@ -36,7 +36,7 @@ struct PlantInfoView: View {
                 }
                 
                 HStack(spacing: 32) {
-                    viewModel.plant.plantIcon
+                    Image(viewModel.plant.iconPath)
                         .resizable()
                         .scaledToFit()
                         .padding(.vertical, 68)
@@ -116,6 +116,6 @@ struct PlantInfoView: View {
 
 struct PlantInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        PlantInfoView(viewModel: PlantInfoViewModel(journey: ObservativeJourney.placeholderObservativeJourney(name: "asdasd"), buttonStyle: .backToHome)).previewInterfaceOrientation(.landscapeLeft)
+        PlantInfoView(viewModel: PlantInfoViewModel(journey: Journey.getObservativePlaceholder(), buttonStyle: .backToHome)).previewInterfaceOrientation(.landscapeLeft)
     }
 }

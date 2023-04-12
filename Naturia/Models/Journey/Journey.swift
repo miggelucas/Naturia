@@ -44,7 +44,7 @@ extension Journey {
             Journey(plant: Plant.getPlant(popularName: "Primavera")!, isCompleted: false)]
     }
     
-    static func getObservativePlaceHolder() -> Journey {
+    static func getObservativePlaceholder() -> Journey {
         var journey = Journey(plant: Plant.getPlant(popularName: "Pitangueira")!,
                               isCompleted: true
         )

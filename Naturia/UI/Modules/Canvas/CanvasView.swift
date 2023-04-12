@@ -28,7 +28,7 @@ struct CanvasView: View {
         
         
         //descobrir se recivedJouney é observative ou imaginve
-        if receivedJourney is ObservativeJourney{
+        if receivedJourney != nil {
             typeOfJourney = .observative
         }else{
             typeOfJourney = .imaginative
