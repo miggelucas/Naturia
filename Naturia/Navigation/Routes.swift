@@ -11,6 +11,8 @@ enum Routes: Hashable {
     case galery
     case canvas
     case observativeRepo
+    case canvasObservative
+    case plantsInfoFromJourney
 }
 
 enum CanvasRoutes: Hashable {
@@ -19,6 +21,8 @@ enum CanvasRoutes: Hashable {
     case conquista
 
 }
+
+
 
 enum CanvasRole {
     case imaginative1, imaginative2, observative

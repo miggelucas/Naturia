@@ -41,7 +41,7 @@ extension ImaginativeJourney {
     
     static func getPlaceholder() -> ImaginativeJourney {
         
-        var journey = ImaginativeJourney(mainProvocation: "Como deve ser a planta que indica a chuva no sertão?",
+        let journey = ImaginativeJourney(mainProvocation: "Como deve ser a planta que indica a chuva no sertão?",
                                          drawingProvocations: ["Qual característica ela deve ter para habitar o sertão?", "O que tem nessa planta que indica a vinda da chuva?", "Como você imagina que seria o porte dela?"],
                                          mainTrivia: Plant.getPlant(popularName: "Mandacaru")!.trivia[0],
                                          plant: Plant.getPlant(popularName: "Pitangueira")!,

@@ -54,9 +54,6 @@ struct ConquistaView: View {
             .frame(width: 874)
         }
         .navigationBarBackButtonHidden(true)
-        .navigationDestination(for: Journey.self, destination: { journey in
-            PlantInfoView(viewModel: PlantInfoViewModel(journey: journey, buttonStyle: .backToHome))
-        })
         .onAppear{
             viewModel.navigationManager = navigationManager
         }

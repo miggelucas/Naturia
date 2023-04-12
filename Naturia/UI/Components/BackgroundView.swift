@@ -30,7 +30,7 @@ struct BackgroundView: View {
                 case .conquista:
                     Image("IlustracoesConquista")
                         .resizable()
-                        .frame(width: .infinity, height: .infinity)
+//                        .frame(width: .infinity, height: .infinity)
                 case .review:
                     Image("IlustracoesReview")
                 }

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "IlustracoesConquista.png",
+      "filename" : "IlustraçõesConquista.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "IlustracoesConquista@2x.png",
+      "filename" : "IlustraçõesConquista@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "IlustracoesConquista@3x.png",
+      "filename" : "IlustraçõesConquista@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

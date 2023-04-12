@@ -25,16 +25,23 @@ struct ContentView: View {
                         
                     case .observativeRepo:
                         ObservatoryRepositoryView()
+                    
+                    case .canvasObservative:
+                        CanvasView(viewModel: CanvasViewModel(canvasRole: .observative))
+                        
+                    case .plantsInfoFromJourney:
+                        PlantInfoView(viewModel: PlantInfoViewModel(journey: navigationManager.currentJourney!, buttonStyle: .backToHome))
                     }
                     
                 }
 
-            
+
         }
         .environmentObject(navigationManager)
         .navigationViewStyle(.stack)
         .navigationBarTitleDisplayMode(.automatic)
         .navigationBarBackButtonHidden(true)
+
 
 
         

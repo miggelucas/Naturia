@@ -48,10 +48,8 @@ final class CanvasViewModel: ObservableObject {
         
         guard let safeJourney = safeNavManager.currentJourney else { return }
         
-        print("journada que entra no didAppear \(safeJourney)")
         provocacoes = safeJourney.drawingProvocations
         referencia = safeJourney.plant.imagePath
-        print("chegou aqui")
     }
     
 //    func doneButtonPressed() {

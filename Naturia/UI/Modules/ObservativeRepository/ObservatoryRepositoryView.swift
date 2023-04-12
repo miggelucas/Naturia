@@ -80,9 +80,6 @@ struct ObservatoryRepositoryView: View {
         .onAppear {
             viewModel.navigationManager = navigationManager
         }
-        .navigationDestination(for: Journey.self, destination: { journey in
-            CanvasView(viewModel: CanvasViewModel(canvasRole: .observative))
-        })
         .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)
     }
