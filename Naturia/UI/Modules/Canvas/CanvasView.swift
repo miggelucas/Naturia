@@ -18,19 +18,23 @@ struct CanvasView: View {
     }
     
     func getImageData() -> UIImage{
-        let drawingImage = viewModel.canvasView.drawing.image(from: CGRect(origin: .zero, size: CGSize(width: 200, height: 200)), scale: 1)
+        let drawnSize = viewModel.canvasView.drawing.bounds.size
+        let drawnRect = CGRect(origin: .zero, size: drawnSize)
+        let drawingImage = viewModel.canvasView.drawing.image(from: drawnRect, scale: 1)
         return drawingImage
     }
     
     func doneButtonPressed() {
         let receivedJourney = navigationManager.currentJourney
                 
-        var typeOfJourney: Drawn.DrawnType
-        if receivedJourney != nil {
-            typeOfJourney = .observative
-        }else{
-            typeOfJourney = .imaginative
+        var typeOfJourney: Drawn.DrawnType {
+            if viewModel.canvasRole == .imaginative1 {
+                return .imaginative
+            } else {
+                return .observative
+            }
         }
+    
 
         viewModel.userDraw = getImageData()
         let newDrawn: Drawn = Drawn(image: Image(uiImage: viewModel.userDraw), type: typeOfJourney)
@@ -40,13 +44,13 @@ struct CanvasView: View {
         
         switch viewModel.canvasRole {
         case .imaginative1:
-            navigationManager.path.append(CanvasRoutes.miniInfo)
+            navigationManager.path.append(Routes.miniInfo)
 
         case .imaginative2:
-            navigationManager.path.append(CanvasRoutes.review)
+            navigationManager.path.append(Routes.review)
 
         case .observative:
-            navigationManager.path.append(CanvasRoutes.conquista)
+            navigationManager.path.append(Routes.conquista)
         }
 
     }
@@ -79,16 +83,6 @@ struct CanvasView: View {
             }
             .padding(.top, 48.0)
         }
-        .navigationDestination(for: CanvasRoutes.self, destination: { canvaRoute in
-            switch canvaRoute {
-            case .conquista:
-                ConquistaView()
-            case .miniInfo:
-                MiniInfosView()
-            case .review:
-                ReviewView()
-            }
-        })
         .navigationBarBackButtonHidden(true)
         .onAppear {
             viewModel.navigationManager = navigationManager

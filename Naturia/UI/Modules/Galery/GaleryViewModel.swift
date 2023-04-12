@@ -53,13 +53,15 @@ class GaleryViewModel: ObservableObject {
     
     func jorneyPressed(for journey: Journey) {
         if let safeNavManger = navigationManager {
-            safeNavManger.pushToPath(journey)
+            safeNavManger.currentJourney = journey
+            safeNavManger.pushToPath(Routes.plantsInfoFromGalery)
         }
     }
     
-    func drawnPressed(for drawCard: CardGaleryDrawn) {
+    func drawnPressed(for cardDrawn: CardGaleryDrawn) {
         if let safeNavManger = navigationManager {
-            safeNavManger.pushToPath(drawCard)
+            // gambiarra
+            safeNavManger.pushToPath(cardDrawn)
         }
     }
     

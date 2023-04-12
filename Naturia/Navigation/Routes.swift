@@ -13,16 +13,17 @@ enum Routes: Hashable {
     case observativeRepo
     case confirmacao
     case canvasObservative
+    case canvasImaginative2
     case plantsInfoFromJourney
     case plantsInfoFromGalery
-}
-
-enum CanvasRoutes: Hashable {
     case miniInfo
     case review
     case conquista
-
+//    case drawnImageView
+    
 }
+
+
 
 
 

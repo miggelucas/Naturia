@@ -17,10 +17,6 @@ struct GaleryView: View {
     }
     
     
-    //    let gridLayout = [GridItem(.flexible()),
-    //                      GridItem(.flexible()),
-    //                      GridItem(.flexible())]
-    
     let gridLayout = [GridItem(.adaptive(minimum: 280))]
     
     
@@ -44,8 +40,6 @@ struct GaleryView: View {
                     Text("Galeria de Plantas")
                         .font(Font.NaturiaPrimary(.h1))
                     
-                    //                Text("Subtítulo")
-                    //                    .font(Font.NaturiaSecundary(.Subtitle))
                     
                 } .padding(.top, -80)
                 
@@ -69,7 +63,6 @@ struct GaleryView: View {
                                     ForEach(viewModel.completedJourneys, id: \.self) { jorney in
                                         Button {
                                             viewModel.jorneyPressed(for: jorney)
-                                            //                                                navigationManager.push(AnyView(PlantInfoView(viewModel: PlantInfoViewModel(journey: jorney))))
                                             
                                         } label: {
                                             CardObservative(plantIconDrawn: Image(jorney.plant.iconPath),
@@ -116,7 +109,7 @@ struct GaleryView: View {
                                         ForEach(jorney.userDrawns, id: \.self) { draw in
                                             Button {
                                                 viewModel.drawnPressed(for: CardGaleryDrawn(drawn: draw,
-                                                                                            text: jorney.plant.popularName ))
+                                                                                            text: jorney.plant.popularName))
                                             } label: {
                                                 CardGaleryDrawn(drawn: draw,
                                                                 text: jorney.plant.popularName)
@@ -139,8 +132,7 @@ struct GaleryView: View {
                             
                         }
                         
-                        
-                        
+
                         ArrowButton(buttonType: .left) {
                             // assim como o botao no caso da tela de plantas
                             // esse cara eh gambiarra, esta aqui para manter proporcao da tela
@@ -148,13 +140,9 @@ struct GaleryView: View {
                         .layoutPriority(2)
                         .opacity(0)
                     }
-                    
-                    
-                    
-                    
+
                 }
-                
-                
+
             }
             .padding(.horizontal, 32)
             .padding(.top, 48)
@@ -162,12 +150,6 @@ struct GaleryView: View {
             
         }
         .navigationBarBackButtonHidden(true)
-        .navigationDestination(for: Journey.self) { journey in
-            PlantInfoView(viewModel: PlantInfoViewModel(journey: journey, buttonStyle: .back))
-        }
-        .navigationDestination(for: CardGaleryDrawn.self) { card in
-            DrawImageView(drawn: card.drawn, name: card.text)
-        }
         
         .onAppear {
             self.viewModel.navigationManager = self.navigationManager
