@@ -35,11 +35,15 @@ struct PlantInfoView: View {
                     
                 }
                 
+                
+                
                 HStack(spacing: 32) {
                     Image(viewModel.plant.iconPath)
                         .resizable()
                         .scaledToFit()
                         .padding(.vertical, 68)
+                    
+                    Spacer()
                     
                     ScrollView {
                         VStack(alignment: .leading, spacing: 32) {
@@ -86,19 +90,21 @@ struct PlantInfoView: View {
                                     .font(Font.NaturiaSecundary(.h5))
                             }
                             
-                            ScrollView {
-                                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], alignment: .center, spacing: 32) {
-                                    ForEach(viewModel.plant.trivia, id: \.self) { trivia in
-                                        CardPlantTrivia(trivia: trivia)
-                                    }
+                            
+                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], alignment: .center, spacing: 32) {
+                                ForEach(viewModel.plant.trivia, id: \.self) { trivia in
+                                    CardPlantTrivia(trivia: trivia)
                                 }
+                                
                             }
+                            .frame(width: 549)
                             
                         }
                         
                     }
                     .foregroundColor(Color("gray-900"))
                     .padding(.top, -50)
+                    .padding(.trailing, 5)
                 }
             }
             .padding(.horizontal, 32)
