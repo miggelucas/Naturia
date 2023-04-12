@@ -42,7 +42,7 @@ class ObservatoryRepositoryViewModel: ObservableObject {
     func journeyPressed(_ journey: Journey) {
         if let safeNavManager = navigationManager {
             safeNavManager.currentJourney = journey
-            safeNavManager.pushToPath(Routes.canvasObservative)
+            safeNavManager.pushToPath(Routes.confirmacao)
         }
         print("User pressed in jorney \(journey.plant.popularName)")
     }

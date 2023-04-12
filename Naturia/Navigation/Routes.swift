@@ -11,6 +11,7 @@ enum Routes: Hashable {
     case galery
     case canvas
     case observativeRepo
+    case confirmacao
     case canvasObservative
     case plantsInfoFromJourney
 }
