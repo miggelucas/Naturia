@@ -59,7 +59,7 @@ struct TextAndConfirmationButtons: View {
 
 struct TextAndConfirmationButtons_Previews: PreviewProvider {
     static var previews: some View {
-        TextAndConfirmationButtons(cardType: .pequeno, firstLine: "Teste de 1 linha", firstButtonType: .sim, actionForGreenButton: {}, actionForWhiteButton: {})
+        TextAndConfirmationButtons(cardType: .grande, firstLine: "Teste de 1 linha", firstButtonType: .sim, actionForGreenButton: {}, actionForWhiteButton: {})
     }
 }
 
