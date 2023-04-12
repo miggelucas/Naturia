@@ -39,14 +39,13 @@ class Journey: Hashable {
 extension Journey {
     static func getObservativeJourneys() -> [Journey] {
         return [
-            // Pitangueira
             Journey(plant: Plant.getPlant(popularName: "Pitangueira")!, isCompleted: false),
-            // Pau-Brasil
             Journey(plant: Plant.getPlant(popularName: "Pau-Brasil")!, isCompleted: false),
-            // Vitória-régia
             Journey(plant: Plant.getPlant(popularName: "Vitória-régia")!, isCompleted: false),
-            // Primavera
-            Journey(plant: Plant.getPlant(popularName: "Primavera")!, isCompleted: false)]
+            Journey(plant: Plant.getPlant(popularName: "Ipê-amarelo")!, isCompleted: false),
+            Journey(plant: Plant.getPlant(popularName: "Mandacaru")!, isCompleted: false),
+            Journey(plant: Plant.getPlant(popularName: "Brinco-de-princesa")!, isCompleted: false),
+        ]
     }
     
     static func getObservativePlaceholder() -> Journey {

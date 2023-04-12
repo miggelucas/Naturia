@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Card.png",
+      "filename" : "Pitangueira.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Card@2x.png",
+      "filename" : "Pitangueira@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Card@3x.png",
+      "filename" : "Pitangueira@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

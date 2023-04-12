@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Card.png",
+      "filename" : "Vitoria regia.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Card@2x.png",
+      "filename" : "Vitoria regia@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Card@3x.png",
+      "filename" : "Vitoria regia@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -24,7 +24,7 @@ extension Font {
         case .h5:
             return custom(fontName, size: 20).weight(.medium)
         case .cta:
-            return custom(fontName, size: 25).weight(.regular)
+            return custom(fontName, size: 23).weight(.regular)
         case .Subtitle:
             return custom(fontName, size: 20).weight(.regular)
         case .button:

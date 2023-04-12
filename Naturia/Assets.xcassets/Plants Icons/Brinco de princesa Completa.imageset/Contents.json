@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Card.png",
+      "filename" : "Brinco de princesa.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Card@2x.png",
+      "filename" : "Brinco de princesa@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Card@3x.png",
+      "filename" : "Brinco de princesa@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

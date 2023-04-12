@@ -89,7 +89,7 @@ struct ReviewView: View, Hashable {
                     }
                 }
                 
-                TextAndConfirmationButtons(cardType: .grande, firstLine: "Parabéns, olha o quanto você aprendeu!", secondLine: "Quer saber mais sobre o/a [nomedaplanta]?", firstButtonType: .sim, secondButtonType: .sim, actionForGreenButton: {
+                TextAndConfirmationButtons(cardType: .grande, firstLine: "Parabéns, olha o quanto você aprendeu!", secondLine: "Quer saber mais sobre o/a [nomedaplanta]?", firstButtonType: .sim, secondButtonType: .agoranao, actionForGreenButton: {
                     viewModel.greenButtonPressed()
                 }, actionForWhiteButton: {
                     viewModel.whiteButtonPressed()

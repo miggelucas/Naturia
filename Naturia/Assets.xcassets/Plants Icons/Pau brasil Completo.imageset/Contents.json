@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Card.png",
+      "filename" : "Pau brasil.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Card@2x.png",
+      "filename" : "Pau brasil@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Card@3x.png",
+      "filename" : "Pau brasil@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
