@@ -129,6 +129,7 @@ struct ReviewView: View, Hashable {
                         .frame(width: 468, height: 325)
                         Text("O que você imaginou")
                             .font(Font.NaturiaSecundary(.h5))
+                        
                     }
                     Spacer()
                     Image("iconSetaDireita")
