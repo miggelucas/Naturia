@@ -24,31 +24,27 @@ struct CanvasView: View {
     
     func doneButtonPressed() {
         let receivedJourney = navigationManager.currentJourney
+                
         var typeOfJourney: Drawn.DrawnType
-        
-        
-        //descobrir se recivedJouney é observative ou imaginve
         if receivedJourney != nil {
             typeOfJourney = .observative
         }else{
             typeOfJourney = .imaginative
         }
 
-        
         viewModel.userDraw = getImageData()
         let newDrawn: Drawn = Drawn(image: Image(uiImage: viewModel.userDraw), type: typeOfJourney)
         receivedJourney?.userDrawns.append(newDrawn)
         
         navigationManager.currentJourney = receivedJourney
-        print(viewModel.canvasRole)
         
         switch viewModel.canvasRole {
         case .imaginative1:
             navigationManager.path.append(CanvasRoutes.miniInfo)
-                print("Caiu na miniInfo")
+
         case .imaginative2:
             navigationManager.path.append(CanvasRoutes.review)
-            print("caiy aqyu")
+
         case .observative:
             navigationManager.path.append(CanvasRoutes.conquista)
         }
@@ -56,7 +52,6 @@ struct CanvasView: View {
     }
     
     var body: some View {
-        //Text(viewModel.example ?? "Hello World")
         ZStack(alignment: .topLeading){
             BackgroundView()
             
@@ -68,7 +63,9 @@ struct CanvasView: View {
                         viewModel.backButtonPressed()
                     }
                     
-                    ExpandableView(viewType: viewModel.toggleType, provocacoes: viewModel.provocacoes, referencia: viewModel.referencia)
+                    ExpandableView(viewType: viewModel.toggleType,
+                                   provocacoes: $viewModel.provocacoes,
+                                   referencia: $viewModel.referencia)
                 }
                 .padding(.leading, 32)
                 .fixedSize()
@@ -95,6 +92,7 @@ struct CanvasView: View {
         .navigationBarBackButtonHidden(true)
         .onAppear {
             viewModel.navigationManager = navigationManager
+            viewModel.viewDidAppear()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

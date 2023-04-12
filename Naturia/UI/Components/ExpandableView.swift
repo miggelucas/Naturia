@@ -12,9 +12,36 @@ import SwiftUI
 struct ExpandableView: View {
     @State private var isExpanded = true
     @State var viewType: ExpandableViewType
-    @State var provocacoes: [String]?
-    @State var referencia: String?
+    @Binding var provocacoes: [String]
+    @Binding var referencia: String
     @State var frameDaView: CGSize?
+    
+    
+    func getTitle() -> String{
+        
+        switch viewType{
+        case .referencia:
+            return "Referência"
+        case .provocacao:
+            return "Provocações"
+        }
+    }
+    
+    func getSize() -> CGSize{
+        if isExpanded{
+            switch viewType{
+            case .referencia:
+                return CGSize(width: 400, height: 400)
+            case .provocacao:
+                return CGSize(width: 375, height: 204)
+            }
+        }else{
+            let targetSize = CGSize(width: 0, height: 0)
+            return targetSize
+        }
+        
+    }
+    
     
     var body: some View {
         ZStack {
@@ -49,18 +76,21 @@ struct ExpandableView: View {
                     switch viewType{
                         
                     case .referencia:
-                        Image(referencia ?? "")
+                        Image(referencia)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                         
                     case .provocacao:
                         VStack(alignment:.leading ,spacing: 8) {
-                            if let provocacoes = provocacoes{
-                                ForEach(provocacoes, id: \.self){ provocacao in
-                                    Text(provocacao)
-                                }
-                            }else{
-                                Text("Poxa nenhuma provocação por aqui! Erro: EVPROV1")
+                            //                            if let provocacoes = provocacoes{
+                            //                                ForEach(provocacoes, id: \.self){ provocacao in
+                            //                                    Text(provocacao)
+                            //                                }
+                            //                            }else{
+                            //                                Text("Poxa nenhuma provocação por aqui! Erro: EVPROV1")
+                            //                            }
+                            ForEach(provocacoes, id: \.self){ provocacao in
+                                Text(provocacao)
                             }
                         }
                         .font(Font.NaturiaSecundary(.body))
@@ -77,41 +107,16 @@ struct ExpandableView: View {
         }
         
         
-    
-    }
-    
-    
-    
-    
-    func getTitle() -> String{
-        
-        switch viewType{
-        case .referencia:
-            return "Referência"
-        case .provocacao:
-            return "Provocações"
-        }
-    }
-    
-    func getSize() -> CGSize{
-        if isExpanded{
-            switch viewType{
-            case .referencia:
-                return CGSize(width: 400, height: 400)
-            case .provocacao:
-                return CGSize(width: 375, height: 204)
-            }
-        }else{
-            let targetSize = CGSize(width: 0, height: 0)
-            return targetSize
-        }
         
     }
+    
     
 }
 
 struct ExpandableView_Previews: PreviewProvider {
     static var previews: some View {
-        ExpandableView(viewType: .provocacao)
+        ExpandableView(viewType: .provocacao,
+                       provocacoes: .constant(["a", "b", "c"]),
+                       referencia: .constant("plantinha"))
     }
 }
