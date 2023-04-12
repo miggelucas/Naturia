@@ -16,20 +16,26 @@ struct CardObservative: View {
     var body: some View {
         ZStack {
             Image("Card Observative")
+                .resizable()
+                .frame(width: 270, height: 134)
+                .scaledToFit()
             
             HStack {
                 plantIconDrawn
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: Responsive.scaleWidth(s: 88), height: Responsive.scaleHeight(s: 88))
+                 
                 
                 Spacer()
-                
+            
                 Text(plantName)
                     .font(Font.NaturiaSecundary(.cta))
                     .multilineTextAlignment(.center)
                     .foregroundColor(.black)
-                
                 Spacer()
             }
-            .padding(.trailing, 23.0)
+            .padding(.trailing, 16.0)
             .padding(.leading, 16.0)
         }
         .frame(width: 270, height: 134)
@@ -38,6 +44,6 @@ struct CardObservative: View {
 
 struct CardObservative_Previews: PreviewProvider {
     static var previews: some View {
-        CardObservative(plantIconDrawn: Image("Green Plant"), plantName: "Espada de São Jorge")
+        CardObservative(plantIconDrawn: Image("Mandacaru Completo"), plantName: "Espada de São Jorge")
     }
 }

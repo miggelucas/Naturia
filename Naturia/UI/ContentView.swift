@@ -67,6 +67,7 @@ struct ContentView: View {
         .navigationViewStyle(.stack)
         .navigationBarTitleDisplayMode(.automatic)
         .navigationBarBackButtonHidden(true)
+        .preferredColorScheme(.light)
 
 
 

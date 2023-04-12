@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Card Observative.png",
+      "filename" : "Card.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Card Observative@2x.png",
+      "filename" : "Card@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Card Observative@3x.png",
+      "filename" : "Card@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
