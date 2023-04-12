@@ -25,43 +25,41 @@ struct CardImaginativeCarousel: View {
     let journeys: [ImaginativeJourney]
     let onTapArrowLeft: () -> Void
     let onTapArrowRight: () -> Void
-//    let onTapButton: () -> Void
+    //    let onTapButton: () -> Void
     @State private var childComponentSize: CGSize = .zero
     
     var body: some View {
         TabView(selection: $index) {
             ForEach(journeys.indices, id: \.self) { i in
-                if i == index {
-                    CardImaginative(
-                        journeyTitle: journeys[i].plant.popularName,
-                        journeyProvocation: journeys[i].mainProvocation,
-                        journeyImage: Image(journeys[i].iconPath))
-                    
-                    .background(GeometryReader { geometry in
-                                        Color.clear
-                                            .preference(key: ChildComponentSizePreferenceKey.self, value: geometry.size)
-                                    })
-                                    .onPreferenceChange(ChildComponentSizePreferenceKey.self) { size in
-                                        self.childComponentSize = size
-                                    }
-                    .overlay(
-                        VStack() {
-                            HStack {
-                                ArrowButton(buttonType: .left, onTap: onTapArrowLeft)
-                                    .padding(.leading, Responsive.scaleWidth(s: -29))
-                                Spacer()
-                                ArrowButton(buttonType: .right, onTap: onTapArrowRight)
-                                    .padding(.trailing, Responsive.scaleWidth(s: -29))
-                            }
-                        }
-                    )
-                    .overlay(
-                        CTAButton(buttonType: .desenhar, actionForButton: {
-                            navigationManager.currentJourney = journeys[index]
-                            navigationManager.path.append(Routes.canvas)
-                        })
-                            .padding(.bottom, Responsive.scaleHeight(s: -24.5)), alignment: .bottom)
+                CardImaginative(
+                    journeyProvocation: journeys[i].mainProvocation,
+                    journeyImage: Image(journeys[i].iconPath), cardIndex: i)
+                
+                .background(GeometryReader { geometry in
+                    Color.clear
+                        .preference(key: ChildComponentSizePreferenceKey.self, value: geometry.size)
+                })
+                .onPreferenceChange(ChildComponentSizePreferenceKey.self) { size in
+                    self.childComponentSize = size
                 }
+                .overlay(
+                    VStack() {
+                        HStack {
+                            ArrowButton(buttonType: .left, onTap: onTapArrowLeft)
+                                .padding(.leading, Responsive.scaleWidth(s: -25))
+                            Spacer()
+                            ArrowButton(buttonType: .right, onTap: onTapArrowRight)
+                                .padding(.trailing, Responsive.scaleWidth(s: -25))
+                        }
+                    }
+                )
+                .overlay(
+                    CTAButton(buttonType: .desenhar, actionForButton: {
+                        navigationManager.currentJourney = journeys[index]
+                        navigationManager.path.append(Routes.canvas)
+                    })
+                    .padding(.bottom, Responsive.scaleHeight(s: -24.5)), alignment: .bottom)
+                
             }
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))

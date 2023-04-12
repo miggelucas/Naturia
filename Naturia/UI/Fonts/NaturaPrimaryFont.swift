@@ -21,7 +21,7 @@ extension Font {
             return .custom(fontName, size: 120).weight(.regular)
             
         case .h2:
-            return .custom(fontName, size: 96).weight(.regular)
+            return .custom(fontName, size: 80).weight(.regular)
         }
         
     }

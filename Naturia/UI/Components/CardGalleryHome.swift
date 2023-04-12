@@ -15,10 +15,12 @@ struct CardGalleryHome: View {
         HStack {
             VStack(alignment: .center) {
                 HStack {
-                    Image("IconSearch")
+                    Image("iconCatalogo")
+                        .resizable()
+                        .scaledToFit()
                         .frame(width: Responsive.scaleWidth(s: 25), height: Responsive.scaleHeight(s: 32))
                     Text(title)
-                        .font(.custom("Montserrat", size: 31))
+                        .font(Font.NaturiaSecundary(.h4))
                 }
             }
         }
