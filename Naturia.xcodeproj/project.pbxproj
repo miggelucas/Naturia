@@ -25,6 +25,7 @@
 		178EBDAF29E2111400D2DA70 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178EBDAE29E2111400D2DA70 /* NavigationManager.swift */; };
 		179637A329DE119100C787F7 /* GaleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179637A229DE119100C787F7 /* GaleryViewModel.swift */; };
 		179637A929DE56C800C787F7 /* GaleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179637A829DE56C800C787F7 /* GaleryView.swift */; };
+		17AE4D8629F84F8C00A4813A /* RepositoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AE4D8529F84F8C00A4813A /* RepositoryManager.swift */; };
 		17C4F56329DCB5900016D74C /* CardPlantDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */; };
 		17C4F56529DCBD750016D74C /* CardPlantOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56429DCBD750016D74C /* CardPlantOrigin.swift */; };
 		17C4F56729DCBE670016D74C /* CardPlantTrivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56629DCBE670016D74C /* CardPlantTrivia.swift */; };
@@ -96,6 +97,7 @@
 		178EBDAE29E2111400D2DA70 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		179637A229DE119100C787F7 /* GaleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryViewModel.swift; sourceTree = "<group>"; };
 		179637A829DE56C800C787F7 /* GaleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryView.swift; sourceTree = "<group>"; };
+		17AE4D8529F84F8C00A4813A /* RepositoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryManager.swift; sourceTree = "<group>"; };
 		17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantDescriptionView.swift; sourceTree = "<group>"; };
 		17C4F56429DCBD750016D74C /* CardPlantOrigin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantOrigin.swift; sourceTree = "<group>"; };
 		17C4F56629DCBE670016D74C /* CardPlantTrivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantTrivia.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 			children = (
 				EB18AEFD29D4AF9C00D73821 /* Routes.swift */,
 				178EBDAE29E2111400D2DA70 /* NavigationManager.swift */,
+				17AE4D8529F84F8C00A4813A /* RepositoryManager.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				47F7D28729D61F7A00D54D01 /* ReviewView.swift in Sources */,
 				47F7D28829D61F7A00D54D01 /* ReviewViewModel.swift in Sources */,
 				4787B89929D36B9800BBC7EE /* Canvas.swift in Sources */,
+				17AE4D8629F84F8C00A4813A /* RepositoryManager.swift in Sources */,
 				EBB272AE29DDF8FE00811137 /* ArrowButton.swift in Sources */,
 				822E0A0529DCBC47005B311F /* CardCTAMainTrivia.swift in Sources */,
 				824CC2DD29DC9C2600DC2A4E /* CardMainTrivia.swift in Sources */,

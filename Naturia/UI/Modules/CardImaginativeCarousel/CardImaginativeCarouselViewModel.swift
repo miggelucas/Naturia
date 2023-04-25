@@ -34,10 +34,6 @@ final class CardImaginativeCarouselViewModel: ObservableObject {
     
     func onTapButton() {
         print("onTapButton CardImaginativeCarouselViewModel")
-        if let safeNavManager = navigationManager {
-//            safeNavManager.path.append()
-            
-        }
     }
     
     private func getJourneys() -> [ImaginativeJourney]{
