@@ -42,7 +42,7 @@ struct MiniInfosView: View {
                 
                 TextAndConfirmationButtons(cardType: .pequeno, firstLine:  "Agora que você conhece mais essa planta, vamos desenhá-la?", firstButtonType: .desenhar, actionForGreenButton: {
                     print("greenButton pressed")
-                    navigationManager.path.append(Routes.canvasImaginative2)
+                    navigationManager.path.append(ImaginativeRoutes.canvasImaginative2)
                 }, actionForWhiteButton: {})
                 
                 //                VStack(spacing: -24) {

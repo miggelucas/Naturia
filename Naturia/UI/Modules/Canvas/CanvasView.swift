@@ -49,10 +49,10 @@ struct CanvasView: View {
         // então realiza a ação de notificar o navManager para próxima tela
         switch viewModel.canvasRole {
         case .imaginative1:
-            navigationManager.path.append(Routes.miniInfo)
+            navigationManager.path.append(ImaginativeRoutes.miniInfo)
 
         case .imaginative2:
-            navigationManager.path.append(Routes.review)
+            navigationManager.path.append(ImaginativeRoutes.review)
 
         case .observative:
             navigationManager.path.append(ObservativeRoutes.conquer)

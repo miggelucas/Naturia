@@ -7,20 +7,18 @@
 
 import Foundation
 
-enum Routes: Hashable {
-    case galery
-    case canvas
-    case canvasImaginative2
-    case plantsInfoFromJourney
-    case plantsInfoFromGalery
-    case miniInfo
-    case review
+enum ImaginativeRoutes: Hashable {
+    case canvas, miniInfo, canvasImaginative2, review, plantsInfo
 
 }
 
 enum ObservativeRoutes: Hashable {
     case observativeRepository, confirmation, canvas, conquer, plants
     
+}
+
+enum GaleryRoutes: Hashable {
+    case galery, plantInfo, drawn(CardGaleryDrawn)
 }
 
 

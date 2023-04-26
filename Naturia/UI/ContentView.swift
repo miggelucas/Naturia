@@ -32,22 +32,29 @@ struct ContentView: View {
                     case .plants:
                         PlantInfoView(viewModel: PlantInfoViewModel(buttonStyle: .backToHome))
                         
-                    }})
-            
-                .navigationDestination(for: Routes.self) { route in
+                    }}
+                )
+                .navigationDestination(for: GaleryRoutes.self, destination: { routes in
+                    switch routes{
+                    case .galery:
+                        GaleryView()
+                        
+                    case .plantInfo:
+                        PlantInfoView(viewModel: PlantInfoViewModel(buttonStyle: .back))
+                        
+                    case .drawn(let cardDrawn):
+                        DrawImageView(drawn: cardDrawn.drawn, name: cardDrawn.text)
+                    }
+                })
+                .navigationDestination(for: ImaginativeRoutes.self) { route in
                     switch route {
                     case .canvas:
                         CanvasView(viewModel: CanvasViewModel(canvasRole: .imaginative1))
-                        
-                    case .galery:
-                        GaleryView()
+            
         
-                    case .plantsInfoFromJourney:
+                    case .plantsInfo:
                         PlantInfoView(viewModel: PlantInfoViewModel(buttonStyle: .backToHome))
-                        
-                    case .plantsInfoFromGalery:
-                        PlantInfoView(viewModel: PlantInfoViewModel(journey: navigationManager.currentJourney!, buttonStyle: .back))
-             
+            
                         
                     case .canvasImaginative2:
                         CanvasView(viewModel: CanvasViewModel(canvasRole: .imaginative2))
@@ -58,15 +65,9 @@ struct ContentView: View {
                     case .review:
                         ReviewView()
                         
-//                    case .drawnImageView:
-//                        DrawImageView()
 
                     }
                     
-                }
-                .navigationDestination(for: CardGaleryDrawn.self) { card in
-                    // gambiarra
-                    DrawImageView(drawn: card.drawn, name: card.text)
                 }
 
 

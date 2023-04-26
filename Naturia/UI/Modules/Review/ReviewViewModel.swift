@@ -36,7 +36,7 @@ final class ReviewViewModel: ObservableObject {
     
     func greenButtonPressed() {
         if let safeNavManager = navigationManager {
-            safeNavManager.pushToPath(Routes.plantsInfoFromJourney)
+            safeNavManager.pushToPath(ImaginativeRoutes.plantsInfo)
         }
     }
     

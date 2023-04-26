@@ -21,7 +21,7 @@ final class CardGalleryHomeViewModel: ObservableObject {
     func onTap() {
         print("onTap CardGalleryHomeViewModel")
         if let safeNavManager = navigationManager {
-            safeNavManager.pushToPath(Routes.galery)
+            safeNavManager.pushToPath(GaleryRoutes.galery)
         }
        
     }
