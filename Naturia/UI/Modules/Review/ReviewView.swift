@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+
 struct ReviewView: View, Hashable {
     
     @EnvironmentObject var navigationManager: NavigationManager
@@ -36,6 +37,7 @@ struct ReviewView: View, Hashable {
                     ShareLink(item: getShareImage(), preview: SharePreview("Seu desenho", image: getShareImage())){
                         SaveButton()
                     }
+
                 }
                 HStack {
                     VStack(spacing: 16) {
@@ -142,13 +144,14 @@ struct ReviewView: View, Hashable {
     
     func getShareImage() -> Image{
         guard let image = ImageRenderer(content: screenshot).uiImage else{
-            return Image("Image")
+            return Image("")
         }
         return Image(uiImage: image)
     }
-
     
 }
+
+
 
 
 struct Review_Previews: PreviewProvider {
