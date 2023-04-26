@@ -12,7 +12,7 @@ struct MiniInfosView: View {
     @EnvironmentObject var navigationManager: NavigationManager
     
     var journey: ImaginativeJourney {
-        navigationManager.currentJourney! as! ImaginativeJourney
+        RepositoryManager.shared.currentJourney as! ImaginativeJourney
     }
     
     
