@@ -22,7 +22,3 @@ enum GaleryRoutes: Hashable {
 }
 
 
-
-enum CanvasRole {
-    case imaginative1, imaginative2, observative
-}

@@ -13,6 +13,20 @@ import SwiftUI
 final class ConquistaViewModel: ObservableObject {
     var navigationManager: NavigationManager?
     
+    @Published var userDrawImage: Image = Image("DesenhoCriativo")
+    
+    func updateUserDrawImage() {
+        let journey = RepositoryManager.shared.currentJourney
+        
+        let drawns = journey.userDrawns
+        
+        for drawn in drawns {
+            if drawn.type == .observative{
+                userDrawImage =  drawn.image
+                
+            }
+        }
+    }
     
     func confirmativeButtonPressed() {
         if let safeNavManager = navigationManager {

@@ -53,7 +53,7 @@ class GaleryViewModel: ObservableObject {
     
     func jorneyPressed(for journey: Journey) {
         if let safeNavManger = navigationManager {
-            safeNavManger.currentJourney = journey
+            RepositoryManager.shared.currentJourney = journey
             safeNavManger.pushToPath(GaleryRoutes.plantInfo)
         }
     }

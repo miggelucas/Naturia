@@ -26,6 +26,7 @@
 		179637A329DE119100C787F7 /* GaleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179637A229DE119100C787F7 /* GaleryViewModel.swift */; };
 		179637A929DE56C800C787F7 /* GaleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179637A829DE56C800C787F7 /* GaleryView.swift */; };
 		17AE4D8629F84F8C00A4813A /* RepositoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AE4D8529F84F8C00A4813A /* RepositoryManager.swift */; };
+		17AE4D8B29F8C50000A4813A /* CanvasRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AE4D8A29F8C50000A4813A /* CanvasRole.swift */; };
 		17C4F56329DCB5900016D74C /* CardPlantDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */; };
 		17C4F56529DCBD750016D74C /* CardPlantOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56429DCBD750016D74C /* CardPlantOrigin.swift */; };
 		17C4F56729DCBE670016D74C /* CardPlantTrivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56629DCBE670016D74C /* CardPlantTrivia.swift */; };
@@ -36,15 +37,12 @@
 		17E9251929E2391E009FB71E /* CardExpandedDrawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9251829E2391E009FB71E /* CardExpandedDrawn.swift */; };
 		47185D8B29DE0757008611D6 /* ConquistaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D8829DE0757008611D6 /* ConquistaView.swift */; };
 		47185D8C29DE0757008611D6 /* ConquistaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D8929DE0757008611D6 /* ConquistaViewModel.swift */; };
-		47185D8D29DE0757008611D6 /* Conquista.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D8A29DE0757008611D6 /* Conquista.swift */; };
 		47185D9229DE0A30008611D6 /* ConfirmacaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D8F29DE0A30008611D6 /* ConfirmacaoView.swift */; };
 		47185D9329DE0A30008611D6 /* ConfirmacaoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D9029DE0A30008611D6 /* ConfirmacaoViewModel.swift */; };
-		47185D9429DE0A30008611D6 /* Confirmacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D9129DE0A30008611D6 /* Confirmacao.swift */; };
 		4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */; };
 		4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88B29D36B1700BBC7EE /* ExpandableView.swift */; };
 		4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89429D36B9800BBC7EE /* CanvasView.swift */; };
 		4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89529D36B9800BBC7EE /* CanvasViewModel.swift */; };
-		4787B89929D36B9800BBC7EE /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89629D36B9800BBC7EE /* Canvas.swift */; };
 		4787B89D29D375EB00BBC7EE /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89C29D375EB00BBC7EE /* DoneButton.swift */; };
 		479EF26329E5FAB900428CC5 /* QuisasStandard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 479EF26229E5FAB900428CC5 /* QuisasStandard-Regular.ttf */; };
 		479EF26729E5FC9200428CC5 /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 479EF26629E5FC9200428CC5 /* Montserrat-VariableFont_wght.ttf */; };
@@ -58,10 +56,9 @@
 		822E0A0529DCBC47005B311F /* CardCTAMainTrivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822E0A0429DCBC47005B311F /* CardCTAMainTrivia.swift */; };
 		824CC2DB29DC982400DC2A4E /* MiniInfosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824CC2DA29DC982400DC2A4E /* MiniInfosView.swift */; };
 		824CC2DD29DC9C2600DC2A4E /* CardMainTrivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824CC2DC29DC9C2600DC2A4E /* CardMainTrivia.swift */; };
-		EB18AEFE29D4AF9C00D73821 /* ImaginativeRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AEFD29D4AF9C00D73821 /* ImaginativeRoutes.swift */; };
+		EB18AEFE29D4AF9C00D73821 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AEFD29D4AF9C00D73821 /* Routes.swift */; };
 		EB18AF0229D4B00600D73821 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AEFF29D4B00600D73821 /* HomeView.swift */; };
 		EB18AF0329D4B00600D73821 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AF0029D4B00600D73821 /* HomeViewModel.swift */; };
-		EB18AF0429D4B00600D73821 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AF0129D4B00600D73821 /* Home.swift */; };
 		EB18AF0729D4C19600D73821 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18AF0629D4C19600D73821 /* ContentView.swift */; };
 		EB59D6B229D64C3E0047065D /* Responsive.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59D6B129D64C3E0047065D /* Responsive.swift */; };
 		EB8C01C529E069CA00B286A3 /* CardGalleryHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C01C429E069CA00B286A3 /* CardGalleryHome.swift */; };
@@ -98,6 +95,7 @@
 		179637A229DE119100C787F7 /* GaleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryViewModel.swift; sourceTree = "<group>"; };
 		179637A829DE56C800C787F7 /* GaleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryView.swift; sourceTree = "<group>"; };
 		17AE4D8529F84F8C00A4813A /* RepositoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryManager.swift; sourceTree = "<group>"; };
+		17AE4D8A29F8C50000A4813A /* CanvasRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasRole.swift; sourceTree = "<group>"; };
 		17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantDescriptionView.swift; sourceTree = "<group>"; };
 		17C4F56429DCBD750016D74C /* CardPlantOrigin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantOrigin.swift; sourceTree = "<group>"; };
 		17C4F56629DCBE670016D74C /* CardPlantTrivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantTrivia.swift; sourceTree = "<group>"; };
@@ -109,15 +107,12 @@
 		17E9251829E2391E009FB71E /* CardExpandedDrawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardExpandedDrawn.swift; sourceTree = "<group>"; };
 		47185D8829DE0757008611D6 /* ConquistaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquistaView.swift; sourceTree = "<group>"; };
 		47185D8929DE0757008611D6 /* ConquistaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquistaViewModel.swift; sourceTree = "<group>"; };
-		47185D8A29DE0757008611D6 /* Conquista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conquista.swift; sourceTree = "<group>"; };
 		47185D8F29DE0A30008611D6 /* ConfirmacaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmacaoView.swift; sourceTree = "<group>"; };
 		47185D9029DE0A30008611D6 /* ConfirmacaoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmacaoViewModel.swift; sourceTree = "<group>"; };
-		47185D9129DE0A30008611D6 /* Confirmacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Confirmacao.swift; sourceTree = "<group>"; };
 		4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvas.swift; sourceTree = "<group>"; };
 		4787B88B29D36B1700BBC7EE /* ExpandableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableView.swift; sourceTree = "<group>"; };
 		4787B89429D36B9800BBC7EE /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		4787B89529D36B9800BBC7EE /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
-		4787B89629D36B9800BBC7EE /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		4787B89C29D375EB00BBC7EE /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
 		479EF26229E5FAB900428CC5 /* QuisasStandard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "QuisasStandard-Regular.ttf"; sourceTree = "<group>"; };
 		479EF26629E5FC9200428CC5 /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; };
@@ -131,10 +126,9 @@
 		822E0A0429DCBC47005B311F /* CardCTAMainTrivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCTAMainTrivia.swift; sourceTree = "<group>"; };
 		824CC2DA29DC982400DC2A4E /* MiniInfosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniInfosView.swift; sourceTree = "<group>"; };
 		824CC2DC29DC9C2600DC2A4E /* CardMainTrivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMainTrivia.swift; sourceTree = "<group>"; };
-		EB18AEFD29D4AF9C00D73821 /* ImaginativeRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImaginativeRoutes.swift; sourceTree = "<group>"; };
+		EB18AEFD29D4AF9C00D73821 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		EB18AEFF29D4B00600D73821 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EB18AF0029D4B00600D73821 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		EB18AF0129D4B00600D73821 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		EB18AF0629D4C19600D73821 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EB59D6B129D64C3E0047065D /* Responsive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responsive.swift; sourceTree = "<group>"; };
 		EB8C01C429E069CA00B286A3 /* CardGalleryHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGalleryHome.swift; sourceTree = "<group>"; };
@@ -163,6 +157,8 @@
 		170F210A29D6207E002363FB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				17AE4D8729F8C4C900A4813A /* Enums */,
+				17AE4D8529F84F8C00A4813A /* RepositoryManager.swift */,
 				170F210029D607E4002363FB /* Plant.swift */,
 				170F210829D6206A002363FB /* Drawn.swift */,
 				170F210B29D620CF002363FB /* Journey */,
@@ -265,6 +261,14 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		17AE4D8729F8C4C900A4813A /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				17AE4D8A29F8C50000A4813A /* CanvasRole.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		17C4F56129DCB5710016D74C /* Plant Info */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,7 +304,6 @@
 			children = (
 				47185D8829DE0757008611D6 /* ConquistaView.swift */,
 				47185D8929DE0757008611D6 /* ConquistaViewModel.swift */,
-				47185D8A29DE0757008611D6 /* Conquista.swift */,
 			);
 			path = Conquista;
 			sourceTree = "<group>";
@@ -310,7 +313,6 @@
 			children = (
 				47185D8F29DE0A30008611D6 /* ConfirmacaoView.swift */,
 				47185D9029DE0A30008611D6 /* ConfirmacaoViewModel.swift */,
-				47185D9129DE0A30008611D6 /* Confirmacao.swift */,
 			);
 			path = Confirmacao;
 			sourceTree = "<group>";
@@ -366,7 +368,6 @@
 			children = (
 				4787B89429D36B9800BBC7EE /* CanvasView.swift */,
 				4787B89529D36B9800BBC7EE /* CanvasViewModel.swift */,
-				4787B89629D36B9800BBC7EE /* Canvas.swift */,
 			);
 			path = Canvas;
 			sourceTree = "<group>";
@@ -392,9 +393,8 @@
 		EB18AEFC29D4AF7600D73821 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				EB18AEFD29D4AF9C00D73821 /* ImaginativeRoutes.swift */,
+				EB18AEFD29D4AF9C00D73821 /* Routes.swift */,
 				178EBDAE29E2111400D2DA70 /* NavigationManager.swift */,
-				17AE4D8529F84F8C00A4813A /* RepositoryManager.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -404,7 +404,6 @@
 			children = (
 				EB18AEFF29D4B00600D73821 /* HomeView.swift */,
 				EB18AF0029D4B00600D73821 /* HomeViewModel.swift */,
-				EB18AF0129D4B00600D73821 /* Home.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -510,7 +509,6 @@
 			files = (
 				47F7D28729D61F7A00D54D01 /* ReviewView.swift in Sources */,
 				47F7D28829D61F7A00D54D01 /* ReviewViewModel.swift in Sources */,
-				4787B89929D36B9800BBC7EE /* Canvas.swift in Sources */,
 				17AE4D8629F84F8C00A4813A /* RepositoryManager.swift in Sources */,
 				EBB272AE29DDF8FE00811137 /* ArrowButton.swift in Sources */,
 				822E0A0529DCBC47005B311F /* CardCTAMainTrivia.swift in Sources */,
@@ -540,10 +538,8 @@
 				4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */,
 				17C4F56729DCBE670016D74C /* CardPlantTrivia.swift in Sources */,
 				47F7D28B29D61FEE00D54D01 /* SaveButton.swift in Sources */,
-				47185D9429DE0A30008611D6 /* Confirmacao.swift in Sources */,
 				47185D9229DE0A30008611D6 /* ConfirmacaoView.swift in Sources */,
 				4787B89D29D375EB00BBC7EE /* DoneButton.swift in Sources */,
-				47185D8D29DE0757008611D6 /* Conquista.swift in Sources */,
 				1789C60729DE595F00BA9F49 /* CardGaleryDrawn.swift in Sources */,
 				4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */,
 				47F7D28F29D6219300D54D01 /* TextAndConfirmationButtons.swift in Sources */,
@@ -554,14 +550,14 @@
 				173E810029DE09B8005B7253 /* BackgroundView.swift in Sources */,
 				179637A329DE119100C787F7 /* GaleryViewModel.swift in Sources */,
 				170F210129D607E4002363FB /* Plant.swift in Sources */,
+				17AE4D8B29F8C50000A4813A /* CanvasRole.swift in Sources */,
 				4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */,
 				17601E1B29DDF31100A82898 /* PlantInfoViewModel.swift in Sources */,
 				EB18AF0729D4C19600D73821 /* ContentView.swift in Sources */,
 				822E0A0129DCA64F005B311F /* ImageMainTrivia.swift in Sources */,
 				EB18AF0329D4B00600D73821 /* HomeViewModel.swift in Sources */,
-				EB18AF0429D4B00600D73821 /* Home.swift in Sources */,
 				17E9251929E2391E009FB71E /* CardExpandedDrawn.swift in Sources */,
-				EB18AEFE29D4AF9C00D73821 /* ImaginativeRoutes.swift in Sources */,
+				EB18AEFE29D4AF9C00D73821 /* Routes.swift in Sources */,
 				178EBDAF29E2111400D2DA70 /* NavigationManager.swift in Sources */,
 				EBE180E529DCE04B00336477 /* CardImaginativeCarouselViewModel.swift in Sources */,
 				172EA40929DB46E7006AC9E6 /* ObservatoryRepositoryView.swift in Sources */,
