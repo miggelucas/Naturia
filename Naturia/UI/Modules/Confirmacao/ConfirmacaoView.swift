@@ -10,8 +10,14 @@ import SwiftUI
 
 struct ConfirmacaoView: View {
     @EnvironmentObject var navigationManager: NavigationManager
-    @ObservedObject private var viewModel = ConfirmacaoViewModel()
+    @ObservedObject private var viewModel: ConfirmacaoViewModel
+    
+    init(viewModel: ConfirmacaoViewModel = ConfirmacaoViewModel()) {
+        self.viewModel = viewModel
+    }
        
+    
+    
     var body: some View {
         ZStack {
             

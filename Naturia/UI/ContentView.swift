@@ -30,7 +30,7 @@ struct ContentView: View {
                         CanvasView(viewModel: CanvasViewModel(canvasRole: .observative))
                         
                     case .plantsInfoFromJourney:
-                        PlantInfoView(viewModel: PlantInfoViewModel(journey: navigationManager.currentJourney!, buttonStyle: .backToHome))
+                        PlantInfoView(viewModel: PlantInfoViewModel(buttonStyle: .backToHome))
                         
                     case .plantsInfoFromGalery:
                         PlantInfoView(viewModel: PlantInfoViewModel(journey: navigationManager.currentJourney!, buttonStyle: .back))
@@ -69,32 +69,8 @@ struct ContentView: View {
         .navigationBarBackButtonHidden(true)
         .preferredColorScheme(.light)
 
-
-
-        
-        
-        //        HomeView()
-        // Usando a view atual como conteúdo da tela
-        //        currentView
-        //            .navigationBarBackButtonHidden(true)
-        //            .navigationBarTitleDisplayMode(.automatic)
-        //            .navigationViewStyle(StackNavigationViewStyle())
-        //            .onReceive(navigationManager.$stack) { stack in
-        //                guard let lastView = stack.last else { return }
-        //                currentView = lastView
-        //            }
     }
-    
-    //    private var appView: some View {
-    //        HomeView().navigationDestination(for: Routes.self) { route in
-    //            switch route {
-    //            case .home:
-    //                HomeView()
-    //            case .canvas:
-    //                CanvasView()
-    //            }
-    //        }
-    //    }
+
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -17,11 +17,11 @@ final class ConfirmacaoViewModel: ObservableObject {
     @Published var imagePath: String = "jiboiaReferencia"
     
     func viewDidApper() {
-        guard let safeNaveManager = navigationManager else { return }
+        let journey: Journey = RepositoryManager.shared.currentJourney
         
-        guard let safeJourney = safeNaveManager.currentJourney else { return }
-                
-        self.imagePath = safeJourney.plant.imagePath
+        let plantQuest: Plant = journey.plant
+        
+        imagePath = plantQuest.imagePath
     }
     
     func confirmativeButtonPressed() {
