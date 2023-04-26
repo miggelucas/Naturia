@@ -23,7 +23,7 @@ final class CardObservativeHomeViewModel: ObservableObject {
     
     func onTap() {
         if let safeNavManager = navigationManager {
-            safeNavManager.path.append(Routes.observativeRepo)
+            safeNavManager.path.append(ObservativeRoutes.observativeRepository)
         }
         
     }

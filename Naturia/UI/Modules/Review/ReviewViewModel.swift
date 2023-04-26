@@ -19,10 +19,9 @@ final class ReviewViewModel: ObservableObject {
     
     
     func viewDidApper() {
-        guard let safeNavManager = navigationManager else { return }
-        guard let safeJourney = safeNavManager.currentJourney else { return }
+        let journey = RepositoryManager.shared.currentJourney
         
-        for drawn in safeJourney.userDrawns {
+        for drawn in journey.userDrawns {
             switch drawn.type {
             case .imaginative:
                 userImaginativeDrawn = drawn.image
@@ -36,7 +35,7 @@ final class ReviewViewModel: ObservableObject {
     
     func greenButtonPressed() {
         if let safeNavManager = navigationManager {
-            safeNavManager.pushToPath(Routes.plantsInfoFromJourney)
+            safeNavManager.pushToPath(ImaginativeRoutes.plantsInfo)
         }
     }
     

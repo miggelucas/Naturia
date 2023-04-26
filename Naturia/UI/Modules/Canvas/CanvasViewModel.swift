@@ -29,11 +29,13 @@ final class CanvasViewModel: ObservableObject {
     }
     @Published var userDraw: UIImage = UIImage()
     @Published var canvasView = PKCanvasView()
-    @Published var provocacoes: [String] = ["Provocacao 1 aaaaaaaaaaa", "Provocacao 2 aaaaaaaaaaa", "Provocacao 3 aaaaaaaaaaa"]
-    @Published var referencia: String = "plantinha"
+    @Published var provocacoes: [String]
+    @Published var referencia: String
     
-    init(canvasRole: CanvasRole) {
+    init(canvasRole: CanvasRole, journey: Journey = RepositoryManager.shared.currentJourney) {
         self.canvasRole = canvasRole
+        self.provocacoes = journey.drawingProvocations
+        self.referencia = journey.plant.imagePath
     }
     
 
@@ -43,14 +45,7 @@ final class CanvasViewModel: ObservableObject {
         }
     }
     
-    func viewDidAppear() {
-        guard let safeNavManager = navigationManager else { return }
-        
-        guard let safeJourney = safeNavManager.currentJourney else { return }
-        
-        provocacoes = safeJourney.drawingProvocations
-        referencia = safeJourney.plant.imagePath
-    }
+
     
 //    func doneButtonPressed() {
 //        guard let safeNavManage = navigationManager else { return }
