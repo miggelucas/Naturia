@@ -15,7 +15,7 @@ class PlantInfoViewModel: ObservableObject {
     var navigationManager: NavigationManager?
     let buttonStyle: BackButton.Style
     
-    init(journey: Journey, buttonStyle: BackButton.Style) {
+    init(journey: Journey = RepositoryManager.shared.currentJourney, buttonStyle: BackButton.Style) {
         self.journey = journey
         self.plant = journey.plant
         self.buttonStyle = buttonStyle

@@ -15,50 +15,59 @@ struct ContentView: View {
     var body: some View {
         NavigationStack(path: $navigationManager.path) {
             HomeView()
-                .navigationDestination(for: Routes.self) { route in
-                    switch route {
-                    case .canvas:
-                        CanvasView(viewModel: CanvasViewModel(canvasRole: .imaginative1))
+                .navigationDestination(for: ObservativeRoutes.self, destination: { routes in
+                    switch routes {
+                    case .observativeRepository:
+                        ObservatoryRepositoryView()
                         
+                    case .canvas:
+                        CanvasView(viewModel: CanvasViewModel(canvasRole: .observative))
+                        
+                    case .confirmation:
+                        ConfirmacaoView()
+                        
+                    case .conquer:
+                        ConquistaView()
+                        
+                    case .plants:
+                        PlantInfoView(viewModel: PlantInfoViewModel(buttonStyle: .backToHome))
+                        
+                    }}
+                )
+                .navigationDestination(for: GaleryRoutes.self, destination: { routes in
+                    switch routes{
                     case .galery:
                         GaleryView()
                         
-                    case .observativeRepo:
-                        ObservatoryRepositoryView()
-                    
-                    case .canvasObservative:
-                        CanvasView(viewModel: CanvasViewModel(canvasRole: .observative))
+                    case .plantInfo:
+                        PlantInfoView(viewModel: PlantInfoViewModel(buttonStyle: .back))
                         
-                    case .plantsInfoFromJourney:
-                        PlantInfoView(viewModel: PlantInfoViewModel(journey: navigationManager.currentJourney!, buttonStyle: .backToHome))
-                        
-                    case .plantsInfoFromGalery:
-                        PlantInfoView(viewModel: PlantInfoViewModel(journey: navigationManager.currentJourney!, buttonStyle: .back))
-                   
-                    case .confirmacao:
-                        ConfirmacaoView()
+                    case .drawn(let cardDrawn):
+                        DrawImageView(drawn: cardDrawn.drawn, name: cardDrawn.text)
+                    }
+                })
+                .navigationDestination(for: ImaginativeRoutes.self) { route in
+                    switch route {
+                    case .canvas:
+                        CanvasView(viewModel: CanvasViewModel(canvasRole: .imaginative1))
+            
+        
+                    case .plantsInfo:
+                        PlantInfoView(viewModel: PlantInfoViewModel(buttonStyle: .backToHome))
+            
                         
                     case .canvasImaginative2:
                         CanvasView(viewModel: CanvasViewModel(canvasRole: .imaginative2))
-                        
-                    case .conquista:
-                        ConquistaView()
-                        
+                       
                     case .miniInfo:
                         MiniInfosView()
                         
                     case .review:
                         ReviewView()
                         
-//                    case .drawnImageView:
-//                        DrawImageView()
 
                     }
                     
-                }
-                .navigationDestination(for: CardGaleryDrawn.self) { card in
-                    // gambiarra
-                    DrawImageView(drawn: card.drawn, name: card.text)
                 }
 
 
@@ -69,32 +78,8 @@ struct ContentView: View {
         .navigationBarBackButtonHidden(true)
         .preferredColorScheme(.light)
 
-
-
-        
-        
-        //        HomeView()
-        // Usando a view atual como conteúdo da tela
-        //        currentView
-        //            .navigationBarBackButtonHidden(true)
-        //            .navigationBarTitleDisplayMode(.automatic)
-        //            .navigationViewStyle(StackNavigationViewStyle())
-        //            .onReceive(navigationManager.$stack) { stack in
-        //                guard let lastView = stack.last else { return }
-        //                currentView = lastView
-        //            }
     }
-    
-    //    private var appView: some View {
-    //        HomeView().navigationDestination(for: Routes.self) { route in
-    //            switch route {
-    //            case .home:
-    //                HomeView()
-    //            case .canvas:
-    //                CanvasView()
-    //            }
-    //        }
-    //    }
+
 }
 
 struct ContentView_Previews: PreviewProvider {

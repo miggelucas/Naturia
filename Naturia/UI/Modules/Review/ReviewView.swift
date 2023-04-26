@@ -92,7 +92,7 @@ struct ReviewView: View, Hashable {
             VStack (spacing: 48) {
                 Text("Jornada Criativa")
                     .font(Font.NaturiaPrimary(.h2))
-                Text(navigationManager.currentImaginativeJourney?.plant.popularName ?? "[Nome da planta]")
+                Text(RepositoryManager.shared.currentJourney.plant.popularName)
                     .font(Font.NaturiaSecundary(.Subtitle))
                     .padding(.top, -24)
                 HStack {

@@ -55,8 +55,8 @@ struct CardImaginativeCarousel: View {
                 )
                 .overlay(
                     CTAButton(buttonType: .desenhar, actionForButton: {
-                        navigationManager.currentJourney = journeys[index]
-                        navigationManager.path.append(Routes.canvas)
+                        RepositoryManager.shared.currentJourney = journeys[index]
+                        navigationManager.path.append(ImaginativeRoutes.canvas)
                     })
                     .padding(.bottom, Responsive.scaleHeight(s: -24.5)), alignment: .bottom)
                 

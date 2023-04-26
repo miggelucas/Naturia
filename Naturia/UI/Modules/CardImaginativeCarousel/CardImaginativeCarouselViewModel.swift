@@ -17,7 +17,7 @@ final class CardImaginativeCarouselViewModel: ObservableObject {
     var navigationManager: NavigationManager?
     
     init() {
-        journeys = ImaginativeJourney.getImaginativeJourneys()
+        journeys = RepositoryManager.shared.getImaginativeJourney()
     }
     
     func onTapArrowLeft() {
@@ -34,13 +34,9 @@ final class CardImaginativeCarouselViewModel: ObservableObject {
     
     func onTapButton() {
         print("onTapButton CardImaginativeCarouselViewModel")
-        if let safeNavManager = navigationManager {
-//            safeNavManager.path.append()
-            
-        }
     }
     
-    private func getJourneys() -> [ImaginativeJourney]{
-        return ImaginativeJourney.getImaginativeJourneys()
-    }
+//    private func getJourneys() -> [ImaginativeJourney]{
+//        return ImaginativeJourney.getImaginativeJourneys()
+//    }
 }

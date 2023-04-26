@@ -17,6 +17,8 @@ struct CanvasView: View {
         self.viewModel = viewModel
     }
     
+    // tentar devolver essa lógica para viewModel
+    
     func getImageData() -> UIImage{
         let drawingSize = UIScreen.main.bounds.size
         
@@ -26,7 +28,9 @@ struct CanvasView: View {
     }
     
     func doneButtonPressed() {
-        let receivedJourney = navigationManager.currentJourney
+        // quebrar esse metodo em partes
+        // chamar um método que aplica a lógica abaixo
+        let receivedJourney = RepositoryManager.shared.currentJourney
                 
         var typeOfJourney: Drawn.DrawnType {
             if viewModel.canvasRole == .imaginative1 {
@@ -39,19 +43,20 @@ struct CanvasView: View {
 
         viewModel.userDraw = getImageData()
         let newDrawn: Drawn = Drawn(image: Image(uiImage: viewModel.userDraw), type: typeOfJourney)
-        receivedJourney?.userDrawns.append(newDrawn)
+        receivedJourney.userDrawns.append(newDrawn)
         
-        navigationManager.currentJourney = receivedJourney
+        RepositoryManager.shared.currentJourney = receivedJourney
         
+        // então realiza a ação de notificar o navManager para próxima tela
         switch viewModel.canvasRole {
         case .imaginative1:
-            navigationManager.path.append(Routes.miniInfo)
+            navigationManager.path.append(ImaginativeRoutes.miniInfo)
 
         case .imaginative2:
-            navigationManager.path.append(Routes.review)
+            navigationManager.path.append(ImaginativeRoutes.review)
 
         case .observative:
-            navigationManager.path.append(Routes.conquista)
+            navigationManager.path.append(ObservativeRoutes.conquer)
         }
 
     }
@@ -87,7 +92,6 @@ struct CanvasView: View {
         .navigationBarBackButtonHidden(true)
         .onAppear {
             viewModel.navigationManager = navigationManager
-            viewModel.viewDidAppear()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

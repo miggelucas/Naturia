@@ -24,7 +24,7 @@ class ObservatoryRepositoryViewModel: ObservableObject {
         }
     }
     
-    init(journeyArray: [Journey] = Journey.getObservativeJourneys()) {
+    init(journeyArray: [Journey] = RepositoryManager.shared.getJourneys()) {
         self.journeys = journeyArray
     }
     
@@ -40,8 +40,8 @@ class ObservatoryRepositoryViewModel: ObservableObject {
     
     func journeyPressed(_ journey: Journey) {
         if let safeNavManager = navigationManager {
-            safeNavManager.currentJourney = journey
-            safeNavManager.pushToPath(Routes.confirmacao)
+            RepositoryManager.shared.currentJourney = journey
+            safeNavManager.pushToPath(ObservativeRoutes.confirmation)
         }
     }
 }
