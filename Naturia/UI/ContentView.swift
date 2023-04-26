@@ -15,6 +15,25 @@ struct ContentView: View {
     var body: some View {
         NavigationStack(path: $navigationManager.path) {
             HomeView()
+                .navigationDestination(for: ObservativeRoutes.self, destination: { routes in
+                    switch routes {
+                    case .observativeRepository:
+                        ObservatoryRepositoryView()
+                        
+                    case .canvas:
+                        CanvasView(viewModel: CanvasViewModel(canvasRole: .observative))
+                        
+                    case .confirmation:
+                        ConfirmacaoView()
+                        
+                    case .conquer:
+                        ConquistaView()
+                        
+                    case .plants:
+                        PlantInfoView(viewModel: PlantInfoViewModel(buttonStyle: .backToHome))
+                        
+                    }})
+            
                 .navigationDestination(for: Routes.self) { route in
                     switch route {
                     case .canvas:
@@ -22,28 +41,17 @@ struct ContentView: View {
                         
                     case .galery:
                         GaleryView()
-                        
-                    case .observativeRepo:
-                        ObservatoryRepositoryView()
-                    
-                    case .canvasObservative:
-                        CanvasView(viewModel: CanvasViewModel(canvasRole: .observative))
-                        
+        
                     case .plantsInfoFromJourney:
                         PlantInfoView(viewModel: PlantInfoViewModel(buttonStyle: .backToHome))
                         
                     case .plantsInfoFromGalery:
                         PlantInfoView(viewModel: PlantInfoViewModel(journey: navigationManager.currentJourney!, buttonStyle: .back))
-                   
-                    case .confirmacao:
-                        ConfirmacaoView()
+             
                         
                     case .canvasImaginative2:
                         CanvasView(viewModel: CanvasViewModel(canvasRole: .imaginative2))
-                        
-                    case .conquista:
-                        ConquistaView()
-                        
+                       
                     case .miniInfo:
                         MiniInfosView()
                         

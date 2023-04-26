@@ -41,7 +41,7 @@ class ObservatoryRepositoryViewModel: ObservableObject {
     func journeyPressed(_ journey: Journey) {
         if let safeNavManager = navigationManager {
             RepositoryManager.shared.currentJourney = journey
-            safeNavManager.pushToPath(Routes.confirmacao)
+            safeNavManager.pushToPath(ObservativeRoutes.confirmation)
         }
     }
 }

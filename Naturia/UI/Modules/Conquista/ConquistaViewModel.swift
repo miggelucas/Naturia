@@ -16,7 +16,7 @@ final class ConquistaViewModel: ObservableObject {
     
     func confirmativeButtonPressed() {
         if let safeNavManager = navigationManager {
-            safeNavManager.pushToPath(Routes.plantsInfoFromJourney)
+            safeNavManager.pushToPath(ObservativeRoutes.plants)
         }
     }
     

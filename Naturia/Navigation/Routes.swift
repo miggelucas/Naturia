@@ -10,20 +10,18 @@ import Foundation
 enum Routes: Hashable {
     case galery
     case canvas
-    case observativeRepo
-    case confirmacao
-    case canvasObservative
     case canvasImaginative2
     case plantsInfoFromJourney
     case plantsInfoFromGalery
     case miniInfo
     case review
-    case conquista
-//    case drawnImageView
-    
+
 }
 
-
+enum ObservativeRoutes: Hashable {
+    case observativeRepository, confirmation, canvas, conquer, plants
+    
+}
 
 
 

@@ -55,7 +55,7 @@ struct CanvasView: View {
             navigationManager.path.append(Routes.review)
 
         case .observative:
-            navigationManager.path.append(Routes.conquista)
+            navigationManager.path.append(ObservativeRoutes.conquer)
         }
 
     }

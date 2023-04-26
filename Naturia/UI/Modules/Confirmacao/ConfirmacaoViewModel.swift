@@ -26,7 +26,7 @@ final class ConfirmacaoViewModel: ObservableObject {
     
     func confirmativeButtonPressed() {
         if let safeNavManager = navigationManager {
-            safeNavManager.pushToPath(Routes.canvasObservative)
+            safeNavManager.pushToPath(ObservativeRoutes.canvas)
         }
     }
     
