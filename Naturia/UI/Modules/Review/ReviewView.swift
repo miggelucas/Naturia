@@ -24,8 +24,6 @@ struct ReviewView: View, Hashable {
         lhs.id == rhs.id
     }
     
-    
-
     var body: some View {
         ZStack {
             
@@ -86,64 +84,9 @@ struct ReviewView: View, Hashable {
         
     }
     
-    var screenshot: some View{
-        ZStack{
-            BackgroundView(illustrationType: .review)
-            VStack (spacing: 48) {
-                Text("Jornada Criativa")
-                    .font(Font.NaturiaPrimary(.h2))
-                Text(RepositoryManager.shared.currentJourney.plant.popularName)
-                    .font(Font.NaturiaSecundary(.Subtitle))
-                    .padding(.top, -24)
-                HStack {
-                    VStack(spacing: 16) {
-                        ZStack {
-                            viewModel.userImaginativeDrawn
-                                .resizable()
-                            Image("cardImage")
-                                .resizable()
-                        }
-                        .frame(width: 468, height: 325)
-                        Text("O que você imaginou")
-                            .font(Font.NaturiaSecundary(.h5))
-                        
-                    }
-                    Spacer()
-                    Image("iconSetaDireita")
-                        .padding(.bottom, 40.0)
-                    Spacer()
-                    VStack(spacing: 16) {
-                        ZStack {
-                            viewModel.userObservativeDrawn
-                                .resizable()
-                            Image("cardImage")
-                                .resizable()
-                        }
-                        .frame(width: 468, height: 325)
-                        Text("Seu desenho da planta")
-                            .font(Font.NaturiaSecundary(.h5))
-                    }
-                }
-            }
-            .frame(width: 874)
-            
-            
-            
-            HStack{
-                Spacer()
-                HStack{
-                    Image("Logo")
-                        .resizable()
-                        .frame(width: 38, height: 38)
-                    Text("NATURIA")
-                        .font(.system(size: 26))
-                }.padding(.top, 48)
-            }
-        }.frame(width: 1130)
-    }
-    
     func getShareImage() -> Image{
-        guard let image = ImageRenderer(content: screenshot).uiImage else{
+        
+        guard let image = ImageRenderer(content: ScreenshotView(imaginativeDrawn: viewModel.userImaginativeDrawn, observativeDrawn: viewModel.userObservativeDrawn)).uiImage else{
             return Image("")
         }
         return Image(uiImage: image)
