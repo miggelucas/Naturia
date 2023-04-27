@@ -20,9 +20,10 @@ struct CanvasView: View {
     // tentar devolver essa lógica para viewModel
     
     func getImageData() -> UIImage{
-        let drawnSize = viewModel.canvasView.drawing.bounds.size
-        let drawnRect = CGRect(origin: .zero, size: drawnSize)
-        let drawingImage = viewModel.canvasView.drawing.image(from: drawnRect, scale: 1)
+        let drawingSize = UIScreen.main.bounds.size
+        
+        let drawingRect = CGRect(origin: .zero, size: drawingSize)
+        let drawingImage = viewModel.canvasView.drawing.image(from: drawingRect, scale: CGFloat(1.0))
         return drawingImage
     }
     
