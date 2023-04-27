@@ -12,30 +12,45 @@ class RepositoryManager {
     static let shared = RepositoryManager()
     
     var currentJourney: Journey
+    var observativeJourneysArray: [Journey]
+    var imaginativeJourneysArray: [ImaginativeJourney]
     
-    init(currentJourney: Journey = ImaginativeJourney.getPlaceholder()) {
+    init(currentJourney: Journey = ImaginativeJourney.getPlaceholder(),
+         observativeArray: [Journey] = Journey.getObservativeJourneys(),
+         imaginativeArray: [ImaginativeJourney] = ImaginativeJourney.getImaginativeJourneys()
+    ){
         self.currentJourney = currentJourney
+        self.observativeJourneysArray = observativeArray
+        self.imaginativeJourneysArray = imaginativeArray
     }
     
-    
-    
-    func update(for journey: Journey) {
-        // provavelmente vai funcionar assim
-        var journeyArray: [Journey] = getJourneys()
-
-        if let journeyIndex = journeyArray.firstIndex(where: { $0.id == journey.id}) {
-            journeyArray[journeyIndex] = journey
+    func userDidCompletedCurrentJourney() {
+        self.currentJourney.isCompleted = true
+        
+        if currentJourney is ImaginativeJourney {
+            updateImaginative()
+        } else {
+            updateObservative()
         }
-        
-        
     }
     
-    func getJourneys() -> [Journey] {
-        return Journey.getObservativeJourneys()
+    private func updateImaginative() {
+        if let journeyIndex = imaginativeJourneysArray.firstIndex(where: { $0.id == currentJourney.id}) {
+            let journey = currentJourney as! ImaginativeJourney
+            imaginativeJourneysArray[journeyIndex] = journey
+        }
     }
     
-    func getImaginativeJourney() -> [ImaginativeJourney] {
-        return ImaginativeJourney.getImaginativeJourneys()
+    private func updateObservative() {
+        if let journeyIndex = observativeJourneysArray.firstIndex(where: { $0.id == currentJourney.id}) {
+            observativeJourneysArray[journeyIndex] = currentJourney
+        }
+
+    }
+
+    func getAllJourneys() -> [Journey] {        
+        return self.imaginativeJourneysArray + self.observativeJourneysArray
+        
     }
     
 }

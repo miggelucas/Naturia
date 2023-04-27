@@ -19,9 +19,11 @@ final class ReviewViewModel: ObservableObject {
     
     
     func viewDidApper() {
-        let journey = RepositoryManager.shared.currentJourney
+        let reciviedJourney = RepositoryManager.shared.currentJourney
         
-        for drawn in journey.userDrawns {
+        RepositoryManager.shared.currentJourney.isCompleted = true
+        
+        for drawn in reciviedJourney.userDrawns {
             switch drawn.type {
             case .imaginative:
                 userImaginativeDrawn = drawn.image

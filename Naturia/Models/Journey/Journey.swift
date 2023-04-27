@@ -11,7 +11,7 @@ import SwiftUI
 class Journey: Hashable {
     let id = UUID()
     let plant: Plant
-    let isCompleted: Bool
+    var isCompleted: Bool
     let drawingProvocations: [String]
     var userDrawns: [Drawn] = []
     

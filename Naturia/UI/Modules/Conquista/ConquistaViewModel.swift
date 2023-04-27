@@ -15,7 +15,9 @@ final class ConquistaViewModel: ObservableObject {
     
     @Published var userDrawImage: Image = Image("DesenhoCriativo")
     
-    func updateUserDrawImage() {
+    func viewDidAppear() {
+        RepositoryManager.shared.userDidCompletedCurrentJourney()
+        
         let journey = RepositoryManager.shared.currentJourney
         
         let drawns = journey.userDrawns
@@ -26,6 +28,8 @@ final class ConquistaViewModel: ObservableObject {
                 
             }
         }
+        
+        
     }
     
     func confirmativeButtonPressed() {
