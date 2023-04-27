@@ -39,6 +39,7 @@
 		47185D8C29DE0757008611D6 /* ConquistaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D8929DE0757008611D6 /* ConquistaViewModel.swift */; };
 		47185D9229DE0A30008611D6 /* ConfirmacaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D8F29DE0A30008611D6 /* ConfirmacaoView.swift */; };
 		47185D9329DE0A30008611D6 /* ConfirmacaoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47185D9029DE0A30008611D6 /* ConfirmacaoViewModel.swift */; };
+		47633D6F29FAE85C004E5CA1 /* ScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47633D6E29FAE85C004E5CA1 /* ScreenshotView.swift */; };
 		4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */; };
 		4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B88B29D36B1700BBC7EE /* ExpandableView.swift */; };
 		4787B89729D36B9800BBC7EE /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787B89429D36B9800BBC7EE /* CanvasView.swift */; };
@@ -109,6 +110,7 @@
 		47185D8929DE0757008611D6 /* ConquistaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquistaViewModel.swift; sourceTree = "<group>"; };
 		47185D8F29DE0A30008611D6 /* ConfirmacaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmacaoView.swift; sourceTree = "<group>"; };
 		47185D9029DE0A30008611D6 /* ConfirmacaoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmacaoViewModel.swift; sourceTree = "<group>"; };
+		47633D6E29FAE85C004E5CA1 /* ScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotView.swift; sourceTree = "<group>"; };
 		4787B88929D36AD900BBC7EE /* DrawingCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvas.swift; sourceTree = "<group>"; };
 		4787B88B29D36B1700BBC7EE /* ExpandableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableView.swift; sourceTree = "<group>"; };
 		4787B89429D36B9800BBC7EE /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				47F7D28429D61F7A00D54D01 /* ReviewView.swift */,
+				47633D6E29FAE85C004E5CA1 /* ScreenshotView.swift */,
 				47F7D28529D61F7A00D54D01 /* ReviewViewModel.swift */,
 				47F7D28629D61F7A00D54D01 /* Review.swift */,
 			);
@@ -554,6 +557,7 @@
 				4787B88C29D36B1700BBC7EE /* ExpandableView.swift in Sources */,
 				17601E1B29DDF31100A82898 /* PlantInfoViewModel.swift in Sources */,
 				EB18AF0729D4C19600D73821 /* ContentView.swift in Sources */,
+				47633D6F29FAE85C004E5CA1 /* ScreenshotView.swift in Sources */,
 				822E0A0129DCA64F005B311F /* ImageMainTrivia.swift in Sources */,
 				EB18AF0329D4B00600D73821 /* HomeViewModel.swift in Sources */,
 				17E9251929E2391E009FB71E /* CardExpandedDrawn.swift in Sources */,
@@ -706,6 +710,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Naturia/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need to access your photo library to save your draws";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -751,6 +756,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Naturia/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need to access your photo library to save your draws";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
