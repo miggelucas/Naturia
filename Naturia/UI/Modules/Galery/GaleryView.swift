@@ -104,9 +104,9 @@ struct GaleryView: View {
                         case .content:
                             ScrollView {
                                 LazyVGrid(columns: gridLayout, alignment: .center, spacing: 32) {
-                                    ForEach(viewModel.completedJourneys, id: \.self) { jorney in
+                                    ForEach(viewModel.completedJourneys, id: \.id) { jorney in
                                         
-                                        ForEach(jorney.userDrawns, id: \.self) { draw in
+                                        ForEach(jorney.userDrawns, id: \.id) { draw in
                                             Button {
                                                 viewModel.drawnPressed(for: CardGaleryDrawn(drawn: draw,
                                                                                             text: jorney.plant.popularName))
