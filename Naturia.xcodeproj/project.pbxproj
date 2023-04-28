@@ -11,10 +11,12 @@
 		170F210329D61FE1002363FB /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170F210229D61FE1002363FB /* Journey.swift */; };
 		170F210529D62029002363FB /* ImaginativeJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170F210429D62029002363FB /* ImaginativeJourney.swift */; };
 		170F210929D6206A002363FB /* Drawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170F210829D6206A002363FB /* Drawn.swift */; };
+		172E04E929FB484B00570172 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172E04E829FB484B00570172 /* CoreDataManager.swift */; };
 		172EA40929DB46E7006AC9E6 /* ObservatoryRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EA40829DB46E7006AC9E6 /* ObservatoryRepositoryView.swift */; };
 		172EA40D29DB4731006AC9E6 /* CardObservative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EA40C29DB4731006AC9E6 /* CardObservative.swift */; };
 		172EA40F29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EA40E29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift */; };
 		172EA41129DBB9F0006AC9E6 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EA41029DBB9F0006AC9E6 /* BackButton.swift */; };
+		17348E4D29FB41F20049A7DB /* CoreData2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17348E4B29FB41F20049A7DB /* CoreData2.xcdatamodeld */; };
 		173E810029DE09B8005B7253 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173E80FF29DE09B8005B7253 /* BackgroundView.swift */; };
 		17601E1B29DDF31100A82898 /* PlantInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17601E1A29DDF31100A82898 /* PlantInfoViewModel.swift */; };
 		1768ACE329CCE869002703C5 /* NaturiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768ACE229CCE869002703C5 /* NaturiaApp.swift */; };
@@ -79,10 +81,12 @@
 		170F210229D61FE1002363FB /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
 		170F210429D62029002363FB /* ImaginativeJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImaginativeJourney.swift; sourceTree = "<group>"; };
 		170F210829D6206A002363FB /* Drawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawn.swift; sourceTree = "<group>"; };
+		172E04E829FB484B00570172 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		172EA40829DB46E7006AC9E6 /* ObservatoryRepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservatoryRepositoryView.swift; sourceTree = "<group>"; };
 		172EA40C29DB4731006AC9E6 /* CardObservative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardObservative.swift; sourceTree = "<group>"; };
 		172EA40E29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservatoryRepositoryViewModel.swift; sourceTree = "<group>"; };
 		172EA41029DBB9F0006AC9E6 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		17348E4C29FB41F20049A7DB /* DrawnEntity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrawnEntity.xcdatamodel; sourceTree = "<group>"; };
 		173E80FF29DE09B8005B7253 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		17601E1A29DDF31100A82898 /* PlantInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantInfoViewModel.swift; sourceTree = "<group>"; };
 		1768ACDF29CCE869002703C5 /* Naturia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Naturia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +168,8 @@
 				170F210029D607E4002363FB /* Plant.swift */,
 				170F210829D6206A002363FB /* Drawn.swift */,
 				170F210B29D620CF002363FB /* Journey */,
+				17348E4B29FB41F20049A7DB /* CoreData2.xcdatamodeld */,
+				172E04E829FB484B00570172 /* CoreDataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -511,6 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47F7D28729D61F7A00D54D01 /* ReviewView.swift in Sources */,
+				17348E4D29FB41F20049A7DB /* CoreData2.xcdatamodeld in Sources */,
 				47F7D28829D61F7A00D54D01 /* ReviewViewModel.swift in Sources */,
 				17AE4D8629F84F8C00A4813A /* RepositoryManager.swift in Sources */,
 				EBB272AE29DDF8FE00811137 /* ArrowButton.swift in Sources */,
@@ -563,6 +570,7 @@
 				17E9251929E2391E009FB71E /* CardExpandedDrawn.swift in Sources */,
 				EB18AEFE29D4AF9C00D73821 /* Routes.swift in Sources */,
 				178EBDAF29E2111400D2DA70 /* NavigationManager.swift in Sources */,
+				172E04E929FB484B00570172 /* CoreDataManager.swift in Sources */,
 				EBE180E529DCE04B00336477 /* CardImaginativeCarouselViewModel.swift in Sources */,
 				172EA40929DB46E7006AC9E6 /* ObservatoryRepositoryView.swift in Sources */,
 				47185D9329DE0A30008611D6 /* ConfirmacaoViewModel.swift in Sources */,
@@ -808,6 +816,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		17348E4B29FB41F20049A7DB /* CoreData2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				17348E4C29FB41F20049A7DB /* DrawnEntity.xcdatamodel */,
+			);
+			currentVersion = 17348E4C29FB41F20049A7DB /* DrawnEntity.xcdatamodel */;
+			path = CoreData2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1768ACD729CCE869002703C5 /* Project object */;
 }

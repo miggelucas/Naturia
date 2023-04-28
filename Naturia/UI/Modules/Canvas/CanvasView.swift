@@ -42,7 +42,9 @@ struct CanvasView: View {
     
 
         viewModel.userDraw = getImageData()
-        let newDrawn: Drawn = Drawn(image: Image(uiImage: viewModel.userDraw), type: typeOfJourney)
+        let newDrawn: Drawn = Drawn(plantName: receivedJourney.plant.popularName,
+                                    image: Image(uiImage: viewModel.userDraw),
+                                    type: typeOfJourney)
         receivedJourney.userDrawns.append(newDrawn)
         
         RepositoryManager.shared.currentJourney = receivedJourney

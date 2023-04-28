@@ -15,9 +15,8 @@ final class ConquistaViewModel: ObservableObject {
     
     @Published var userDrawImage: Image = Image("DesenhoCriativo")
     
-    func viewDidAppear() {
-        RepositoryManager.shared.userDidCompletedCurrentJourney()
-        
+    func viewDidAppear()  {
+   
         let journey = RepositoryManager.shared.currentJourney
         
         let drawns = journey.userDrawns
@@ -28,6 +27,10 @@ final class ConquistaViewModel: ObservableObject {
                 
             }
         }
+        Task {
+            RepositoryManager.shared.userDidCompletedCurrentJourney()
+        }
+       
         
         
     }

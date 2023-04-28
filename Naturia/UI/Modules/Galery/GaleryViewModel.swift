@@ -40,7 +40,7 @@ class GaleryViewModel: ObservableObject {
         }
     }
     
-    init(journeys: [Journey] = RepositoryManager.shared.getAllJourneys(), mode: GaleryViewModel.Mode = .plants) {
+    init(journeys: [Journey] = RepositoryManager.shared.loadJourneysDrawns(), mode: GaleryViewModel.Mode = .plants) {
         self.journeys = journeys
         self.mode = mode
     }

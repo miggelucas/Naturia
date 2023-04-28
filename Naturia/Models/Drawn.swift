@@ -14,10 +14,19 @@ struct Drawn: Hashable {
         case imaginative, observative
     }
     
-    let id: UUID = UUID()
-    let creationDate : Date = Date()
+    let id: UUID
+    let plantName: String
+    let creationDate: Date
     var image: Image
     var type: DrawnType
+    
+    init(id: UUID = UUID(), plantName: String, creationDate: Date = Date(), image: Image, type: DrawnType) {
+        self.id = id
+        self.plantName = plantName
+        self.creationDate = creationDate
+        self.image = image
+        self.type = type
+    }
     
     // Implementação do protocolo Hashable
     func hash(into hasher: inout Hasher) {
@@ -33,11 +42,11 @@ extension Drawn {
     static func DrawnPlaceholder(type: DrawnType) -> Drawn {
         switch type {
         case .imaginative:
-           return Drawn(image: Image("DesenhoCriativo"), type: .imaginative)
+            return Drawn(plantName: "Abe", image: Image("DesenhoCriativo"), type: .imaginative)
 
 
         case .observative:
-            return Drawn(image: Image("desenhoUsuario"), type: .observative)
+            return Drawn(plantName: "Abe", image: Image("desenhoUsuario"), type: .observative)
         }
 
 
