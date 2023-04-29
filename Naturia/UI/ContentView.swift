@@ -10,10 +10,10 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var navigationManager = NavigationManager.shared
+    @StateObject var navigationManager = NavigationManager.shared
     
     var body: some View {
-        NavigationStack(path: NavigationManager.shared.path) {
+        NavigationStack(path: $navigationManager.path) {
             HomeView()
                 .navigationDestination(for: ObservativeRoutes.self, destination: { routes in
                     switch routes {

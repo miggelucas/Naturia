@@ -10,7 +10,7 @@ import SwiftUI
 
 class ObservatoryRepositoryViewModel: ObservableObject {
     
-    var navigationManager: NavigationManager?
+    var safeNavManager: NavigationManager = NavigationManager.shared
     
     enum state {
         case empty, content
@@ -33,15 +33,12 @@ class ObservatoryRepositoryViewModel: ObservableObject {
     let textForEmptyState: String = "Sem jornadas no momento =("
     
     func backButtonPressed() {
-        if let safeNavManager = navigationManager {
             safeNavManager.backToPreviousView()
-        }
+
     }
     
     func journeyPressed(_ journey: Journey) {
-        if let safeNavManager = navigationManager {
             RepositoryManager.shared.currentJourney = journey
             safeNavManager.pushToPath(ObservativeRoutes.confirmation)
-        }
     }
 }

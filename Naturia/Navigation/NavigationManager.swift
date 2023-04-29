@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-class NavigationManager {
-    var path = NavigationPath()
+class NavigationManager: ObservableObject {
+    @Published var path = NavigationPath()
     
     static var shared = NavigationManager()
 

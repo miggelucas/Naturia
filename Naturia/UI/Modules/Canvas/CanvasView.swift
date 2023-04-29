@@ -30,7 +30,7 @@ struct CanvasView: View {
         // quebrar esse metodo em partes
         // chamar um método que aplica a lógica abaixo
         let receivedJourney = RepositoryManager.shared.currentJourney
-                
+        
         var typeOfJourney: Drawn.DrawnType {
             if viewModel.canvasRole == .imaginative1 {
                 return .imaginative
@@ -38,10 +38,12 @@ struct CanvasView: View {
                 return .observative
             }
         }
-    
-
+        
+        
         viewModel.userDraw = getImageData()
-        let newDrawn: Drawn = Drawn(image: Image(uiImage: viewModel.userDraw), type: typeOfJourney)
+        let newDrawn: Drawn = Drawn(image: Image(uiImage: viewModel.userDraw),
+                                    type: typeOfJourney)
+        
         receivedJourney.userDrawns.append(newDrawn)
         
         RepositoryManager.shared.currentJourney = receivedJourney
@@ -50,14 +52,14 @@ struct CanvasView: View {
         switch viewModel.canvasRole {
         case .imaginative1:
             NavigationManager.shared.path.append(ImaginativeRoutes.miniInfo)
-
+            
         case .imaginative2:
             NavigationManager.shared.path.append(ImaginativeRoutes.review)
-
+            
         case .observative:
             NavigationManager.shared.path.append(ObservativeRoutes.conquer)
         }
-
+        
     }
     
     var body: some View {
