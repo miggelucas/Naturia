@@ -87,17 +87,13 @@ class RepositoryManager {
                         }
                     }
                 }
-                
-                
+
             case .failure(let error):
                 print("Failed to load drawns: \(error)")
             }
-            
-            
         }
         
         return journeysArray
-        
     }
     
     private func updateImaginative() {
@@ -111,7 +107,6 @@ class RepositoryManager {
         if let journeyIndex = observativeJourneysArray.firstIndex(where: { $0.id == currentJourney.id}) {
             observativeJourneysArray[journeyIndex] = currentJourney
         }
-        
     }
     
     

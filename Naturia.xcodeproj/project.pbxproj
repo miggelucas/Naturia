@@ -168,8 +168,6 @@
 				170F210029D607E4002363FB /* Plant.swift */,
 				170F210829D6206A002363FB /* Drawn.swift */,
 				170F210B29D620CF002363FB /* Journey */,
-				17348E4B29FB41F20049A7DB /* CoreData.xcdatamodeld */,
-				172E04E829FB484B00570172 /* CoreDataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -181,6 +179,15 @@
 				170F210429D62029002363FB /* ImaginativeJourney.swift */,
 			);
 			path = Journey;
+			sourceTree = "<group>";
+		};
+		172E04EA29FD957E00570172 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				17348E4B29FB41F20049A7DB /* CoreData.xcdatamodeld */,
+				172E04E829FB484B00570172 /* CoreDataManager.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		172EA40729DB46B1006AC9E6 /* ObservativeRepository */ = {
@@ -212,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				17C4F57129DD13B10016D74C /* Info.plist */,
+				172E04EA29FD957E00570172 /* Persistence */,
 				170F210A29D6207E002363FB /* Models */,
 				EB18AEFC29D4AF7600D73821 /* Navigation */,
 				4787B87F29D3689300BBC7EE /* UI */,

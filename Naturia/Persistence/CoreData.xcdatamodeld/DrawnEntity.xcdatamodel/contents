@@ -5,6 +5,7 @@
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="imageData" attributeType="Binary"/>
         <attribute name="journeyId" attributeType="String"/>
+        <attribute name="plantName" optional="YES" attributeType="String"/>
         <attribute name="type" attributeType="String"/>
     </entity>
 </model>

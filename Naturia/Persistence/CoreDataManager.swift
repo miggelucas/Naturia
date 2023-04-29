@@ -37,6 +37,7 @@ class CoreDataManager {
         if let userUIImage = await render.uiImage  {
             drawnContext.id = drawn.id
             drawnContext.journeyId = drawn.journeyId
+            drawnContext.plantName = drawn.plantName
             drawnContext.creationDate = drawn.creationDate
             drawnContext.imageData = userUIImage.pngData()
             drawnContext.type = drawn.type == .imaginative ? "imaginative" : "observative"
@@ -63,6 +64,7 @@ class CoreDataManager {
             drawnsEntitiesArray.map { drawnEntity in
                 return Drawn(id: drawnEntity.id!,
                              journeyId: drawnEntity.journeyId!,
+                             plantName: drawnEntity.plantName!,
                              creationDate: drawnEntity.creationDate!,
                              image: Image(uiImage: UIImage(data: drawnEntity.imageData!)!),
                              type: drawnEntity.type == "imaginative" ? .imaginative : .observative)

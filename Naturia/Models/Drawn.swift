@@ -16,13 +16,15 @@ struct Drawn: Hashable, Identifiable {
     
     let id: UUID
     let journeyId: String
+    let plantName: String
     let creationDate: Date
     var image: Image
     var type: DrawnType
     
-    init(id: UUID = UUID(), journeyId: String, creationDate: Date = Date(), image: Image, type: DrawnType) {
+    init(id: UUID = UUID(), journeyId: String, plantName: String, creationDate: Date = Date(), image: Image, type: DrawnType) {
         self.id = id
         self.journeyId = journeyId
+        self.plantName = plantName
         self.creationDate = creationDate
         self.image = image
         self.type = type
@@ -42,11 +44,11 @@ extension Drawn {
     static func DrawnPlaceholder(type: DrawnType) -> Drawn {
         switch type {
         case .imaginative:
-            return Drawn(journeyId: "x1", image: Image("DesenhoCriativo"), type: .imaginative)
+            return Drawn(journeyId: "x1", plantName: "exemplo", image: Image("DesenhoCriativo"), type: .imaginative)
 
 
         case .observative:
-            return Drawn(journeyId: "x2", image: Image("desenhoUsuario"), type: .observative)
+            return Drawn(journeyId: "x2", plantName: "exemplo", image: Image("desenhoUsuario"), type: .observative)
         }
 
 

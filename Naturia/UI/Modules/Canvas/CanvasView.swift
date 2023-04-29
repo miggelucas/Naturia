@@ -43,6 +43,7 @@ struct CanvasView: View {
 
         viewModel.userDraw = getImageData()
         let newDrawn: Drawn = Drawn(journeyId: receivedJourney.id,
+                                    plantName: receivedJourney.plant.popularName,
                                     image: Image(uiImage: viewModel.userDraw),
                                     type: typeOfJourney)
         receivedJourney.userDrawns.append(newDrawn)
