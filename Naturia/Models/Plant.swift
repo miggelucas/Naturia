@@ -8,7 +8,8 @@
 import Foundation
 import SwiftUI
 
-struct Plant {
+struct Plant: Hashable {
+    let id: UUID = UUID()
     let popularName: String
     let scientificName: String
     let origin: String

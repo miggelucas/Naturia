@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class GaleryViewModel: ObservableObject {
-
+    
     var navigationManager: NavigationManager?
     
     enum Mode {
@@ -28,6 +28,20 @@ class GaleryViewModel: ObservableObject {
         journeys.filter { journey in
             journey.isCompleted
         }
+    }
+    
+    var journeysPlants: [Plant] {
+        var filterPlants: [Plant] = []
+        
+        for journey in completedJourneys {
+            if !filterPlants.contains(where: { $0.popularName == journey.plant.popularName }) {
+                filterPlants.append(journey.plant)
+                
+            }
+        }
+        
+        return filterPlants
+        
     }
     
     var state: State {
@@ -51,9 +65,9 @@ class GaleryViewModel: ObservableObject {
         }
     }
     
-    func jorneyPressed(for journey: Journey) {
+    func plantPressed(for plant: Plant) {
         if let safeNavManger = navigationManager {
-            RepositoryManager.shared.currentJourney = journey
+            RepositoryManager.shared.currentPlant = plant
             safeNavManger.pushToPath(GaleryRoutes.plantInfo)
         }
     }

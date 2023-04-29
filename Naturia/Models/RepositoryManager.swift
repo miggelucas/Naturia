@@ -22,6 +22,9 @@ class RepositoryManager {
     var observativeJourneysArray: [Journey]
     var imaginativeJourneysArray: [ImaginativeJourney]
     
+    // gambiarra
+    var currentPlant: Plant?
+    
     init(currentJourney: Journey = ImaginativeJourney.getPlaceholder(),
          observativeArray: [Journey] = Journey.getObservativeJourneys(),
          imaginativeArray: [ImaginativeJourney] = ImaginativeJourney.getImaginativeJourneys()
@@ -48,7 +51,15 @@ class RepositoryManager {
         
         Task {
             for drawn in currentJourney.userDrawns {
-                await coreDataManager.saveDrawn(for: drawn)
+                await coreDataManager.saveDrawn(for: drawn) { result in
+                    switch result {
+                    case .success(let message):
+                        // could also inform user of result
+                        print(message)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
             }
             
             refreshJourneys()

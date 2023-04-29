@@ -60,13 +60,13 @@ struct GaleryView: View {
                         case .content:
                             ScrollView {
                                 LazyVGrid(columns: gridLayout, alignment: .center, spacing: 32) {
-                                    ForEach(viewModel.completedJourneys, id: \.id) { jorney in
+                                    ForEach(viewModel.journeysPlants, id: \.id) { plant in
                                         Button {
-                                            viewModel.jorneyPressed(for: jorney)
+                                            viewModel.plantPressed(for: plant)
                                             
                                         } label: {
-                                            CardObservative(plantIconDrawn: Image(jorney.plant.iconPath),
-                                                            plantName: jorney.plant.popularName)
+                                            CardObservative(plantIconDrawn: Image(plant.iconPath),
+                                                            plantName: plant.popularName)
                                         }
                                     }
                                 }
@@ -106,13 +106,13 @@ struct GaleryView: View {
                                 LazyVGrid(columns: gridLayout, alignment: .center, spacing: 32) {
                                     ForEach(viewModel.completedJourneys, id: \.id) { jorney in
                                         
-                                        ForEach(jorney.userDrawns, id: \.id) { draw in
+                                        ForEach(jorney.userDrawns, id: \.id) { drawn in
                                             Button {
-                                                viewModel.drawnPressed(for: CardGaleryDrawn(drawn: draw,
+                                                viewModel.drawnPressed(for: CardGaleryDrawn(drawn: drawn,
                                                                                             text: jorney.plant.popularName))
                                             } label: {
-                                                CardGaleryDrawn(drawn: draw,
-                                                                text: jorney.plant.popularName)
+                                                CardGaleryDrawn(drawn: drawn,
+                                                                text: drawn.creationDate.formatted(date: .abbreviated, time: .omitted))
                                             }
                                         }
                                         

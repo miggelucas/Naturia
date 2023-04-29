@@ -10,14 +10,12 @@ import SwiftUI
 
 class PlantInfoViewModel: ObservableObject {
     
-    @Published var journey: Journey
     @Published var plant: Plant
     var navigationManager: NavigationManager?
     let buttonStyle: BackButton.Style
     
-    init(journey: Journey = RepositoryManager.shared.currentJourney, buttonStyle: BackButton.Style) {
-        self.journey = journey
-        self.plant = journey.plant
+    init(plant: Plant, buttonStyle: BackButton.Style) {
+        self.plant = plant
         self.buttonStyle = buttonStyle
     }
     

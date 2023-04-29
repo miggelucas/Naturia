@@ -29,33 +29,30 @@ class CoreDataManager {
         }
     }
     
-    func saveDrawn(for drawn: Drawn) async {
-        
+    func saveDrawn(for drawn: Drawn, completion: @escaping (Result<String, Error>) -> Void) async {
         let drawnContext = DrawnEntity(context: viewContext)
         
         let render = await ImageRenderer(content: drawn.image)
         
         if let userUIImage = await render.uiImage  {
-            // Defina os valores dos atributos do objeto gerenciado com base no objeto Drawn
             drawnContext.id = drawn.id
             drawnContext.journeyId = drawn.journeyId
             drawnContext.creationDate = drawn.creationDate
             drawnContext.imageData = userUIImage.pngData()
             drawnContext.type = drawn.type == .imaginative ? "imaginative" : "observative"
             
-            // Salve o contexto do banco de dados para persistir o objeto
             do {
                 print(drawnContext.journeyId!)
                 try viewContext.save()
-                print("Salvou!")
+                completion(.success("Desenho \(drawnContext.id!) da jornada \(drawnContext.journeyId!) Salvo com sucesso!"))
             } catch {
-                print("Caiu no catch")
-                print("Failed to save drawn: \(error.localizedDescription)")
+                completion(.failure(error))
+
             }
         }
-        
-        
     }
+    
+    
     
     func fetchDrawns(completion: @escaping (Result<[Drawn], Error>) -> Void) {
         let fetchRequest: NSFetchRequest<DrawnEntity> = DrawnEntity.fetchRequest()
@@ -79,6 +76,7 @@ class CoreDataManager {
             completion(.failure(error))
         }
         
+        print("Fetched \(drawnsEntitiesArray.count) drawns in CoreData")
         completion(.success(drawns))
         
         
