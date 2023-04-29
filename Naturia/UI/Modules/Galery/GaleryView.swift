@@ -60,7 +60,7 @@ struct GaleryView: View {
                         case .content:
                             ScrollView {
                                 LazyVGrid(columns: gridLayout, alignment: .center, spacing: 32) {
-                                    ForEach(viewModel.completedJourneys, id: \.self) { jorney in
+                                    ForEach(viewModel.completedJourneys, id: \.id) { jorney in
                                         Button {
                                             viewModel.jorneyPressed(for: jorney)
                                             

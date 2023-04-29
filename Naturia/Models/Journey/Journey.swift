@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class Journey: Hashable {
+class Journey: Hashable, Identifiable {
     let id = UUID()
     let plant: Plant
     var isCompleted: Bool

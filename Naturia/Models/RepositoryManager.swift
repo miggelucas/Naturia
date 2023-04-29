@@ -11,7 +11,7 @@ import CoreData
 
 class RepositoryManager {
     
-
+    
     static let shared = RepositoryManager()
     
     let coreDataManager = CoreDataManager()
@@ -31,6 +31,11 @@ class RepositoryManager {
         self.imaginativeJourneysArray = imaginativeArray
     }
     
+    private func refreshJourneys() {
+        self.observativeJourneysArray = Journey.getObservativeJourneys()
+        self.imaginativeJourneysArray = ImaginativeJourney.getImaginativeJourneys()
+    }
+    
     
     func userDidCompletedCurrentJourney() {
         self.currentJourney.isCompleted = true
@@ -41,13 +46,14 @@ class RepositoryManager {
             updateObservative()
         }
         
-        for drawn in currentJourney.userDrawns {
-            Task {
+        Task {
+            for drawn in currentJourney.userDrawns {
                 await coreDataManager.saveDrawn(for: drawn)
             }
-     
+            
+            refreshJourneys()
         }
-       
+        
     }
     
     func getAllJourneys() -> [Journey] {
@@ -94,8 +100,8 @@ class RepositoryManager {
         if let journeyIndex = observativeJourneysArray.firstIndex(where: { $0.id == currentJourney.id}) {
             observativeJourneysArray[journeyIndex] = currentJourney
         }
-
+        
     }
-
+    
     
 }

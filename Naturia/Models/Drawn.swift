@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Drawn: Hashable {
+struct Drawn: Hashable, Identifiable {
     
     enum DrawnType {
         case imaginative, observative
