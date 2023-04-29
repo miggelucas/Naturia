@@ -9,14 +9,8 @@
 import SwiftUI
 
 struct ConquistaView: View {
-    
-    @EnvironmentObject var navigationManager: NavigationManager
     @ObservedObject private var viewModel = ConquistaViewModel()
     
-
-    
-   
-
 
 var body: some View {
     ZStack {
@@ -48,7 +42,6 @@ var body: some View {
     }
     .navigationBarBackButtonHidden(true)
     .onAppear{
-        viewModel.navigationManager = navigationManager
         viewModel.updateUserDrawImage()
     }
 }
@@ -57,6 +50,6 @@ var body: some View {
 
 struct Conquista_Previews: PreviewProvider {
     static var previews: some View {
-        ConquistaView().previewInterfaceOrientation(.landscapeLeft).environmentObject(NavigationManager())
+        ConquistaView().previewInterfaceOrientation(.landscapeLeft)
     }
 }

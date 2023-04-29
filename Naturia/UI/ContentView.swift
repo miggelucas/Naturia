@@ -9,11 +9,11 @@ import Foundation
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var navigationManager: NavigationManager
     
+    @State var navigationManager = NavigationManager.shared
     
     var body: some View {
-        NavigationStack(path: $navigationManager.path) {
+        NavigationStack(path: NavigationManager.shared.path) {
             HomeView()
                 .navigationDestination(for: ObservativeRoutes.self, destination: { routes in
                     switch routes {
@@ -72,7 +72,6 @@ struct ContentView: View {
 
 
         }
-        .environmentObject(navigationManager)
         .navigationViewStyle(.stack)
         .navigationBarTitleDisplayMode(.automatic)
         .navigationBarBackButtonHidden(true)
@@ -85,6 +84,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(NavigationManager())
     }
 }

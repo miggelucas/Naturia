@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CardImaginativeCarouselView: View {
-    @EnvironmentObject var navigationManager: NavigationManager
+    var navigationManager = NavigationManager.shared
     @ObservedObject private var viewModel = CardImaginativeCarouselViewModel()
     
     var body: some View {
@@ -23,7 +23,6 @@ struct CardImaginativeCarouselView: View {
     struct CardImaginativeCarousel_Previews: PreviewProvider {
         static var previews: some View {
             CardImaginativeCarouselView()
-                .environmentObject(NavigationManager())
         }
     }
 }

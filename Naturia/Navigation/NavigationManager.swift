@@ -8,8 +8,10 @@
 import Foundation
 import SwiftUI
 
-class NavigationManager: ObservableObject {
-    @Published var path = NavigationPath()
+class NavigationManager {
+    var path = NavigationPath()
+    
+    static var shared = NavigationManager()
 
     
     func popToRoot() {

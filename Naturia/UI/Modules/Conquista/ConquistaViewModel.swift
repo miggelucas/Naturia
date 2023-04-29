@@ -11,7 +11,8 @@ import SwiftUI
 // MARK: Variables to watch mark as Published. ViewModel also calls API/Core Data
 
 final class ConquistaViewModel: ObservableObject {
-    var navigationManager: NavigationManager?
+    
+    let safeNavManager = NavigationManager.shared
     
     @Published var userDrawImage: Image = Image("DesenhoCriativo")
     
@@ -29,15 +30,11 @@ final class ConquistaViewModel: ObservableObject {
     }
     
     func confirmativeButtonPressed() {
-        if let safeNavManager = navigationManager {
             safeNavManager.pushToPath(ObservativeRoutes.plants)
-        }
     }
     
     func dismissButtonPressed() {
-        if let safeNavManager = navigationManager {
             safeNavManager.popToRoot()
-        }
     }
     
     

@@ -19,7 +19,7 @@ struct ChildComponentSizePreferenceKey: PreferenceKey {
 }
 
 struct CardImaginativeCarousel: View {
-    @EnvironmentObject var navigationManager: NavigationManager
+    var navigationManager = NavigationManager.shared
     
     @Binding var index: Int
     let journeys: [ImaginativeJourney]

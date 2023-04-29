@@ -11,7 +11,6 @@ import SwiftUI
 
 struct ReviewView: View, Hashable {
     
-    @EnvironmentObject var navigationManager: NavigationManager
     @ObservedObject private var viewModel = ReviewViewModel()
     
     let id: UUID = UUID()
@@ -77,7 +76,6 @@ struct ReviewView: View, Hashable {
         }
         .navigationBarBackButtonHidden(true)
         .onAppear {
-            viewModel.navigationManager = navigationManager
             viewModel.viewDidApper()
         }
         
@@ -100,6 +98,6 @@ struct ReviewView: View, Hashable {
 struct Review_Previews: PreviewProvider {
     static var previews: some View {
         ReviewView()
-            .previewInterfaceOrientation(.landscapeLeft).environmentObject(NavigationManager())
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }
