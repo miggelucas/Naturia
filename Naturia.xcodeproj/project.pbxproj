@@ -16,7 +16,7 @@
 		172EA40D29DB4731006AC9E6 /* CardObservative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EA40C29DB4731006AC9E6 /* CardObservative.swift */; };
 		172EA40F29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EA40E29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift */; };
 		172EA41129DBB9F0006AC9E6 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EA41029DBB9F0006AC9E6 /* BackButton.swift */; };
-		17348E4D29FB41F20049A7DB /* CoreData2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17348E4B29FB41F20049A7DB /* CoreData2.xcdatamodeld */; };
+		17348E4D29FB41F20049A7DB /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17348E4B29FB41F20049A7DB /* CoreData.xcdatamodeld */; };
 		173E810029DE09B8005B7253 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173E80FF29DE09B8005B7253 /* BackgroundView.swift */; };
 		17601E1B29DDF31100A82898 /* PlantInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17601E1A29DDF31100A82898 /* PlantInfoViewModel.swift */; };
 		1768ACE329CCE869002703C5 /* NaturiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768ACE229CCE869002703C5 /* NaturiaApp.swift */; };
@@ -168,7 +168,7 @@
 				170F210029D607E4002363FB /* Plant.swift */,
 				170F210829D6206A002363FB /* Drawn.swift */,
 				170F210B29D620CF002363FB /* Journey */,
-				17348E4B29FB41F20049A7DB /* CoreData2.xcdatamodeld */,
+				17348E4B29FB41F20049A7DB /* CoreData.xcdatamodeld */,
 				172E04E829FB484B00570172 /* CoreDataManager.swift */,
 			);
 			path = Models;
@@ -517,7 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47F7D28729D61F7A00D54D01 /* ReviewView.swift in Sources */,
-				17348E4D29FB41F20049A7DB /* CoreData2.xcdatamodeld in Sources */,
+				17348E4D29FB41F20049A7DB /* CoreData.xcdatamodeld in Sources */,
 				47F7D28829D61F7A00D54D01 /* ReviewViewModel.swift in Sources */,
 				17AE4D8629F84F8C00A4813A /* RepositoryManager.swift in Sources */,
 				EBB272AE29DDF8FE00811137 /* ArrowButton.swift in Sources */,
@@ -818,13 +818,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		17348E4B29FB41F20049A7DB /* CoreData2.xcdatamodeld */ = {
+		17348E4B29FB41F20049A7DB /* CoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				17348E4C29FB41F20049A7DB /* DrawnEntity.xcdatamodel */,
 			);
 			currentVersion = 17348E4C29FB41F20049A7DB /* DrawnEntity.xcdatamodel */;
-			path = CoreData2.xcdatamodeld;
+			path = CoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -56,7 +56,7 @@ class RepositoryManager {
         
     }
     
-    func getAllJourneys() -> [Journey] {
+    private func getAllJourneys() -> [Journey] {
         return self.imaginativeJourneysArray + self.observativeJourneysArray
         
     }
@@ -69,10 +69,10 @@ class RepositoryManager {
             case .success(let drawsArray):
                 for draw in drawsArray {
                     for journey in journeysArray {
-                        if draw.plantName == journey.plant.popularName {
+                        if draw.journeyId == journey.id {
                             journey.isCompleted = true
                             journey.userDrawns.append(draw)
-                            print("Journey load Draw for plant: \(journey.plant.popularName)")
+                            print("JourneyId \(journey.id) load Draw \(draw.id) for plant: \(journey.plant.popularName)")
                         }
                     }
                 }
