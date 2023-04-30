@@ -122,6 +122,6 @@ struct PlantInfoView: View {
 
 struct PlantInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        PlantInfoView(viewModel: PlantInfoViewModel(buttonStyle: .back)).previewInterfaceOrientation(.landscapeLeft)
+        PlantInfoView(viewModel: PlantInfoViewModel(plant: Journey.getObservativePlaceholder().plant, buttonStyle: .back)).previewInterfaceOrientation(.landscapeLeft)
     }
 }

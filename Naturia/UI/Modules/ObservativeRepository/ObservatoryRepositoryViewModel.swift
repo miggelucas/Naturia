@@ -24,7 +24,7 @@ class ObservatoryRepositoryViewModel: ObservableObject {
         }
     }
     
-    init(journeyArray: [Journey] = RepositoryManager.shared.getJourneys()) {
+    init(journeyArray: [Journey] = RepositoryManager.shared.observativeJourneysArray) {
         self.journeys = journeyArray
     }
     

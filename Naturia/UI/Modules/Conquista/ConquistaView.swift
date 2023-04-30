@@ -49,7 +49,7 @@ var body: some View {
     .navigationBarBackButtonHidden(true)
     .onAppear{
         viewModel.navigationManager = navigationManager
-        viewModel.updateUserDrawImage()
+        viewModel.viewDidAppear()
     }
 }
 

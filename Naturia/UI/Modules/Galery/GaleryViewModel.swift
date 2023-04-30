@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class GaleryViewModel: ObservableObject {
-
+    
     var navigationManager: NavigationManager?
     
     enum Mode {
@@ -30,6 +30,38 @@ class GaleryViewModel: ObservableObject {
         }
     }
     
+    var journeysPlants: [Plant] {
+        var filterPlants: [Plant] = []
+        
+        for journey in completedJourneys {
+            if !filterPlants.contains(where: { $0.popularName == journey.plant.popularName }) {
+                filterPlants.append(journey.plant)
+                
+            }
+        }
+        
+        return filterPlants
+        
+    }
+    
+    var drawns: [Drawn] {
+        var drawns = [Drawn]()
+        
+        for journey in completedJourneys {
+            print("journey: \(journey.id)")
+            for drawn in journey.userDrawns {
+                if !drawns.contains(drawn) {
+                    print("draw: \(drawn.id)")
+                    drawns.append(drawn)
+                }
+               
+            }
+        }
+        
+        return drawns
+        
+    }
+    
     var state: State {
         switch mode {
         case .plants:
@@ -40,7 +72,7 @@ class GaleryViewModel: ObservableObject {
         }
     }
     
-    init(journeys: [Journey] = Journey.getObservativeJourneys(), mode: GaleryViewModel.Mode = .plants) {
+    init(journeys: [Journey] = RepositoryManager.shared.loadJourneysDrawns(), mode: GaleryViewModel.Mode = .plants) {
         self.journeys = journeys
         self.mode = mode
     }
@@ -51,9 +83,9 @@ class GaleryViewModel: ObservableObject {
         }
     }
     
-    func jorneyPressed(for journey: Journey) {
+    func plantPressed(for plant: Plant) {
         if let safeNavManger = navigationManager {
-            RepositoryManager.shared.currentJourney = journey
+            RepositoryManager.shared.currentPlant = plant
             safeNavManger.pushToPath(GaleryRoutes.plantInfo)
         }
     }

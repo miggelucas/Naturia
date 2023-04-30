@@ -30,7 +30,7 @@ struct ContentView: View {
                         ConquistaView()
                         
                     case .plants:
-                        PlantInfoView(viewModel: PlantInfoViewModel(buttonStyle: .backToHome))
+                        PlantInfoView(viewModel: PlantInfoViewModel(plant: RepositoryManager.shared.currentJourney.plant, buttonStyle: .backToHome))
                         
                     }}
                 )
@@ -40,7 +40,7 @@ struct ContentView: View {
                         GaleryView()
                         
                     case .plantInfo:
-                        PlantInfoView(viewModel: PlantInfoViewModel(buttonStyle: .back))
+                        PlantInfoView(viewModel: PlantInfoViewModel(plant: RepositoryManager.shared.currentPlant!, buttonStyle: .back))
                         
                     case .drawn(let cardDrawn):
                         DrawImageView(drawn: cardDrawn.drawn, name: cardDrawn.text)
@@ -53,7 +53,7 @@ struct ContentView: View {
             
         
                     case .plantsInfo:
-                        PlantInfoView(viewModel: PlantInfoViewModel(buttonStyle: .backToHome))
+                        PlantInfoView(viewModel: PlantInfoViewModel(plant: RepositoryManager.shared.currentJourney.plant, buttonStyle: .backToHome))
             
                         
                     case .canvasImaginative2:
