@@ -348,12 +348,9 @@
 		4787B88029D3689F00BBC7EE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				EB8C01CE29E0935A00B286A3 /* CardGalleryHome */,
-				EB8C01CD29E0934C00B286A3 /* CardObservativeHome */,
 				47185D8E29DE0A1C008611D6 /* Confirmacao */,
 				47185D8729DE0740008611D6 /* Conquista */,
 				1789C60429DE572500BA9F49 /* Galery */,
-				EBE180E029DCE02900336477 /* CardImaginativeCarousel */,
 				47F7D28329D61F5600D54D01 /* Review */,
 				824CC2D929DC980300DC2A4E /* MiniInfos */,
 				172EA40729DB46B1006AC9E6 /* ObservativeRepository */,
@@ -419,6 +416,9 @@
 		EB18AF0529D4B02600D73821 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				EB8C01CE29E0935A00B286A3 /* CardGalleryHome */,
+				EB8C01CD29E0934C00B286A3 /* CardObservativeHome */,
+				EBE180E029DCE02900336477 /* CardImaginativeCarousel */,
 				EB18AEFF29D4B00600D73821 /* HomeView.swift */,
 				EB18AF0029D4B00600D73821 /* HomeViewModel.swift */,
 			);

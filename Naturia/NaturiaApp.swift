@@ -9,12 +9,10 @@ import SwiftUI
 
 @main
 struct NaturiaApp: App {
-    @StateObject var navigationManager = NavigationManager()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(navigationManager)
         }
     }
 }

@@ -11,7 +11,6 @@ import UIKit
 struct HomeView: View {
     
     @ObservedObject private var viewModel = HomeViewModel()
-    @EnvironmentObject var navigationManager: NavigationManager
     
     @State private var index = 0;
     
@@ -33,18 +32,13 @@ struct HomeView: View {
                 }
                 Spacer()
             }
-            .environmentObject(navigationManager)
         .frame(maxHeight: .infinity)
         }
-//        .background(LinearGradient(
-//            colors: [Color.gray, Color.brown],
-//            startPoint: .leading, endPoint: .trailing))
     }
 }
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .environmentObject(NavigationManager())
     }
 }

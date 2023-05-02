@@ -9,21 +9,17 @@
 import SwiftUI
 
 struct CardImaginativeCarouselView: View {
-    @EnvironmentObject var navigationManager: NavigationManager
     @ObservedObject private var viewModel = CardImaginativeCarouselViewModel()
     
     var body: some View {
         CardImaginativeCarousel(index: $viewModel.cardIndex, journeys: viewModel.journeys, onTapArrowLeft: viewModel.onTapArrowLeft, onTapArrowRight: viewModel.onTapArrowRight)
-            .onAppear {
-                viewModel.navigationManager = navigationManager
-            }
+            
         
     }
     
     struct CardImaginativeCarousel_Previews: PreviewProvider {
         static var previews: some View {
             CardImaginativeCarouselView()
-                .environmentObject(NavigationManager())
         }
     }
 }

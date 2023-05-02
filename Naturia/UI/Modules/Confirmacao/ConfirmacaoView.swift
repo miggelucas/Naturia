@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ConfirmacaoView: View {
-    @EnvironmentObject var navigationManager: NavigationManager
+
     @ObservedObject private var viewModel: ConfirmacaoViewModel
     
     init(viewModel: ConfirmacaoViewModel = ConfirmacaoViewModel()) {
@@ -49,7 +49,6 @@ struct ConfirmacaoView: View {
         .navigationBarBackButtonHidden(true)
         .ignoresSafeArea()
         .onAppear {
-            viewModel.navigationManager = navigationManager
             viewModel.viewDidApper()
         }
     }
@@ -59,6 +58,5 @@ struct ConfirmacaoView: View {
 struct Confirmacao_Previews: PreviewProvider {
     static var previews: some View {
         ConfirmacaoView().previewInterfaceOrientation(.landscapeLeft)
-            .environmentObject(NavigationManager())
     }
 }

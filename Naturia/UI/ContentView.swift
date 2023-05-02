@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var navigationManager: NavigationManager
     
+    @StateObject var navigationManager = NavigationManager.shared
     
     var body: some View {
         NavigationStack(path: $navigationManager.path) {
@@ -72,7 +72,6 @@ struct ContentView: View {
 
 
         }
-        .environmentObject(navigationManager)
         .navigationViewStyle(.stack)
         .navigationBarTitleDisplayMode(.automatic)
         .navigationBarBackButtonHidden(true)
@@ -85,6 +84,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(NavigationManager())
     }
 }

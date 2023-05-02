@@ -12,17 +12,13 @@ import SwiftUI
 
 final class CardGalleryHomeViewModel: ObservableObject {
     @Published var title: String = ""
-    var navigationManager: NavigationManager?
+    var safeNavManager: NavigationManager = NavigationManager.shared
     
     init() {
         title = "Galeria"
     }
     
     func onTap() {
-        print("onTap CardGalleryHomeViewModel")
-        if let safeNavManager = navigationManager {
-            safeNavManager.pushToPath(GaleryRoutes.galery)
-        }
-       
+        safeNavManager.pushToPath(GaleryRoutes.galery)
     }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 class PlantInfoViewModel: ObservableObject {
     
     @Published var plant: Plant
-    var navigationManager: NavigationManager?
+    var safeNavManager: NavigationManager = NavigationManager.shared
     let buttonStyle: BackButton.Style
     
     init(plant: Plant, buttonStyle: BackButton.Style) {
@@ -21,14 +21,13 @@ class PlantInfoViewModel: ObservableObject {
     
     
     func backButtonPressed() {
-        if let safeNavManager = navigationManager {
             switch buttonStyle {
             case .back:
                 safeNavManager.backToPreviousView()
             case .backToHome:
                 safeNavManager.popToRoot()
             }
-        }
+        
 
         // should return to home
     }

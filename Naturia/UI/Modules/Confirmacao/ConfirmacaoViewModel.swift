@@ -12,7 +12,7 @@ import SwiftUI
 
 final class ConfirmacaoViewModel: ObservableObject {
     
-    var navigationManager: NavigationManager?
+    var navigationManager = NavigationManager.shared
     
     @Published var imagePath: String = "jiboiaReferencia"
     
@@ -25,15 +25,12 @@ final class ConfirmacaoViewModel: ObservableObject {
     }
     
     func confirmativeButtonPressed() {
-        if let safeNavManager = navigationManager {
-            safeNavManager.pushToPath(ObservativeRoutes.canvas)
-        }
+        navigationManager.pushToPath(ObservativeRoutes.canvas)
+        
     }
     
     func dismissButtonPressed() {
-        if let safeNavManager = navigationManager {
-            safeNavManager.backToPreviousView()
-        }
+        navigationManager.backToPreviousView()
     }
     
 }

@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 class GaleryViewModel: ObservableObject {
-    
-    var navigationManager: NavigationManager?
+
+    let navigationManager = NavigationManager.shared
     
     enum Mode {
         case plants, draws
@@ -78,22 +78,18 @@ class GaleryViewModel: ObservableObject {
     }
     
     func backButtonPressed() {
-        if let safeNavManger = navigationManager {
-            safeNavManger.backToPreviousView()
-        }
+            navigationManager.backToPreviousView()
+        
     }
     
     func plantPressed(for plant: Plant) {
-        if let safeNavManger = navigationManager {
             RepositoryManager.shared.currentPlant = plant
-            safeNavManger.pushToPath(GaleryRoutes.plantInfo)
-        }
+        navigationManager.pushToPath(GaleryRoutes.plantInfo)
     }
     
     func drawnPressed(for cardDrawn: CardGaleryDrawn) {
-        if let safeNavManger = navigationManager {
-            safeNavManger.pushToPath(GaleryRoutes.drawn(cardDrawn))
-        }
+            navigationManager.pushToPath(GaleryRoutes.drawn(cardDrawn))
+        
     }
     
     func rightArrowPressed() {

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MiniInfosView: View {
     
-    @EnvironmentObject var navigationManager: NavigationManager
     
     var journey: ImaginativeJourney {
         RepositoryManager.shared.currentJourney as! ImaginativeJourney
@@ -42,7 +41,7 @@ struct MiniInfosView: View {
                 
                 TextAndConfirmationButtons(cardType: .pequeno, firstLine:  "Agora que você conhece mais essa planta, vamos desenhá-la?", firstButtonType: .desenhar, actionForGreenButton: {
                     print("greenButton pressed")
-                    navigationManager.path.append(ImaginativeRoutes.canvasImaginative2)
+                    NavigationManager.shared.path.append(ImaginativeRoutes.canvasImaginative2)
                 }, actionForWhiteButton: {})
                 
                 //                VStack(spacing: -24) {
@@ -67,6 +66,5 @@ struct MiniInfosView: View {
 struct MiniInfosView_Previews: PreviewProvider {
     static var previews: some View {
         MiniInfosView().previewInterfaceOrientation(.landscapeLeft)
-            .environmentObject(NavigationManager())
     }
 }

@@ -14,7 +14,7 @@ import PencilKit
 final class CanvasViewModel: ObservableObject {
     
     let canvasRole: CanvasRole
-    var navigationManager: NavigationManager?
+    var navigationManager: NavigationManager = NavigationManager.shared
     
     @Published var example: String?
     var toggleType: ExpandableViewType {
@@ -40,9 +40,8 @@ final class CanvasViewModel: ObservableObject {
     
 
     func backButtonPressed(){
-        if let safeNavManager = navigationManager {
-            safeNavManager.path.removeLast()
-        }
+        navigationManager.path.removeLast()
+        
     }
     
 

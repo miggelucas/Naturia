@@ -11,7 +11,7 @@ import SwiftUI
 // MARK: Variables to watch mark as Published. ViewModel also calls API/Core Data
 
 final class ReviewViewModel: ObservableObject {
-    var navigationManager: NavigationManager?
+    let navigationManager: NavigationManager = NavigationManager.shared
     
     var userImaginativeDrawn: Image {
         let journey = RepositoryManager.shared.currentJourney
@@ -50,16 +50,12 @@ final class ReviewViewModel: ObservableObject {
     }
     
     func greenButtonPressed() {
-        if let safeNavManager = navigationManager {
-            safeNavManager.pushToPath(ImaginativeRoutes.plantsInfo)
-        }else{
-            print("n tem navmanagar")
-        }
+            navigationManager.pushToPath(ImaginativeRoutes.plantsInfo)
+
     }
     
     func whiteButtonPressed() {
-        if let safeNavManager = navigationManager {
-            safeNavManager.popToRoot()
-        }
+            navigationManager.popToRoot()
+
     }
 }

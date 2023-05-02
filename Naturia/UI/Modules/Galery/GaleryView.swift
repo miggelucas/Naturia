@@ -10,7 +10,6 @@ import SwiftUI
 struct GaleryView: View {
     
     @ObservedObject var viewModel: GaleryViewModel
-    @EnvironmentObject var navigationManager: NavigationManager
     
     init(viewModel: GaleryViewModel = GaleryViewModel()) {
         self.viewModel = viewModel
@@ -149,11 +148,6 @@ struct GaleryView: View {
             
         }
         .navigationBarBackButtonHidden(true)
-        
-        .onAppear {
-            self.viewModel.navigationManager = self.navigationManager
-            
-        }
     }
     
     struct GaleryView_Previews: PreviewProvider {
@@ -161,7 +155,6 @@ struct GaleryView: View {
             GaleryView(viewModel: GaleryViewModel(journeys:  Journey.getObservativeJourneys(),  mode: .plants
                                                  )
             )
-            .environmentObject(NavigationManager())
         }
     }
 }

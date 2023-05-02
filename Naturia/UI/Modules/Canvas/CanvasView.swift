@@ -11,7 +11,6 @@ import SwiftUI
 
 struct CanvasView: View {
     @ObservedObject private var viewModel: CanvasViewModel
-    @EnvironmentObject var navigationManager: NavigationManager
     
     init(viewModel: CanvasViewModel) {
         self.viewModel = viewModel
@@ -31,7 +30,7 @@ struct CanvasView: View {
         // quebrar esse metodo em partes
         // chamar um método que aplica a lógica abaixo
         let receivedJourney = RepositoryManager.shared.currentJourney
-                
+        
         var typeOfJourney: Drawn.DrawnType {
             if viewModel.canvasRole == .imaginative1 {
                 return .imaginative
@@ -39,8 +38,8 @@ struct CanvasView: View {
                 return .observative
             }
         }
-    
-
+        
+        
         viewModel.userDraw = getImageData()
         let newDrawn: Drawn = Drawn(journeyId: receivedJourney.id,
                                     plantName: receivedJourney.plant.popularName,
@@ -53,15 +52,15 @@ struct CanvasView: View {
         // então realiza a ação de notificar o navManager para próxima tela
         switch viewModel.canvasRole {
         case .imaginative1:
-            navigationManager.path.append(ImaginativeRoutes.miniInfo)
-
+            NavigationManager.shared.path.append(ImaginativeRoutes.miniInfo)
+            
         case .imaginative2:
-            navigationManager.path.append(ImaginativeRoutes.review)
-
+            NavigationManager.shared.path.append(ImaginativeRoutes.review)
+            
         case .observative:
-            navigationManager.path.append(ObservativeRoutes.conquer)
+            NavigationManager.shared.path.append(ObservativeRoutes.conquer)
         }
-
+        
     }
     
     var body: some View {
@@ -93,9 +92,6 @@ struct CanvasView: View {
             .padding(.top, 48.0)
         }
         .navigationBarBackButtonHidden(true)
-        .onAppear {
-            viewModel.navigationManager = navigationManager
-        }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
@@ -106,6 +102,6 @@ struct CanvasView: View {
 
 struct Canvas_Previews: PreviewProvider {
     static var previews: some View {
-        CanvasView(viewModel: CanvasViewModel(canvasRole: .imaginative1)).previewInterfaceOrientation(.landscapeLeft).environmentObject(NavigationManager())
+        CanvasView(viewModel: CanvasViewModel(canvasRole: .imaginative1)).previewInterfaceOrientation(.landscapeLeft)
     }
 }

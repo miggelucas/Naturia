@@ -14,7 +14,7 @@ final class CardObservativeHomeViewModel: ObservableObject {
     @Published var title: String = ""
     @Published var description: String = ""
     
-    var navigationManager: NavigationManager?
+    var safeNavManager: NavigationManager = NavigationManager.shared
     
     init() {
         title = "Jornada Observativa"
@@ -22,9 +22,8 @@ final class CardObservativeHomeViewModel: ObservableObject {
     }
     
     func onTap() {
-        if let safeNavManager = navigationManager {
-            safeNavManager.path.append(ObservativeRoutes.observativeRepository)
-        }
+        safeNavManager.path.append(ObservativeRoutes.observativeRepository)
+     
         
     }
 }

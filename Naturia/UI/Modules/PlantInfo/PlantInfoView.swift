@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlantInfoView: View {
-    @EnvironmentObject var navigationManager: NavigationManager
+    var navigationManager = NavigationManager.shared
     
     let viewModel: PlantInfoViewModel
     
@@ -114,9 +114,6 @@ struct PlantInfoView: View {
         }
         .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)
-        .onAppear {
-            self.viewModel.navigationManager = self.navigationManager
-        }
     }
 }
 

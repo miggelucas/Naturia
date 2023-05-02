@@ -11,13 +11,10 @@ import SwiftUI
 struct CardGalleryHomeView: View {
 
     @ObservedObject private var viewModel = CardGalleryHomeViewModel()
-    @EnvironmentObject var navigationManager: NavigationManager
        
     var body: some View {
         CardGalleryHome(title: viewModel.title, onTap: viewModel.onTap)
-            .onAppear {
-                self.viewModel.navigationManager = self.navigationManager
-            }
+        
     }
 
 }
