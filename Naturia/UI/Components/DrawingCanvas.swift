@@ -19,8 +19,7 @@ struct DrawingCanvas: UIViewRepresentable {
         canvasView.delegate = context.coordinator
         canvasView.tool = PKInkingTool(.pen, color: .black, width: 10)
         canvasView.drawingPolicy = .default
-        
-        canvasView.becomeFirstResponder()
+        canvasView.backgroundColor = UIColor.clear
         
        
         return canvasView
@@ -29,14 +28,14 @@ struct DrawingCanvas: UIViewRepresentable {
     func updateUIView(_ uiView: PKCanvasView, context: Context) {
         toolPicker.addObserver(canvasView)
         toolPicker.setVisible(true, forFirstResponder: canvasView)
-        
+        canvasView.becomeFirstResponder()
     }
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
     
-    class Coordinator: NSObject, PKCanvasViewDelegate {
+    class Coordinator: NSObject, PKCanvasViewDelegate  {
         var parent: DrawingCanvas
         
         init(_ parent: DrawingCanvas) {
@@ -48,3 +47,11 @@ struct DrawingCanvas: UIViewRepresentable {
         }
     }
 }
+
+struct DrawingCanvas_Previews: PreviewProvider {
+    static var previews: some View {
+        DrawingCanvas(canvasView: .constant(PKCanvasView()))
+            .previewInterfaceOrientation(.landscapeLeft)
+    }
+}
+

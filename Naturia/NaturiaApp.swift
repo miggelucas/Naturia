@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct NaturiaApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            CanvasView()
+            ContentView()
         }
     }
 }
