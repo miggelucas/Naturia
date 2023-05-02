@@ -9,14 +9,10 @@
 import SwiftUI
 
 struct CardObservativeHomeView: View {
-    var navigationManager = NavigationManager.shared
     @ObservedObject private var viewModel = CardObservativeHomeViewModel()
        
     var body: some View {
         CardObservativeHome(title: viewModel.title, description: viewModel.description, onTap: viewModel.onTap)
-            .onAppear {
-                viewModel.navigationManager = navigationManager
-            }
     }
 
 }

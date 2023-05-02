@@ -14,7 +14,7 @@ final class CardImaginativeCarouselViewModel: ObservableObject {
     @Published var cardIndex: Int = 0
     @Published var journeys: [ImaginativeJourney]
     
-    var navigationManager: NavigationManager?
+    let navigationManager = NavigationManager.shared
     
     init() {
         journeys = RepositoryManager.shared.getImaginativeJourney()

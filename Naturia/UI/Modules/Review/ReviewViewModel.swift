@@ -11,7 +11,7 @@ import SwiftUI
 // MARK: Variables to watch mark as Published. ViewModel also calls API/Core Data
 
 final class ReviewViewModel: ObservableObject {
-    var navigationManager: NavigationManager = NavigationManager.shared
+    let navigationManager: NavigationManager = NavigationManager.shared
     
     var userImaginativeDrawn: Image {
         let journey = RepositoryManager.shared.currentJourney

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ObservatoryRepositoryView: View {
-    var navigationManager = NavigationManager.shared
     @ObservedObject var viewModel: ObservatoryRepositoryViewModel
     
     
