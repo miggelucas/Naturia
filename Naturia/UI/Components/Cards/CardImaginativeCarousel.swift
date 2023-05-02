@@ -71,7 +71,7 @@ struct CardCarousel_Previews: PreviewProvider {
     static var previews: some View {
         StatefulPreviewWrapper(0) {
             CardImaginativeCarousel(index: $0,
-                                    journeys: ImaginativeJourney.getImaginativeJourneys(),
+                                    journeys: RepositoryManager.shared.imaginativeJourneysArray,
                                     onTapArrowLeft: test,
                                     onTapArrowRight: test)
         }

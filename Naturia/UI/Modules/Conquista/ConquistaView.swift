@@ -42,7 +42,7 @@ var body: some View {
     }
     .navigationBarBackButtonHidden(true)
     .onAppear{
-        viewModel.updateUserDrawImage()
+        viewModel.viewDidAppear()
     }
 }
 

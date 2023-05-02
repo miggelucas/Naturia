@@ -6,36 +6,108 @@
 //
 
 import Foundation
+import CoreData
+
 
 class RepositoryManager {
     
+    
     static let shared = RepositoryManager()
     
-    var currentJourney: Journey
+    let coreDataManager = CoreDataManager()
     
-    init(currentJourney: Journey = ImaginativeJourney.getPlaceholder()) {
+    // all this should be private
+    // refact it later
+    var currentJourney: Journey
+    var observativeJourneysArray: [Journey]
+    var imaginativeJourneysArray: [ImaginativeJourney]
+    
+    // gambiarra
+    var currentPlant: Plant?
+    
+    init(currentJourney: Journey = ImaginativeJourney.getPlaceholder(),
+         observativeArray: [Journey] = Journey.getObservativeJourneys(),
+         imaginativeArray: [ImaginativeJourney] = ImaginativeJourney.getImaginativeJourneys()
+    ){
         self.currentJourney = currentJourney
+        self.observativeJourneysArray = observativeArray
+        self.imaginativeJourneysArray = imaginativeArray
+    }
+    
+    private func refreshJourneys() {
+        self.observativeJourneysArray = Journey.getObservativeJourneys()
+        self.imaginativeJourneysArray = ImaginativeJourney.getImaginativeJourneys()
     }
     
     
-    
-    func update(for journey: Journey) {
-        // provavelmente vai funcionar assim
-        var journeyArray: [Journey] = getJourneys()
-
-        if let journeyIndex = journeyArray.firstIndex(where: { $0.id == journey.id}) {
-            journeyArray[journeyIndex] = journey
+    func userDidCompletedCurrentJourney() {
+        self.currentJourney.isCompleted = true
+        
+        if currentJourney is ImaginativeJourney {
+            updateImaginative()
+        } else {
+            updateObservative()
         }
         
+        Task {
+            for drawn in currentJourney.userDrawns {
+                await coreDataManager.saveDrawn(for: drawn) { result in
+                    switch result {
+                    case .success(let message):
+                        // could also inform user of result
+                        print(message)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+            
+            refreshJourneys()
+        }
         
     }
     
-    func getJourneys() -> [Journey] {
-        return Journey.getObservativeJourneys()
+    private func getAllJourneys() -> [Journey] {
+        return self.imaginativeJourneysArray + self.observativeJourneysArray
+        
     }
     
-    func getImaginativeJourney() -> [ImaginativeJourney] {
-        return ImaginativeJourney.getImaginativeJourneys()
+    func loadJourneysDrawns() -> [Journey] {
+        let journeysArray = getAllJourneys()
+        
+        coreDataManager.fetchDrawns { result in
+            switch result {
+            case .success(let drawsArray):
+                for draw in drawsArray {
+                    for journey in journeysArray {
+                        if draw.journeyId == journey.id {
+                            journey.isCompleted = true
+                            journey.userDrawns.append(draw)
+                            print("JourneyId \(journey.id) load Draw \(draw.id) for plant: \(journey.plant.popularName)")
+                        }
+                    }
+                }
+
+            case .failure(let error):
+                print("Failed to load drawns: \(error)")
+            }
+        }
+        
+        return journeysArray
     }
+    
+    private func updateImaginative() {
+        if let journeyIndex = imaginativeJourneysArray.firstIndex(where: { $0.id == currentJourney.id}) {
+            let journey = currentJourney as! ImaginativeJourney
+            imaginativeJourneysArray[journeyIndex] = journey
+        }
+    }
+    
+    private func updateObservative() {
+        if let journeyIndex = observativeJourneysArray.firstIndex(where: { $0.id == currentJourney.id}) {
+            observativeJourneysArray[journeyIndex] = currentJourney
+        }
+    }
+    
     
 }

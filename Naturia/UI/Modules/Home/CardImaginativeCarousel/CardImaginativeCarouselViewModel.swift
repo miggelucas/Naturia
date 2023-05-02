@@ -17,7 +17,7 @@ final class CardImaginativeCarouselViewModel: ObservableObject {
     let navigationManager = NavigationManager.shared
     
     init() {
-        journeys = RepositoryManager.shared.getImaginativeJourney()
+        journeys = RepositoryManager.shared.imaginativeJourneysArray
     }
     
     func onTapArrowLeft() {

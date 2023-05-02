@@ -59,13 +59,13 @@ struct GaleryView: View {
                         case .content:
                             ScrollView {
                                 LazyVGrid(columns: gridLayout, alignment: .center, spacing: 32) {
-                                    ForEach(viewModel.completedJourneys, id: \.self) { jorney in
+                                    ForEach(viewModel.journeysPlants, id: \.id) { plant in
                                         Button {
-                                            viewModel.jorneyPressed(for: jorney)
+                                            viewModel.plantPressed(for: plant)
                                             
                                         } label: {
-                                            CardObservative(plantIconDrawn: Image(jorney.plant.iconPath),
-                                                            plantName: jorney.plant.popularName)
+                                            CardObservative(plantIconDrawn: Image(plant.iconPath),
+                                                            plantName: plant.popularName)
                                         }
                                     }
                                 }
@@ -103,19 +103,18 @@ struct GaleryView: View {
                         case .content:
                             ScrollView {
                                 LazyVGrid(columns: gridLayout, alignment: .center, spacing: 32) {
-                                    ForEach(viewModel.completedJourneys, id: \.self) { jorney in
-                                        
-                                        ForEach(jorney.userDrawns, id: \.self) { draw in
-                                            Button {
-                                                viewModel.drawnPressed(for: CardGaleryDrawn(drawn: draw,
-                                                                                            text: jorney.plant.popularName))
-                                            } label: {
-                                                CardGaleryDrawn(drawn: draw,
-                                                                text: jorney.plant.popularName)
-                                            }
+                                    
+                                    ForEach(viewModel.drawns, id: \.hashValue) { drawn in
+                                        Button {
+                                            viewModel.drawnPressed(for: CardGaleryDrawn(drawn: drawn,
+                                                                                        text: drawn.plantName))
+                                        } label: {
+                                            CardGaleryDrawn(drawn: drawn,
+                                                            text: drawn.creationDate.formatted(date: .abbreviated, time: .omitted))
                                         }
-                                        
                                     }
+                                    
+                                    
                                 }
                             }
                             
@@ -131,7 +130,7 @@ struct GaleryView: View {
                             
                         }
                         
-
+                        
                         ArrowButton(buttonType: .left) {
                             // assim como o botao no caso da tela de plantas
                             // esse cara eh gambiarra, esta aqui para manter proporcao da tela
@@ -139,9 +138,9 @@ struct GaleryView: View {
                         .layoutPriority(2)
                         .opacity(0)
                     }
-
+                    
                 }
-
+                
             }
             .padding(.horizontal, 32)
             .padding(.top, 48)

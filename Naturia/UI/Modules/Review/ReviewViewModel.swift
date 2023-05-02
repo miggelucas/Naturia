@@ -44,8 +44,8 @@ final class ReviewViewModel: ObservableObject {
     }
     
     
-    func viewDidApper() {
-        
+    func viewDidApper()  {
+        RepositoryManager.shared.userDidCompletedCurrentJourney()
         
     }
     
