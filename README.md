@@ -36,7 +36,7 @@ Developed by
 
 <table>
   <tr>
-<td align="center"><a href="https://www.linkedin.com/in/alanacramos/"><img src="https://media.licdn.com/dms/image/C4D03AQHo_CScOGjswQ/profile-displayphoto-shrink_400_400/0/1611785354848?e=1688601600&v=beta&t=V_Qq8SeO2DgGwXSPvG6kx1Hrdwv3l-tLGA-OxDx-AH0" width="100px;" alt=""/><br /><sub><b>Rinaldo Jr.</b></sub></a><br/></td>
+<td align="center"><a href="https://www.linkedin.com/in/alanacramos/"><img src="https://media.licdn.com/dms/image/C4D03AQHo_CScOGjswQ/profile-displayphoto-shrink_400_400/0/1611785354848?e=1688601600&v=beta&t=V_Qq8SeO2DgGwXSPvG6kx1Hrdwv3l-tLGA-OxDx-AH0" width="100px;" alt=""/><br /><sub><b>Alana Ram</b></sub></a><br/></td>
 
 <td align="center"><a href="https://www.linkedin.com/in/thalesvgfraga/"><img src="https://media.licdn.com/dms/image/D4D03AQG09fy6_wxgog/profile-displayphoto-shrink_400_400/0/1682003556422?e=1688601600&v=beta&t=efRKnbyEl67DF0b_A0qMKrBH5xMmCPUnoV2IQ0mZV1E" width="100px;" alt=""/><br /><sub><b>Thales Fraga</b></sub></a><br/></td>
 
