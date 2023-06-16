@@ -12,24 +12,24 @@ struct CardPlantTrivia: View {
     let trivia: String
     
     var body: some View {
-        ZStack {
-            Image("Card Trivia")
-            
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(trivia)
-                        .font(Font.NaturiaSecundary(.body))
-                        .foregroundColor(Color("gray-900"))
-                    
-                    Spacer()
-                }
-                Spacer()
+        
+        HStack {
+            VStack(alignment: .leading) {
+                Text(trivia)
+                    .font(Font.NaturiaSecundary(.body))
+                    .foregroundColor(Color("gray-900"))
                 
+                Spacer()
             }
-            .padding(24)
+            Spacer()
             
         }
-        .frame(width: 258, height: 312)
+        .padding(24)
+        .background {
+            Image("Card Trivia")
+                .resizable()
+            
+        }
     }
 }
 

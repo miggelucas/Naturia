@@ -12,31 +12,39 @@ struct CardPlantDescriptionView: View {
     let description: String
     
     var body: some View {
-        ZStack {
-            Image("Card Description")
-            
-            
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(description)
-                        .font(Font.NaturiaSecundary(.body))
-                        .foregroundColor(Color("gray-900"))
-                    
-                    Spacer()
-                }
-                Spacer()
+        
+        HStack {
+            VStack(alignment: .leading) {
+                Text(description)
+                    .font(Font.NaturiaSecundary(.body))
+                    .foregroundColor(Color("gray-900"))
+
                 
+                Spacer()
             }
+            Spacer()
             
-            .padding(24)
-           
         }
-        .frame(width: 549, height: 192 )
+        .padding(24)
+        .background {
+            Image("Card Description")
+                .resizable()
+        }
+        
+        
+        
+        
     }
 }
 
 struct PlantDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
-        CardPlantDescriptionView(description: "Texto aqui Texto aqui Texto aqui Texto aqui Texto aqui Texto aqui Texto aqui Texto aqui Texto aqui Texto aquiTexto aqui Texto aqui Texto aqui Texto aqui Texto aqui")
+        
+        VStack {
+            CardPlantDescriptionView(description: "Texto aqui Texto aqui Texto aqui Texto aqui Texto aqui Texto aqui Texto aqui Texto aqui Texto aqui Texto aquiTexto aqui ")
+                .padding()
+        }
+        .padding()
     }
+    
 }

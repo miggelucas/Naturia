@@ -24,11 +24,10 @@ struct PlantInfoView: View {
             
             VStack {
                 
-                // Back Button
                 HStack {
                     BackButton(style: viewModel.buttonStyle, actionForButton: {
                         viewModel.backButtonPressed()
-                        print("entrou aqui")
+                    
                     })
                     
                     Spacer()
@@ -74,6 +73,7 @@ struct PlantInfoView: View {
                                     .font(Font.NaturiaSecundary(.h5))
                                 
                                 CardPlantDescriptionView(description: viewModel.plant.description)
+                                
                             }
                             
                             
@@ -97,14 +97,13 @@ struct PlantInfoView: View {
                                 }
                                 
                             }
-                            .frame(width: 549)
                             
                         }
                         
                     }
                     .foregroundColor(Color("gray-900"))
                     .padding(.top, -50)
-                    .padding(.trailing, 5)
+                    .padding(.trailing, 50)
                 }
             }
             .padding(.horizontal, 32)
