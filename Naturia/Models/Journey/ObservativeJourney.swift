@@ -11,7 +11,6 @@ import SwiftUI
 class ObservativeJourney: Journey, Hashable, Identifiable {
     var id: String
     var plant: Plant
-
     var drawingProvocations: [String]
     var userDrawns: [Drawn] = []
     

@@ -106,8 +106,8 @@ struct GaleryView: View {
                                     
                                     ForEach(viewModel.drawns, id: \.hashValue) { drawn in
                                         Button {
-                                            viewModel.drawnPressed(for: CardGaleryDrawn(drawn: drawn,
-                                                                                        text: drawn.plantName))
+//                                            viewModel.drawnPressed(for: CardGaleryDrawn(drawn: drawn,
+//                                                                                        text: drawn.plantName))
                                         } label: {
                                             CardGaleryDrawn(drawn: drawn,
                                                             text: drawn.creationDate.formatted(date: .abbreviated, time: .omitted))

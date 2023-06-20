@@ -17,6 +17,8 @@ struct Plant: Identifiable {
     let iconPath: String
     let description: String
     let trivia: [String]
+    var drawns: [Drawn] = []
+    
 }
 
 
