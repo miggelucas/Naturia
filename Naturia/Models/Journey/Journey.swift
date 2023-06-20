@@ -8,8 +8,8 @@
 import Foundation
 
 protocol Journey {
-    var id: String { get set }
+    var id: String { get }
     var plant: Plant { get set }
-    var drawingProvocations: [String] { get set }
+    var drawingProvocations: [String] { get }
     
 }

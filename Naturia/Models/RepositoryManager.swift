@@ -22,7 +22,8 @@ class RepositoryManager {
     var observativeJourneysArray: [ObservativeJourney]
     var imaginativeJourneysArray: [ImaginativeJourney]
     
-    // gambiarra
+    
+    var plants: [Plant] = []
     var currentPlant: Plant?
     
     init(currentJourney: Journey = ImaginativeJourney.getPlaceholder(),
@@ -32,6 +33,8 @@ class RepositoryManager {
         self.currentJourney = currentJourney
         self.observativeJourneysArray = observativeArray
         self.imaginativeJourneysArray = imaginativeArray
+        
+        self.plants = loadPlants()
     }
     
     private func refreshJourneys() {
@@ -39,6 +42,45 @@ class RepositoryManager {
         self.imaginativeJourneysArray = ImaginativeJourney.getImaginativeJourneys()
     }
     
+    func loadPlants() -> [Plant] {
+        var plantsArray: [Plant] = []
+        
+        coreDataManager.fetchPlants { result in
+            switch result {
+            case .success(let plants):
+                print("load plants success")
+                plantsArray = plants
+                
+            case .failure(let error):
+                print("failed to load plants: \(error)")
+            }
+        }
+        
+        return plantsArray
+        
+    }
+    
+    func update(for plant: Plant) {
+        currentJourney.plant = plant
+        
+        // if is a new plant
+        Task {
+            if !plants.contains(where: { $0.id == plant.id }) {
+                await coreDataManager.savePlant(for: plant) { [self] result in
+                    switch result {
+                    case .success(let mensage):
+                        print(mensage)
+                        self.plants = self.loadPlants()
+                        
+                    case .failure(let error):
+                        print("failed to save new Plant error: \(error.localizedDescription)")
+                    }
+                }
+            }
+        }
+
+        
+    }
     
     func userDidCompletedCurrentJourney() {
         

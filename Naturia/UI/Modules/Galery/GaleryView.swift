@@ -59,7 +59,7 @@ struct GaleryView: View {
                         case .content:
                             ScrollView {
                                 LazyVGrid(columns: gridLayout, alignment: .center, spacing: 32) {
-                                    ForEach(viewModel.journeysPlants, id: \.id) { plant in
+                                    ForEach(viewModel.plants) { plant in
                                         Button {
                                             viewModel.plantPressed(for: plant)
                                             
@@ -104,7 +104,7 @@ struct GaleryView: View {
                             ScrollView {
                                 LazyVGrid(columns: gridLayout, alignment: .center, spacing: 32) {
                                     
-                                    ForEach(viewModel.drawns, id: \.hashValue) { drawn in
+                                    ForEach(viewModel.drawns) { drawn in
                                         Button {
 //                                            viewModel.drawnPressed(for: CardGaleryDrawn(drawn: drawn,
 //                                                                                        text: drawn.plantName))
@@ -152,8 +152,7 @@ struct GaleryView: View {
     
     struct GaleryView_Previews: PreviewProvider {
         static var previews: some View {
-            GaleryView(viewModel: GaleryViewModel(journeys:  ObservativeJourney.getObservativeJourneys(),  mode: .plants
-                                                 )
+            GaleryView(viewModel: GaleryViewModel(mode: .plants)
             )
         }
     }

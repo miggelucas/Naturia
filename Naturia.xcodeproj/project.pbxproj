@@ -16,8 +16,11 @@
 		172EA40D29DB4731006AC9E6 /* CardObservative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EA40C29DB4731006AC9E6 /* CardObservative.swift */; };
 		172EA40F29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EA40E29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift */; };
 		172EA41129DBB9F0006AC9E6 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EA41029DBB9F0006AC9E6 /* BackButton.swift */; };
-		17348E4D29FB41F20049A7DB /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17348E4B29FB41F20049A7DB /* CoreData.xcdatamodeld */; };
 		173E810029DE09B8005B7253 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173E80FF29DE09B8005B7253 /* BackgroundView.swift */; };
+		175CDD562A422D20003514A1 /* DrawnCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175CDD522A422D20003514A1 /* DrawnCD+CoreDataClass.swift */; };
+		175CDD572A422D20003514A1 /* DrawnCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175CDD532A422D20003514A1 /* DrawnCD+CoreDataProperties.swift */; };
+		175CDD582A422D20003514A1 /* PlantCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175CDD542A422D20003514A1 /* PlantCD+CoreDataClass.swift */; };
+		175CDD592A422D20003514A1 /* PlantCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175CDD552A422D20003514A1 /* PlantCD+CoreDataProperties.swift */; };
 		17601E1B29DDF31100A82898 /* PlantInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17601E1A29DDF31100A82898 /* PlantInfoViewModel.swift */; };
 		1768ACE329CCE869002703C5 /* NaturiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768ACE229CCE869002703C5 /* NaturiaApp.swift */; };
 		1768ACE729CCE86A002703C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768ACE629CCE86A002703C5 /* Assets.xcassets */; };
@@ -30,6 +33,7 @@
 		17AE4D8629F84F8C00A4813A /* RepositoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AE4D8529F84F8C00A4813A /* RepositoryManager.swift */; };
 		17AE4D8B29F8C50000A4813A /* CanvasRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AE4D8A29F8C50000A4813A /* CanvasRole.swift */; };
 		17B6294B2A411ED2004F89EE /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B6294A2A411ED2004F89EE /* Journey.swift */; };
+		17B6294E2A42177B004F89EE /* PlantsAndDrawnCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17B6294C2A42177B004F89EE /* PlantsAndDrawnCD.xcdatamodeld */; };
 		17C4F56329DCB5900016D74C /* CardPlantDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */; };
 		17C4F56529DCBD750016D74C /* CardPlantOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56429DCBD750016D74C /* CardPlantOrigin.swift */; };
 		17C4F56729DCBE670016D74C /* CardPlantTrivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56629DCBE670016D74C /* CardPlantTrivia.swift */; };
@@ -87,8 +91,11 @@
 		172EA40C29DB4731006AC9E6 /* CardObservative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardObservative.swift; sourceTree = "<group>"; };
 		172EA40E29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservatoryRepositoryViewModel.swift; sourceTree = "<group>"; };
 		172EA41029DBB9F0006AC9E6 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
-		17348E4C29FB41F20049A7DB /* DrawnEntity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrawnEntity.xcdatamodel; sourceTree = "<group>"; };
 		173E80FF29DE09B8005B7253 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		175CDD522A422D20003514A1 /* DrawnCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrawnCD+CoreDataClass.swift"; sourceTree = "<group>"; };
+		175CDD532A422D20003514A1 /* DrawnCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrawnCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		175CDD542A422D20003514A1 /* PlantCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlantCD+CoreDataClass.swift"; sourceTree = "<group>"; };
+		175CDD552A422D20003514A1 /* PlantCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlantCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		17601E1A29DDF31100A82898 /* PlantInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantInfoViewModel.swift; sourceTree = "<group>"; };
 		1768ACDF29CCE869002703C5 /* Naturia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Naturia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1768ACE229CCE869002703C5 /* NaturiaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturiaApp.swift; sourceTree = "<group>"; };
@@ -103,6 +110,7 @@
 		17AE4D8529F84F8C00A4813A /* RepositoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryManager.swift; sourceTree = "<group>"; };
 		17AE4D8A29F8C50000A4813A /* CanvasRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasRole.swift; sourceTree = "<group>"; };
 		17B6294A2A411ED2004F89EE /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
+		17B6294D2A42177B004F89EE /* PlantsAndDrawnCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlantsAndDrawnCD.xcdatamodel; sourceTree = "<group>"; };
 		17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantDescriptionView.swift; sourceTree = "<group>"; };
 		17C4F56429DCBD750016D74C /* CardPlantOrigin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantOrigin.swift; sourceTree = "<group>"; };
 		17C4F56629DCBE670016D74C /* CardPlantTrivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantTrivia.swift; sourceTree = "<group>"; };
@@ -187,8 +195,9 @@
 		172E04EA29FD957E00570172 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				17348E4B29FB41F20049A7DB /* CoreData.xcdatamodeld */,
 				172E04E829FB484B00570172 /* CoreDataManager.swift */,
+				17B6294C2A42177B004F89EE /* PlantsAndDrawnCD.xcdatamodeld */,
+				17389D5D2A422190007F0A7B /* ModelCD */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -200,6 +209,17 @@
 				172EA40E29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift */,
 			);
 			path = ObservativeRepository;
+			sourceTree = "<group>";
+		};
+		17389D5D2A422190007F0A7B /* ModelCD */ = {
+			isa = PBXGroup;
+			children = (
+				175CDD532A422D20003514A1 /* DrawnCD+CoreDataProperties.swift */,
+				175CDD522A422D20003514A1 /* DrawnCD+CoreDataClass.swift */,
+				175CDD542A422D20003514A1 /* PlantCD+CoreDataClass.swift */,
+				175CDD552A422D20003514A1 /* PlantCD+CoreDataProperties.swift */,
+			);
+			path = ModelCD;
 			sourceTree = "<group>";
 		};
 		1768ACD629CCE869002703C5 = {
@@ -528,16 +548,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				47F7D28729D61F7A00D54D01 /* ReviewView.swift in Sources */,
-				17348E4D29FB41F20049A7DB /* CoreData.xcdatamodeld in Sources */,
 				47F7D28829D61F7A00D54D01 /* ReviewViewModel.swift in Sources */,
 				17AE4D8629F84F8C00A4813A /* RepositoryManager.swift in Sources */,
 				EBB272AE29DDF8FE00811137 /* ArrowButton.swift in Sources */,
 				822E0A0529DCBC47005B311F /* CardCTAMainTrivia.swift in Sources */,
 				824CC2DD29DC9C2600DC2A4E /* CardMainTrivia.swift in Sources */,
 				170F210529D62029002363FB /* ImaginativeJourney.swift in Sources */,
+				175CDD592A422D20003514A1 /* PlantCD+CoreDataProperties.swift in Sources */,
 				172EA40F29DB89C9006AC9E6 /* ObservatoryRepositoryViewModel.swift in Sources */,
+				175CDD572A422D20003514A1 /* DrawnCD+CoreDataProperties.swift in Sources */,
 				EBE180E429DCE04B00336477 /* CardImaginativeCarouselView.swift in Sources */,
 				4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */,
+				175CDD582A422D20003514A1 /* PlantCD+CoreDataClass.swift in Sources */,
 				172EA41129DBB9F0006AC9E6 /* BackButton.swift in Sources */,
 				4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */,
 				EB59D6B229D64C3E0047065D /* Responsive.swift in Sources */,
@@ -548,6 +570,7 @@
 				172EA41129DBB9F0006AC9E6 /* BackButton.swift in Sources */,
 				EB8C01D329E0936B00B286A3 /* CardGalleryHomeViewModel.swift in Sources */,
 				17C4F56C29DD0E410016D74C /* NaturiaSecundaryFont.swift in Sources */,
+				175CDD562A422D20003514A1 /* DrawnCD+CoreDataClass.swift in Sources */,
 				EB8C01CA29E088A400B286A3 /* CardObservativeHomeView.swift in Sources */,
 				179637A929DE56C800C787F7 /* GaleryView.swift in Sources */,
 				17C4F56C29DD0E410016D74C /* NaturiaSecundaryFont.swift in Sources */,
@@ -582,6 +605,7 @@
 				17E9251929E2391E009FB71E /* CardExpandedDrawn.swift in Sources */,
 				EB18AEFE29D4AF9C00D73821 /* Routes.swift in Sources */,
 				178EBDAF29E2111400D2DA70 /* NavigationManager.swift in Sources */,
+				17B6294E2A42177B004F89EE /* PlantsAndDrawnCD.xcdatamodeld in Sources */,
 				172E04E929FB484B00570172 /* CoreDataManager.swift in Sources */,
 				EBE180E529DCE04B00336477 /* CardImaginativeCarouselViewModel.swift in Sources */,
 				172EA40929DB46E7006AC9E6 /* ObservatoryRepositoryView.swift in Sources */,
@@ -830,13 +854,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		17348E4B29FB41F20049A7DB /* CoreData.xcdatamodeld */ = {
+		17B6294C2A42177B004F89EE /* PlantsAndDrawnCD.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				17348E4C29FB41F20049A7DB /* DrawnEntity.xcdatamodel */,
+				17B6294D2A42177B004F89EE /* PlantsAndDrawnCD.xcdatamodel */,
 			);
-			currentVersion = 17348E4C29FB41F20049A7DB /* DrawnEntity.xcdatamodel */;
-			path = CoreData.xcdatamodeld;
+			currentVersion = 17B6294D2A42177B004F89EE /* PlantsAndDrawnCD.xcdatamodel */;
+			path = PlantsAndDrawnCD.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

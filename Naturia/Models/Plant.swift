@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct Plant: Identifiable {
-    let id: UUID = UUID()
+    let id: Int
     let popularName: String
     let scientificName: String
     let origin: String
@@ -25,7 +25,8 @@ struct Plant: Identifiable {
 extension Plant {
     static func getPlants() -> [Plant] {
         return [
-            Plant(popularName: "Pitangueira",
+            Plant(id: 1,
+                  popularName: "Pitangueira",
                   scientificName: "Eugenia uniflora",
                   origin: "Cerrado, Mata Altântica e Pampa",
                   imagePath: "pitangueira",
@@ -34,7 +35,8 @@ extension Plant {
                   trivia: ["Dizem que o conhaque de pitangas era a bebida favorita de Gilberto Freyre, criada pelo mesmo",
                            "Suas folhas são usadas para fazer chás para ajudar contra diarreias persistentes e doenças do fígado",
                            "Por ser muito adaptável às condições de clima e solo, ela é cultivada em vários cantos do mundo, como no Hawaii, Madagascar, China e muitos outros"]),
-            Plant(popularName: "Vitória-régia",
+            Plant(id: 2,
+                  popularName: "Vitória-régia",
                   scientificName: "Victoria amazonica",
                   origin: "Região amazônica",
                   imagePath: "vitoriaRegia",
@@ -43,7 +45,8 @@ extension Plant {
                   trivia: ["Apesar de não ser convencional, é possível se alimentar das sementes, talo, flores e caule da vitória-régia",
                            "Suas flores são brancas e perfumadas, e abrem somente à noite, sobrevivendo por apenas 48 horas.",
                            "O seu nome foi dado em homenagem à Rainha Vitória do Reino Unido. Na época, era considerada uma das maiores maravilhas naturais do mundo."]),
-            Plant(popularName: "Pau-Brasil",
+            Plant(id: 3,
+                  popularName: "Pau-Brasil",
                   scientificName: "Paubrasilia echinata",
                   origin: "Mata Atlântica",
                   imagePath: "pauBrasil",
@@ -52,7 +55,8 @@ extension Plant {
                   trivia: ["Por ser uma árvore em risco de extinção, o pau-brasil só pode ser cortada para a produção do arco do violino",
                            "Na época do Brasil Imperial, o pau-brasil foi a primeira 'madeira de lei' do Brasil, o que significava que só podiam ser extraída com autorização da coroa.",
                            "Durante a colonização do Brasil, a madeira era valiosa por sua cor avermelhada, que era usada para tingir tecidos e fabricar objetos de luxo na Europa"]),
-            Plant(popularName: "Ipê-amarelo",
+            Plant(id: 4,
+                  popularName: "Ipê-amarelo",
                   scientificName: "Handroanthus albus",
                   origin: "Floresta de Araucária, floresta semidecidual e cerrado",
                   imagePath: "ipeAmarelo",
@@ -61,7 +65,8 @@ extension Plant {
                   trivia: ["Ele é considerado a flor símbolo do Brasil, já que, quando floresce em setembro, as cores de suas flores e folhas, amarelo e verde, representam a bandeira nacional",
                            "As flores do ipê-amarelo maceradas com mel e água morna ajudam em inflamações da garganta, boca e gengiva",
                            "Por ter flores com formato de pequenas trombetas, elas são muito atrativas para grande parte dos animais polinizadores, como vespas, abelhas e borboletas"]),
-            Plant(popularName: "Mandacaru",
+            Plant(id: 5,
+                  popularName: "Mandacaru",
                   scientificName: "Cereus jamacaru",
                   origin: "Semiárido do Nordeste brasileiro",
                   imagePath: "mandacaru",
@@ -70,7 +75,8 @@ extension Plant {
                   trivia: ["As suas flores são brancas, desabrocham à noite e murcham ao nascer do sol",
                            "Há evidências da planta até em telhados de casa, isso porque não demandam um tratamento específico e podem brotar em lugares inusitados.",
                            "Os seus espinhos possuem a função de defesa contra animais herbívoros."]),
-            Plant(popularName: "Brinco-de-princesa",
+            Plant(id: 6,
+                  popularName: "Brinco-de-princesa",
                   scientificName: "Fuchsia",
                   origin: "Sul do Brasil e regiões serranas",
                   imagePath: "brincoDePrincesa",
@@ -79,7 +85,8 @@ extension Plant {
                   trivia: ["Algumas espécies de beija-flores são atraídas pelas flores do Brinco-de-Princesa, o que faz com que a planta seja muito utilizada em paisagismo." ,
                            "O Brinco-de-Princesa é uma planta que pode ser facilmente propagada por estaquia, ou seja, através de um pedaço de galho da planta que é plantado em substrato úmido." ,
                            "Existem mais de 200 espécies de Brinco-de-Princesa, que variam em tamanho, formato e cor das flores."]),
-            Plant(popularName: "Primavera",
+            Plant(id: 7,
+                  popularName: "Primavera",
                   scientificName: "Bougainvillea spectabilis",
                   origin: "Nordeste do Brasil",
                   imagePath: "primavera",
@@ -88,7 +95,8 @@ extension Plant {
                   trivia: ["Ela possui flores pequenas, brancas ou amarelas, rodeadas por brácteas coloridas. As brácteas são folhas modificadas, que muitas vezes são confundidas com as flores, mas são na verdade estruturas de proteção das flores verdadeiras." ,
                            "Pode ser uma planta invasora em algumas áreas. Ela pode se espalhar rapidamente e sufocar outras plantas nativas, tornando-se uma ameaça para a biodiversidade." ,
                            "Seu nome é uma homenagem ao explorador francês Louis Antoine de Bougainville, que liderou uma expedição ao redor do mundo, em 1766 e a levou para os solos franceses."]),
-            Plant(popularName: "Carnaúba",
+            Plant(id: 8,
+                  popularName: "Carnaúba",
                   scientificName: "Copernicia prunifera)",
                   origin: "Nordeste do Brasil",
                   imagePath: "carnauba",
@@ -97,7 +105,7 @@ extension Plant {
                   trivia: ["A árvore é considerada símbolo do estado do Ceará, onde é amplamente cultivada e homenageada na bandeira do estado." ,
                            "A cera de Carnaúba é considerada a mais dura do mundo, com ponto de derretimento superior que a maioria das ceras, e por isso é amplamente utilizada em automóveis." ,
                            "Seu nome é uma homenagem ao explorador francês Louis Antoine de Bougainville, que liderou uma expedição ao redor do mundo, em 1766 e a levou para os solos franceses."]),
-            Plant(popularName: "Cajueiro",
+            Plant(id: 9, popularName: "Cajueiro",
                   scientificName: "Anacardium occidentale)",
                   origin: "Nordeste do Brasil",
                   imagePath: "cajueiro",

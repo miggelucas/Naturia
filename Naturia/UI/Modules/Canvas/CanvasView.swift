@@ -27,9 +27,8 @@ struct CanvasView: View {
     }
     
     func doneButtonPressed() {
-        // quebrar esse metodo em partes
-        // chamar um método que aplica a lógica abaixo
-        let receivedJourney = RepositoryManager.shared.currentJourney
+        // código novo
+        var currentPlant = RepositoryManager.shared.currentJourney.plant
         
         var typeOfJourney: Drawn.DrawnType {
             if viewModel.canvasRole == .imaginative1 {
@@ -39,15 +38,39 @@ struct CanvasView: View {
             }
         }
         
-        
         viewModel.userDraw = getImageData()
-//        let newDrawn: Drawn = Drawn(journeyId: receivedJourney.id,
-//                                    plantName: receivedJourney.plant.popularName,
-//                                    image: Image(uiImage: viewModel.userDraw),
-//                                    type: typeOfJourney)
-//        receivedJourney.userDrawns.append(newDrawn)
+        let newDrawn = Drawn(image: Image(uiImage: viewModel.userDraw),
+                             type: typeOfJourney)
         
-        RepositoryManager.shared.currentJourney = receivedJourney
+        currentPlant.drawns.append(newDrawn)
+        
+        RepositoryManager.shared.update(for: currentPlant)
+        
+        
+        
+        
+        
+        // código antigo
+        
+        // quebrar esse metodo em partes
+        // chamar um método que aplica a lógica abaixo
+        let receivedJourney = RepositoryManager.shared.currentJourney
+        
+        //        var typeOfJourney: Drawn.DrawnType {
+        //            if viewModel.canvasRole == .imaginative1 {
+        //                return .imaginative
+        //            } else {
+        //                return .observative
+        //            }
+        //        }
+        
+        
+        //        viewModel.userDraw = getImageData()
+        //        let newDrawn: Drawn = Drawn(image: Image(uiImage: viewModel.userDraw),
+        //                                    type: typeOfJourney)
+        //        receivedJourney.userDrawns.append(newDrawn)
+        
+        //        RepositoryManager.shared.currentJourney = receivedJourney
         
         // então realiza a ação de notificar o navManager para próxima tela
         switch viewModel.canvasRole {
