@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		170F210129D607E4002363FB /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170F210029D607E4002363FB /* Plant.swift */; };
-		170F210329D61FE1002363FB /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170F210229D61FE1002363FB /* Journey.swift */; };
+		170F210329D61FE1002363FB /* ObservativeJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170F210229D61FE1002363FB /* ObservativeJourney.swift */; };
 		170F210529D62029002363FB /* ImaginativeJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170F210429D62029002363FB /* ImaginativeJourney.swift */; };
 		170F210929D6206A002363FB /* Drawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170F210829D6206A002363FB /* Drawn.swift */; };
 		172E04E929FB484B00570172 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172E04E829FB484B00570172 /* CoreDataManager.swift */; };
@@ -29,6 +29,7 @@
 		179637A929DE56C800C787F7 /* GaleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179637A829DE56C800C787F7 /* GaleryView.swift */; };
 		17AE4D8629F84F8C00A4813A /* RepositoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AE4D8529F84F8C00A4813A /* RepositoryManager.swift */; };
 		17AE4D8B29F8C50000A4813A /* CanvasRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AE4D8A29F8C50000A4813A /* CanvasRole.swift */; };
+		17B6294B2A411ED2004F89EE /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B6294A2A411ED2004F89EE /* Journey.swift */; };
 		17C4F56329DCB5900016D74C /* CardPlantDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */; };
 		17C4F56529DCBD750016D74C /* CardPlantOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56429DCBD750016D74C /* CardPlantOrigin.swift */; };
 		17C4F56729DCBE670016D74C /* CardPlantTrivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4F56629DCBE670016D74C /* CardPlantTrivia.swift */; };
@@ -78,7 +79,7 @@
 
 /* Begin PBXFileReference section */
 		170F210029D607E4002363FB /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
-		170F210229D61FE1002363FB /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
+		170F210229D61FE1002363FB /* ObservativeJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservativeJourney.swift; sourceTree = "<group>"; };
 		170F210429D62029002363FB /* ImaginativeJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImaginativeJourney.swift; sourceTree = "<group>"; };
 		170F210829D6206A002363FB /* Drawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawn.swift; sourceTree = "<group>"; };
 		172E04E829FB484B00570172 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -101,6 +102,7 @@
 		179637A829DE56C800C787F7 /* GaleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryView.swift; sourceTree = "<group>"; };
 		17AE4D8529F84F8C00A4813A /* RepositoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryManager.swift; sourceTree = "<group>"; };
 		17AE4D8A29F8C50000A4813A /* CanvasRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasRole.swift; sourceTree = "<group>"; };
+		17B6294A2A411ED2004F89EE /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
 		17C4F56229DCB5900016D74C /* CardPlantDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantDescriptionView.swift; sourceTree = "<group>"; };
 		17C4F56429DCBD750016D74C /* CardPlantOrigin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantOrigin.swift; sourceTree = "<group>"; };
 		17C4F56629DCBE670016D74C /* CardPlantTrivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlantTrivia.swift; sourceTree = "<group>"; };
@@ -175,8 +177,9 @@
 		170F210B29D620CF002363FB /* Journey */ = {
 			isa = PBXGroup;
 			children = (
-				170F210229D61FE1002363FB /* Journey.swift */,
+				170F210229D61FE1002363FB /* ObservativeJourney.swift */,
 				170F210429D62029002363FB /* ImaginativeJourney.swift */,
+				17B6294A2A411ED2004F89EE /* Journey.swift */,
 			);
 			path = Journey;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				172EA41129DBB9F0006AC9E6 /* BackButton.swift in Sources */,
 				4787B89829D36B9800BBC7EE /* CanvasViewModel.swift in Sources */,
 				EB59D6B229D64C3E0047065D /* Responsive.swift in Sources */,
+				17B6294B2A411ED2004F89EE /* Journey.swift in Sources */,
 				EBE180DF29DCC48200336477 /* CardImaginative.swift in Sources */,
 				822E0A0329DCAB42005B311F /* CTAButton.swift in Sources */,
 				4787B88A29D36AD900BBC7EE /* DrawingCanvas.swift in Sources */,
@@ -563,7 +567,7 @@
 				47F7D28F29D6219300D54D01 /* TextAndConfirmationButtons.swift in Sources */,
 				47185D8B29DE0757008611D6 /* ConquistaView.swift in Sources */,
 				17C4F57329DD149D0016D74C /* NaturaPrimaryFont.swift in Sources */,
-				170F210329D61FE1002363FB /* Journey.swift in Sources */,
+				170F210329D61FE1002363FB /* ObservativeJourney.swift in Sources */,
 				170F210929D6206A002363FB /* Drawn.swift in Sources */,
 				173E810029DE09B8005B7253 /* BackgroundView.swift in Sources */,
 				179637A329DE119100C787F7 /* GaleryViewModel.swift in Sources */,

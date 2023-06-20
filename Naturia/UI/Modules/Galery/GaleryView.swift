@@ -152,7 +152,7 @@ struct GaleryView: View {
     
     struct GaleryView_Previews: PreviewProvider {
         static var previews: some View {
-            GaleryView(viewModel: GaleryViewModel(journeys:  Journey.getObservativeJourneys(),  mode: .plants
+            GaleryView(viewModel: GaleryViewModel(journeys:  ObservativeJourney.getObservativeJourneys(),  mode: .plants
                                                  )
             )
         }

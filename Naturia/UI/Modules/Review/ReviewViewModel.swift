@@ -18,11 +18,11 @@ final class ReviewViewModel: ObservableObject {
         
         var image = Image("star")
         
-        for drawn in journey.userDrawns {
-            if drawn.type == .imaginative {
-                image =  drawn.image
-            }
-        }
+//        for drawn in journey.userDrawns {
+//            if drawn.type == .imaginative {
+//                image =  drawn.image
+//            }
+//        }
         
         return image
         
@@ -34,11 +34,11 @@ final class ReviewViewModel: ObservableObject {
         
         var image = Image("star")
         
-        for drawn in journey.userDrawns {
-            if drawn.type == .observative {
-                image =  drawn.image
-            }
-        }
+//        for drawn in journey.userDrawns {
+//            if drawn.type == .observative {
+//                image =  drawn.image
+//            }
+//        }
         
         return image
     }

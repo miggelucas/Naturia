@@ -25,9 +25,10 @@ class GaleryViewModel: ObservableObject {
     var journeys: [Journey]
     
     var completedJourneys: [Journey] {
-        journeys.filter { journey in
-            journey.isCompleted
-        }
+//        journeys.filter { journey in
+//            journey.isCompleted
+//        }
+        return journeys
     }
     
     var journeysPlants: [Plant] {
@@ -47,16 +48,16 @@ class GaleryViewModel: ObservableObject {
     var drawns: [Drawn] {
         var drawns = [Drawn]()
         
-        for journey in completedJourneys {
-            print("journey: \(journey.id)")
-            for drawn in journey.userDrawns {
-                if !drawns.contains(drawn) {
-                    print("draw: \(drawn.id)")
-                    drawns.append(drawn)
-                }
-               
-            }
-        }
+//        for journey in completedJourneys {
+//            print("journey: \(journey.id)")
+//            for drawn in journey.userDrawns {
+//                if !drawns.contains(drawn) {
+//                    print("draw: \(drawn.id)")
+//                    drawns.append(drawn)
+//                }
+//
+//            } 
+//        }
         
         return drawns
         

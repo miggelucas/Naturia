@@ -45,7 +45,7 @@ struct CanvasView: View {
                                     plantName: receivedJourney.plant.popularName,
                                     image: Image(uiImage: viewModel.userDraw),
                                     type: typeOfJourney)
-        receivedJourney.userDrawns.append(newDrawn)
+//        receivedJourney.userDrawns.append(newDrawn)
         
         RepositoryManager.shared.currentJourney = receivedJourney
         

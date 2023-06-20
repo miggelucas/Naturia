@@ -20,17 +20,17 @@ final class ConquistaViewModel: ObservableObject {
    
         let journey = RepositoryManager.shared.currentJourney
         
-        let drawns = journey.userDrawns
-        
-        for drawn in drawns {
-            if drawn.type == .observative{
-                userDrawImage =  drawn.image
-                
-            }
-        }
-        Task {
-            RepositoryManager.shared.userDidCompletedCurrentJourney()
-        }
+//        let drawns = journey.userDrawns
+//
+//        for drawn in drawns {
+//            if drawn.type == .observative{
+//                userDrawImage =  drawn.image
+//
+//            }
+//        }
+//        Task {
+//            RepositoryManager.shared.userDidCompletedCurrentJourney()
+//        }
        
         
         
