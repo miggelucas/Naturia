@@ -89,48 +89,7 @@ final class CanvasViewModel: ObservableObject {
         
     }
 
-    
 
-    
-//    func doneButtonPressed() {
-//        guard let safeNavManage = navigationManager else { return }
-//        let receivedJourney = safeNavManage.currentJourney
-//        var typeOfJourney: Drawn.DrawnType
-//        
-//        
-//        //descobrir se recivedJouney é observative ou imaginve
-//        if receivedJourney is ImaginativeJourney {
-//            typeOfJourney = .imaginative
-//        } else {
-//            typeOfJourney = .observative
-//        }
-//
-//        
-//        userDraw = getImageData()
-//        let newDrawn: Drawn = Drawn(image: Image(uiImage: userDraw), type: typeOfJourney)
-//        receivedJourney?.userDrawns.append(newDrawn)
-//        
-//        safeNavManage.currentJourney = receivedJourney
-//        print(self.canvasRole)
-//        
-//        switch canvasRole {
-//        case .imaginative1:
-//            safeNavManage.path.append(CanvasRoutes.miniInfo)
-//                print("Caiu na miniInfo")
-//        case .imaginative2:
-//            safeNavManage.path.append(CanvasRoutes.review)
-//            print("caiy aqyu")
-//        case .observative:
-//            safeNavManage.path.append(CanvasRoutes.conquista)
-//        }
-//
-//    }
-//
-//    func getImageData() -> UIImage{
-//        let drawingImage = canvasView.drawing.image(from: canvasView.bounds, scale: CGFloat(1.0))
-//        return drawingImage
-//
-//    }
 }
 
 enum ExpandableViewType{
