@@ -44,6 +44,52 @@ final class CanvasViewModel: ObservableObject {
         
     }
     
+    // tentar devolver essa lógica para viewModel
+    
+    func getImageData() -> UIImage{
+        let drawingSize = UIScreen.main.bounds.size
+        
+        let drawingRect = CGRect(origin: .zero, size: drawingSize)
+        let drawingImage = canvasView.drawing.image(from: drawingRect, scale: CGFloat(1.0))
+        return drawingImage
+    }
+    
+    func doneButtonPressed() {
+
+        var currentPlant = RepositoryManager.shared.currentJourney.plant
+        
+        var typeOfJourney: Drawn.DrawnType {
+            if canvasRole == .imaginative1 {
+                return .imaginative
+            } else {
+                return .observative
+            }
+        }
+        
+        userDraw = getImageData()
+        let newDrawn = Drawn(image: Image(uiImage: userDraw),
+                             type: typeOfJourney)
+        
+        currentPlant.drawns.append(newDrawn)
+        
+        RepositoryManager.shared.update(for: currentPlant)
+        
+        
+        // então realiza a ação de notificar o navManager para próxima tela
+        switch canvasRole {
+        case .imaginative1:
+            NavigationManager.shared.path.append(ImaginativeRoutes.miniInfo)
+            
+        case .imaginative2:
+            NavigationManager.shared.path.append(ImaginativeRoutes.review)
+            
+        case .observative:
+            NavigationManager.shared.path.append(ObservativeRoutes.conquer)
+        }
+        
+    }
+
+    
 
     
 //    func doneButtonPressed() {

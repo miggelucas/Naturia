@@ -15,7 +15,7 @@
         <attribute name="origin" optional="YES" attributeType="String"/>
         <attribute name="populaName" optional="YES" attributeType="String"/>
         <attribute name="scientificName" optional="YES" attributeType="String"/>
-        <attribute name="trivia" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="trivia" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransforme" customClassName="[String]"/>
         <relationship name="drawns" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DrawnCD" inverseName="plant" inverseEntity="DrawnCD"/>
     </entity>
 </model>
