@@ -28,6 +28,10 @@ final class ReviewViewModel: ObservableObject {
         
     }
     
+    var nameOfPlant: String {
+        RepositoryManager.shared.currentJourney.plant.popularName
+    }
+    
     
     var userObservativeDrawn: Image {
         let journey = RepositoryManager.shared.currentJourney
