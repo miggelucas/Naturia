@@ -12,9 +12,10 @@ import SwiftUI
 
 final class ReviewViewModel: ObservableObject {
     let navigationManager: NavigationManager = NavigationManager.shared
+    let repositoryManager: RepositoryManager = RepositoryManager.shared
     
     var userImaginativeDrawn: Image {
-        let journey = RepositoryManager.shared.currentJourney
+        let journey = repositoryManager.currentJourney
         
         var image = Image("star")
         
@@ -29,12 +30,13 @@ final class ReviewViewModel: ObservableObject {
     }
     
     var nameOfPlant: String {
-        RepositoryManager.shared.currentJourney.plant.popularName
+        let plant = repositoryManager.currentJourney.plant
+        return plant.popularName
     }
     
     
     var userObservativeDrawn: Image {
-        let journey = RepositoryManager.shared.currentJourney
+        let journey = repositoryManager.currentJourney
         
         var image = Image("star")
         
@@ -49,7 +51,7 @@ final class ReviewViewModel: ObservableObject {
     
     
     func viewDidApper()  {
-        RepositoryManager.shared.userDidCompletedCurrentJourney()
+        repositoryManager.userDidCompletedCurrentJourney()
         
     }
     
