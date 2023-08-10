@@ -37,7 +37,7 @@ struct BackButton: View {
       
             }
             .foregroundColor(.black)
-            .font(.custom("Montserrat", size: 16))
+            .font(.NaturiaSecundary(.button3))
         }
 
         

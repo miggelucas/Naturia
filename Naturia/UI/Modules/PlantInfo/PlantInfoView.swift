@@ -14,9 +14,17 @@ struct PlantInfoView: View {
     
     init(viewModel: PlantInfoViewModel) {
         self.viewModel = viewModel
-
+        
     }
     
+
+    private var plantIcon: some View {
+        Image(viewModel.plant.iconPath)
+            .resizable()
+            .scaledToFit()
+    }
+    
+
     var body: some View {
         
         ZStack {
@@ -24,85 +32,17 @@ struct PlantInfoView: View {
             
             VStack {
                 
-                // Back Button
-                HStack {
-                    BackButton(style: viewModel.buttonStyle, actionForButton: {
-                        viewModel.backButtonPressed()
-                        print("entrou aqui")
-                    })
-                    
-                    Spacer()
-                    
-                }
-                
+                heard
+                    .padding(.bottom, 50)
                 
                 
                 HStack(spacing: 32) {
-                    Image(viewModel.plant.iconPath)
-                        .resizable()
-                        .scaledToFit()
+                   plantIcon
                         .padding(.vertical, 68)
                     
                     Spacer()
                     
-                    ScrollView {
-                        VStack(alignment: .leading, spacing: 32) {
-                            
-                            VStack(alignment: .leading, spacing: 16) {
-                                HStack(alignment: .lastTextBaseline) {
-                                    Text(viewModel.plant.popularName)
-                                        .font(Font.NaturiaPrimary(.h1))
-                                    
-                                    
-                                    Spacer()
-                                     
-                                    Image("Logo")
-                                        .resizable()
-                                        .frame(width: 46, height: 46)
-                                 
-                                }
-                                .padding(.vertical, -5)
-     
-                                
-                                Text(viewModel.plant.scientificName)
-                                    .font(Font.NaturiaSecundary(.Subtitle))
-                                
-                            }
-                            
-                            VStack(alignment: .leading, spacing: 16) {
-                                Text("Descrição")
-                                    .font(Font.NaturiaSecundary(.h5))
-                                
-                                CardPlantDescriptionView(description: viewModel.plant.description)
-                            }
-                            
-                            
-                            VStack(alignment: .leading, spacing: 16) {
-                                Text("Local de Origem")
-                                    .font(Font.NaturiaSecundary(.h5))
-                                
-                                CardPlantOrigin(plantOrigin: viewModel.plant.origin)
-                            }
-                            
-                            
-                            VStack(alignment: .leading, spacing: 16) {
-                                Text("Trivia")
-                                    .font(Font.NaturiaSecundary(.h5))
-                            }
-                            
-                            
-                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], alignment: .center, spacing: 32) {
-                                ForEach(viewModel.plant.trivia, id: \.self) { trivia in
-                                    CardPlantTrivia(trivia: trivia)
-                                }
-                                
-                            }
-                            .frame(width: 549)
-                            
-                        }
-                        
-                    }
-                    .foregroundColor(Color("gray-900"))
+                    infoScroll
                     .padding(.top, -50)
                     .padding(.trailing, 5)
                 }
@@ -114,6 +54,99 @@ struct PlantInfoView: View {
         }
         .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)
+    }
+    
+    
+    
+    private var heard: some View {
+        // Back Button
+        HStack(alignment: .center) {
+            BackButton(style: viewModel.buttonStyle, actionForButton: {
+                viewModel.backButtonPressed()
+                print("entrou aqui")
+            })
+            
+            Spacer()
+            
+            HStack(spacing: 8) {
+                Button {
+                    viewModel.userDrawnsPressed()
+                } label: {
+                    Text("Seus Desenhos")
+                        .font(.NaturiaSecundary(.button3))
+                        .foregroundColor(.black)
+                    Image("iconSetaDireita")
+                        .resizable()
+                        .frame(width: 15, height: 20)
+                }
+                
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    private var infoScroll: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 32) {
+                
+                VStack(alignment: .leading, spacing: 16) {
+                    HStack(alignment: .lastTextBaseline) {
+                        Text(viewModel.plant.popularName)
+                            .font(Font.NaturiaPrimary(.h1))
+                        
+                        
+                        Spacer()
+                        
+                        Image("Logo")
+                            .resizable()
+                            .frame(width: 46, height: 46)
+                        
+                    }
+                    .padding(.vertical, -5)
+                    
+                    
+                    Text(viewModel.plant.scientificName)
+                        .font(Font.NaturiaSecundary(.Subtitle))
+                    
+                }
+                
+                VStack(alignment: .leading, spacing: 16) {
+                    Text("Descrição")
+                        .font(Font.NaturiaSecundary(.h5))
+                    
+                    CardPlantDescriptionView(description: viewModel.plant.description)
+                }
+                
+                
+                VStack(alignment: .leading, spacing: 16) {
+                    Text("Local de Origem")
+                        .font(Font.NaturiaSecundary(.h5))
+                    
+                    CardPlantOrigin(plantOrigin: viewModel.plant.origin)
+                }
+                
+                
+                VStack(alignment: .leading, spacing: 16) {
+                    Text("Trivia")
+                        .font(Font.NaturiaSecundary(.h5))
+                }
+                
+                
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], alignment: .center, spacing: 32) {
+                    ForEach(viewModel.plant.trivia, id: \.self) { trivia in
+                        CardPlantTrivia(trivia: trivia)
+                    }
+                    
+                }
+                .frame(width: 549)
+                
+            }
+            
+        }
+        .foregroundColor(Color("gray-900"))
     }
 }
 

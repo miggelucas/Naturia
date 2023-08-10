@@ -18,6 +18,8 @@ struct ImageMainTrivia: View {
             
             plantImage
                 .resizable()
+
+        
             Image("cardImage")
             
         } .frame(width: 330, height: 424)

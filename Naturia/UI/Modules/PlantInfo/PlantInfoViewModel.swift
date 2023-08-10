@@ -32,6 +32,9 @@ class PlantInfoViewModel: ObservableObject {
         // should return to home
     }
     
+    func userDrawnsPressed() {
+        
+    }
     
     
 }
