@@ -13,12 +13,12 @@ enum ImaginativeRoutes: Hashable {
 }
 
 enum ObservativeRoutes: Hashable {
-    case observativeRepository, confirmation, canvas, conquer, plants
+    case observativeRepository, confirmation, canvas, conquer, plantsInfo
     
 }
 
 enum GaleryRoutes: Hashable {
-    case galery, plantInfo, drawn(CardGaleryDrawn)
+    case plantsGalery, plantInfo, drawGalery, draw(CardGaleryDrawn)
 }
 
 

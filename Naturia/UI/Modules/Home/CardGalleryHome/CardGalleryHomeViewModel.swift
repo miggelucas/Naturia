@@ -19,6 +19,6 @@ final class CardGalleryHomeViewModel: ObservableObject {
     }
     
     func onTap() {
-        safeNavManager.pushToPath(GaleryRoutes.galery)
+        safeNavManager.pushToPath(GaleryRoutes.plantsGalery)
     }
 }

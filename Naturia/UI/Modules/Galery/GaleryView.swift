@@ -11,7 +11,7 @@ struct GaleryView: View {
     
     @ObservedObject var viewModel: GaleryViewModel
     
-    init(viewModel: GaleryViewModel = GaleryViewModel()) {
+    init(_ viewModel: GaleryViewModel) {
         self.viewModel = viewModel
     }
     
@@ -48,13 +48,6 @@ struct GaleryView: View {
                 case .plants:
                     HStack(alignment: .center) {
                         
-                        ArrowButton(buttonType: .right) {
-                            // esse botao aqui é pura gambiarra
-                            // so esta aqui para manter a proporcao da tela
-                        }
-                        .layoutPriority(2)
-                        .opacity(0)
-                        
                         switch viewModel.state {
                         case .content:
                             ScrollView {
@@ -83,21 +76,11 @@ struct GaleryView: View {
                         }
                         
                         
-                        ArrowButton(buttonType: .right) {
-                            viewModel.rightArrowPressed()
-                        }
-                        .layoutPriority(2)
-                        
                     }
                     
                     
                 case .draws:
                     HStack(alignment: .center) {
-                        ArrowButton(buttonType: .left) {
-                            viewModel.leftArrowPressed()
-                            
-                        }
-                        .layoutPriority(2)
                         
                         switch viewModel.state {
                         case .content:
@@ -130,13 +113,6 @@ struct GaleryView: View {
                             
                         }
                         
-                        
-                        ArrowButton(buttonType: .left) {
-                            // assim como o botao no caso da tela de plantas
-                            // esse cara eh gambiarra, esta aqui para manter proporcao da tela
-                        }
-                        .layoutPriority(2)
-                        .opacity(0)
                     }
                     
                 }
@@ -152,7 +128,7 @@ struct GaleryView: View {
     
     struct GaleryView_Previews: PreviewProvider {
         static var previews: some View {
-            GaleryView(viewModel: GaleryViewModel(journeys:  Journey.getObservativeJourneys(),  mode: .plants
+            GaleryView(GaleryViewModel(journeys:  Journey.getObservativeJourneys(),  mode: .draws
                                                  )
             )
         }

@@ -11,8 +11,9 @@ import SwiftUI
 class GaleryViewModel: ObservableObject {
 
     let navigationManager = NavigationManager.shared
+    let repositoryManager = RepositoryManager.shared
     
-    enum Mode {
+    enum ContentMode {
         case plants, draws
     }
     
@@ -20,7 +21,13 @@ class GaleryViewModel: ObservableObject {
         case empty, content
     }
     
-    @Published var mode: Mode
+    @Published var mode: ContentMode
+    
+    
+    init(journeys: [Journey] = RepositoryManager.shared.loadJourneysDrawns(), mode: GaleryViewModel.ContentMode) {
+        self.journeys = journeys
+        self.mode = mode
+    }
     
     var journeys: [Journey]
     
@@ -45,20 +52,10 @@ class GaleryViewModel: ObservableObject {
     }
     
     var drawns: [Drawn] {
-        var drawns = [Drawn]()
         
-        for journey in completedJourneys {
-            print("journey: \(journey.id)")
-            for drawn in journey.userDrawns {
-                if !drawns.contains(drawn) {
-                    print("draw: \(drawn.id)")
-                    drawns.append(drawn)
-                }
-               
-            }
-        }
+        return repositoryManager.currentJourney.userDrawns
         
-        return drawns
+
         
     }
     
@@ -72,10 +69,7 @@ class GaleryViewModel: ObservableObject {
         }
     }
     
-    init(journeys: [Journey] = RepositoryManager.shared.loadJourneysDrawns(), mode: GaleryViewModel.Mode = .plants) {
-        self.journeys = journeys
-        self.mode = mode
-    }
+
     
     func backButtonPressed() {
             navigationManager.backToPreviousView()
@@ -88,7 +82,7 @@ class GaleryViewModel: ObservableObject {
     }
     
     func drawnPressed(for cardDrawn: CardGaleryDrawn) {
-            navigationManager.pushToPath(GaleryRoutes.drawn(cardDrawn))
+            navigationManager.pushToPath(GaleryRoutes.draw(cardDrawn))
         
     }
     

@@ -10,12 +10,18 @@ import SwiftUI
 
 class PlantInfoViewModel: ObservableObject {
     
-    @Published var plant: Plant
-    var safeNavManager: NavigationManager = NavigationManager.shared
+    var journey: Journey
+    
+    var NavManager: NavigationManager = NavigationManager.shared
+    let repositoryManager: RepositoryManager = RepositoryManager.shared
     let buttonStyle: BackButton.Style
     
-    init(plant: Plant, buttonStyle: BackButton.Style) {
-        self.plant = plant
+    var plant: Plant {
+        journey.plant
+    }
+    
+    init(buttonStyle: BackButton.Style) {
+        self.journey = repositoryManager.currentJourney
         self.buttonStyle = buttonStyle
     }
     
@@ -23,9 +29,9 @@ class PlantInfoViewModel: ObservableObject {
     func backButtonPressed() {
             switch buttonStyle {
             case .back:
-                safeNavManager.backToPreviousView()
+                NavManager.backToPreviousView()
             case .backToHome:
-                safeNavManager.popToRoot()
+                NavManager.popToRoot()
             }
         
 
@@ -33,7 +39,7 @@ class PlantInfoViewModel: ObservableObject {
     }
     
     func userDrawnsPressed() {
-        
+        NavManager.pushToPath(GaleryRoutes.drawGalery)
     }
     
     

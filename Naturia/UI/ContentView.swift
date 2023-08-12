@@ -29,21 +29,25 @@ struct ContentView: View {
                     case .conquer:
                         ConquistaView()
                         
-                    case .plants:
-                        PlantInfoView(viewModel: PlantInfoViewModel(plant: RepositoryManager.shared.currentJourney.plant, buttonStyle: .backToHome))
+                    case .plantsInfo:
+                        PlantInfoView(viewModel: PlantInfoViewModel(buttonStyle: .backToHome))
                         
                     }}
                 )
                 .navigationDestination(for: GaleryRoutes.self, destination: { routes in
                     switch routes{
-                    case .galery:
-                        GaleryView()
+                    case .plantsGalery:
+                        GaleryView(GaleryViewModel(mode: .plants))
                         
                     case .plantInfo:
-                        PlantInfoView(viewModel: PlantInfoViewModel(plant: RepositoryManager.shared.currentPlant!, buttonStyle: .back))
+                        PlantInfoView(viewModel: PlantInfoViewModel(buttonStyle: .back))
                         
-                    case .drawn(let cardDrawn):
+                    case .drawGalery:
+                        GaleryView(GaleryViewModel(mode: .draws))
+                        
+                    case .draw(let cardDrawn):
                         DrawImageView(drawn: cardDrawn.drawn, name: cardDrawn.text)
+
                     }
                 })
                 .navigationDestination(for: ImaginativeRoutes.self) { route in
@@ -53,7 +57,7 @@ struct ContentView: View {
             
         
                     case .plantsInfo:
-                        PlantInfoView(viewModel: PlantInfoViewModel(plant: RepositoryManager.shared.currentJourney.plant, buttonStyle: .backToHome))
+                        PlantInfoView(viewModel: PlantInfoViewModel(buttonStyle: .backToHome))
             
                         
                     case .canvasImaginative2:

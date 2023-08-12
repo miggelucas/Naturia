@@ -17,14 +17,14 @@ struct PlantInfoView: View {
         
     }
     
-
+    
     private var plantIcon: some View {
         Image(viewModel.plant.iconPath)
             .resizable()
             .scaledToFit()
     }
     
-
+    
     var body: some View {
         
         ZStack {
@@ -37,14 +37,14 @@ struct PlantInfoView: View {
                 
                 
                 HStack(spacing: 32) {
-                   plantIcon
+                    plantIcon
                         .padding(.vertical, 68)
                     
                     Spacer()
                     
                     infoScroll
-                    .padding(.top, -50)
-                    .padding(.trailing, 5)
+                        .padding(.top, -50)
+                        .padding(.trailing, 5)
                 }
             }
             .padding(.horizontal, 32)
@@ -61,7 +61,8 @@ struct PlantInfoView: View {
     private var heard: some View {
         // Back Button
         HStack(alignment: .center) {
-            BackButton(style: viewModel.buttonStyle, actionForButton: {
+            BackButton(style: viewModel.buttonStyle,
+                       actionForButton: {
                 viewModel.backButtonPressed()
                 print("entrou aqui")
             })
@@ -79,7 +80,6 @@ struct PlantInfoView: View {
                         .resizable()
                         .frame(width: 15, height: 20)
                 }
-                
                 
             }
             
@@ -152,6 +152,6 @@ struct PlantInfoView: View {
 
 struct PlantInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        PlantInfoView(viewModel: PlantInfoViewModel(plant: Journey.getObservativePlaceholder().plant, buttonStyle: .back)).previewInterfaceOrientation(.landscapeLeft)
+        PlantInfoView(viewModel: PlantInfoViewModel(buttonStyle: .back)).previewInterfaceOrientation(.landscapeLeft)
     }
 }
