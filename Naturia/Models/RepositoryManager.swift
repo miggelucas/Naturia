@@ -19,14 +19,14 @@ class RepositoryManager {
     // all this should be private
     // refact it later
     var currentJourney: Journey
-    var observativeJourneysArray: [Journey]
+    var observativeJourneysArray: [ObservativeJourney]
     var imaginativeJourneysArray: [ImaginativeJourney]
     
     // gambiarra
     var currentPlant: Plant?
     
     init(currentJourney: Journey = ImaginativeJourney.getPlaceholder(),
-         observativeArray: [Journey] = Journey.getObservativeJourneys(),
+         observativeArray: [ObservativeJourney] = ObservativeJourney.getObservativeJourneys(),
          imaginativeArray: [ImaginativeJourney] = ImaginativeJourney.getImaginativeJourneys()
     ){
         self.currentJourney = currentJourney
@@ -35,7 +35,7 @@ class RepositoryManager {
     }
     
     private func refreshJourneys() {
-        self.observativeJourneysArray = Journey.getObservativeJourneys()
+        self.observativeJourneysArray = ObservativeJourney.getObservativeJourneys()
         self.imaginativeJourneysArray = ImaginativeJourney.getImaginativeJourneys()
     }
     
@@ -50,7 +50,8 @@ class RepositoryManager {
         }
         
         Task {
-            for drawn in currentJourney.userDrawns {
+            let plant = currentJourney.plant
+            for drawn in plant.userDrawns {
                 await coreDataManager.saveDrawn(for: drawn) { result in
                     switch result {
                     case .success(let message):
@@ -81,9 +82,8 @@ class RepositoryManager {
                 for draw in drawsArray {
                     for journey in journeysArray {
                         if draw.journeyId == journey.id {
-                            journey.isCompleted = true
-                            journey.userDrawns.append(draw)
-                            print("JourneyId \(journey.id) load Draw \(draw.id) for plant: \(journey.plant.popularName)")
+                            journey.plant.userDrawns.append(draw)
+                           
                         }
                     }
                 }
@@ -105,7 +105,7 @@ class RepositoryManager {
     
     private func updateObservative() {
         if let journeyIndex = observativeJourneysArray.firstIndex(where: { $0.id == currentJourney.id}) {
-            observativeJourneysArray[journeyIndex] = currentJourney
+            observativeJourneysArray[journeyIndex] = currentJourney as! ObservativeJourney
         }
     }
     

@@ -20,7 +20,7 @@ final class ConquistaViewModel: ObservableObject {
    
         let journey = RepositoryManager.shared.currentJourney
         
-        let drawns = journey.userDrawns
+        let drawns = journey.plant.userDrawns
         
         for drawn in drawns {
             if drawn.type == .observative{

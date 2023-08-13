@@ -9,6 +9,14 @@ import Foundation
 import SwiftUI
 
 class ImaginativeJourney: Journey {
+    var id: String
+    
+    var plant: Plant
+    
+    var isCompleted: Bool
+    
+    var drawProvocations: [String]
+    
     
     let mainProvocation: String
     let mainTrivia: String
@@ -19,13 +27,17 @@ class ImaginativeJourney: Journey {
          mainTrivia: String,
          id: String,
          plant: Plant,
-         isCompleted: Bool,
+         isCompleted: Bool = false,
          iconPath: String
     ) {
+        self.id = id
+        self.plant = plant
+        self.isCompleted = isCompleted
+        self.drawProvocations = drawingProvocations
         self.mainProvocation = mainProvocation
         self.mainTrivia = mainTrivia
         self.iconPath = iconPath
-        super.init(id: id, plant: plant, isCompleted: isCompleted, drawingProvocations: drawingProvocations)
+    
     }
 }
 
@@ -53,7 +65,7 @@ extension ImaginativeJourney {
                               Drawn.DrawnPlaceholder(type: .imaginative)
         ]
         
-        journey.userDrawns = drawn
+//        journey.userDrawns = drawn
         
         return journey
         

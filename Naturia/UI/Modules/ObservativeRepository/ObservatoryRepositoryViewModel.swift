@@ -24,11 +24,11 @@ class ObservatoryRepositoryViewModel: ObservableObject {
         }
     }
     
-    init(journeyArray: [Journey] = RepositoryManager.shared.observativeJourneysArray) {
+    init(journeyArray: [ObservativeJourney] = RepositoryManager.shared.observativeJourneysArray) {
         self.journeys = journeyArray
     }
     
-    let journeys: [Journey]
+    let journeys: [ObservativeJourney]
     
     let textForEmptyState: String = "Sem jornadas no momento =("
     
@@ -37,7 +37,7 @@ class ObservatoryRepositoryViewModel: ObservableObject {
 
     }
     
-    func journeyPressed(_ journey: Journey) {
+    func journeyPressed(_ journey: ObservativeJourney) {
             RepositoryManager.shared.currentJourney = journey
             safeNavManager.pushToPath(ObservativeRoutes.confirmation)
     }

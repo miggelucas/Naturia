@@ -29,7 +29,7 @@ struct CanvasView: View {
     func doneButtonPressed() {
         // quebrar esse metodo em partes
         // chamar um método que aplica a lógica abaixo
-        let receivedJourney = RepositoryManager.shared.currentJourney
+        var receivedJourney = RepositoryManager.shared.currentJourney
         
         var typeOfJourney: Drawn.DrawnType {
             if viewModel.canvasRole == .imaginative1 {
@@ -45,7 +45,7 @@ struct CanvasView: View {
                                     plantName: receivedJourney.plant.popularName,
                                     image: Image(uiImage: viewModel.userDraw),
                                     type: typeOfJourney)
-        receivedJourney.userDrawns.append(newDrawn)
+        receivedJourney.plant.userDrawns.append(newDrawn)
         
         RepositoryManager.shared.currentJourney = receivedJourney
         

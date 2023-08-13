@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Plant: Identifiable {
+class Plant: Identifiable {
     let id: UUID = UUID()
     let popularName: String
     let scientificName: String
@@ -17,6 +17,19 @@ struct Plant: Identifiable {
     let iconPath: String
     let description: String
     let trivia: [String]
+    var userDrawns: [Drawn]
+    
+    init(popularName: String, scientificName: String, origin: String, imagePath: String, iconPath: String, description: String, trivia: [String], userDrawns: [Drawn] = []) {
+        self.popularName = popularName
+        self.scientificName = scientificName
+        self.origin = origin
+        self.imagePath = imagePath
+        self.iconPath = iconPath
+        self.description = description
+        self.trivia = trivia
+        self.userDrawns = userDrawns
+    }
+    
 }
 
 

@@ -34,7 +34,7 @@ final class CanvasViewModel: ObservableObject {
     
     init(canvasRole: CanvasRole, journey: Journey = RepositoryManager.shared.currentJourney) {
         self.canvasRole = canvasRole
-        self.provocacoes = journey.drawingProvocations
+        self.provocacoes = journey.drawProvocations
         self.referencia = journey.plant.imagePath
     }
     

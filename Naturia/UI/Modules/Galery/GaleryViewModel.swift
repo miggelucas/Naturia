@@ -52,8 +52,8 @@ class GaleryViewModel: ObservableObject {
     }
     
     var drawns: [Drawn] {
-        
-        return repositoryManager.currentJourney.userDrawns
+        let journey: Journey = repositoryManager.currentJourney
+        return journey.plant.userDrawns
         
 
         

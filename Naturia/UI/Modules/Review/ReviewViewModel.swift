@@ -15,11 +15,11 @@ final class ReviewViewModel: ObservableObject {
     let repositoryManager: RepositoryManager = RepositoryManager.shared
     
     var userImaginativeDrawn: Image {
-        let journey = repositoryManager.currentJourney
+        let plant = repositoryManager.currentJourney.plant
         
         var image = Image("star")
         
-        for drawn in journey.userDrawns {
+        for drawn in plant.userDrawns {
             if drawn.type == .imaginative {
                 image =  drawn.image
             }
@@ -36,11 +36,11 @@ final class ReviewViewModel: ObservableObject {
     
     
     var userObservativeDrawn: Image {
-        let journey = repositoryManager.currentJourney
+        let plant = repositoryManager.currentJourney.plant
         
         var image = Image("star")
         
-        for drawn in journey.userDrawns {
+        for drawn in plant.userDrawns {
             if drawn.type == .observative {
                 image =  drawn.image
             }
